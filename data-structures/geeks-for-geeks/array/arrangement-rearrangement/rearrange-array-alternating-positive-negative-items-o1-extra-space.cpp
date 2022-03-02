@@ -1,7 +1,7 @@
 // https://www.geeksforgeeks.org/rearrange-array-alternating-positive-negative-items-o1-extra-space/
 // https://www.geeksforgeeks.org/rearrange-array-in-alternating-positive-negative-items-with-o1-extra-space-set-2/
 // https://www.geeksforgeeks.org/rearrange-positive-and-negative-numbers-publish/
-// TODO(amirphl) maintain order - time: O(n) || O(nlogn) - memory: O(1)
+// TODO(amirphl) maintain order - time: O(n) || O(nlogn) - memory: O(1) || O(logn)
 
 #include<algorithm>
 #include<iostream>
