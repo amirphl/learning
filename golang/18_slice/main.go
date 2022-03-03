@@ -170,9 +170,9 @@ func main() {
 	// ss2 := make([]byte, 20, 100)
 	// ss2[35] = 100 // runtime error: index out of range [35] with length 20
 	fmt.Println("--------------------")
-    ss2 := make([]byte, 5, 10)
-    fmt.Printf("before append: %v\n", ss2)
-    ss2 = append(ss2, 101)
-    fmt.Printf("after  append: %v\n", ss2)
+	ss2 := make([]byte, 5, 10)
+	fmt.Printf("before append: %v\n", ss2)
+	ss2 = append(ss2, 101)
+	fmt.Printf("after  append: %v\n", ss2)
 	fmt.Println("--------------------")
 }
