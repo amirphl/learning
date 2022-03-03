@@ -2,6 +2,14 @@ package main
 
 import "fmt"
 
+// Note: This array is completly a new array and is not a reference to
+// the original array in the caller function!
+// unlike slice, map, and channel, it's not a reference!
+func change(arr [5]byte, index int, newValue byte) {
+	fmt.Printf("inside change function: %p \n", &arr)
+	arr[index] = newValue
+}
+
 func main() {
 	var strs [10]string
 	// strs[-1] = "abc" // invalid array index -1 (index must be non-negative)
@@ -25,5 +33,8 @@ func main() {
 	var u int = 254
 	// b[1] = u // cannot use u (type int) as type byte in assignment
 	b[1] = byte(u)
+	fmt.Printf("inside main function: %p \n", &b)
+	fmt.Println(b)
+	change(b, 4, 11)
 	fmt.Println(b)
 }
