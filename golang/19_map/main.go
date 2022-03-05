@@ -1,8 +1,104 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"log"
+	"net/http"
+    "io/ioutil"
+)
 
-func nilMap() {
+func makeHttpReq() {
+	res, err := http.Get("http://www-01.sil.org/linguistics/wordlists/english/wordlist/wordsEn.txt")
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	bs, _ := ioutil.ReadAll(res.Body)
+	str := string(bs)
+	fmt.Printf("wordsBn: %v\n", str)
+}
+
+func makeHashTable() {
+	fmt.Printf("type of salam[1]: %T\n", "salam"[1]) // TODO
+	fmt.Printf("type of rune(salam[1]): %T\n", rune("salam"[1]))
+	fmt.Printf("type of سلام[1]: %T\n", "سلام"[1]) // TODO
+	fmt.Printf("type of rune(سلام[1]): %T\n", rune("سلام"[1]))
+
+	res, err := http.Get("http://www.gutenberg.org/files/2701/old/moby10b.txt")
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	defer res.Body.Close()
+
+	scanner := bufio.NewScanner(res.Body)
+	scanner.Split(bufio.ScanWords)
+	buckets1 := make([]int, 200)
+	buckets2 := make([]int, 12)
+	buckets3 := make([]int, 15)
+	buckets4 := make([][]string, 100) // buckets4[i] is empty and is not nil, so we are able to do `buckets4[i] = append(buckets4[i], someStuff)`
+	// buckets4[i][0] produces runtime error: index out of range [0] with length 0
+	buckets5 := make(map[int]map[string]int) // inner maps are nil!!
+
+	for i := 0; i < 100; i++ {
+		buckets5[i] = make(map[string]int)
+	}
+
+	hashFunc1 := func(str string) int {
+		return int(str[0])
+	}
+
+	hashFunc2 := func(str string, buckets []int) int {
+		return int(str[0]) % len(buckets)
+	}
+
+	hashFunc3 := func(str string, buckets []int) int {
+		sum := 0
+
+		for _, v := range str {
+			sum += int(v)
+		}
+
+		return sum % len(buckets)
+	}
+
+	hashFunc4 := func(str string, buckets [][]string) int {
+		sum := 0
+
+		for _, v := range str {
+			sum += int(v)
+		}
+
+		return sum % len(buckets)
+	}
+
+	for scanner.Scan() {
+		str := scanner.Text()
+		buckets1[hashFunc1(str)]++
+		buckets2[hashFunc2(str, buckets2)]++
+		buckets3[hashFunc3(str, buckets3)]++
+		n := hashFunc4(str, buckets4)
+		buckets4[n] = append(buckets4[n], str)
+		buckets5[n][str]++
+	}
+
+	fmt.Printf("buckets1: %v\n", buckets1)
+	fmt.Printf("buckets2: %v\n", buckets2)
+	fmt.Printf("buckets3: %v\n", buckets3)
+	fmt.Printf("len(buckets4): %v\n", len(buckets4))
+	fmt.Printf("cap(buckets4): %v\n", cap(buckets4))
+
+	for i, innerBuck := range buckets4 {
+		fmt.Printf("len(buckets4[%d]), cap(buckets4[%d]): %v    %v\n", i, i, len(innerBuck), cap(innerBuck))
+	}
+
+	fmt.Printf("buckets5[49]: %v\n", buckets5[49])
+}
+
+func main() {
 	// There is no function like `append` for map.
 
 	// nil map
@@ -16,7 +112,8 @@ func nilMap() {
 
 	// empty map
 
-	var b map[int]int = map[int]int{}
+	// var b map[int]int = map[int]int{}
+	var b = map[int]int{}
 	fmt.Printf("b: %v\n", b)
 	fmt.Printf("b == nil: %v\n", b == nil)
 	fmt.Printf("***** (default value test) b[5]: %v\n", b[5])
@@ -31,7 +128,7 @@ func nilMap() {
 	fmt.Printf("(after deleting key 5 again) b: %v\n", b)
 	fmt.Println("----------------------")
 
-	// composite map
+	// composite-literal map
 
 	var c = map[float64]float64{
 		4.6:   -1,
@@ -81,8 +178,11 @@ func nilMap() {
 		fmt.Printf("key, value: %v    %v\n", k, value)
 	}
 	fmt.Println("----------------------")
-}
 
-func main() {
-	nilMap()
+	// f18 := delete(f, 18) // delete(f, 18) used as value
+
+	makeHashTable()
+	fmt.Println("----------------------")
+	makeHttpReq()
+	fmt.Println("----------------------")
 }
