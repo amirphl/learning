@@ -3,6 +3,8 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"os"
+	"strings"
 )
 
 type foo int
@@ -33,10 +35,13 @@ type child struct {
 }
 
 func (p Parent) do() {
+	// You could access p fields(state) and methods here.
+	// p.do() // **** Uncomment this line and you receive stack overflow!!!
 	fmt.Println("I am the function do() and I belong to `Parent`.", "p:", p)
 }
 
 func (c child) do(x int) {
+	// You could access c fields(state) and methods here.
 	fmt.Println("I am the function do(x int) and I belong to `child`.", "c:", c, "x:", x)
 }
 
@@ -134,6 +139,26 @@ func unmarshaling() {
 	fmt.Printf("a1, b1, string(b1), e1:	%v	%v	%v	%v\n", a1, b1, string(b1), e1)
 }
 
+func encode() {
+	a1 := AAA{
+		a: 1111,
+		A: "The-String",
+		b: false,
+		B: 6.64,
+		C: "CCCC",
+		D: "DDDD",
+	}
+
+	json.NewEncoder(os.Stdout).Encode(a1)
+}
+
+func decode() {
+	a1 := AAA{}
+	reader := strings.NewReader("{\"DDD\":	\"ﺩﺭﻭﺩ ﺥﺩﺍ ﺏﺭ ﺕﻭ!\"}")
+	json.NewDecoder(reader).Decode(&a1)
+	fmt.Printf("a1: %v\n", a1)
+}
+
 func main() {
 	var a1 foo = 60
 	var a2 foo2 = 70
@@ -199,6 +224,14 @@ func main() {
 	fmt.Println("------------")
 
 	unmarshaling()
+
+	fmt.Println("------------")
+
+	encode()
+
+	fmt.Println("------------")
+
+	decode()
 
 	fmt.Println("------------")
 }
