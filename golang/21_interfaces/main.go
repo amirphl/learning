@@ -1,8 +1,20 @@
 package main
 
 import "fmt"
+import "sort"
 
+// golint
+
+// TODO Does the subtype must implement all methods of the supertype?
+
+// Universal is an empty interface.
+type Universal interface {
+	// You can put some methods here.
+}
+
+// Animal is a subtype of Universal.
 type Animal interface {
+	Universal
 	// alive bool // An interface can't hold a variable.
 	feed(x int) int
 	kill() bool
@@ -10,6 +22,7 @@ type Animal interface {
 	// function(){} // An interface can't hold an implemented function.
 }
 
+// Dog is a struct implementing Animal interface.
 type Dog struct {
 	alive  bool
 	weight int
@@ -63,7 +76,7 @@ func feed(a Animal, x int) int {
 	fmt.Printf("\tinside \"feed(a Animal, x int) int\":\n\t\ta: %v\n\t\ta: %p\n\t\t&a: ===> %p <===\n\t\t&x: %p\n\t\ttype(a): =======> %T <=======\n", a, a, &a, &x, a)
 	/* If `a` is actually a struct:
 	 	if `method` `feed` `receiver` input is a pointer:
-	 		TODO
+	 		This is not possible because of parallel type system. Refer to `124-method-sets.mp4` for more info.
 	 	else
 			A new struct is formed from `a` somewhere in the memory and passed to the receiver.
 	   If `a` is a pointer to a struct:
@@ -95,7 +108,7 @@ func kill(a Animal) bool {
 	fmt.Printf("\tinside \"kill(a Animal) bool\":\n\t\ta: %v\n\t\ta: %p\n\t\t&a:	===> %p <===\n\t\ttype(a): =======> %T <=======\n", a, a, &a, a)
 	/* If `a` is actually a struct:
 	 	if `method` `kill` `receiver` input is a pointer:
-	 		TODO
+	 		This is not possible because of parallel type system. Refer to `124-method-sets.mp4` for more info.
 	 	else
 			A new struct is formed from `a` somewhere in the memory and passed to the receiver.
 	   If `a` is a pointer to a struct:
@@ -118,7 +131,7 @@ func killDash9(a Animal) bool {
 	// return (&a).killDash9() // Doesn't work.
 	/* If `a` is actually a struct:
 	 	if `method` `killDash9` `receiver` input is a pointer:
-	 		TODO
+	 		This is not possible because of parallel type system. Refer to `124-method-sets.mp4` for more info.
 	 	else
 			A new struct is formed from `a` somewhere in the memory and passed to the receiver.
 	   If `a` is a pointer to a struct:
@@ -131,6 +144,7 @@ func killDash9(a Animal) bool {
 	return a.killDash9()
 }
 
+// Cat is a struct implementing Animal interface.
 type Cat struct {
 	alive  bool
 	weight int
@@ -169,6 +183,87 @@ func (c Cat) killDash9() bool {
 	}
 
 	return false
+}
+
+type foo []string
+
+// assigning function to type
+func (x foo) Len() int {
+	return len(x)
+}
+
+// assigning function to type
+func (x foo) Less(i, j int) bool {
+	return x[i] <= x[j]
+}
+
+// assigning function to type
+func (x foo) Swap(i, j int) {
+	// x is a reference.
+	x[i], x[j] = x[j], x[i]
+}
+
+// Cats is an array of Cat.
+type Cats []Cat
+
+func (x Cats) Len() int {
+	return len(x)
+}
+
+func (x Cats) Less(i, j int) bool {
+	return x[i].weight <= x[j].weight
+}
+
+func (x Cats) Swap(i, j int) {
+	x[i], x[j] = x[j], x[i]
+}
+
+func sortExamples() {
+	a1 := []string{"hello", "bye", "salam", "hellyeah"}
+	fmt.Printf("before sorting: %v\n", a1)
+	sort.Strings(a1)
+	fmt.Printf("after  sorting: %v\n", a1)
+
+	fmt.Println("---------------------")
+
+	a2 := []float64{1.4, 2.5, -1.3, 0.5, 0, 0.0}
+	fmt.Printf("before sorting: %v\n", a2)
+	sort.Float64s(a2)
+	fmt.Printf("after  sorting: %v\n", a2)
+
+	fmt.Println("---------------------")
+
+	a3 := []float64{1.4, 2.5, -1.3, 0.5, 0, 0.0}
+	fmt.Printf("before sorting in decreasing order: %v\n", a3)
+	sort.Sort(sort.Reverse(sort.Float64Slice(a3)))
+	fmt.Printf("after  sorting in decreasing order: %v\n", a3)
+
+	fmt.Println("---------------------")
+
+	a4 := foo{"abc", "dd", "de", "zz", "ab"}
+	fmt.Printf("before sorting: %v\n", a4)
+	sort.Sort(a4) // The sort is performed inline.
+	fmt.Printf("after  sorting: %v\n", a4)
+
+	fmt.Println("---------------------")
+
+	a5 := sort.StringSlice(a1) // TODO The type is being converted to the `Interface` or the value?
+	// TODO Why `&a1` is different from `&a5`?
+	fmt.Printf("a5, &a5, &a1, type(a5):	%v	%p	%p	%T\n", a5, &a5, &a1, a5)
+
+	fmt.Println("---------------------")
+
+	a6 := sort.Reverse(a5) // TODO Does `Reverse` modifies the `Swap` `method`?
+	fmt.Printf("a6, &a6, &a5, type(a6):	%v	%p	%p	%T\n", a6, &a6, &a5, a6)
+
+	fmt.Println("---------------------")
+
+	a7 := Cats{{true, 55}, {false, 60}, {false, 54}}
+	fmt.Printf("before sorting: %v\n", a7)
+	sort.Sort(a7)
+	fmt.Printf("after  sorting: %v\n", a7)
+
+	fmt.Println("---------------------")
 }
 
 func main() {
@@ -284,5 +379,27 @@ func main() {
 	fmt.Println("+++++++++++++++++++++")
 	fmt.Println("+++++++++++++++++++++\n\n")
 
-	// # animal inst
+	// anim := Animal{} // invalid composite literal type Animal
+
+	// An struct can't have a function inside the body.
+	// type structWithFunction struct {
+	//	feed(x int) int
+	// }
+
+	type structWithNoBody struct{}
+	var structwithnobody structWithNoBody
+	fmt.Printf("structwithnobody: %v %T\n", structwithnobody, structwithnobody)
+	fmt.Println("---------------------")
+
+	fmt.Println("\n\n+++++++++++++++++++++")
+	fmt.Println("+++++++++++++++++++++")
+	fmt.Println("+++++++++++++++++++++\n\n")
+
+	sortExamples()
+
+	a := []Universal{Dog{true, 50}, Cat{false, 66}, Cat{true, 54}}
+	fmt.Printf("storing Cats and Dogs inside a Universal slice: %v\n", a)
+	for _, v := range a {
+		fmt.Printf("\t%v	%T\n", v, v)
+	}
 }
