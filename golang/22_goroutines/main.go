@@ -724,6 +724,7 @@ func puller2(c <-chan int) <-chan int {
 }
 
 // There is no dead lock!
+// This a pipeline pattern.
 func testReturnChan1() {
 	c := pusher()
 	// There are still stuffs are being pushed to the `c`.
@@ -745,6 +746,107 @@ func testReturnChan2() {
 	for s := range out {
 		fmt.Println(s)
 	}
+}
+
+func testReturnChan3() {
+	c1 := pusher2()
+	c2 := pusher2()
+	out1 := puller2(c1)
+	out2 := puller2(c2)
+	fmt.Println(<-out1 + <-out2)
+}
+
+// fatal error: all goroutines are asleep - deadlock!
+func makeDeadlock() {
+	c := make(chan int)
+	c <- 1
+	fmt.Println(<-c)
+}
+
+func solveDeadlock1() {
+	c := make(chan int, 1)
+	c <- 1
+	fmt.Println(<-c)
+}
+
+func solveDeadlock2() {
+	c := make(chan int, 1)
+	go func() { c <- 1 }()
+	fmt.Println(<-c)
+}
+
+// challenge: Why it only prints `0`?
+func challenge1() {
+	c := make(chan int)
+
+	go func() {
+		for i := 0; i < 10; i++ {
+			c <- i
+		}
+	}()
+
+	fmt.Println(<-c)
+}
+
+// TODO What happens if the NumCPU = 1?
+func solveChallenge1() {
+	c := make(chan int)
+
+	go func() {
+		for i := 0; i < 10; i++ {
+			c <- i
+		}
+
+		// If you do not close the channel: fatal error: all goroutines are asleep - deadlock!
+		// reason: `range(c)` is always waiting to receive something from the channel (blocking) unless you close the channel.
+		close(c)
+	}()
+
+	for v := range c {
+		fmt.Println(v)
+	}
+
+	// This causes deadlock!
+	// for {
+	// 	fmt.Println(<-c)
+	// }
+}
+
+// Compute factorial with goroutines.
+func challenge2(x int) int {
+	if x == 0 {
+		return 1
+	}
+
+	return x * challenge2(x-1)
+}
+
+func solveChallenge2(x int) {
+	n := int(x / 2)
+	c := make(chan int)
+
+	go func() {
+		s := 1
+
+		for i := 1; i <= n; i++ {
+			s *= i
+		}
+
+		c <- s
+	}()
+
+	go func() {
+		s := 1
+
+		for i := n + 1; i <= x; i++ {
+			s *= i
+		}
+
+		c <- s
+	}()
+
+	fmt.Println(<-c * <-c)
+	close(c)
 }
 
 func main() {
@@ -776,4 +878,12 @@ func main() {
 	// testOneProducerManyConsumer4()
 	// testReturnChan1()
 	// testReturnChan2()
+	// testReturnChan3()
+	// makeDeadlock()
+	// solveDeadlock1()
+	// solveDeadlock2()
+	// challenge1()
+	// solveChallenge1()
+	// challenge2(10)
+	// solveChallenge2(10)
 }
