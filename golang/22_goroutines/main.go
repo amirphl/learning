@@ -659,6 +659,94 @@ func testOneProducerManyConsumer4() {
 	fmt.Println("reached the end ...")
 }
 
+func pusher() chan int {
+	c := make(chan int)
+
+	go func() {
+		for i := 0; i < 1000; i++ {
+			c <- i
+			fmt.Printf("pusher: %v\n", i)
+			time.Sleep(time.Duration(rand.Intn(2)) * time.Millisecond)
+		}
+
+		close(c)
+	}()
+
+	return c
+}
+
+func puller(c chan int) chan int {
+	out := make(chan int)
+
+	go func() {
+		s := 0
+		for v := range c {
+			fmt.Printf("puller: %v\n", v)
+			s += v
+		}
+		out <- s
+		close(out)
+	}()
+
+	return out
+}
+
+func pusher2() <-chan int {
+	c := make(chan int)
+
+	go func() {
+		for i := 0; i < 1000; i++ {
+			c <- i
+			fmt.Printf("pusher2: %v\n", i)
+			time.Sleep(time.Duration(rand.Intn(2)) * time.Millisecond)
+		}
+
+		close(c)
+	}()
+
+	return c
+}
+
+func puller2(c <-chan int) <-chan int {
+	out := make(chan int)
+
+	go func() {
+		s := 0
+		for v := range c {
+			fmt.Printf("puller2: %v\n", v)
+			s += v
+		}
+		out <- s
+		close(out)
+	}()
+
+	return out
+}
+
+// There is no dead lock!
+func testReturnChan1() {
+	c := pusher()
+	// There are still stuffs are being pushed to the `c`.
+	out := puller(c)
+	// There are still stuffs are being pushed to the `out`.
+
+	for s := range out {
+		fmt.Println(s)
+	}
+}
+
+// Channel direction example
+func testReturnChan2() {
+	c := pusher2()
+	// There are still stuffs are being pushed to the `c`.
+	out := puller2(c)
+	// There are still stuffs are being pushed to the `out`.
+
+	for s := range out {
+		fmt.Println(s)
+	}
+}
+
 func main() {
 	// noGo()
 	// noWait()
@@ -686,4 +774,6 @@ func main() {
 	// testOneProducerManyConsumer2()
 	// testOneProducerManyConsumer3()
 	// testOneProducerManyConsumer4()
+	// testReturnChan1()
+	// testReturnChan2()
 }
