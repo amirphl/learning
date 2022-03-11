@@ -2,8 +2,16 @@ package main
 
 import "fmt"
 import "sort"
+import (
+	"bytes"
+	"io"
+	"net/http"
+	"os"
+	"strings"
+)
 
 // golint
+// method sets concept
 
 // TODO Does the subtype must implement all methods of the supertype?
 
@@ -30,8 +38,8 @@ type Dog struct {
 
 // Holyshit: This function doesn't work as expected since the `d` is passed by the value, not the reference!
 func (d Dog) feed(x int) int {
-	fmt.Println("\t\t________________\n")
-	fmt.Printf("\t\tinside `feed` `method`: \n\t\t\t d: %v\n\t\t\t d: %p\n\t\t\t type(d): %T \n\t\t\t &d: %p\n", d, d, d, &d)
+	fmt.Println("\t\t ________________ \n")
+	fmt.Printf("\t\t inside `feed` `method` of Dog: \n\t\t\t d: %v \n\t\t\t d: %p \n\t\t\t &d: %p \n\t\t\t type(d): %T \n", d, d, &d, d)
 	d.weight += 10
 
 	return x - 10
@@ -39,9 +47,8 @@ func (d Dog) feed(x int) int {
 
 // Holyshit: This function doesn't work as expected since the `d` is passed by the value, not the reference!
 func (d Dog) kill() bool {
-	fmt.Println("\t\t________________\n")
-	fmt.Printf("\t\tinside `kill` `method`: \n\t\t\t d: %v\n\t\t\t d: %p\n\t\t\t type(d): %T \n\t\t\t &d: %p\n", d, d, d, &d)
-	d.weight += 10
+	fmt.Println("\t\t ________________ \n")
+	fmt.Printf("\t\t inside `kill` `method` of Dog: \n\t\t\t d: %v \n\t\t\t d: %p \n\t\t\t &d: %p \n\t\t\t type(d): %T \n", d, d, &d, d)
 
 	if d.alive {
 		d.alive = false
@@ -53,8 +60,8 @@ func (d Dog) kill() bool {
 
 // This works. `d` is the reference here.
 func (d *Dog) killDash9() bool {
-	fmt.Printf("\t\t________________\n")
-	fmt.Printf("\t\tinside `killDash9` `method`: \n\t\t\t d: %v\n\t\t\t d: %p\n\t\t\t type(d): %T \n\t\t\t &d: %p\n", d, d, d, &d)
+	fmt.Printf("\t\t ________________ \n")
+	fmt.Printf("\t\t inside `killDash9` `method` of Dog: \n\t\t\t d: %v \n\t\t\t d: %p \n\t\t\t &d: %p \n\t\t\t type(d): %T \n", d, d, &d, d)
 	// fmt.Printf("%p	%p\n", &d.alive, &(*d).alive)
 	// if *d.alive { // invalid indirect of d.alive (type bool)
 	// if (*d).alive { // This works too.
@@ -73,7 +80,7 @@ func (d *Dog) killDash9() bool {
    You can pass both `struct` and `&struct` to this function.
 */
 func feed(a Animal, x int) int {
-	fmt.Printf("\tinside \"feed(a Animal, x int) int\":\n\t\ta: %v\n\t\ta: %p\n\t\t&a: ===> %p <===\n\t\t&x: %p\n\t\ttype(a): =======> %T <=======\n", a, a, &a, &x, a)
+	fmt.Printf("\t inside \"feed(a Animal, x int)\": \n\t\t a: %v \n\t\t a: %p \n\t\t &a: ===> %p <===\n\t\t type(a): =======> %T <======= \n", a, a, &a, a)
 	/* If `a` is actually a struct:
 	 	if `method` `feed` `receiver` input is a pointer:
 	 		This is not possible because of parallel type system. Refer to `124-method-sets.mp4` for more info.
@@ -105,7 +112,7 @@ func feed2(d Dog, x int) int {
    You can pass both `struct` and `&struct` to this function.
 */
 func kill(a Animal) bool {
-	fmt.Printf("\tinside \"kill(a Animal) bool\":\n\t\ta: %v\n\t\ta: %p\n\t\t&a:	===> %p <===\n\t\ttype(a): =======> %T <=======\n", a, a, &a, a)
+	fmt.Printf("\t inside \"kill(a Animal)\": \n\t\t a: %v \n\t\t a: %p \n\t\t &a: ===> %p <===\n\t\t type(a): =======> %T <======= \n", a, a, &a, a)
 	/* If `a` is actually a struct:
 	 	if `method` `kill` `receiver` input is a pointer:
 	 		This is not possible because of parallel type system. Refer to `124-method-sets.mp4` for more info.
@@ -126,7 +133,7 @@ func kill(a Animal) bool {
    You can pass both `struct` and `&struct` to this function.
 */
 func killDash9(a Animal) bool {
-	fmt.Printf("\tinside \"killDash9(a Animal) bool\":\n\t\ta: %v\n\t\ta: %p\n\t\t&a:	===> %p <===\n\t\ttype(a): =======> %T <=======\n", a, a, &a, a)
+	fmt.Printf("\t inside \"killDash9(a Animal)\": \n\t\t a: %v \n\t\t a: %p \n\t\t &a: ===> %p <===\n\t\t type(a): =======> %T <======= \n", a, a, &a, a)
 	// return (*a).killDash9() // Doesn't work.
 	// return (&a).killDash9() // Doesn't work.
 	/* If `a` is actually a struct:
@@ -152,8 +159,8 @@ type Cat struct {
 
 // Holyshit: This function doesn't work as expected since the `c` is passed by the value, not the reference!
 func (c Cat) feed(x int) int {
-	fmt.Println("\t\t________________\n")
-	fmt.Printf("\t\tinside `feed` `method`: \n\t\t\t c: %v\n\t\t\t c: %p\n\t\t\t type(c): %T \n\t\t\t &c: %p\n", c, c, c, &c)
+	fmt.Println("\t\t ________________ \n")
+	fmt.Printf("\t\t inside `feed` `method` of Cat: \n\t\t\t c: %v \n\t\t\t c: %p \n\t\t\t &c: %p \n\t\t\t type(c): %T \n", c, c, &c, c)
 	c.weight += 5
 
 	return x - 5
@@ -161,8 +168,8 @@ func (c Cat) feed(x int) int {
 
 // Holyshit: This function doesn't work as expected since the `c` is passed by the value, not the reference!
 func (c Cat) kill() bool {
-	fmt.Println("\t\t________________\n")
-	fmt.Printf("\t\tinside `kill` `method`: \n\t\t\t c: %v\n\t\t\t c: %p\n\t\t\t type(c): %T \n\t\t\t &c: %p\n", c, c, c, &c)
+	fmt.Println("\t\t ________________ \n")
+	fmt.Printf("\t\t inside `kill` `method` of Cat: \n\t\t\t c: %v \n\t\t\t c: %p \n\t\t\t &c: %p \n\t\t\t type(c): %T \n", c, c, &c, c)
 
 	if c.alive {
 		c.alive = false
@@ -174,8 +181,8 @@ func (c Cat) kill() bool {
 
 // Holyshit: This function doesn't work as expected since the `c` is passed by the value, not the reference!
 func (c Cat) killDash9() bool {
-	fmt.Printf("\t\t________________\n")
-	fmt.Printf("\t\tinside `killDash9` `method`: \n\t\t\t c: %v\n\t\t\t c: %p\n\t\t\t type(c): %T \n\t\t\t &c: %p\n", c, c, c, &c)
+	fmt.Printf("\t\t ________________ \n")
+	fmt.Printf("\t\t inside `killDash9` `method` of Cat: \n\t\t\t c: %v \n\t\t\t c: %p \n\t\t\t &c: %p \n\t\t\t type(c): %T \n", c, c, &c, c)
 
 	if c.alive {
 		c.alive = false
@@ -242,18 +249,20 @@ func sortExamples() {
 
 	a4 := foo{"abc", "dd", "de", "zz", "ab"}
 	fmt.Printf("before sorting: %v\n", a4)
-	sort.Sort(a4) // The sort is performed inline.
+	sort.Sort(a4) // The sort is performed in-place.
 	fmt.Printf("after  sorting: %v\n", a4)
 
 	fmt.Println("---------------------")
 
-	a5 := sort.StringSlice(a1) // TODO The type is being converted to the `Interface` or the value?
+	// TODO The type is being converted to the `Interface` or the instance? Are the methods (Len, Swap, and Less) are appended to the instance?
+	a5 := sort.StringSlice(a1)
 	// TODO Why `&a1` is different from `&a5`?
 	fmt.Printf("a5, &a5, &a1, type(a5):	%v	%p	%p	%T\n", a5, &a5, &a1, a5)
 
 	fmt.Println("---------------------")
 
-	a6 := sort.Reverse(a5) // TODO Does `Reverse` modifies the `Swap` `method`?
+	// TODO Does `Reverse` modifies the `Swap` `method`?
+	a6 := sort.Reverse(a5)
 	fmt.Printf("a6, &a6, &a5, type(a6):	%v	%p	%p	%T\n", a6, &a6, &a5, a6)
 
 	fmt.Println("---------------------")
@@ -277,6 +286,7 @@ func main() {
 	fmt.Printf("remained food: %v\n", remainedFood)
 	fmt.Println("---------------------")
 	fmt.Printf("after  feeding:\n\tdog: %v\n\ttype(dog): %T\n\taddress of dog: %p\n", dog, dog, dog)
+	fmt.Println("As you see, there is no change applied to the dog!")
 	fmt.Println("---------------------")
 
 	fmt.Println("\n\n+++++++++++++++++++++")
@@ -294,6 +304,7 @@ func main() {
 	wasAlive = kill(dog)
 	fmt.Println("---------------------")
 	fmt.Printf("was alive: %v\n", wasAlive)
+	fmt.Println("As you see, there is no change applied to the dog!")
 	fmt.Println("---------------------")
 
 	fmt.Println("\n\n+++++++++++++++++++++")
@@ -397,9 +408,57 @@ func main() {
 
 	sortExamples()
 
-	a := []Universal{Dog{true, 50}, Cat{false, 66}, Cat{true, 54}}
+	a := []Universal{Dog{true, 50}, Cat{false, 66}, Cat{true, 54}} // It's possible to store Dogs and Cats inside an array of type Universal because of polymorphism.
 	fmt.Printf("storing Cats and Dogs inside a Universal slice: %v\n", a)
 	for _, v := range a {
 		fmt.Printf("\t%v	%T\n", v, v)
 	}
+
+	fmt.Println("---------------------")
+
+	sameInterfaceAsInput()
+
+	fmt.Println("---------------------")
+
+	acceptAnything("hello")
+	acceptAnything(1)
+	acceptAnything(Dog{true, 123})
+
+	fmt.Println("---------------------")
+
+	type persianCat struct {
+		Cat
+		something float64
+	}
+
+	// cannot use persianCat{...} (type persianCat) as type Cat in slice literal
+	// pc := []Cat{persianCat{Cat{true, 34}, 4.3}, persianCat{Cat{true, 56}, -1.2}}
+
+	// for _, c := range pc {
+	// 	fmt.Printf("%v	%T\n", c, c)
+	// }
+
+	// Same as []Universal defined above.
+	pc := []interface{}{persianCat{Cat{true, 34}, 4.3}, persianCat{Cat{true, 56}, -1.2}}
+
+	for _, c := range pc {
+		fmt.Printf("%v	%T\n", c, c)
+	}
+
+	fmt.Println("---------------------")
+}
+
+func sameInterfaceAsInput() {
+	rdr := strings.NewReader("I come from somewhere!\n")
+	io.Copy(os.Stdout, rdr)
+	rdr2 := bytes.NewBuffer([]byte("I come from somewhere 2!\n"))
+	io.Copy(os.Stdout, rdr2)
+	res, _ := http.Get("https://web.ics.purdue.edu/~gchopra/class/public/pages/webdesign/05_simple.html")
+	io.Copy(os.Stdout, res.Body)
+	res.Body.Close()
+}
+
+// This function accepts anything.
+func acceptAnything(x interface{}) {
+	fmt.Println(x)
 }
