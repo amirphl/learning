@@ -465,6 +465,200 @@ func closeChan9() {
 	fmt.Println()
 }
 
+func testSemaphore1() {
+	c := make(chan int, 5)
+	s := make(chan string, 2) // 2 = number of routines. It can be more than 2.
+
+	go func() {
+		for i := 0; i < 10; i++ {
+			c <- i
+		}
+
+		s <- "routine_1"
+	}()
+
+	go func() {
+		for i := 0; i < 10; i++ {
+			c <- i
+		}
+
+		s <- "routine_2"
+	}()
+
+	go func() {
+		res := <-s
+		<-s
+		fmt.Printf("\nwhich routine finished sooner?	%v\n", res)
+		fmt.Println("going to close the channel...")
+		close(c)
+	}()
+
+	for v := range c {
+		fmt.Printf("%v	", v)
+	}
+
+	fmt.Println()
+}
+
+// `testSemaphore1` also works with a queue of length one.
+func testSemaphore2() {
+	c := make(chan int, 5)
+	s := make(chan string) // unbuffered channel (length = 1)
+
+	go func() {
+		for i := 0; i < 10; i++ {
+			c <- i
+		}
+
+		s <- "routine_1"
+	}()
+
+	go func() {
+		for i := 0; i < 10; i++ {
+			c <- i
+		}
+
+		s <- "routine_2"
+	}()
+
+	go func() {
+		res := <-s
+		<-s
+		fmt.Printf("\nwhich routine finished sooner?	%v\n", res)
+		fmt.Println("going to close the channel...")
+		close(c)
+	}()
+
+	for v := range c {
+		fmt.Printf("%v	", v)
+	}
+
+	fmt.Println()
+}
+
+// m to n is possible too.
+// This is misleading!
+// See difference of `testOneProducerManyConsumer1` and `testOneProducerManyConsumer2`.
+func testOneProducerManyConsumer1() {
+	c := make(chan int, 100)
+	s := make(chan bool)
+
+	go func() {
+		for i := 0; i < 20; i++ {
+			c <- i
+		}
+
+		close(c)
+	}()
+
+	n := 3
+	for i := 0; i < n; i++ {
+		go func() {
+			for v := range c {
+				fmt.Printf("consumer%v: %v\n", i, v)
+				time.Sleep(time.Duration(rand.Intn(20)*(i+1)) * time.Millisecond)
+			}
+			s <- true
+		}()
+	}
+
+	for i := 0; i < n; i++ {
+		<-s
+	}
+}
+
+// This works as expected.
+// See difference of `testOneProducerManyConsumer1` and `testOneProducerManyConsumer2`.
+func testOneProducerManyConsumer2() {
+	c := make(chan int, 100)
+	s := make(chan bool)
+
+	go func() {
+		for i := 0; i < 20; i++ {
+			c <- i
+		}
+
+		close(c)
+	}()
+
+	n := 3
+	for i := 0; i < n; i++ {
+		go func(id int) {
+			for v := range c {
+				fmt.Printf("consumer%v: %v\n", id, v)
+				time.Sleep(time.Duration(rand.Intn(20)*(id+1)) * time.Millisecond)
+			}
+			s <- true
+		}(i)
+	}
+
+	for i := 0; i < n; i++ {
+		<-s
+	}
+}
+
+// This doesn't work.
+// fatal error: all goroutines are asleep - deadlock!
+func testOneProducerManyConsumer3() {
+	c := make(chan int, 100)
+	s := make(chan bool)
+
+	go func() {
+		for i := 0; i < 20; i++ {
+			c <- i
+		}
+
+		// close(c)
+	}()
+
+	n := 3
+	for i := 0; i < n; i++ {
+		go func(id int) {
+			for v := range c {
+				fmt.Printf("consumer%v: %v\n", id, v)
+				time.Sleep(time.Duration(rand.Intn(20)*(id+1)) * time.Millisecond)
+			}
+			s <- true
+		}(i)
+	}
+
+	for i := 0; i < n; i++ {
+		<-s
+	}
+}
+
+// This doesn't work.
+func testOneProducerManyConsumer4() {
+	c := make(chan int, 100)
+	s := make(chan bool)
+
+	go func() {
+		for i := 0; i < 20; i++ {
+			c <- i
+		}
+
+		close(c)
+	}()
+
+	n := 3
+	for i := 0; i < n; i++ {
+		go func(id int) {
+			for v := range c {
+				fmt.Printf("consumer%v: %v\n", id, v)
+				time.Sleep(time.Duration(rand.Intn(20)*(id+1)) * time.Millisecond)
+			}
+			s <- true
+		}(i)
+	}
+
+	// for i := 0; i < n; i++ {
+	for i := 0; i < n-1; i++ {
+		<-s
+	}
+
+	fmt.Println("reached the end ...")
+}
+
 func main() {
 	// noGo()
 	// noWait()
@@ -485,5 +679,11 @@ func main() {
 	// closeChan6()
 	// closeChan7()
 	// closeChan8()
-	closeChan9()
+	// closeChan9()
+	// testSemaphore1()
+	// testSemaphore2()
+	// testOneProducerManyConsumer1()
+	// testOneProducerManyConsumer2()
+	// testOneProducerManyConsumer3()
+	// testOneProducerManyConsumer4()
 }
