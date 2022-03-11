@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"runtime"
+	"strconv"
 	"sync"
 	"sync/atomic"
 	"time"
@@ -15,6 +17,7 @@ func init() {
 	runtime.GOMAXPROCS(runtime.NumCPU())
 }
 
+// TODO What's the zero value of `WaitGroup`?
 var wg sync.WaitGroup
 
 func foo1() {
@@ -116,13 +119,32 @@ func inc3(id string) {
 	wg.Done()
 }
 
-// Nothing will be printed!
-// TODO What happen for the child processes (forks)? Zombie deamons?
+func producer1(c chan string, id string) {
+	for i := 0; i < 10; i++ {
+		c <- id + "_" + strconv.FormatInt(int64(i), 10)
+		fmt.Printf("producer	%v	put	%v	at	%v\n", id, i, time.Now())
+		time.Sleep(time.Duration(rand.Intn(20)) * time.Millisecond)
+	}
+
+	wg.Done()
+}
+
+func consumer1(c chan string, id string) {
+	for i := 0; i < 20; i++ {
+		fmt.Printf("consumer	%v	rec	%v	at	%v	at	%v\n", id, <-c, time.Now(), i)
+		time.Sleep(time.Duration(time.Second))
+	}
+
+	wg.Done()
+}
+
 func noGo() {
 	foo1()
 	bar1()
 }
 
+// Nothing will be printed!
+// TODO What happen for the child processes (forks)? Zombie deamons?
 func noWait() {
 	go foo1()
 	go bar1()
@@ -173,6 +195,276 @@ func testAtomic() {
 	fmt.Printf("final counter must be 20 and it's: %v\n", counter)
 }
 
+func produceManyConsumeOneCapOne() {
+	c := make(chan string)
+
+	wg.Add(3)
+	go producer1(c, "p1")
+	go producer1(c, "p2")
+	go consumer1(c, "c1")
+	wg.Wait()
+}
+
+func produceManyConsumeOneCapTen() {
+	c := make(chan string, 10)
+
+	wg.Add(3)
+	go producer1(c, "p3")
+	go producer1(c, "p4")
+	go consumer1(c, "c2")
+	wg.Wait()
+}
+
+func closeChan1() {
+	c := make(chan int)
+
+	go func() {
+		for i := 0; i < 10; i++ {
+			c <- i
+			time.Sleep(time.Duration(time.Second))
+		}
+	}()
+
+	// This section is blocking.
+	for v := range c {
+		fmt.Printf("v:	%v	time:	%v\n", v, time.Now())
+	}
+
+	// fatal error: all goroutines are asleep - deadlock!
+}
+
+func closeChan2() {
+	c := make(chan int)
+
+	go func() {
+		for i := 0; i < 10; i++ {
+			c <- i
+			time.Sleep(time.Duration(time.Second))
+		}
+
+		close(c)
+	}()
+
+	for v := range c {
+		fmt.Printf("v:	%v	time:	%v\n", v, time.Now())
+	}
+}
+
+func closeChan3() {
+	c := make(chan int, 2)
+
+	go func() {
+		for i := 0; i < 10; i++ {
+			c <- i
+			time.Sleep(time.Duration(time.Second))
+		}
+
+	}()
+
+	time.Sleep(time.Duration(2) * time.Second)
+	close(c)
+
+	for v := range c {
+		fmt.Printf("v:	%v	time:	%v\n", v, time.Now())
+	}
+
+	// panic: send on closed channel
+}
+
+func closeChan4() {
+	c := make(chan int, 5)
+
+	go func() {
+		for i := 0; i < 10; i++ {
+			c <- i
+			time.Sleep(time.Duration(time.Second))
+		}
+
+	}()
+
+	time.Sleep(time.Duration(2) * time.Second)
+	close(c)
+
+	for v := range c {
+		fmt.Printf("v:	%v	time:	%v\n", v, time.Now())
+	}
+}
+
+func closeChan5() {
+	c := make(chan int, 2)
+
+	go func() {
+		for i := 0; i < 10; i++ {
+			c <- i
+			time.Sleep(time.Duration(time.Second))
+		}
+
+	}()
+
+	for v := range c {
+		fmt.Printf("v:	%v	time:	%v\n", v, time.Now())
+		time.Sleep(time.Duration(2) * time.Second)
+		close(c)
+	}
+
+	// panic: send on closed channel
+}
+
+// This ain't gonna work since two go routines are concurrently adding to `wg`.
+// possible outputs:
+// 	all 20 numbers (there is no order)
+// 	some of 20 numbers
+// 	panic: send on closed channel
+func closeChan6() {
+	var wg sync.WaitGroup // shadowed global wg
+	c := make(chan int, 5)
+
+	go func() {
+		wg.Add(1)
+
+		for i := 0; i < 10; i++ {
+			c <- i
+		}
+
+		wg.Done()
+	}()
+
+	go func() {
+		wg.Add(1)
+
+		for i := 0; i < 10; i++ {
+			c <- i
+		}
+
+		wg.Done()
+	}()
+
+	go func() {
+		wg.Wait()
+		fmt.Println("going to close the channel...")
+		close(c)
+	}()
+
+	time.Sleep(time.Duration(2) * time.Second)
+
+	for v := range c {
+		fmt.Printf("%v	", v)
+	}
+
+	fmt.Println()
+}
+
+// This works.
+// Some numbers may get printed after printing "going to close the channel...".
+// reason: capacity of 5
+func closeChan7() {
+	var wg sync.WaitGroup // shadowed global wg
+	c := make(chan int, 5)
+	wg.Add(2)
+
+	go func() {
+		for i := 0; i < 10; i++ {
+			c <- i
+		}
+
+		wg.Done()
+	}()
+
+	go func() {
+		for i := 0; i < 10; i++ {
+			c <- i
+		}
+
+		wg.Done()
+	}()
+
+	go func() {
+		wg.Wait()
+		fmt.Println("going to close the channel...")
+		close(c)
+	}()
+
+	time.Sleep(time.Duration(2) * time.Second)
+
+	for v := range c {
+		fmt.Printf("%v	", v)
+	}
+
+	fmt.Println()
+}
+
+// This doesn't work since there's no consumer.
+// fatal error: all goroutines are asleep - deadlock!
+func closeChan8() {
+	var wg sync.WaitGroup // shadowed global wg
+	c := make(chan int)
+	wg.Add(2)
+
+	go func() {
+		for i := 0; i < 10; i++ {
+			c <- i
+		}
+
+		wg.Done()
+	}()
+
+	go func() {
+		for i := 0; i < 10; i++ {
+			c <- i
+		}
+
+		wg.Done()
+	}()
+
+	wg.Wait()
+	fmt.Println("going to close the channel...")
+	close(c)
+
+	time.Sleep(time.Duration(2) * time.Second)
+
+	for v := range c {
+		fmt.Printf("%v	", v)
+	}
+
+	fmt.Println()
+}
+
+// This works.
+// All numbers are printed after "going to close the channel..." gets printed.
+func closeChan9() {
+	var wg sync.WaitGroup   // shadowed global wg
+	c := make(chan int, 20) // Note: Capacity is increased to solve the problem of `closeChan8`.
+	wg.Add(2)
+
+	go func() {
+		for i := 0; i < 10; i++ {
+			c <- i
+		}
+
+		wg.Done()
+	}()
+
+	go func() {
+		for i := 0; i < 10; i++ {
+			c <- i
+		}
+
+		wg.Done()
+	}()
+
+	wg.Wait()
+	fmt.Println("going to close the channel...")
+	close(c)
+
+	time.Sleep(time.Duration(2) * time.Second)
+
+	for v := range c {
+		fmt.Printf("%v	", v)
+	}
+
+	fmt.Println()
+}
+
 func main() {
 	// noGo()
 	// noWait()
@@ -183,4 +475,15 @@ func main() {
 	// race()
 	// testMutex()
 	// testAtomic()
+	// produceManyConsumeOneCapOne()
+	// produceManyConsumeOneCapTen()
+	// closeChan1()
+	// closeChan2()
+	// closeChan3()
+	// closeChan4()
+	// closeChan5()
+	// closeChan6()
+	// closeChan7()
+	// closeChan8()
+	closeChan9()
 }
