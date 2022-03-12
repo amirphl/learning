@@ -849,6 +849,296 @@ func solveChallenge2(x int) {
 	close(c)
 }
 
+func fanInfanOutExample() {
+	c1 := make(chan int)
+
+	go func() {
+		for {
+			c1 <- rand.Intn(100)
+			time.Sleep(time.Duration(10 * time.Millisecond))
+		}
+		// no close, it works forever.
+	}()
+
+	c2 := make(chan int)
+
+	worker := func() {
+		for v := range c1 {
+			c2 <- v * v
+			time.Sleep(time.Duration(10 * time.Millisecond))
+		}
+		// no close, it works forever.
+	}
+
+	go worker()
+	go worker()
+
+	for i := 0; i < 10; i++ {
+		fmt.Printf("%v ", <-c2)
+	}
+
+	// Uncomment and run with `-race` argument: WARNING: DATA RACE
+	// close(c1)
+	// close(c2)
+
+	fmt.Println()
+}
+
+func fact(x int64) int64 {
+	if x == 0 || x == 1 {
+		return 1
+	}
+
+	return x * fact(x-1)
+}
+
+func multiFactFanInFanOut() {
+	n := 3
+	c1 := make(chan int)
+	c2 := make([]chan int64, n)
+	c3 := make(chan int64)
+
+	for i := 0; i < n; i++ {
+		c2[i] = make(chan int64)
+	}
+
+	producer := func() {
+		for {
+			c1 <- rand.Intn(20)
+			// time.Sleep(time.Duration(10 * time.Millisecond))
+		}
+		// no close, it works forever.
+	}
+
+	worker := func(id int) {
+		for v := range c1 {
+			c2[id] <- fact(int64(v))
+			// time.Sleep(time.Duration(10 * time.Millisecond))
+		}
+		// no close, it works forever.
+	}
+
+	merger := func(id int) {
+		for v := range c2[id] {
+			c3 <- v
+			// time.Sleep(time.Duration(10 * time.Millisecond))
+		}
+		// no close, it works forever.
+	}
+
+	go producer()
+
+	for i := 0; i < n; i++ {
+		go worker(i)
+		go merger(i)
+	}
+
+	for i := 0; i < 100000; i++ {
+		fmt.Printf("%v ", <-c3)
+	}
+
+	fmt.Println()
+}
+
+// challenge: fix `fatal error: all goroutines are asleep - deadlock!`
+func deadLockChallenge() {
+	gen := func() <-chan int {
+		out := make(chan int)
+
+		go func() {
+			for i := 0; i < 10000; i++ {
+				for j := 3; j < 13; j++ {
+					out <- j
+				}
+			}
+
+			close(out)
+		}()
+
+		return out
+	}
+
+	factorial := func(in <-chan int) <-chan int {
+		out := make(chan int)
+
+		go func() {
+			for n := range in {
+				out <- int(fact(int64(n)))
+			}
+
+			close(out)
+		}()
+
+		return out
+	}
+
+	fanOut := func(in <-chan int, n int) []<-chan int {
+		xc := make([]<-chan int, n)
+
+		for i := 0; i < n; i++ {
+			xc = append(xc, factorial(in))
+		}
+
+		return xc
+	}
+
+	merge := func(cs ...<-chan int) <-chan int {
+		var wg sync.WaitGroup
+		out := make(chan int)
+
+		output := func(c <-chan int) {
+			for n := range c {
+				out <- n
+			}
+
+			wg.Done()
+		}
+
+		wg.Add(len(cs))
+
+		for _, c := range cs {
+			go output(c)
+		}
+
+		go func() {
+			wg.Wait()
+			close(out)
+		}()
+
+		return out
+	}
+
+	in := gen()
+
+	xc := fanOut(in, 10)
+
+	for n := range merge(xc...) {
+		fmt.Printf("%v ", n)
+	}
+}
+
+func deadLockChallengeSolution() {
+	gen := func() <-chan int {
+		out := make(chan int)
+
+		go func() {
+			for i := 0; i < 10000; i++ {
+				for j := 3; j < 13; j++ {
+					out <- j
+				}
+			}
+
+			close(out)
+		}()
+
+		return out
+	}
+
+	factorial := func(in <-chan int) <-chan int {
+		out := make(chan int)
+
+		go func() {
+			for n := range in {
+				out <- int(fact(int64(n)))
+			}
+
+			close(out)
+		}()
+
+		return out
+	}
+
+	fanOut := func(in <-chan int, n int) []<-chan int {
+		xc := make([]<-chan int, n)
+
+		for i := 0; i < n; i++ {
+			xc[i] = factorial(in)
+		}
+
+		return xc
+	}
+
+	merge := func(cs ...<-chan int) <-chan int {
+		var wg sync.WaitGroup
+		out := make(chan int)
+
+		output := func(c <-chan int) {
+			for n := range c {
+				out <- n
+			}
+
+			wg.Done()
+		}
+
+		wg.Add(len(cs))
+
+		for _, c := range cs {
+			go output(c)
+		}
+
+		go func() {
+			wg.Wait()
+			close(out)
+		}()
+
+		return out
+	}
+
+	in := gen()
+
+	xc := fanOut(in, 10)
+
+	for n := range merge(xc...) {
+		fmt.Printf("%v ", n)
+	}
+}
+
+// challenge: replace `sync` and `atomic` with `channel`.
+func incrementorChallenge() {
+	var count int64
+	var wg sync.WaitGroup
+
+	inc := func(s string) {
+		for i := 0; i < 20; i++ {
+			atomic.AddInt64(&count, 1)
+			fmt.Printf("-- inc %v	%v\n", s, i)
+		}
+
+		wg.Done()
+	}
+
+	wg.Add(2)
+	go inc("1")
+	go inc("2")
+	wg.Wait()
+	fmt.Println(count)
+}
+
+func incrementorChallengeSolution() {
+	var count int64
+	c := make(chan bool)
+	// d := make(chan bool) // Uncomment and see what happens! deadlock!
+	d := make(chan bool, 1)
+	d <- true
+
+	inc := func(s string) {
+		for i := 0; i < 20; i++ {
+			<-d
+			count++
+			fmt.Printf("++ inc %v	%v\n", s, i)
+			d <- true
+		}
+
+		c <- false
+	}
+
+	go inc("1")
+	go inc("2")
+	<-c
+	<-c
+	fmt.Println(count)
+}
+
 func main() {
 	// noGo()
 	// noWait()
@@ -886,4 +1176,10 @@ func main() {
 	// solveChallenge1()
 	// challenge2(10)
 	// solveChallenge2(10)
+	// fanInfanOutExample()
+	// multiFactFanInFanOut()
+	// deadLockChallenge()
+	// deadLockChallengeSolution()
+	// incrementorChallenge()
+	// incrementorChallengeSolution()
 }
