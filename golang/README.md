@@ -1,0 +1,161 @@
+# What's this?
+Alright, this is a great ongoing journy of learning a lot of stuff aroung Golang.  
+I started learning Golang by watching Todd Mcloud videos then summerising each section.  
+I update repo with stuff I learn in the journey.  
+
+
+## TODO
+This is the list of remained unread sections, question, books to read, and some other things.  
+Hope I could finish them someday.  
+
+- links, books:
+	- https://go.dev/doc/tutorial/index.html
+	- https://go.dev/doc/modules/managing-dependencies#naming_module
+	- https://pkg.go.dev/std
+	- https://go.dev/ref/mod#authenticating
+	- https://go.dev/doc/tutorial/create-module.html
+	- https://en.wikipedia.org/wiki/Numeral_system
+	- language spec
+	- effective go
+	- Golang blog
+	- golang-book.com
+	- https://www.ardanlabs.com/
+	- https://www.ardanlabs.com/blog
+	- https://github.com/ardanlabs/gotraining
+	- http://forum.golangbridge.org/
+	- https://dave.cheney.net/
+	- https://www.goinggo.net/2013/10/functions-and-naked-returns-in-go.html
+	- project euler problems
+	- books:
+		- the go programming language
+	    	- go in action
+		- the way to go: by Ivo Balbaert
+
+- book: outliers the story of success by Malcolm Gladwell
+
+- commands
+	- go help
+	- go *.a files
+
+- Todd videos:
+	- 012-linux-machine-setup
+	- 013-linux-machine-configuration
+	- 014-linux-configuring-path-variables
+	- 040-go-commands
+
+- vim
+	- Autocomplete, Intellisense, jump to doc, and ... plugin
+	- Go live edit plugin
+	- keymap
+	- equivalent features of Jetbrains in vim
+	- code formatter plugin
+
+- others
+	- Git scm docs
+	- Todd McLeod youtube playlist
+	- encodings comparsion
+	- UTF8 and Unicode in wikipedia
+	- the magic of UTF8: using 1 to 4 bytes
+	- When do we have to use closures?
+	- When do we should limit visibility?
+	- When do we use package scope variables?
+	- Everything is pass by value even functions. How is a function stored inside memory? Is it in Heap?
+	- How a function is copied as a param? (pass by value)
+	- How to determine the size of a function or a variable or a struct?
+	- How a Type is passed? Are Types passed by reference? Where the codes are stored? In Heap?
+	- Are function's args are stored in the Stack section of memory?
+	- If you initiate two instances of a struct, does the code get duplicated in the memory?
+	- shorthand declaration vs var
+	- "defer" usage in go
+	- `int*` vs `*int` vs `* int` vs `int *`
+	- Golang code style
+	- Golang clean code
+	- Golang clean architecture
+	- Golang design patterns
+	- Golang multithreading (multicore) management. Is it the only language uses cores efficiently?
+	- Golang version logs
+	- wikipedia: Type System
+	- Javascript hoisting
+	- Silicon Valley code camp
+	- writing a download manager like IDM with Golang
+	- Todd videos descriptions
+	- screenshots
+	- functional programming in Golang
+	- modular programming
+	- `^ & | << >>` (bitwise operations)
+	- multidim array
+	- gurbage collection
+	- make vs new
+	- performance cost of adding elements to slice because of doubling inner array size
+	- delete elem from slice - effect on len and cap - delete inner elements
+	- `type a struct{ b int, c string}` vs `type a struct{c string, b int}
+	- What is cgo (c inside Golang?)?
+	- Stack, Tree, Graph, and other DS in Golang
+	- hash table wikipedia
+	- back tick vs double quotes
+	- Is each rune really takes 32 bits? (1-4 UTF8)
+	- How does an struct get stored inside the memory? What about other datastructures?
+	- composition vs inheritance. Where? When?
+	- everything about OOP in Golang
+	- What are composite types?
+	- inheritance in Golang:
+		- polymorphism
+		- interfaces
+		- promotion or overriding
+		- encapsulation
+		- states = fields = data
+		- behaviours = methods
+		- instantiation
+	- `this` keyword in Golang
+	- How does comparsion work in Golang? Something like `__equal__` and `is` in Python or `equal()` in Java?
+	- Where do structs `blueprints` get stored in runtime?
+	- Does the function of structs get stored inside the memory?
+	- marshaling vs encoding
+	- unmarshaling vs decoding
+	- Why do we can call anything with `.` on `&Type` in Golang?
+	- How to attach methods to Types?
+	- Why there is no difference between `&person{"James", 20}` and `person{"James", 20}`?
+	- effect of difference return types in interfaces (signatures)
+	- review videos 116 to 125
+	- concurrency and parallelism
+	- If a variable gets created inside a function and the function gets terminated and you return the pointer, do you still have access to the variable? (c++ question for Golang)
+	- How many cores does Golang use by default?
+	- https://go-proverbs.github.io/
+	- How does garbage collection work in Golang?
+	- Where do we use Golang generics?
+	- Where do we use Channels and Goroutines?
+	- best practices of Golang
+	- FIFO and LIFO Channels in Golang
+	- `wait`, `interrupt`, `join`, and other concepts of Java multithreading in Golang
+	- Go concurrency patterns in language spec, effective go, and Golang blog
+	- fan out / fan in pattern
+	- observer pattern
+	- https://blog.golang.org/pipelines
+	- concurrent modification of data structures in Golang
+	- ardanlabs -> gotraining -> goroutines
+	- gobyexample.com
+	- introduction to go programming by Caleb Doxsey
+	- equivalent concepts of Java, Python, and C++ in Golang
+	- socket programming in Golang
+	- multithreading in Golang
+	- webrtc in Golang
+	- http://divan.github.io/posts/go_concurrency_visualize/
+	- https://medium.com/@deckarep/dancing-with-go-s-mutexes-92407ae927bf#.wjr1u2xjm
+	- http://stackoverflow.com/questions/34197248/how-can-i-store-reference-to-the-result-of-an-operation-in-go
+	- http://golangtutorials.blogspot.ae/2011/06/memory-variables-in-memory-and-pointers.html
+	- memory allocation in C++ vs Golang
+	- http://golangtutorials.blogspot.ae/2011/06/memory-variables-in-memory-and-pointers.html
+	- Golang faq
+	- wikipedia: CSP communicating sequential processes
+	- stdout vs stderr from view of file descriptors
+	- bash - postgres - Golang - C - C++
+	- goinggo.net
+	- review resources on net - farsi - en - video - book - website, and ... and mention good ones to read later
+	- 1000 best github repoes
+	- version diff 1.18, 1.17
+	- see Golang standard library source codes
+	- http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/
+	- software testing in go
+	- Grpc
+	- web programming for go
+	- web programming with go course - Todd courses
