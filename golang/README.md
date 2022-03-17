@@ -117,6 +117,7 @@ Hope I could finish them someday.
 
 - others
 	- 24_testing
+	- 25_code-walk
 	- Git SCM docs
 	- encodings:
 		- encodings comparison
