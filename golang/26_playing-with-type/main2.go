@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"math"
+	"reflect"
 	"strconv"
 )
 
@@ -167,14 +169,77 @@ func sprintSamples() {
 	fmt.Printf("%v   %v   %v   %v\n", a, b, c, d)
 }
 
+func mathFloor() {
+	fmt.Printf("\n ----------- \n mathFloor:\n")
+	fmt.Printf("%v\n", math.Floor(0.6))
+	fmt.Printf("%v\n", math.Floor(0.1))
+	fmt.Printf("%v\n", math.Floor(-0.1))
+}
+
+func reflectSamples() {
+	fmt.Printf("\n ----------- \n reflectSamples:\n")
+	fmt.Printf("%v\n", reflect.TypeOf(nil))
+	fmt.Printf("%v\n", reflect.TypeOf(2))
+	fmt.Printf("%v\n", reflect.TypeOf(2.1))
+	fmt.Printf("%v\n", reflect.TypeOf("2.1"))
+	fmt.Printf("%v\n", reflect.TypeOf(`2.1`))
+}
+
+type newString string
+
+func stringConversion() {
+	fmt.Printf("\n ----------- \n anotherTypeLikeString:\n")
+	var a newString = "hello"
+	b := string(a)
+	fmt.Printf("%T   %T\n", a, b)
+	// invalid conversion
+	/*
+		c := a.(string)
+		d := b.(newString)
+		fmt.Printf("%T\n", c)
+		fmt.Printf("%T\n", d)
+	*/
+}
+
+func zeroValInit() {
+	fmt.Printf("\n ----------- \n zeroValInit:\n")
+	type a struct {
+		a, b int
+		c    bool
+		d    string
+		f    float32
+		g    rune
+	}
+
+	var b a
+	fmt.Println(b)
+}
+
+type sliceStr []string
+
+func sliceString() {
+	fmt.Printf("\n ----------- \n sliceString:\n")
+	a := sliceStr{"11", "salam", "ha_"}
+	fmt.Printf("%T\n", a)
+	// invalid conversion
+	/*
+		b := a.([]string)
+		fmt.Printf("%T\n", b)
+	*/
+	c := []string(a)
+	fmt.Printf("%T\n", c)
+	var d sliceStr = []string{"s", "a"}
+	fmt.Printf("%T\n", d)
+}
+
 func main() {
-	// intInt()
-	// intInt2()
-	// intFloat()
-	// intFloat2()
-	// intFloat3()
-	// stringString()
-	// byteStringByteString()
+	intInt()
+	intInt2()
+	intFloat()
+	intFloat2()
+	intFloat3()
+	stringString()
+	stringByte()
 	stringImmutable()
 	// changeImmutable()
 	lenEnglish()
@@ -185,4 +250,10 @@ func main() {
 	concatenation2()
 	strconvSamples()
 	sprintSamples()
+	mathFloor()
+	reflectSamples()
+	stringConversion()
+	zeroValInit()
+	sliceString()
+
 }
