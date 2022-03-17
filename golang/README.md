@@ -14,6 +14,7 @@ Hope I could finish them someday.
 	- https://go.dev/doc/tutorial/create-module.html
 	- https://go.dev/ref/mod#authenticating
 	- https://pkg.go.dev/std
+	- https://golang.org
 	- https://en.wikipedia.org/wiki/Numeral\_system
 	- language spec
 	- effective go
@@ -42,6 +43,18 @@ Hope I could finish them someday.
 		- the way to go by Ivo Balbaert
 		- introduction to go programming by Caleb Doxsey
 		- outliers the story of success by Malcolm Gladwell
+	- https://github.com/mingrammer/go-web-framework-stars
+	- https://github.com/the-benchmarker/web-frameworks
+
+- vim plugins:
+	- https://octetz.com/docs/2019/2019-04-24-vim-as-a-go-ide/
+	- https://github.com/fatih/vim-go
+	- https://github.com/fatih/vim-go/blob/master/doc/vim-go.txt
+	- https://github.com/go-delve/delve
+	- https://github.com/golang/tools/blob/master/gopls/README.md
+	- https://langserver.org/
+	- https://github.com/neoclide/coc.nvim
+	- https://github.com/junegunn/vim-plug
 
 - commands
 	- go help
@@ -100,8 +113,10 @@ Hope I could finish them someday.
 	- effect of different return types in interfaces (signatures)
 	- memory allocation in C++ vs Golang
 	- stdout vs stderr from the view of file descriptors
+	- struct{name Person name}
 
 - others
+	- 24_testing
 	- Git SCM docs
 	- encodings:
 		- encodings comparison
@@ -121,6 +136,7 @@ Hope I could finish them someday.
 	- everything about OOP in Golang
 	- `this` keyword
 	- best practices of Golang
+	- microservices
 	- inheritance in Golang:
 		- composition vs inheritance. Where? When?
 		- polymorphism
