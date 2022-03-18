@@ -32,7 +32,7 @@ This is a simple game which is built step by step from https://wiki.gdevelop.io/
 ![health-ui-layer](health-UI-layer.png)
 
 ## Why does the Bullet has no effect on the Player itself?
-Because it doesn't have Physics2 behavior.
+Because it doesn't have Physics2 behavior.  
 ![bullet no effect](bullet-no-effect.png)
 
 ## Events - set 1
