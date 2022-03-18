@@ -88,6 +88,15 @@
         "name": "PlatformerTutorialResources/bridgeLogs.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "PlatformerTutorialResources/p1_jump.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "PlatformerTutorialResources/p1_jump.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -339,6 +348,35 @@
                     {
                       "hasCustomCollisionMask": false,
                       "image": "PlatformerTutorialResources/p1_stand.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Jumping",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "PlatformerTutorialResources/p1_jump.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
