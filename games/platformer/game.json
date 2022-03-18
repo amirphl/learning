@@ -196,6 +196,15 @@
         "name": "PlatformerTutorialResources/Right.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "PlatformerTutorialResources/bush.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "PlatformerTutorialResources/bush.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -238,7 +247,12 @@
           "value": ""
         },
         {
-          "name": "",
+          "name": "CheckpointX",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "CheckpointY",
           "type": "string",
           "value": ""
         }
@@ -486,6 +500,38 @@
           "x": 29,
           "y": 98,
           "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "Checkpoint",
+          "persistentUuid": "3c635466-6685-43d3-9a3b-a197cda6cdb9",
+          "width": 0,
+          "x": 311,
+          "y": 40,
+          "zOrder": 16,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "Checkpoint",
+          "persistentUuid": "bd90256d-96b1-4963-80db-14e0ceef1fb3",
+          "width": 0,
+          "x": 616,
+          "y": 129,
+          "zOrder": 17,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -956,6 +1002,46 @@
               ]
             }
           ]
+        },
+        {
+          "name": "Checkpoint",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "PlatformerTutorialResources/bush.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "events": [
@@ -1016,6 +1102,30 @@
               },
               "parameters": [
                 "Right"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "CheckpointX",
+                "=",
+                "Player.X()"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "CheckpointY",
+                "=",
+                "Player.Y()"
               ],
               "subInstructions": []
             }
@@ -1497,11 +1607,24 @@
             {
               "type": {
                 "inverted": false,
-                "value": "Delete"
+                "value": "MettreX"
               },
               "parameters": [
                 "Player",
-                ""
+                "=",
+                "Variable(CheckpointX)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "MettreY"
+              },
+              "parameters": [
+                "Player",
+                "=",
+                "Variable(CheckpointY)"
               ],
               "subInstructions": []
             },
@@ -1526,6 +1649,54 @@
                 "CollectedScore",
                 "=",
                 "\"Score: \" + ToString(Variable(Score))"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player",
+                "Checkpoint",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "CheckpointX",
+                "=",
+                "Checkpoint.X()"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "CheckpointY",
+                "=",
+                "Checkpoint.Y()"
               ],
               "subInstructions": []
             }
