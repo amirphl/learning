@@ -395,7 +395,7 @@
           "customSize": false,
           "height": 0,
           "layer": "",
-          "locked": false,
+          "locked": true,
           "name": "CollectedScore",
           "persistentUuid": "194e9c6f-4383-4d9e-bfe0-caf8ca83fa53",
           "width": 0,
@@ -928,6 +928,18 @@
                 "Score",
                 "+",
                 "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "CollectedScore",
+                "=",
+                "\"Score: \" + ToString(Variable(Score))"
               ],
               "subInstructions": []
             }
