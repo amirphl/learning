@@ -151,6 +151,15 @@
         "name": "PlatformerTutorialResources/coinGold.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "file": "PlatformerTutorialResources/coin.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "PlatformerTutorialResources/coin.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -186,7 +195,18 @@
         "windowMask": false
       },
       "objectsGroups": [],
-      "variables": [],
+      "variables": [
+        {
+          "name": "Score",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "Variable",
+          "type": "string",
+          "value": ""
+        }
+      ],
       "instances": [
         {
           "angle": 30,
@@ -815,6 +835,75 @@
               "subInstructions": []
             }
           ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player",
+                "Coin",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "Coin",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "PlatformerTutorialResources/coin.wav",
+                "no",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "Score",
+                "+",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [],
           "events": []
         }
       ],
