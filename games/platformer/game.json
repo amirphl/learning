@@ -70,6 +70,15 @@
         "name": "PlatformerTutorialResources/p1_stand.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "PlatformerTutorialResources/grassHalfMid.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "PlatformerTutorialResources/grassHalfMid.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -276,6 +285,17 @@
               ]
             }
           ]
+        },
+        {
+          "height": 16,
+          "name": "GrassPlatform",
+          "tags": "",
+          "texture": "PlatformerTutorialResources/grassHalfMid.png",
+          "type": "TiledSpriteObject::TiledSprite",
+          "width": 16,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
         }
       ],
       "events": [
