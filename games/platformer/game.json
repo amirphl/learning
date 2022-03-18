@@ -79,6 +79,15 @@
         "name": "PlatformerTutorialResources/grassHalfMid.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "PlatformerTutorialResources/bridgeLogs.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "PlatformerTutorialResources/bridgeLogs.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -318,6 +327,25 @@
               "platformType": "NormalPlatform",
               "type": "PlatformBehavior::PlatformBehavior",
               "yGrabOffset": 5
+            }
+          ]
+        },
+        {
+          "height": 25,
+          "name": "SmallBridge",
+          "tags": "",
+          "texture": "PlatformerTutorialResources/bridgeLogs.png",
+          "type": "TiledSpriteObject::TiledSprite",
+          "width": 25,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "canBeGrabbed": true,
+              "name": "Platform",
+              "platformType": "Jumpthru",
+              "type": "PlatformBehavior::PlatformBehavior",
+              "yGrabOffset": 0
             }
           ]
         }
