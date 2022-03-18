@@ -185,6 +185,22 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 38,
+          "layer": "",
+          "locked": false,
+          "name": "GrassPlatform",
+          "persistentUuid": "36837b4b-aea8-454f-bb26-ee95d98b4240",
+          "width": 307,
+          "x": 386,
+          "y": 354,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
