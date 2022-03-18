@@ -160,6 +160,24 @@
         "preloadAsMusic": false,
         "preloadAsSound": false,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "PlatformerTutorialResources/slimeWalk1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "PlatformerTutorialResources/slimeWalk1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "PlatformerTutorialResources/slimeWalk2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "PlatformerTutorialResources/slimeWalk2.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -402,6 +420,22 @@
           "x": 686,
           "y": 16,
           "zOrder": 12,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "Slime",
+          "persistentUuid": "08c52927-a2db-4282-aeaa-1231f2ff79b9",
+          "width": 0,
+          "x": 31,
+          "y": 101,
+          "zOrder": 13,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -729,6 +763,63 @@
             "g": 0,
             "r": 0
           }
+        },
+        {
+          "name": "Slime",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Running",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.10000000149011612,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "PlatformerTutorialResources/slimeWalk1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "PlatformerTutorialResources/slimeWalk2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "events": [
