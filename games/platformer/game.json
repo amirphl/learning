@@ -394,12 +394,12 @@
           "angle": 0,
           "customSize": false,
           "height": 0,
-          "layer": "",
-          "locked": true,
+          "layer": "SecondLayer",
+          "locked": false,
           "name": "CollectedScore",
           "persistentUuid": "194e9c6f-4383-4d9e-bfe0-caf8ca83fa53",
           "width": 0,
-          "x": 714,
+          "x": 686,
           "y": 16,
           "zOrder": 12,
           "numberProperties": [],
@@ -976,6 +976,17 @@
               "width": 0
             }
           ],
+          "effects": []
+        },
+        {
+          "ambientLightColorB": -2147483632,
+          "ambientLightColorG": 6025824,
+          "ambientLightColorR": 9492032,
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "name": "SecondLayer",
+          "visibility": true,
+          "cameras": [],
           "effects": []
         }
       ],
