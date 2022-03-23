@@ -3,3 +3,4 @@ https://www.geeksforgeeks.org/move-negative-numbers-beginning-positive-end-const
 https://www.geeksforgeeks.org/move-ve-elements-end-order-extra-space-allowed/
 https://www.geeksforgeeks.org/positive-elements-at-even-and-negative-at-odd-positions-relative-order-not-maintained/
 https://www.geeksforgeeks.org/replace-every-array-element-by-multiplication-of-previous-and-next/
+https://www.geeksforgeeks.org/segregate-even-odd-numbers-set-3/
