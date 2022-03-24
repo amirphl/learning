@@ -4,6 +4,7 @@
 #include<algorithm>
 #include<iostream>
 
+// time: O(logn), memory: O(1)
 int binary_pivot_search(int arr[], int low, int high, int elem) {
     if (high - low < 0)
         return -1;

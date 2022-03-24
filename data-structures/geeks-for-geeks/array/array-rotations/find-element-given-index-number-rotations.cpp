@@ -14,6 +14,7 @@ class Solution{
   public:
     // Function to compute the element at
     // given index
+    // time: O(k), memory: O(1)
     int findElement(int arr[], int n, int x, int ranges[][2], int k) {
         for (int i = k - 1; i >=0; i--) {
             if (ranges[i][0] <= x && x <= ranges[i][1]) {

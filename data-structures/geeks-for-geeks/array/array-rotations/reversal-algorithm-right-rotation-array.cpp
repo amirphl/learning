@@ -1,8 +1,10 @@
 // https://www.geeksforgeeks.org/reversal-algorithm-right-rotation-array/
+// https://www.geeksforgeeks.org/program-for-array-rotation-continued-reversal-algorithm/
 
 #include<algorithm>
 #include<iostream>
 
+// time: O(n), memory: O(1)
 void rotate(int arr[], int n, int d) {
     std::reverse(arr, arr + n - d);
     std::reverse(arr + n - d, arr + n);

@@ -11,6 +11,7 @@ void print(int arr[], int n) {
     std::cout << std::endl;
 }
 
+// time: O(n), memory: O(1)
 int find_max_i_arr_i(int arr[], int n) {
     int sum = 0;
     int dp_0 = 0;

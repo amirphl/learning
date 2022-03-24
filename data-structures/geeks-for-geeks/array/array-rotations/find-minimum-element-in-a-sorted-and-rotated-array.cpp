@@ -1,10 +1,11 @@
 // https://www.geeksforgeeks.org/find-minimum-element-in-a-sorted-and-rotated-array/
-// to handle duplicates: https://ideone.com/LaJnN5      O(n)
+// TODO(amirphl) to handle duplicates: https://ideone.com/LaJnN5      O(n)
 
 #include<algorithm>
 #include<iostream>
 
-// O(log(n))
+// time: O(logn), memory: O(logn)
+// use iterative approach to reduce the memory to O(1)
 int find_minimum(int arr[], int l, int r) {
     // std::cout << l << " " << r << std::endl;
 

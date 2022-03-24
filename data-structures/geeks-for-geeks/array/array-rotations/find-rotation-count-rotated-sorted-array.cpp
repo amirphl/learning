@@ -4,6 +4,7 @@
 #include<algorithm>
 #include<iostream>
 
+// time: O(logn), memory: O(logn)
 int find_k(int arr[], int l, int r) {
     // std::cout << l << " " << r << " " << std::endl;
     if (r < l)

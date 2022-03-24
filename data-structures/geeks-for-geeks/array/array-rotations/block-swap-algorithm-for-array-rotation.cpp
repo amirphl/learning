@@ -1,3 +1,5 @@
+// https://www.geeksforgeeks.org/block-swap-algorithm-for-array-rotation/
+
 #include<algorithm>
 #include<iostream>
 
