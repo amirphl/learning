@@ -7,6 +7,8 @@
 // https://www.geeksforgeeks.org/find-the-largest-three-elements-in-an-array/
 // https://www.geeksforgeeks.org/find-elements-array-least-two-greater-elements/
 // https://www.geeksforgeeks.org/minimum-product-k-integers-array-positive-integers/
+// https://www.geeksforgeeks.org/find-second-largest-element-array/
+// https://www.geeksforgeeks.org/to-find-smallest-and-second-smallest-element-in-an-array/
 
 // sorting approach :   time: O(nlogn)            , memory: O(1)
 // modified buuble sort:time: O(k*n)              , memory: O(1)
