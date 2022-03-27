@@ -10,9 +10,10 @@
 #include <iostream>
 #include <cmath>
 #include <climits>
+#define MAX 200
 
-int t[100][100];
-int gcd[100][100];
+int t[MAX][MAX];
+int gcd[MAX][MAX];
 
 void print_t(int n, int m) {
 	for (int i = 0; i < n; i++) {
@@ -85,7 +86,7 @@ int query_gcd(int low, int high) {
 }
 
 int main() {
-	int arr[] = {7, 2, 3, 1, 5, 10, 3, 12, 18, 4};
+	int arr[] = {12, 13, 6, 18, 2, 12, 15, 11, 11, 12, 14, 11, 15, 17, 12, 11, 20, 17, 14, 5, -1, 0 ,-2, 5, 6, -3, 13, 3, 10, 11, 8, 15, 1, 14, 5, 6, 13, 13, 9, 1, 7, 2, 3, 10, 12, 1, 15, 6, 15, 19, 17, 3, 2, 6, 13, 17, 9, 5, 8, 1, 13, 19, 17, 20, 20, 19, 3, 1, 9, 10, 19, 1, 5, 5, 5, 9, 12, 9, 8, 19, 9, 15, 18, 7, 14, 6, 11, 8, 14, 3, 5, 15, 19, 8, 10, 1, 7, 8, 17, 14, 3, 7, 15, 3, 14, 6};
 	int n = sizeof(arr) / sizeof(arr[0]);
 	int m = int(log2(n)) + 2;
 	fill_min(arr, n, m);
@@ -95,12 +96,17 @@ int main() {
 	std::cout << "gcd: --------------\n";
 	print_gcd(n, m);
 	std::cout << "query min --------------\n";
-	std::cout << query_min(0, 0) << std::endl;
-	std::cout << query_min(0, 4) << std::endl;
-	std::cout << query_min(4, 7) << std::endl;
-	std::cout << query_min(7, 8) << std::endl;
-	std::cout << query_min(8, 8) << std::endl;
-	std::cout << query_min(0, 8) << std::endl;
+	std::cout << query_min(0,  20)  << std::endl;
+	std::cout << query_min(5,  20)  << std::endl;
+	std::cout << query_min(7,  27)  << std::endl;
+	std::cout << query_min(14, 37)  << std::endl;
+	std::cout << query_min(30, 40)  << std::endl;
+	std::cout << query_min(34, 34)  << std::endl;
+	std::cout << query_min(39, 49)  << std::endl;
+	std::cout << query_min(45, 69)  << std::endl;
+	std::cout << query_min(51, 52)  << std::endl;
+	std::cout << query_min(55, 105) << std::endl;
+	std::cout << query_min(0,  105) << std::endl;
 	std::cout << "query gcd --------------\n";
 	std::cout << query_gcd(0, 0) << std::endl;
 	std::cout << query_gcd(0, 4) << std::endl;
