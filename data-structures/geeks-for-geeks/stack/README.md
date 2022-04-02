@@ -1,0 +1,85 @@
+## Source
+	- https://www.geeksforgeeks.org/stack-data-structure/
+	- remained:
+		- https://www.geeksforgeeks.org/stack-data-structure/#misc
+
+## Notes
+	- links:
+		- https://www.geeksforgeeks.org/stack-in-cpp-stl/
+		- https://www.geeksforgeeks.org/stack-swap-in-c-stl/
+		- https://www.geeksforgeeks.org/stack-emplace-in-c-stl/
+	- methods:
+		- dp[i] = number of elements less than or equal to arr[i] -> O(n)
+		- dp[i] = first greater element in right side of arr[i]
+	- notes:
+		- infix, postfix, prefix: representation
+
+## Easy Problems (not present in files)
+	- https://www.geeksforgeeks.org/stack-data-structure-introduction-program/
+	- https://www.geeksforgeeks.org/stack-in-cpp-stl/
+	- https://www.geeksforgeeks.org/stack-class-in-java/
+	- https://www.geeksforgeeks.org/implement-two-stacks-in-an-array/
+	- https://www.geeksforgeeks.org/create-mergable-stack/
+	- https://www.geeksforgeeks.org/implement-stack-using-priority-queue-or-heap/
+	- https://www.geeksforgeeks.org/implement-stack-queue-using-deque/
+	- https://www.geeksforgeeks.org/check-for-balanced-parentheses-in-an-expression/
+	- https://www.geeksforgeeks.org/sort-a-stack-using-recursion/
+		- https://www.geeksforgeeks.org/sort-stack-using-temporary-stack/
+		- https://www.geeksforgeeks.org/sorting-array-using-stacks/
+		- https://www.geeksforgeeks.org/check-array-stack-sortable/
+	- https://www.geeksforgeeks.org/delete-middle-element-stack/
+	- https://www.geeksforgeeks.org/reverse-individual-words/
+
+## TODO
+	- 
+	- https://practice.geeksforgeeks.org/topics/Stack/
+	- https://practice.geeksforgeeks.org/explore/?category%5B%5D=Stack&page=1&category%5B%5D=Stack
+	- https://www.geeksforgeeks.org/category/stack/
+	- https://www.geeksforgeeks.org/tag/cpp-stack/
+	- https://www.geeksforgeeks.org/data-structure-gq/stack-gq/
+	- https://www.geeksforgeeks.org/check-for-balanced-parentheses-in-an-expression/
+	- https://www.geeksforgeeks.org/recursive-functions/
+	- https://www.geeksforgeeks.org/618/
+	- https://www.geeksforgeeks.org/largest-rectangular-area-in-a-histogram-set-1/
+	- Backtracking is one of the algorithm designing techniques. Some examples of backtracking are the Knight-Tour problem, N-Queen problem, find your way through a maze, and game-like chess or checkers in all these problems we dive into someway if that way is not efficient we come back to the previous state and go into some another path. To get back from a current state we need to store the previous state for that purpose we need a stack.
+	- https://www.geeksforgeeks.org/topological-sorting/
+	- https://www.geeksforgeeks.org/strongly-connected-components/
+	- STL stack implementation - complexities
+	- https://www.geeksforgeeks.org/deque-cpp-stl/
+	- https://www.geeksforgeeks.org/list-cpp-stl/
+	- vector vs list vs deque
+	- https://contribute.geeksforgeeks.org/stackempty-and-stacksize-in-c-stl/
+	- push vs emplace
+	- https://www.geeksforgeeks.org/stack-in-python/
+	- * https://www.geeksforgeeks.org/implement-a-stack-using-single-queue/
+	- * https://www.geeksforgeeks.org/efficiently-implement-k-stacks-single-array/
+	- Implement a stack that supports getMax() in O(1) time and constant extra space.
+	- fibonacci heap implementation of priority queue which would give us O(1) time complexity for push operation, but pop still requires O(log n)
+	- * https://www.geeksforgeeks.org/prefix-infix-conversion/
+		- https://www.geeksforgeeks.org/postfix-prefix-conversion
+		- https://www.geeksforgeeks.org/prefix-postfix-conversion/
+		- https://www.geeksforgeeks.org/postfix-to-infix/
+		- https://www.geeksforgeeks.org/convert-infix-prefix-notation/
+		- http://en.wikipedia.org/wiki/Shunting-yard_algorithm
+		- https://www.geeksforgeeks.org/arithmetic-expression-evalution/
+		- https://www.geeksforgeeks.org/expression-evaluation/
+		- https://www.geeksforgeeks.org/stack-set-4-evaluation-postfix-expression/
+	- * https://www.geeksforgeeks.org/number-nges-right/
+	- * https://www.geeksforgeeks.org/maximum-product-of-indexes-of-next-greater-on-left-and-right/
+	- https://www.geeksforgeeks.org/recursive-functions/
+	- http://quiz.geeksforgeeks.org/algorithms/recursion/
+	- https://www.geeksforgeeks.org/tail-recursion/
+	- https://www.geeksforgeeks.org/algorithms-gq/recursion-gq/
+	- * https://www.geeksforgeeks.org/check-queue-can-sorted-another-queue-using-stack/
+	- * https://www.geeksforgeeks.org/the-celebrity-problem/
+	- * https://www.geeksforgeeks.org/count-subarrays-second-highest-lie-highest/
+	- https://practice.geeksforgeeks.org/courses/CPP-Foundation
+	- https://practice.geeksforgeeks.org/courses/Java-Foundation
+	- https://practice.geeksforgeeks.org/courses/Python-Foundation
+	- https://practice.geeksforgeeks.org/courses/geeks-classes-live
+	- https://practice.geeksforgeeks.org/courses/complete-interview-preparation
+	- https://practice.geeksforgeeks.org/courses/dsa-self-paced
+	- https://practice.geeksforgeeks.org/courses/Amazon-Test-Series
+	- https://practice.geeksforgeeks.org/courses/microsoft-test-series
+	- https://practice.geeksforgeeks.org/courses/tcs-interview-preparation
+	- https://practice.geeksforgeeks.org/courses/wipro-enth-preparation
