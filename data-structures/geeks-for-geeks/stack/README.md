@@ -31,7 +31,6 @@
 	- https://www.geeksforgeeks.org/reverse-individual-words/
 
 ## TODO
-	- 
 	- https://practice.geeksforgeeks.org/topics/Stack/
 	- https://practice.geeksforgeeks.org/explore/?category%5B%5D=Stack&page=1&category%5B%5D=Stack
 	- https://www.geeksforgeeks.org/category/stack/

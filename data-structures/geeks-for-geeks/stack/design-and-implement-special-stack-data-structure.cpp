@@ -1,8 +1,18 @@
 // https://www.geeksforgeeks.org/design-and-implement-special-stack-data-structure/
+// https://www.geeksforgeeks.org/design-a-stack-that-supports-getmin-in-o1-time-and-o1-extra-space/
+// https://www.geeksforgeeks.org/design-a-stack-with-find-middle-operation/
+// https://www.geeksforgeeks.org/create-customized-data-structure-evaluates-functions-o1/
 
 // other idea: e * DUMMY_VALUE + MIN_SO_FAR
 // e / DUMMY_VALUE
 // e % DUMMY_VALUE
+// push, pop, getMin: time: O(1)
+
+// other idea: 2 * e - MIN_SO_FAR: push, pop, getMin: time: O(1)
+
+// other idea: pair<e, MIN_SO_FAR>: push, pop, getMin: time: O(1)
+
+// other idea: use two stacks: one for storing the actual elements and the othe one to store the MIN_SO_FAR. push, pop, getMin : time: O(1)
 
 // { Driver Code Starts
 #include<iostream>
@@ -62,21 +72,24 @@ bool isEmpty(stack<int>& s){
 }
 
 int pop(stack<int>& s){
-	int t;
-	if (s.empty())
-        return -1;
-    t = s.top();
-    s.pop();
-	if (s.size() == 0) {
-	    return t;
+	if (s.empty()) {
+		return -1;
 	}
-	if (t > 0)
-	    return t + m;
+	int t = s.top();
+	s.pop();
+	if (s.size() == 0) {
+		return t;
+	}
+	if (t >= 0)
+		return t + m;
 	int temp = m;
-	m = -1 * m;
+	m = -1 * t;
+	// std::cout << "-> " << m << std::endl;
 	return temp;
 }
 
 int getMin(stack<int>& s){
+	if (s.empty())
+		return -1;
 	return m;
 }

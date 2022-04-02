@@ -1,5 +1,8 @@
 // https://www.geeksforgeeks.org/queue-using-stacks/
+// https://www.geeksforgeeks.org/implement-stack-using-queue/
+
 // Implemented with an explicit Stack and the Stack of the memory.
+// We can implement a Stack with two queues.
 
 // { Driver Code Starts
 #include<bits/stdc++.h>

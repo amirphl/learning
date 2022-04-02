@@ -1,5 +1,8 @@
 // https://www.geeksforgeeks.org/next-greater-element/
 // https://www.geeksforgeeks.org/next-greater-element-in-same-order-as-input/
+// https://www.geeksforgeeks.org/next-greater-frequency-element/
+// TODO(amirphl) https://www.geeksforgeeks.org/maximum-product-of-indexes-of-next-greater-on-left-and-right/
+// https://www.geeksforgeeks.org/print-next-greater-number-q-queries/
 
 // We can also use Stack to solve the problem.
 
