@@ -1,6 +1,8 @@
 // https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/
+// https://www.geeksforgeeks.org/level-order-tree-traversal/
 
 // Make the node as visited after pushing it to the queue, not after popping.
+// Note that the code traverses only the vertices reachable from a given source vertex.
 
 // { Driver Code Starts
 #include <bits/stdc++.h>

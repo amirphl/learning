@@ -1,6 +1,7 @@
 // https://www.geeksforgeeks.org/number-siblings-given-node-n-ary-tree/
 
 // This is a more comprehensive implementation. All siblings are printed.
+// Note: assumed that elements are unique.
 
 #include<bits/stdc++.h>
 #include<iostream>
