@@ -1,0 +1,119 @@
+## Source
+	- https://www.geeksforgeeks.org/queue-data-structure/
+	- remained: https://www.geeksforgeeks.org/queue-data-structure/#misc
+
+## Notes
+	- links:
+		- https://www.geeksforgeeks.org/queue-set-1introduction-and-array-implementation/
+		- https://www.geeksforgeeks.org/applications-of-queue-data-structure/
+		- applications: http://introcs.cs.princeton.edu/43stack/
+		- https://www.geeksforgeeks.org/applications-priority-queue/
+		- https://www.geeksforgeeks.org/deque-set-1-introduction-applications/
+		- https://www.geeksforgeeks.org/queue-interface-java/
+		- We can implement priority queue using different data structures: https://www.geeksforgeeks.org/priority-queue-set-1-introduction/
+	- methods:
+	- notes:
+		- circular: front, rear
+		- In BFS, make the node as visited after pushing it to the queue, not after popping it from the queue.
+		- ```bool *visited = new bool[V];```
+		- BFS = Level Order Traversal
+		- reverse a path in tree.
+		- ```TreeNode *&root```
+
+## Easy Problems (not present in files)
+	- https://www.geeksforgeeks.org/queue-linked-list-implementation/
+	- https://www.geeksforgeeks.org/implementation-deque-using-circular-array/
+	- https://www.geeksforgeeks.org/circular-singly-linked-list-insertion/
+	- https://www.geeksforgeeks.org/circular-queue-set-1-introduction-array-implementation/
+	- https://www.geeksforgeeks.org/circular-queue-set-2-circular-linked-list-implementation/
+	- https://www.geeksforgeeks.org/priority-queue-using-linked-list/
+	- https://www.geeksforgeeks.org/priority-queue-using-doubly-linked-list/
+	- https://www.geeksforgeeks.org/implementation-deque-using-doubly-linked-list/
+	- https://www.geeksforgeeks.org/program-page-replacement-algorithms-set-2-fifo/
+	- https://www.geeksforgeeks.org/fifo-first-in-first-out-approach-in-programming/
+	- https://www.geeksforgeeks.org/fifo-vs-lifo-approach-in-programming/
+	- https://www.geeksforgeeks.org/lifo-last-in-first-out-approach-in-programming/
+	- https://www.geeksforgeeks.org/reversing-a-queue/
+	- https://www.geeksforgeeks.org/reversing-queue-using-recursion/
+	- https://www.geeksforgeeks.org/reversing-first-k-elements-queue/
+	- https://www.geeksforgeeks.org/c-sharp-queue-with-examples/
+
+## TODO
+	- https://practice.geeksforgeeks.org/topics/Queue/
+	- https://www.geeksforgeeks.org/data-structure-gq/queue-gq/
+	- https://practice.geeksforgeeks.org/explore/?category%5B%5D=Queue&page=1&category%5B%5D=Queue
+	- https://www.geeksforgeeks.org/category/queue/
+	- https://www.geeksforgeeks.org/tag/cpp-priority-queue/
+		- https://www.geeksforgeeks.org/applications-priority-queue/
+		- https://www.geeksforgeeks.org/priority-queue-class-in-java-2/
+		- https://www.geeksforgeeks.org/heap-queue-or-heapq-in-python/
+		- https://www.geeksforgeeks.org/implementation-priority-queue-javascript/
+		- https://www.geeksforgeeks.org/priority-queue-set-1-introduction/
+		- https://www.geeksforgeeks.org/priority-queue-using-array-in-c/
+		- https://www.geeksforgeeks.org/priority-queue-using-linked-list/
+		- https://www.geeksforgeeks.org/priority-queue-using-binary-heap/
+		- https://www.geeksforgeeks.org/double-ended-priority-queue/
+	- https://www.geeksforgeeks.org/deque-set-1-introduction-applications/
+	- implementation, time complexities of STL queue, priority queue, deque, priority deque
+	- BST, AVL Tree, Red-Black Tree
+	- https://www.geeksforgeeks.org/greedy-algorithms-set-7-dijkstras-algorithm-for-adjacency-list-representation/
+	- https://www.geeksforgeeks.org/greedy-algorithms-set-5-prims-mst-for-adjacency-list-representation/
+	- * https://www.geeksforgeeks.org/efficiently-implement-k-queues-single-array/
+	- * https://www.geeksforgeeks.org/reverse-tree-path/
+		- Implement for graph
+	- https://www.geeksforgeeks.org/queue-in-python/
+	- https://www.geeksforgeeks.org/queue-remove-method-in-java/
+	- https://www.geeksforgeeks.org/queue-add-method-in-java/
+	- https://www.geeksforgeeks.org/generics-in-java/
+	- https://www.geeksforgeeks.org/interfaces-in-java/
+	- https://www.geeksforgeeks.org/priorityblockingqueue-class-in-java/
+	- https://www.geeksforgeeks.org/linked-list-in-java/
+	- https://www.geeksforgeeks.org/priority-queue-class-in-java-2/
+	- https://www.geeksforgeeks.org/collections-in-java-2/
+	- https://www.geeksforgeeks.org/java-util-package-java/
+	- https://www.geeksforgeeks.org/doubly-linked-list/
+	- https://www.geeksforgeeks.org/deque-in-python/
+	- http://en.wikipedia.org/wiki/Double-ended_queue#Language_support
+	- https://www.geeksforgeeks.org/deque-interface-java-example/
+	- http://en.wikipedia.org/wiki/Double-ended_queue#Applications
+	- https://www.geeksforgeeks.org/find-a-tour-that-visits-all-stations/
+	- https://www.geeksforgeeks.org/0-1-bfs-shortest-path-binary-graph/
+	- https://www.geeksforgeeks.org/maximum-of-all-subarrays-of-size-k/
+	- http://en.wikipedia.org/wiki/Double-ended_queue
+	- https://practice.geeksforgeeks.org/problems/interrupt-handlers
+	- https://www.geeksforgeeks.org/load-balancing-on-servers-random-algorithm/
+	- https://en.wikipedia.org/wiki/Load_balancing_(computing)
+	- https://en.wikipedia.org/wiki/Operating_system
+	- https://www.geeksforgeeks.org/heap-sort/
+	- https://www.geeksforgeeks.org/a-search-algorithm/
+	- https://www.geeksforgeeks.org/tag/huffman-coding/
+	- https://en.wikipedia.org/wiki/Data_compression 
+	- https://www.geeksforgeeks.org/prims-algorithm-using-priority_queue-stl/
+	- https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-using-priority_queue-stl/
+	- https://www.geeksforgeeks.org/heap-data-structure/
+	- https://www.geeksforgeeks.org/zigzag-tree-traversal/
+	- https://www.geeksforgeeks.org/level-order-traversal-in-spiral-form/
+	- https://www.geeksforgeeks.org/operating-system-page-replacement-algorithm/
+	- http://en.wikipedia.org/wiki/Binary_tree#Types_of_binary_trees
+	- https://www.geeksforgeeks.org/given-a-binary-tree-print-all-root-to-leaf-paths/
+	- http://www.geeksforgeeks.org/breadth-first-traversal-for-a-graph/
+	- https://www.geeksforgeeks.org/applications-of-depth-first-search/
+	- https://www.geeksforgeeks.org/applications-of-breadth-first-traversal/
+	- https://www.geeksforgeeks.org/depth-first-traversal-for-a-graph/
+	- https://www.geeksforgeeks.org/tag/bfs/
+	- https://www.geeksforgeeks.org/depth-first-traversal-for-a-graph/
+	- http://www.yolinux.com/TUTORIALS/LinuxTutorialC++STL.html#LIST
+	- http://en.wikipedia.org/wiki/Standard\_Template\_Library
+	- http://en.wikipedia.org/wiki/Adjacency\_list
+	- https://www.geeksforgeeks.org/implementation-deque-using-doubly-linked-list/
+	- https://www.geeksforgeeks.org/doubly-linked-list/
+	- http://quiz.geeksforgeeks.org/linked-list-set-1-introduction/
+	- http://quiz.geeksforgeeks.org/circular-linked-list/
+	- http://www.wiley.com/college/silberschatz6e/0471417432/slides/pdf2/mod10.2.pdf
+	- https://www.geeksforgeeks.org/linkedhashmap-class-java-examples/
+	- https://www.geeksforgeeks.org/lru-cache-in-python-using-ordereddict/
+	- http://en.wikipedia.org/wiki/Breadth-first\_search
+	- https://www.geeksforgeeks.org/cpu-scheduling-in-operating-systems/
+	- https://www.geeksforgeeks.org/disk-scheduling-algorithms/
+	- https://en.wikipedia.org/wiki/Semaphore_(programming)#:~:text=In%20computer%20science%2C%20a%20semaphore,as%20a%20multitasking%20operating%20system.
+
