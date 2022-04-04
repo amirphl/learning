@@ -11,7 +11,7 @@ This is a simple game which is built step by step from https://wiki.gdevelop.io/
 ![player animations](player-animations.png)
 
 ## Player Behaviors - Platformer Object
-![player behavior - platformer object](player-behaviour-platformer-object.png)
+![player behavior - platformer object](player-behaviours-platformer-object.png)
 
 ## Slim Animations
 ![slim animations](slim-animations.png)
@@ -29,7 +29,7 @@ This is a simple game which is built step by step from https://wiki.gdevelop.io/
 ![bridge-object](bridge-platform.png)
 
 ## Bridge Behavior - Platform
-![bridge-behavior-platform](bridge-behaviour-platform.png)
+![bridge-behavior-platform](bridge-behvaiour-platform.png)
 
 ## Layers
 ![layers](layers.png)
