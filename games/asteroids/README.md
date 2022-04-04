@@ -1,4 +1,4 @@
-# Platformer game
+# Asteroids game
 This is a simple game which is built step by step from https://wiki.gdevelop.io/gdevelop5/tutorials/asteroids/start
 
 ## Demo
