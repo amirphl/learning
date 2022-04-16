@@ -58,15 +58,13 @@ class Solution{
         if (low > high)
             return 0;
 
-        Node* node = (struct Node*)malloc(sizeof(struct Node));
+        Node* node = new Node(pre[left]);
 
         if (low == high) {
-            node -> data = pre[left];
             return node;
         }
 
         int root_index = m[pre[left]];
-        node -> data = pre[left];
         node -> left = buildTreeRecu(in, pre, low, root_index - 1, left + 1, left + root_index - low, m);
         node -> right = buildTreeRecu(in, pre, root_index + 1, high, left + root_index - low + 1, right, m);
 
