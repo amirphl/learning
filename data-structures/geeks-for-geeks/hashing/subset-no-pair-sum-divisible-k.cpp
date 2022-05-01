@@ -27,7 +27,7 @@ int rem(int n, int k) {
     return (n > 0) ? n % k: k - (-n % k);
 }
 
-// time: O(n + k), memory: O(n + k)
+// time: O(n + k), memory: O(k)
 int subsetPairNotDivisibleByK(int arr[], int n, int k) 
 {
     unordered_map<int, int> m;
