@@ -1,5 +1,7 @@
 // https://www.geeksforgeeks.org/count-subarrays-equal-number-1s-0s/
 
+// TODO(amirphl) first approach
+
 // { Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
