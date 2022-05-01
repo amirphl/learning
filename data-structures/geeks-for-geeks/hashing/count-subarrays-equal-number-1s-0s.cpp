@@ -1,4 +1,5 @@
 // https://www.geeksforgeeks.org/count-subarrays-equal-number-1s-0s/
+// https://www.geeksforgeeks.org/longest-subarray-count-1s-one-count-0s/
 
 // TODO(amirphl) first approach
 
