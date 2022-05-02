@@ -1,4 +1,5 @@
 // https://www.geeksforgeeks.org/printing-longest-increasing-consecutive-subsequence/
+// https://www.geeksforgeeks.org/longest-increasing-consecutive-subsequence/
 
 #include<bits/stdc++.h>
 
