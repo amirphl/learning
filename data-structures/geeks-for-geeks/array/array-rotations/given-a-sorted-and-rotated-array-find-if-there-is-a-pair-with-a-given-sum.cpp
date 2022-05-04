@@ -2,6 +2,8 @@
 // TODO(amirphl) What about pairs of m elements?
 // TODO(amirphl) This method does not handle array with duplicates well.
 
+// Note: We can find pivot element in O(logn) time.
+
 #include<algorithm>
 #include<iostream>
 
