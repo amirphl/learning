@@ -23,6 +23,7 @@ void print(int arr[], int n) {
     std::cout << std::endl;
 }
 
+// time O(n) memory O(1)
 void left_rotate(int arr[], int d, int s, int e) {
     // std::cout << s << "  " << e << " --- " << d << " --- ";
     // print(arr, 8);
