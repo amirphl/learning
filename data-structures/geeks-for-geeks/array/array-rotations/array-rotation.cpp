@@ -1,4 +1,9 @@
 // https://www.geeksforgeeks.org/array-rotation/
+
+// method 2: using a temp array: time O(n), memory O(n)
+// method 3: using two nested for loops: time O(n*k), memory: O(1)
+// method 4: TODO (amirphl) A Juggling Algorithm
+
 #include<algorithm>
 #include<iostream>
 
@@ -42,6 +47,7 @@ void reverse(int arr[], int n, int m) {
     }
 }
 
+// time: O(n), memory: O(1)
 void left_rotate(int arr[], int d, int n) {
     if (d == 0)
         return;
