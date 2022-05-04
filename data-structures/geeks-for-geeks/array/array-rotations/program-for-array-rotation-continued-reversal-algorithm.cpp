@@ -1,5 +1,5 @@
-// https://www.geeksforgeeks.org/reversal-algorithm-right-rotation-array/
 // https://www.geeksforgeeks.org/program-for-array-rotation-continued-reversal-algorithm/
+// https://www.geeksforgeeks.org/reversal-algorithm-right-rotation-array/
 
 #include<algorithm>
 #include<iostream>
