@@ -1,8 +1,8 @@
 // https://www.geeksforgeeks.org/array-rotation/
 
 // method 2: using a temp array: time O(n), memory O(n)
-// method 3: using two nested for loops: time O(n*k), memory: O(1)
-// method 4: TODO (amirphl) A Juggling Algorithm
+// method 3: TODO (amirphl) A Juggling Algorithm
+// method 4: using two nested for loops: time O(n*k), memory: O(1)
 // method 5: block swap algorithm: time O(n), memory O(1) if iterative
 
 #include<algorithm>
