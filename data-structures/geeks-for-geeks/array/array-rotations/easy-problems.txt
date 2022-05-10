@@ -1,4 +1,0 @@
-https://www.geeksforgeeks.org/c-program-cyclically-rotate-array-one/
-https://www.geeksforgeeks.org/queries-left-right-circular-shift-array/
-https://www.geeksforgeeks.org/print-left-rotation-array/
-https://www.geeksforgeeks.org/split-array-add-first-part-end/
