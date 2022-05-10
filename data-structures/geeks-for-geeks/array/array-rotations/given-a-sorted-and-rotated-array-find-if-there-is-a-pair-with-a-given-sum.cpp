@@ -1,6 +1,7 @@
 // https://www.geeksforgeeks.org/given-a-sorted-and-rotated-array-find-if-there-is-a-pair-with-a-given-sum/
 // TODO(amirphl) What about pairs of m elements?
-// TODO(amirphl) This method does not handle array with duplicates well.
+// TODO(amirphl) How to find all pairs?
+// TODO(amirphl) How to handle duplicates?
 
 // Note: We can find pivot element in O(logn) time.
 
