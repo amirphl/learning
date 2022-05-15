@@ -1,5 +1,5 @@
 // https://www.geeksforgeeks.org/searching-array-adjacent-differ-k/
-// TODO(amirphl) https://www.geeksforgeeks.org/search-an-element-in-an-array-where-difference-between-adjacent-elements-is-1/
+// https://www.geeksforgeeks.org/search-an-element-in-an-array-where-difference-between-adjacent-elements-is-1/
 
 // { Driver Code Starts
 // C++ program to search an element in an array
