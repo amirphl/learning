@@ -1,8 +1,12 @@
 // https://www.geeksforgeeks.org/rearrange-array-arrj-becomes-arri-j/
-// TODO(amirphl) There is another approach by Prateek Oraon which is fantastic! Review it.
+// other approaches:
+// method 1: use temporary array: time: O(n), memory: O(n)
+// method 2: The idea is to store each element’s new and old value as quotient and remainder of n, respectively (n being the size of the array). 
+// For example, Suppose an element’s new value is 2, the old value is 1 and n is 3, then the element’s value is stored as 1 + 2*3 = 7. We can retrieve its old value by 7%3 = 1 and its new value by 7/3 = 2. 
 
 #include <iostream>
 
+// time: O(n), memory: O(1)
 int rearr(int arr[], int n) {
     int temp;
 
