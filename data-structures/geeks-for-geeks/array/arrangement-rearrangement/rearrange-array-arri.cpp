@@ -1,5 +1,8 @@
 // https://www.geeksforgeeks.org/rearrange-array-arri/
 
+// method 2: using set: time: O(n), memory: O(n)
+// method 3: If arr[i] >= 0 && arr[i] != i, put arr[i] at i ( swap arr[i] with arr[arr[i]]): time: O(n), memory: O(1)
+
 // { Driver Code Starts
 #include <iostream>
 using namespace std;
@@ -40,8 +43,7 @@ void put(int arr[], int b){
     }
 }
 
-// O(n)
-int * Rearrange(int *arr,int n){
+int * Rearrange2(int *arr,int n){
     for (int i = 0; i < n; i++) {
         if (arr[i] != -1) {
             // cout << " -" << i << "- ";
@@ -54,4 +56,31 @@ int * Rearrange(int *arr,int n){
     return arr;
 }
 
-// other solutions: 1- using set -> O(n) 2- using swap -> O(n)
+// time: O(n), memory: O(1)
+int* Rearrange(int *arr,int n) {
+    for(int i = 0; i < n; i++) {
+        if (arr[i] == -1) {
+            arr[i] = -2147483648;
+        }
+    }
+    for(int i = 0; i < n; i++) {
+        if (arr[i] < 0) {
+            continue;
+        }
+        int j = arr[i];
+        arr[i] = -2147483648;
+        while(j >= 0) {
+            int temp = arr[j];
+            arr[j] = -j;
+            j = temp;
+        }
+    }
+    for(int i = 0; i < n; i++) {
+        if (arr[i] == -2147483648) {
+            arr[i] = -1;
+        } else {
+            arr[i] *= -1;
+        }
+    }
+    return arr;
+}
