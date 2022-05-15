@@ -1,5 +1,7 @@
 // https://www.geeksforgeeks.org/reorder-a-array-according-to-given-indexes/
-// TODO(amirphl) see other approaches
+// other approaches:
+// method 1: copy src to correct indexes in an auxiliary array then copy back auxiliary array to the main array: time: O(n), memory: O(n)
+// method 2: sort the array according to the index array by a customized sort function: time: O(nlogn), memory: O(1)
 
 #include<algorithm>
 #include<iostream>
