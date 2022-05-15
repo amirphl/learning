@@ -1,6 +1,18 @@
 // https://www.geeksforgeeks.org/rearrange-positive-and-negative-numbers/
-// https://www.geeksforgeeks.org/move-ve-elements-end-order-extra-space-allowed/
+// https://www.geeksforgeeks.org/rearrange-positive-and-negative-numbers-publish/
+// https://www.geeksforgeeks.org/rearrange-array-alternating-positive-negative-items-o1-extra-space/
+// https://www.geeksforgeeks.org/rearrange-array-in-alternating-positive-negative-items-with-o1-extra-space-set-2/
 // https://www.geeksforgeeks.org/rearrange-positive-negative-numbers-using-inbuilt-sort-function/
+// https://www.geeksforgeeks.org/move-negative-numbers-beginning-positive-end-constant-extra-space/
+// https://www.geeksforgeeks.org/move-ve-elements-end-order-extra-space-allowed/
+// https://www.geeksforgeeks.org/positive-elements-at-even-and-negative-at-odd-positions-relative-order-not-maintained/
+// https://www.geeksforgeeks.org/segregate-even-odd-numbers-set-3/
+
+// other approaches:
+// method 2 (doesn't maintain the order of appearance): using partition process of quick sort (pivot = 0): time: O(n), memory: O(1)
+// method 3 (       maintains the order of appearance): right rotate the array starting at element at incorrect position with next element which should be replaced with it: time: O(n*n), memory: O(1)
+// method 4 (doesn't maintain the order of appearance): sort then rearrange: time: O(nlogn), memory: O(1)
+// method 5 (doesn't maintain the order of appearance): two pointer technique: time: O(n), memory: O(1)
 
 // { Driver Code Starts
 #include<bits/stdc++.h>
@@ -39,7 +51,7 @@ void left_shift(int arr[], int i, int j, int d)
 }
 
 
-// time: O(nlogn) - memory: O(1) - [We can say memory is O(logn) because of recursive calls]
+// time: O(nlogn), memory: O(logn)
 void rearr(int arr[], int low, int high)
 {
     if (low >= high)
@@ -81,12 +93,10 @@ void rearr(int arr[], int low, int high)
     left_shift(arr, left_b, right_b, mid - left_b + 1);
 }
 
-
+// maintains the order of appearance
+// time: O(nlogn)
+// memory: O(logn)
 void Rearrange(int arr[], int n)
 {
     rearr(arr, 0, n - 1);
 }
-
-// other methods:
-// Modified Partition Process of Quick Sort: time: O(n*n), memory: O(1)
-// Modified Insertion Sort: time: O(n*n), memory: O(1)
