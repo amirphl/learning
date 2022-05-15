@@ -3,7 +3,7 @@
 #include<algorithm>
 #include<iostream>
 
-// O(nlogn)
+// time: O(nlogn), memory: O(n)
 int* rearr(int arr[], int n) {
     std::sort(arr, arr + n);
 
