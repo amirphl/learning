@@ -1,4 +1,6 @@
 // https://www.geeksforgeeks.org/majority-element/
+// https://www.geeksforgeeks.org/check-for-majority-element-in-a-sorted-array/
+// https://www.geeksforgeeks.org/check-array-majority-element/
 
 // { Driver Code Starts
 //Initial template for C++
