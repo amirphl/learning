@@ -1,4 +1,5 @@
 // https://www.geeksforgeeks.org/rearrange-array-arri-arrj-even-arri/
+// https://www.geeksforgeeks.org/rearrange-array-order-smallest-largest-2nd-smallest-2nd-largest/
 
 #include<algorithm>
 #include<iostream>
