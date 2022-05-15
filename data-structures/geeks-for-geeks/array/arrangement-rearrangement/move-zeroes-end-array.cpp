@@ -1,5 +1,6 @@
 // https://www.geeksforgeeks.org/move-zeroes-end-array/
 // https://www.geeksforgeeks.org/move-zeroes-end-array-set-2-using-single-traversal/
+// https://www.geeksforgeeks.org/double-first-element-move-zero-end/
 
 // { Driver Code Starts
 #include <bits/stdc++.h>
