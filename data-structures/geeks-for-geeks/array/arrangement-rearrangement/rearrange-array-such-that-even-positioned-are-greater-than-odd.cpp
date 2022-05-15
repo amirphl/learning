@@ -1,4 +1,6 @@
 // https://www.geeksforgeeks.org/rearrange-array-such-that-even-positioned-are-greater-than-odd/
+// https://www.geeksforgeeks.org/rearrange-array-even-index-elements-smaller-odd-index-elements-greater/
+// https://www.geeksforgeeks.org/sort-array-wave-form-2/
 
 // { Driver Code Starts
 // C++ program to rearrange the elements
