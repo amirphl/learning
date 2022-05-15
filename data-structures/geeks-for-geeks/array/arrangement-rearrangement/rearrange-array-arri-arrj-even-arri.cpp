@@ -1,5 +1,7 @@
 // https://www.geeksforgeeks.org/rearrange-array-arri-arrj-even-arri/
 // https://www.geeksforgeeks.org/rearrange-array-order-smallest-largest-2nd-smallest-2nd-largest/
+// https://www.geeksforgeeks.org/rearrange-array-maximum-minimum-form/
+// https://www.geeksforgeeks.org/rearrange-array-maximum-minimum-form-set-2-o1-extra-space/
 
 #include<algorithm>
 #include<iostream>
