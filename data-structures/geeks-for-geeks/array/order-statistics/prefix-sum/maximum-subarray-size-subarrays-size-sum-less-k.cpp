@@ -1,5 +1,7 @@
 // https://www.geeksforgeeks.org/maximum-subarray-size-subarrays-size-sum-less-k/
 
+// other method: binary search over window sizes: time: O(nlogn), memory: O(1)
+
 #include<bits/stdc++.h>
 
 using namespace std;
