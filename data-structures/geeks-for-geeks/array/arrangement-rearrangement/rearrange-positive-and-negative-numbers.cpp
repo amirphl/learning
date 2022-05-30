@@ -7,7 +7,8 @@
 // https://www.geeksforgeeks.org/move-ve-elements-end-order-extra-space-allowed/
 // https://www.geeksforgeeks.org/positive-elements-at-even-and-negative-at-odd-positions-relative-order-not-maintained/
 // https://www.geeksforgeeks.org/segregate-even-odd-numbers-set-3/
-
+// https://www.geeksforgeeks.org/segregate-even-odd-set-2/
+//
 // other approaches:
 // method 2 (doesn't maintain the order of appearance): using partition process of quick sort (pivot = 0): time: O(n), memory: O(1)
 // method 3 (       maintains the order of appearance): right rotate the array starting at element at incorrect position with next element which should be replaced with it: time: O(n*n), memory: O(1)
