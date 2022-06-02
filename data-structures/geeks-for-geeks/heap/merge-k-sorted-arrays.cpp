@@ -1,4 +1,7 @@
 // https://www.geeksforgeeks.org/merge-k-sorted-arrays/
+// https://www.geeksforgeeks.org/merge-k-sorted-arrays-set-2-different-sized-arrays/
+
+// other method: recursively merge arrays in a bottom-up manner: first merge array 1 with array 2, array 3 with array 4, ...
 
 // { Driver Code Starts
 //Initial Template for C++
