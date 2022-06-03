@@ -2,8 +2,6 @@
 // https://www.geeksforgeeks.org/find-k-th-smallest-element-in-bst-order-statistics-in-bst/
 // https://www.geeksforgeeks.org/kth-largest-element-in-bst-when-modification-to-bst-is-not-allowed/
 
-// other method: using inorder and count the number of visited nodes
-
 // { Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
@@ -99,8 +97,38 @@ struct Node {
 
 class Solution {
   public:
-    // Return the Kth smallest element in the given BST
+    // time: O(n), memory: O(1) (using Morris Traversal)
     int KthSmallestElement(Node *root, int K) {
+        Node* curr = root;
+        while(curr) {
+            if (curr -> left == 0) {
+                K--;
+                if (K == 0) {
+                    return curr -> data;
+                }
+                curr = curr -> right;
+            } else {
+                Node* r = curr -> left;
+                while(r -> right != 0 && r -> right != curr) {
+                    r = r -> right;
+                }
+                if (r -> right == 0) {
+                    r -> right = curr;
+                    curr = curr -> left;
+                } else {
+                    r -> right = 0;
+                    K--;
+                    if (K == 0) {
+                        return curr -> data;
+                    }
+                    curr = curr -> right;
+                }
+            }
+        }
+        return -1;
+    }
+    // Return the Kth smallest element in the given BST
+    int KthSmallestElement2(Node *root, int K) {
         int s;
         Node* res = KthSmallestElementRec(root, K, s);
         if (res) {
@@ -108,7 +136,7 @@ class Solution {
         }
         return -1;
     }
-    // time: O(n), memory: O(n) || O(1) (using Morris Traversal)
+    // time: O(n), memory: O(n)
     Node* KthSmallestElementRec(Node *root, int K, int& size) {
         if (!root) {
             size = 0;
