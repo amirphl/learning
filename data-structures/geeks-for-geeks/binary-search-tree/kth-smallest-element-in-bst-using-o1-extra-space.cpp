@@ -1,6 +1,5 @@
 // https://www.geeksforgeeks.org/kth-smallest-element-in-bst-using-o1-extra-space/
 // https://www.geeksforgeeks.org/find-k-th-smallest-element-in-bst-order-statistics-in-bst/
-// https://www.geeksforgeeks.org/kth-largest-element-in-bst-when-modification-to-bst-is-not-allowed/
 
 // { Driver Code Starts
 #include <bits/stdc++.h>
