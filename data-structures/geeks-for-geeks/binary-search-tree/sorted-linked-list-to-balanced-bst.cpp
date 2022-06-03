@@ -75,14 +75,65 @@ struct TNode
 }; */
 class Solution{
   public:
+    // time: O(n), memory: O(logn)
     TNode* sortedListToBST(LNode *head) {
+        int n = 1;
+        LNode* tail = head;
+        while(tail -> next) {
+            tail = tail -> next;
+            n++;
+        }
+        TNode* root = allocate(n);
+        fill(root, head);
+        return root;
+    }
+
+    // time: O(n), memory: O(logn)
+    TNode* allocate(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        TNode* t = new TNode(INT_MAX);
+        t -> left = allocate(n / 2);
+        t -> right = allocate(n - 1 - n / 2);
+        return t;
+    }
+
+    // time: O(n), memory: O(1)
+    void fill(TNode* root, LNode* head) {
+        TNode* curr = root;
+        while(curr) {
+            if (curr -> left) {
+                TNode* r = curr -> left;
+                while(r -> right != 0 && r -> right != curr) {
+                    r = r -> right;
+                }
+                if (r -> right) {
+                    r -> right = 0;
+                    curr -> data = head -> data;
+                    head = head -> next;
+                    curr = curr -> right;
+                } else {
+                    r -> right = curr;
+                    curr = curr -> left;
+                }
+            } else {
+                curr -> data = head -> data;
+                head = head -> next;
+                curr = curr -> right;
+            }
+        }
+    }
+
+
+    // time: O(nlogn), memory: O(logn)
+    TNode* sortedListToBST2(LNode *head) {
         LNode* tail = head;
         while(tail -> next) {
             tail = tail -> next;
         }
         return sortedListToBSTRec(head, tail);
     }
-    // time: O(n), memory: O(logn)
     TNode* sortedListToBSTRec(LNode* left, LNode* right) {
         if (left == right) {
             TNode* new_node = new TNode(left -> data);
