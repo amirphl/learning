@@ -79,7 +79,7 @@ Node* buildTree(string str) {
 }
 
 
-// } Driver Code Ends
+ // } Driver Code Ends
 /*Complete the function below
 
 struct Node {
@@ -95,7 +95,7 @@ struct Node {
 */
 
 class Solution {
-public:
+  public:
     // time: O(n), memory: O(1) (using Morris Traversal)
     int KthSmallestElement(Node *root, int K) {
         Node* curr = root;

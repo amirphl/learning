@@ -44,7 +44,7 @@ int main()
         struct Node* headA=NULL;
         struct Node* tempA = headA;
 
-        for(int i=0; i<nA; i++)
+        for(int i=0;i<nA;i++)
         {
             int ele;
             cin>>ele;
@@ -52,9 +52,9 @@ int main()
             {
                 headA=tempA=newNode(ele);
 
-            } else {
+            }else{
                 tempA->next = newNode(ele);
-                tempA=tempA->next;
+				tempA=tempA->next;
             }
         }
 
@@ -62,7 +62,7 @@ int main()
         struct Node* tempB = headB;
 
 
-        for(int i=0; i<nB; i++)
+        for(int i=0;i<nB;i++)
         {
             int ele;
             cin>>ele;
@@ -70,9 +70,9 @@ int main()
             {
                 headB=tempB=newNode(ele);
 
-            } else {
+            }else{
                 tempB->next = newNode(ele);
-                tempB=tempB->next;
+				tempB=tempB->next;
             }
         }
 

@@ -87,7 +87,7 @@ Node* buildTree(string str) {
 }
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 /* A binary tree node structure
 
 struct Node
@@ -95,7 +95,7 @@ struct Node
     int data;
     struct Node* left;
     struct Node* right;
-    
+
     Node(int x){
         data = x;
         left = right = NULL;
@@ -103,8 +103,8 @@ struct Node
 };
  */
 
-class Solution{
-    public:
+class Solution {
+public:
     //Function to check whether a binary tree is balanced or not.
     bool isBalanced(Node *root)
     {
@@ -141,21 +141,21 @@ class Solution{
 
 /* Driver program to test size function*/
 
-  
+
 
 int main() {
 
-   
+
     int t;
     scanf("%d ", &t);
     while (t--) {
         string s, ch;
         getline(cin, s);
-        
+
         Node* root = buildTree(s);
         Solution ob;
         cout << ob.isBalanced(root) << endl;
     }
     return 0;
 }
-  // } Driver Code Ends
+// } Driver Code Ends

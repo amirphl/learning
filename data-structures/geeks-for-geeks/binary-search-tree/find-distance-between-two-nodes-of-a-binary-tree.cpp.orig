@@ -87,7 +87,7 @@ Node* buildTree(string str) {
 }
 
 
-// } Driver Code Ends
+ // } Driver Code Ends
 /* A binary tree node
 struct Node
 {
@@ -95,8 +95,8 @@ struct Node
     Node* left, * right;
 }; */
 
-class Solution {
-public:
+class Solution{
+    public:
     /* Should return minimum distance between a and b
     in a tree with given root*/
     int findDist(Node* root, int a, int b) {
@@ -149,24 +149,24 @@ public:
 
 /* Driver program to test size function*/
 
-
+  
 
 int main() {
 
-
+   
     int t;
     scanf("%d ", &t);
     while (t--) {
         string s, ch;
         getline(cin, s);
-
+        
         Node* root = buildTree(s);
         int n1, n2;
         scanf("%d %d ", &n1, &n2);
         Solution ob;
         cout << ob.findDist(root, n1, n2) << endl;
-
+     
     }
     return 0;
 }
-// } Driver Code Ends
+  // } Driver Code Ends

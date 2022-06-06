@@ -5,56 +5,56 @@
 // { Driver Code Starts
 //Initial Template for C++
 
-#include <bits/stdc++.h>
-using namespace std;
+#include <bits/stdc++.h> 
+using namespace std; 
 
 struct LNode
 {
     int data;
     struct LNode* next;
-
-    LNode(int x) {
+    
+    LNode(int x){
         data = x;
         next = NULL;
     }
 };
 
-struct TNode
-{
-
-    int data;
-    struct TNode* left;
-    struct TNode* right;
+struct TNode  
+{  
+    
+    int data;  
+    struct TNode* left;  
+    struct TNode* right; 
     TNode(int x)
     {
         data=x;
         left=right=NULL;
     }
-};
+}; 
 
-void preOrder(TNode* node)
-{
-    if (node == NULL)
-        return;
-    cout<<node->data<<" ";
-    preOrder(node->left);
-    preOrder(node->right);
-}
+void preOrder(TNode* node)  
+{  
+    if (node == NULL)  
+        return;  
+    cout<<node->data<<" ";  
+    preOrder(node->left);  
+    preOrder(node->right);  
+} 
 
 
-// } Driver Code Ends
+ // } Driver Code Ends
 //User function Template for C++
 
 
 //User function Template for C++
 
-/*
+/* 
 //Linked List
 struct LNode
 {
     int data;
     struct LNode* next;
-
+    
     LNode(int x){
         data = x;
         next = NULL;
@@ -62,20 +62,20 @@ struct LNode
 };
 
 //Tree
-struct TNode
-{
-
-    int data;
-    struct TNode* left;
-    struct TNode* right;
+struct TNode  
+{  
+    
+    int data;  
+    struct TNode* left;  
+    struct TNode* right; 
     TNode(int x)
     {
         data=x;
         left=right=NULL;
     }
 }; */
-class Solution {
-public:
+class Solution{
+  public:
     // time: O(n), memory: O(logn)
     TNode* sortedListToBST(LNode *head) {
         int n = 1;
@@ -166,8 +166,8 @@ public:
 
 // { Driver Code Starts.
 
-int main()
-{
+int main() 
+{ 
     int t;
     cin>>t;
     while(t--)
@@ -189,8 +189,8 @@ int main()
         TNode* Thead = ob.sortedListToBST(head);
         preOrder(Thead);
         cout<<"\n";
-
+        
     }
     return 0;
 }
-// } Driver Code Ends
+  // } Driver Code Ends

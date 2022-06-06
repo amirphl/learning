@@ -1,9 +1,8 @@
-// https://www.geeksforgeeks.org/inorder-successor-in-binary-search-tree/
-
-// method 3: using inorder then returning the successor
+// https://www.geeksforgeeks.org/kth-largest-element-bst-using-constant-extra-space/
+// https://www.geeksforgeeks.org/kth-largest-element-in-bst-when-modification-to-bst-is-not-allowed/
 
 // { Driver Code Starts
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 // Tree Node
@@ -17,6 +16,7 @@ struct Node {
         left = right = NULL;
     }
 };
+
 // Function to Build Tree
 Node* buildTree(string str)
 {
@@ -81,24 +81,9 @@ Node* buildTree(string str)
     return root;
 }
 
-Node* search(Node* root, int key)
-{
-    // Base Cases: root is null or key is present at root
-    if (root == NULL || root->data == key)
-        return root;
-
-    // Key is greater than root's key
-    if (root->data < key)
-        return search(root->right, key);
-
-    // Key is smaller than root's key
-    return search(root->left, key);
-}
-
 
 // } Driver Code Ends
-/*The structure of Node
-
+/*The Node structure is defined as
 struct Node {
     int data;
     Node *left;
@@ -111,49 +96,53 @@ struct Node {
 };
 */
 
-class Solution {
+// return the Kth largest element in the given BST rooted at 'root'
+class Solution
+{
 public:
-    // returns the inorder successor of the Node x in BST (rooted at 'root')
-    // time: O(h), memory: O(h)
-    Node* inOrderSuccessor(Node* root, Node* x)
+    int kthLargest(Node *root, int K)
     {
-        if (!x) {
-            return 0;
+        if (K <= 0) {
+            return -1;
         }
-        if (x -> right) {
-            x = x -> right;
-            while (x -> left) {
-                x = x -> left;
-            }
-            return x;
+        Node* head;
+        Node* tail;
+        convert_doubly_linked_list(root, head, tail);
+        while(tail && K - 1 > 0) {
+            // cout << tail -> data << " ";
+            tail = tail -> left;
+            K--;
         }
-        if (x == root) {
-            return 0;
-        }
-        stack<Node*> path;
-        find(root, x, path);
-        Node* prv = x;
-        while(!path.empty()) {
-            Node* u = path.top();
-            path.pop();
-            // This section is the most important part of the code!
-            if (u -> left == prv) {
-                return u;
-            }
-            prv = u;
-        }
-        return 0;
+        if (tail)
+            return tail -> data;
+        return -1;
     }
-    void find(Node* root, Node* x, stack<Node*>& s) {
-        if (!root || root == x) {
+    void convert_doubly_linked_list(Node* root, Node*& head, Node*& tail) {
+        if (!root) {
+            head = 0;
+            tail = 0;
             return;
         }
-        s.push(root);
-        if (root -> data < x -> data) {
-            find(root -> right, x, s);
+        Node* h;
+        Node* t;
+        convert_doubly_linked_list(root -> left, h, t);
+        if (h) {
+            head = h;
+            t -> right = root;
+            root -> left = t;
+            tail = root;
         } else {
-            find(root -> left, x, s);
+            head = root;
+            // root -> left = 0;
+            tail = root;
         }
+        convert_doubly_linked_list(root -> right, h, t);
+        if (h) {
+            tail -> right = h;
+            h -> left = tail;
+            tail = t;
+        }
+        tail -> right - 0;
     }
 };
 
@@ -175,14 +164,8 @@ int main()
         cin>>k;
         getchar();
 
-        Node* kNode = search( head, k );
-        Solution obj;
-        Node* suc = obj.inOrderSuccessor(head, kNode);
-
-        if( suc == NULL ) cout<< "-1";
-        else cout<< suc->data;
-        cout << endl;
+        Solution ob;
+        cout << ob.kthLargest( head, k ) << endl;
     }
-
     return 1;
 }  // } Driver Code Ends

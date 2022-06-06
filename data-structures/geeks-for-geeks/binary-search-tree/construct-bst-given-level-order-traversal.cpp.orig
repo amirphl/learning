@@ -3,9 +3,9 @@
 // Note: inorder traversal can also be used!
 
 // other method:
-// 1) First pick the first element of the array and make it root.
-// 2) Pick the second element, if it’s value is smaller than root node value make it left child,
-// 3) Else make it right child
+// 1) First pick the first element of the array and make it root. 
+// 2) Pick the second element, if it’s value is smaller than root node value make it left child, 
+// 3) Else make it right child 
 // 4) Now recursively call the step (2) and step (3) to make a BST from its level Order Traversal.
 
 // { Driver Code Starts
@@ -17,8 +17,8 @@ struct Node {
     int data;
     Node* right;
     Node* left;
-
-    Node(int x) {
+    
+    Node(int x){
         data = x;
         right = NULL;
         left = NULL;
@@ -27,10 +27,10 @@ struct Node {
 
 void preorderTraversal(Node* root)
 {
-    if (!root)return;
-    cout << root->data << " ";
-    preorderTraversal(root->left);
-    preorderTraversal(root->right);
+	if (!root)return;
+	cout << root->data << " ";
+	preorderTraversal(root->left);
+	preorderTraversal(root->right); 
 }
 
 Node* constructBst(int arr[], int n);
@@ -49,7 +49,7 @@ int main()
         preorderTraversal(root);
         cout<<endl;
     }
-    return 0;
+	return 0; 
 }// } Driver Code Ends
 
 

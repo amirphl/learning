@@ -10,7 +10,7 @@ struct Node
 {
     int data;
     struct Node *next;
-
+    
     Node(int x)
     {
         data = x;
@@ -70,13 +70,13 @@ int main()
 // } Driver Code Ends
 
 
-
+ 
 
 /* Link list Node
 struct Node {
   int data;
   struct Node *next;
-
+  
   Node(int x) {
     data = x;
     next = NULL;
@@ -85,8 +85,8 @@ struct Node {
 */
 //Function to merge two sorted linked list.
 // time: O(n + m), memory: O(1)
-Node* sortedMerge(Node* u, Node* v)
-{
+Node* sortedMerge(Node* u, Node* v)  
+{  
     struct Node* fake = (struct Node*) malloc(sizeof(struct Node));
     struct Node* temp = fake;
     while(u || v) {

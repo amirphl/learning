@@ -106,7 +106,9 @@
     - ```Node** p_min = &root; *pmin = something``` (**you have changed the root too!**)
     - inorder predeccesor
     - inorder successor
+    - always use Morris traversal!
     - convert bst to linked list then revert
+    - TODO add remaining notes here!
 
 ## TODO
     - https://practice.geeksforgeeks.org/courses/dsa-self-paced?utm_source=Google&utm_medium=Header+Link+Click&utm_campaign=DSA+Course+Tracker&utm_id=DSA-Course-Tracker&utm_term=DSA+Course+Promo&utm_content=Course+Page

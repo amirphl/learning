@@ -6,46 +6,46 @@ using namespace std;
 
 struct Node
 {
-    int data;
-    struct Node *left;
-    struct Node *right;
-
-    Node(int x) {
-        data = x;
-        left = NULL;
-        right = NULL;
-    }
+	int data;
+	struct Node *left;
+	struct Node *right;
+	
+	Node(int x){
+	    data = x;
+	    left = NULL;
+	    right = NULL;
+	}
 };
 
-Node* insert(struct Node* node, int key) {
-    if (node == NULL) return new Node(key);
-    if (key < node->data)
-        node->left = insert(node->left, key);
-    else if (key > node->data)
-        node->right = insert(node->right, key);
-    return node;
+Node* insert(struct Node* node, int key){
+	if (node == NULL) return new Node(key);
+	if (key < node->data)
+		node->left = insert(node->left, key);
+	else if (key > node->data)
+		node->right = insert(node->right, key);
+	return node;
 }
 
 void preOrder(Node* node)
 {
-    if (node == NULL)return;
-    printf("%d ", node->data);
-    preOrder(node->left);
-    preOrder(node->right);
+	if (node == NULL)return;
+	printf("%d ", node->data);
+	preOrder(node->left);
+	preOrder(node->right);
 }
 
-int height(struct Node* node)
+int height(struct Node* node) 
 {
-    if (node==NULL) return 0;
-    else
-    {
-        int lDepth = height(node->left);
-        int rDepth = height(node->right);
-        if (lDepth > rDepth) return(lDepth+1);
-        else return(rDepth+1);
-    }
-    return 2;
-}
+  if (node==NULL) return 0;
+  else
+  {
+      int lDepth = height(node->left);
+      int rDepth = height(node->right);
+      if (lDepth > rDepth) return(lDepth+1);
+      else return(rDepth+1);
+  }
+return 2;
+} 
 Node *buildTree(string str) {
     // Corner Case
     if (str.length() == 0 || str[0] == 'N')
@@ -126,7 +126,7 @@ int main()
         root = buildBalancedTree(root);
         cout<<height(root)<<endl;
     }
-    return 0;
+	return 0;
 }`
 // } Driver Code Ends
 
@@ -206,10 +206,10 @@ void convert_tree_to_linked_list(Node* root, Node*& head, Node*& tail) {
             head = root;
             tail = t;
         } else {
-            //   root -> left = 0;
-            //   root -> right = 0;
-            head = root;
-            tail = root;
+        //   root -> left = 0;
+        //   root -> right = 0;
+           head = root;
+           tail = root;
         }
     }
 }
@@ -219,8 +219,8 @@ void convert_tree_to_linked_list(Node* root, Node*& head, Node*& tail) {
 // time: O(n), memory: O(n)
 Node* buildBalancedTree(Node* root)
 {
-    Node* head;
-    Node* tail;
-    convert_tree_to_linked_list(root, head, tail);
-    return convert_linked_list_to_balanced_tree(head, tail);
+	Node* head;
+	Node* tail;
+	convert_tree_to_linked_list(root, head, tail);
+	return convert_linked_list_to_balanced_tree(head, tail);
 }

@@ -85,7 +85,7 @@ Node* buildTree(string str)
 }
 
 
-// } Driver Code Ends
+ // } Driver Code Ends
 //User function Template for C++
 
 /*Structure of the Node of the BST is as
@@ -187,4 +187,4 @@ int main()
     }
     return 0;
 }
-// } Driver Code Ends
+  // } Driver Code Ends
