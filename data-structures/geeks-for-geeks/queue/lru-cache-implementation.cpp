@@ -5,11 +5,11 @@
 using namespace std;
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 // design the class in the most optimal way
 
 class Node {
-    public:
+public:
     int key;
     int data;
     Node* prv;
@@ -18,12 +18,12 @@ class Node {
 
 class LRUCache
 {
-    private:
+private:
 
-    public:
+public:
     //Constructor for initializing the cache capacity with the given value.
     int c;
-    std::map<int, Node*> m;
+    unordered_map<int, Node*> m;
     Node* tail;
     Node* head;
 
@@ -33,7 +33,7 @@ class LRUCache
         tail = NULL;
         c = cap;
     }
-    
+
     //Function to return value corresponding to the key.
     // time: O(1) || O(logn), memory: O(1)
     int get(int key)
@@ -56,7 +56,7 @@ class LRUCache
         }
         return p -> data;
     }
-    
+
     //Function for storing key-value pair.
     // time: O(1) || O(logn), memory: O(1)
     void set(int key, int value)
@@ -101,7 +101,7 @@ int main()
         int capacity;
         cin >> capacity;
         LRUCache *cache = new LRUCache(capacity);
-        
+
         int queries;
         cin >> queries;
         while (queries--)
@@ -127,4 +127,4 @@ int main()
     }
     return 0;
 }
-  // } Driver Code Ends
+// } Driver Code Ends
