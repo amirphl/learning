@@ -92,7 +92,7 @@ Node* buildTree(string str) {
 }
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 //User function Template for C++
 /*Structure of the node of the binary tree is as
 struct Node {
@@ -107,15 +107,15 @@ struct Node {
 };
 */
 
-class Solution{
-    public:
+class Solution {
+public:
     //Function to store the zig zag order traversal of tree in a list.
     // time: O(V), memory: O(V)
     vector <int> zigZagTraversal(Node* root)
     {
-    	std::stack<Node*> s1;
-    	std::stack<Node*> s2;
-    	std::vector<int> vec;
+        std::stack<Node*> s1;
+        std::stack<Node*> s2;
+        std::vector<int> vec;
         int n = 0;
         Node* top;
         s1.push(root);
@@ -152,17 +152,17 @@ class Solution{
 
 /* Driver program to test size function*/
 
-  
+
 
 int main() {
 
-   
+
     int t;
     scanf("%d ", &t);
     while (t--) {
         string s, ch;
         getline(cin, s);
-        
+
         Node* root = buildTree(s);
 
         vector<int> ans;
@@ -173,8 +173,8 @@ int main() {
             cout << ans[i] << " ";
 
         cout << endl;
-     
+
     }
     return 0;
 }
-  // } Driver Code Ends
+// } Driver Code Ends
