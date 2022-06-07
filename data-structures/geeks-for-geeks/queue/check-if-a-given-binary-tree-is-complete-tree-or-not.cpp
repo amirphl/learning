@@ -1,4 +1,5 @@
 // https://www.geeksforgeeks.org/check-if-a-given-binary-tree-is-complete-tree-or-not/
+// https://www.geeksforgeeks.org/check-whether-binary-tree-complete-not-set-2-recursive-solution/
 
 // { Driver Code Starts
 
@@ -21,65 +22,65 @@ struct Node
 };
 
 Node* buildTree(string str)
-{   
+{
     // Corner Case
     if(str.length() == 0 || str[0] == 'N')
-            return NULL;
-    
-    // Creating vector of strings from input 
+        return NULL;
+
+    // Creating vector of strings from input
     // string after spliting by space
     vector<string> ip;
-    
+
     istringstream iss(str);
     for(string str; iss >> str; )
         ip.push_back(str);
-        
+
     // Create the root of the tree
     Node *root = new Node(stoi(ip[0]));
-        
+
     // Push the root to the queue
     queue<Node*> queue;
     queue.push(root);
-        
+
     // Starting from the second element
     int i = 1;
     while(!queue.empty() && i < ip.size()) {
-            
+
         // Get and remove the front of the queue
         Node* currNode = queue.front();
         queue.pop();
-            
+
         // Get the current node's value from the string
         string currVal = ip[i];
-            
+
         // If the left child is not null
         if(currVal != "N") {
 
             // Create the left child for the current Node
             currNode->left = new Node(stoi(currVal));
-                
+
             // Push it to the queue
             queue.push(currNode->left);
         }
-            
+
         // For the right child
         i++;
         if(i >= ip.size())
             break;
         currVal = ip[i];
-            
+
         // If the right child is not null
         if(currVal != "N") {
-                
+
             // Create the right child for the current node
             currNode->right = new Node(stoi(currVal));
-                
+
             // Push it to the queue
             queue.push(currNode->right);
         }
         i++;
     }
-    
+
     return root;
 }
 /* Given a binary tree, return true if the tree is complete
@@ -93,14 +94,14 @@ int main()
     while(t--)
     {
         string treeString;
-		getline(cin,treeString);
-		Node* root = buildTree(treeString);
-        if(isCompleteBT(root)){
+        getline(cin,treeString);
+        Node* root = buildTree(treeString);
+        if(isCompleteBT(root)) {
             printf ("Complete Binary Tree\n");
         }
-        else{
+        else {
             printf ("Not Complete Binary Tree\n");
-        } 
+        }
     }
     return 0;
 }
@@ -111,7 +112,7 @@ int main()
 // } Driver Code Ends
 
 // time: O(V), memory: O(V)
-bool isCompleteBT(Node* root){
+bool isCompleteBT(Node* root) {
     std::queue<Node*> q;
     q.push(root);
     while(!q.empty()) {
