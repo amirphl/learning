@@ -9,8 +9,8 @@ struct Node
     int data;
     struct Node* left;
     struct Node* right;
-    
-    Node(int x){
+
+    Node(int x) {
         data = x;
         left = right = NULL;
     }
@@ -18,7 +18,7 @@ struct Node
 
 void sort_and_print(vector <int> &v)
 {
-    sort( v.begin() , v.end() );
+    sort( v.begin(), v.end() );
     for( int i=0 ; i<v.size() ; i++ )
         cout<< v[i] << " ";
     v.clear();
@@ -28,30 +28,30 @@ void printLevelOrder(struct Node* root)
 {
     vector <int> v;
     queue <Node*> q;
-    
+
     q.push(root);
-    
+
     Node* next_row = NULL;
-    
+
     while(!q.empty())
     {
         Node* n = q.front();
         q.pop();
-        
+
         if(n==next_row)
         {
             sort_and_print(v);
             next_row = NULL;
         }
-        
+
         v.push_back(n->data);
-        
+
         if(n->left)
         {
             q.push(n->left);
             if(next_row == NULL) next_row = n->left;
         }
-        
+
         if(n->right)
         {
             q.push(n->right);
@@ -66,7 +66,7 @@ Node *createTree(int parent[], int n);
 /* Driver program to test above function*/
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 /* node structure  used in the program
 
 struct Node
@@ -74,17 +74,50 @@ struct Node
     int data;
     struct Node* left;
     struct Node* right;
-    
+
     Node(int x){
         data = x;
         left = right = NULL;
     }
 }; */
 
-class Solution{
-  public:
-    // time: O(VlogV), memory: O(V)
+class Solution {
+public:
+    // time: O(n), memory: O(n)
     Node *createTree(int arr[], int n)
+    {
+        unordered_map<int, Node*> m;
+        Node* v;
+        Node* u;
+        int i = 0, root_idx;
+        while(i < n) {
+            if (arr[i] == -1) {
+                root_idx = i;
+            }
+            if (m.find(arr[i]) == m.end()) {
+                v = new Node(arr[i]);
+                m[arr[i]] = v;
+            } else {
+                v = m[arr[i]];
+            }
+            if (m.find(i) == m.end()) {
+                u = new Node(i);
+                m[i] = u;
+            } else {
+                u = m[i];
+            }
+            if (v -> left) {
+                v -> right = u;
+            } else {
+                v -> left = u;
+            }
+            i++;
+        }
+        return m[root_idx];
+    }
+
+    // time: O(nlogn), memory: O(n)
+    Node *createTree2(int arr[], int n)
     {
         multimap<int, int> m;
         int min_index = 0;
@@ -118,9 +151,9 @@ class Solution{
                     }
                 }
                 itr1++;
-            }   
+            }
         }
-        
+
         return root;
     }
 };
@@ -138,11 +171,11 @@ int main()
         int a[n];
         for( int i=0 ; i<n ; i++ )
             cin>> a[i];
-            
+
         Solution ob;
-        
+
         Node *res = ob.createTree(a,n);
-        
+
         printLevelOrder(res);
         cout<<endl;
     }
@@ -150,4 +183,4 @@ int main()
     return 0;
 }
 
-  // } Driver Code Ends
+// } Driver Code Ends
