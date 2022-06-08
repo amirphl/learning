@@ -103,7 +103,7 @@ int main() {
 
         vector<int> vec = findSpiral(root);
         for(int x : vec)
-        cout<<x<<" ";
+            cout<<x<<" ";
         cout << endl;
     }
     return 0;
@@ -114,13 +114,13 @@ int main() {
 
 
 /* A binary tree node has data, pointer to left child
-   and a pointer to right child  
+   and a pointer to right child
 struct Node
 {
     int data;
     struct Node* left;
     struct Node* right;
-    
+
     Node(int x){
         data = x;
         left = right = NULL;
@@ -128,7 +128,7 @@ struct Node
 }; */
 
 
-// time: O(V), memory: O(V)
+// time: O(n), memory: O(n)
 vector<int> findSpiral(Node *root)
 {
     vector<int> vec;
