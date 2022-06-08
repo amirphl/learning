@@ -3,18 +3,18 @@
 #include<bits/stdc++.h>
 #include<iostream>
 
-class Node{
-    public:
-        int data;
-        Node* left;
-        Node* right;
-        Node(int d) {
-            data = d;
-            left = right = 0;
-        }
+class Node {
+public:
+    int data;
+    Node* left;
+    Node* right;
+    Node(int d) {
+        data = d;
+        left = right = 0;
+    }
 };
 
-// time: O(V), memory: O(V)
+// time: O(n), memory: O(n)
 void preorder(Node* root) {
     std::stack<Node*> s;
     Node* t = root;
