@@ -6,7 +6,7 @@
 
 using namespace std;
 
-// time: O(V), memory: O(V)
+// time: O(n), memory: O(n)
 void convert(Node* root) {
     if(!root) {
         return;
@@ -25,5 +25,5 @@ void convert(Node* root) {
 }
 
 int main() {
-	return 0;
+    return 0;
 }
