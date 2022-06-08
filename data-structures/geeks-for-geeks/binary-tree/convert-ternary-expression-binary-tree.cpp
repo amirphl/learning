@@ -6,19 +6,19 @@
 
 using namespace std;
 
-class Node{
-    public:
-        char data;
-        Node* left;
-        Node* right;
+class Node {
+public:
+    char data;
+    Node* left;
+    Node* right;
 
-        Node(char d) {
-            data = d;
-            left = right = 0;
-        }
+    Node(char d) {
+        data = d;
+        left = right = 0;
+    }
 };
 
-// time: O(V), memory: O(V)
+// time: O(n), memory: O(n)
 Node* build(string &in, int i, int &j) {
     if (i >= in.length()) {
         return 0;
@@ -57,5 +57,5 @@ int main() {
     Node* root = build(in, 0, j);
     inorder(root);
 
-	return 0;
+    return 0;
 }
