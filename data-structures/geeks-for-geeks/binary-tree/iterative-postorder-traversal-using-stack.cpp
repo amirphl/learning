@@ -1,28 +1,24 @@
 // https://www.geeksforgeeks.org/iterative-postorder-traversal-using-stack/
 // https://www.geeksforgeeks.org/iterative-postorder-traversal/
 
-// other approches:
-// 1- 
-// 2- 
-
 #include<bits/stdc++.h>
 #include<iostream>
 
-class Node{
-    public:
-        int data;
-        Node* left;
-        Node* right;
-        bool processed;
+class Node {
+public:
+    int data;
+    Node* left;
+    Node* right;
+    bool processed;
 
-        Node(int d) {
-            data = d;
-            left = right = 0;
-            processed = false;
-        }
+    Node(int d) {
+        data = d;
+        left = right = 0;
+        processed = false;
+    }
 };
 
-// time: O(V), memory: O(V)
+// time: O(n), memory: O(n)
 void postorder(Node* root) {
     std::stack<Node*> s;
     Node* curr = root;
