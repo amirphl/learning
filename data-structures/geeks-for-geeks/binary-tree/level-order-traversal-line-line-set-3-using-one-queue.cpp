@@ -103,8 +103,8 @@ int main() {
         Node* root = buildTree(s);
 
         vector<vector<int>> vec = levelOrder(root);
-        for(vector<int> v : vec){
-            for(int value : v){
+        for(vector<int> v : vec) {
+            for(int value : v) {
                 cout<<value<<" ";
             }
             cout<<"$ ";
@@ -123,7 +123,7 @@ struct Node
     int data;
     struct Node* left;
     struct Node* right;
-    
+
     Node(int x){
         data = x;
         left = right = NULL;
@@ -131,7 +131,7 @@ struct Node
 };
  */
 
-// time: O(V), memory: O(V)
+// time: O(n), memory: O(n)
 vector<vector<int>> levelOrder(Node* node)
 {
     std::queue<Node*> q;
