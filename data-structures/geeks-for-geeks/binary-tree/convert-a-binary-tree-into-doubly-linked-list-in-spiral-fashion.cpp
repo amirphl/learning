@@ -6,19 +6,19 @@
 
 using namespace std;
 
-class Node{
-    public:
-        int data;
-        Node* left;
-        Node* right;
+class Node {
+public:
+    int data;
+    Node* left;
+    Node* right;
 
-        Node(int d) {
-            data = d;
-            left = right = 0;
-        }
+    Node(int d) {
+        data = d;
+        left = right = 0;
+    }
 };
 
-// time: O(V), memory: O(V)
+// time: O(n), memory: O(n)
 void convert(Node* root) {
     deque<Node*> q;
     q.push_front(0);
@@ -89,5 +89,5 @@ int main() {
         t = t -> right;
     }
 
-	return 0;
+    return 0;
 }
