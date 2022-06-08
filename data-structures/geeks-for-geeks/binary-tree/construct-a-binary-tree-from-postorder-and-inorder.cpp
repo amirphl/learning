@@ -1,7 +1,5 @@
 // https://www.geeksforgeeks.org/construct-a-binary-tree-from-postorder-and-inorder/
 
-// TODO(amirphl) third approach
-
 // { Driver Code Starts
 /* program to construct tree using inorder and postorder traversals */
 #include <bits/stdc++.h>
@@ -67,28 +65,28 @@ struct Node
     }
 };*/
 
-// time: O(VlogV), memory: O(V)    
-Node* buildTreeRecu(int in[], int post[], int low, int high, int left, int right, std::map<int, int> &m) {    
-  if (low > high)
-      return 0;
+// time: O(n), memory: O(h)
+Node* buildTreeRecu(int in[], int post[], int low, int high, int left, int right, std::unordered_map<int, int> &m) {
+    if (low > high)
+        return 0;
 
-  Node* node = new Node(post[right]);
+    Node* node = new Node(post[right]);
 
-  if (low == high) {
-      return node;
-  }
+    if (low == high) {
+        return node;
+    }
 
-  int root_index = m[post[right]];
-  node -> left = buildTreeRecu(in, post, low, root_index - 1, left, left + root_index - low - 1, m);
-  node -> right = buildTreeRecu(in, post, root_index + 1, high, left + root_index - low, right - 1, m);
+    int root_index = m[post[right]];
+    node -> left = buildTreeRecu(in, post, low, root_index - 1, left, left + root_index - low - 1, m);
+    node -> right = buildTreeRecu(in, post, root_index + 1, high, left + root_index - low, right - 1, m);
 
-  return node;
+    return node;
 }
 
 
 Node* buildTree(int in[],int post[], int n) {
-  std::map<int, int> m;
-  for(int i = 0; i < n; i++)
-      m[in[i]] = i;
-  return buildTreeRecu(in, post, 0, n - 1, 0, n -1, m);
+    std::unordered_map<int, int> m;
+    for(int i = 0; i < n; i++)
+        m[in[i]] = i;
+    return buildTreeRecu(in, post, 0, n - 1, 0, n -1, m);
 }
