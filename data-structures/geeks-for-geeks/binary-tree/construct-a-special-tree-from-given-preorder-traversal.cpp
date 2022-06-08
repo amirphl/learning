@@ -9,23 +9,23 @@ using namespace std;
 
 struct Node
 {
-	int data;
-	struct Node *left;
-	struct Node *right;
-	
-	Node(int x){
-	    data = x;
-	    left = NULL;
-	    right = NULL;
-	}
+    int data;
+    struct Node *left;
+    struct Node *right;
+
+    Node(int x) {
+        data = x;
+        left = NULL;
+        right = NULL;
+    }
 };
 
 void printInorder (struct Node* node)
 {
-	if (node == NULL)return;
-	printInorder(node->left);
-	printf("%d ", node->data);
-	printInorder (node->right);
+    if (node == NULL)return;
+    printInorder(node->left);
+    printf("%d ", node->data);
+    printInorder (node->right);
 }
 
 Node* constructTree(int n, int pre[], char preLN[]);
@@ -47,7 +47,7 @@ int main()
         printInorder(root);
         cout<<endl;
     }
-	return 0;
+    return 0;
 }
 // } Driver Code Ends
 
@@ -61,7 +61,7 @@ struct Node
 };
 */
 
-// time: O(V*V), memory: O(V)
+// time: O(n*n), memory: O(n)
 struct Node* constructTreeRec(int pre[], char preLN[], int low, int high) {
     if (low > high) {
         return 0;
