@@ -119,19 +119,31 @@
     - http://quiz.geeksforgeeks.org/data-structure/binary-search-trees/
     - https://www.geeksforgeeks.org/data-structure-gq/binary-search-trees-gq/
     - https://www.geeksforgeeks.org/data-structure-gq/balanced-binary-search-trees-gq/
-    - https://practice.geeksforgeeks.org/company/Amazon/
-    - https://practice.geeksforgeeks.org/company/Belzabar/
-    - https://practice.geeksforgeeks.org/company/Goldman%20Sachs/
-    - https://practice.geeksforgeeks.org/company/InMobi/
-    - https://practice.geeksforgeeks.org/company/Intel/
-    - https://practice.geeksforgeeks.org/company/Microsoft/
-    - https://practice.geeksforgeeks.org/company/Paytm/
-    - https://practice.geeksforgeeks.org/company/Synopsys/
-    - https://practice.geeksforgeeks.org/company/Walmart/
-    - https://practice.geeksforgeeks.org/company/Zillious/
-    - https://www.geeksforgeeks.org/microsoft-interview-experience-set-53/
+
+
+    - companies:
+        - https://practice.geeksforgeeks.org/company/Amazon/
+        - https://practice.geeksforgeeks.org/company/Belzabar/
+        - https://practice.geeksforgeeks.org/company/Goldman%20Sachs/
+        - https://practice.geeksforgeeks.org/company/InMobi/
+        - https://practice.geeksforgeeks.org/company/Intel/
+        - https://practice.geeksforgeeks.org/company/Microsoft/
+        - https://practice.geeksforgeeks.org/company/Paytm/
+        - https://practice.geeksforgeeks.org/company/Synopsys/
+        - https://practice.geeksforgeeks.org/company/Walmart/
+        - https://practice.geeksforgeeks.org/company/Zillious/
+        - https://practice.geeksforgeeks.org/company/%20Inmobi/
+        - https://practice.geeksforgeeks.org/company/Accolite/
+        - https://practice.geeksforgeeks.org/company/Adobe/
+        - https://practice.geeksforgeeks.org/company/DE%20Shaw/
+        - https://practice.geeksforgeeks.org/company/Flipkart/
+        - https://practice.geeksforgeeks.org/company/InfoEdge/
+        - https://practice.geeksforgeeks.org/company/MakeMyTrip/
+        - https://practice.geeksforgeeks.org/company/Oracle/
+        - https://www.geeksforgeeks.org/microsoft-interview-experience-set-53/
 
     - Red Black Tree and Threaded Binary Tree
+
     - https://www.geeksforgeeks.org/avl-tree-set-2-deletion/
     - https://www.geeksforgeeks.org/sliding-window-maximum-maximum-of-all-subarrays-of-size-k/
     - https://www.geeksforgeeks.org/count-smaller-elements-on-right-side/
@@ -159,6 +171,7 @@
     - https://www.geeksforgeeks.org/binary-indexed-tree-or-fenwick-tree-2/
     - https://www.geeksforgeeks.org/check-given-array-can-represent-level-order-traversal-binary-search-tree/
         - count-pairs-from-two-bsts-whose-sum-is-equal-to-a-given-value-x.cpp
+    - https://www.geeksforgeeks.org/set-in-cpp-stl/
 
     - NP problems
     - planning problems
@@ -169,6 +182,7 @@
     - solve more questions like this:
         - https://www.geeksforgeeks.org/maximum-element-two-nodes-bst/
 
+    - https://www.geeksforgeeks.org/treeset-in-java-with-examples/
     - https://www.geeksforgeeks.org/treeset-class-java-examples/
     - http://www.youtube.com/watch?v=TbvhGcf6UJU
     - http://stackoverflow.com/questions/6209325/how-to-find-the-closest-element-to-a-given-key-value-in-a-binary-search-tree
