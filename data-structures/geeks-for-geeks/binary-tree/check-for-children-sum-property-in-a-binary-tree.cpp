@@ -107,7 +107,7 @@ class Solution{
     public:
     //Function to check whether all nodes of a tree have the value 
     //equal to the sum of their child nodes.
-    // time: O(V), memory: O(V)
+    // time: O(n), memory: O(n)
     bool isSumProperty(Node *root) {
         if(!root) {
             return true;
@@ -150,4 +150,4 @@ int main() {
     }
     return 0;
 }
-  // } Driver Code Ends
+// } Driver Code Ends
