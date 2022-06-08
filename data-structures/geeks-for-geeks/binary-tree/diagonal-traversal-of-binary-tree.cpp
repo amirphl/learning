@@ -101,13 +101,13 @@ int main() {
     t=stoi(tc);
     while(t--)
     {
-        string s ,ch;
+        string s,ch;
         getline(cin, s);
         Node* root = buildTree(s);
 
         vector<int> diagonalNode = diagonal(root);
-        for(int i = 0;i<diagonalNode.size();i++)
-        cout<<diagonalNode[i]<<" ";
+        for(int i = 0; i<diagonalNode.size(); i++)
+            cout<<diagonalNode[i]<<" ";
         cout<<endl;
     }
     return 0;
@@ -123,7 +123,7 @@ struct Node
     Node* left, * right;
 }; */
 
-// time: O(V), memory: O(V)
+// time: O(n), memory: O(n)
 vector<int> diagonal(Node *root)
 {
     std::queue<Node*> q;
