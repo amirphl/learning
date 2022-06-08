@@ -115,7 +115,7 @@ struct TreeNode
 */
 
 //Function to make binary tree from linked list.
-// time: O(V), memory: O(V)
+// time: O(n), memory: O(n)
 void convert(Node *head, TreeNode *&root) {
     int n = 0;
     Node* te = head;
