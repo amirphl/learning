@@ -35,10 +35,10 @@ void displayCList(Node *head)
     } while (head!=itr);
     cout <<endl;
     itr=itr->left;
-    do{
+    do {
         cout<<itr->data<<" ";
         itr=itr->left;
-    }while(head!=itr);
+    } while(head!=itr);
     cout<<itr->data<<endl;
 }
 
@@ -107,7 +107,7 @@ Node* buildTree(string str)
 }
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 /*Complete the function below
 Node is as follows:
 struct Node
@@ -115,61 +115,61 @@ struct Node
     int data;
     struct Node* left;
     struct Node* right;
-    
+
     Node(int x){
         data = x;
         left = right = NULL;
     }
 };*/
 
-  struct A {
-      struct Node* head;
-      struct Node* tail;
-  
-      A() {
-          head = tail = 0;
-      }
-  };
+struct A {
+    struct Node* head;
+    struct Node* tail;
+
+    A() {
+        head = tail = 0;
+    }
+};
 
 
 class Solution
 {
-  public:
+public:
     //Function to convert binary tree into circular doubly linked list.
     Node *bTreeToCList(Node *root) {
-          A* a = recur(root);
-          a -> tail -> right = a -> head;
-          a -> head -> left = a -> tail;
-          return a -> head;
+        A* a = recur(root);
+        a -> tail -> right = a -> head;
+        a -> head -> left = a -> tail;
+        return a -> head;
     }
-  
-      // time: O(V), memory: O(1)
-      A* recur(Node* root) {
-          if (!root) {
-              return new A();
-          }
-          Node* head = root;
-          Node* tail = root;
-  
-          if (root -> left) {
-              A* a = recur(root -> left);
-              a -> tail -> right = root;
-              root -> left = a -> tail;
-              head = a -> head;
-          }
-          if (root -> right) {
-              A* a = recur(root -> right);
-              a -> head -> left = root;
-              root -> right = a -> head;
-              tail = a -> tail;
-          }
-  
-          A* new_a = new A();
-          new_a -> head = head;
-          new_a -> tail = tail;
-  
-          return new_a;
-      }
+
+    // time: O(n), memory: O(h)
+    A* recur(Node* root) {
+        if (!root) {
+            return new A();
+        }
+        Node* head = root;
+        Node* tail = root;
+
+        if (root -> left) {
+            A* a = recur(root -> left);
+            a -> tail -> right = root;
+            root -> left = a -> tail;
+            head = a -> head;
+        }
+        if (root -> right) {
+            A* a = recur(root -> right);
+            a -> head -> left = root;
+            root -> right = a -> head;
+            tail = a -> tail;
+        }
+
+        A* new_a = new A();
+        new_a -> head = head;
+        new_a -> tail = tail;
+
+        return new_a;
+    }
 
 };
 
@@ -197,4 +197,4 @@ int main() {
 
 
 
-  // } Driver Code Ends
+// } Driver Code Ends
