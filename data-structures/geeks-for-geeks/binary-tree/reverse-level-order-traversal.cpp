@@ -157,3 +157,24 @@ vector<int> reverseLevelOrder(Node *root)
 
     return vvv;
 }
+
+// time: O(n), memory: O(n)
+vector<int> reverseLevelOrder2(Node *root)
+{
+    queue<Node*> q;
+    q.push(root);
+    vector<int> vec;
+    while(!q.empty()) {
+        Node* u = q.front();
+        q.pop();
+        vec.push_back(u -> data);
+        if (u -> right) {
+            q.push(u -> right);
+        }
+        if (u -> left) {
+            q.push(u -> left);
+        }
+    }
+    reverse(vec.begin(), vec.end());
+    return vec;
+}
