@@ -1,53 +1,51 @@
 // https://www.geeksforgeeks.org/construct-tree-inorder-level-order-traversals/
 // https://www.geeksforgeeks.org/construct-tree-inorder-level-order-traversals-set-2/
 
-// TODO(amirphl) second approach
-
 // { Driver Code Starts
 #include <bits/stdc++.h>
 
 using namespace std;
 struct Node
 {
-	int key;
-	struct Node *left;
-	struct Node *right;
-	
-	Node(int x){
-	    key = x;
-	    left = NULL;
-	    right = NULL;
-	}
+    int key;
+    struct Node *left;
+    struct Node *right;
+
+    Node(int x) {
+        key = x;
+        left = NULL;
+        right = NULL;
+    }
 };
 
 Node* buildTree(int inorder[], int levelOrder[], int iStart, int iEnd,int n);
 void printPreorder(Node* node)
 {
     if (node == NULL)
-       return;
+        return;
     cout << node->key << " ";
     printPreorder(node->left);
     printPreorder(node->right);
-    
+
 }
 int main()
 {
     int t;
     cin>>t;
-    while(t--){
-    int n;
-    cin>>n;
-    int in[n],level[n];
-    for(int i=0;i<n;i++){
-        cin>>in[i];
-    }
-    for(int i=0;i<n;i++){
-        cin>>level[i];
-    }
-    Node *root=NULL;
-    root = buildTree(in, level, 0, n - 1,n);
-    printPreorder(root);
-    cout<<endl;
+    while(t--) {
+        int n;
+        cin>>n;
+        int in[n],level[n];
+        for(int i=0; i<n; i++) {
+            cin>>in[i];
+        }
+        for(int i=0; i<n; i++) {
+            cin>>level[i];
+        }
+        Node *root=NULL;
+        root = buildTree(in, level, 0, n - 1,n);
+        printPreorder(root);
+        cout<<endl;
     }
     return 0;
 }// } Driver Code Ends
@@ -62,8 +60,8 @@ struct Node
 };
 */
 
-// time: O(V*V), memory: O(V)
-Node* buildTreeRec(int in[], int lvl[], int low, int high, int left, int right, std::map<int, int> &m) {
+// time: O(n*n), memory: O(n)
+Node* buildTreeRec(int in[], int lvl[], int low, int high, int left, int right, std::unordered_map<int, int> &m) {
     if (low > high) {
         return 0;
     }
@@ -107,7 +105,7 @@ Node* buildTreeRec(int in[], int lvl[], int low, int high, int left, int right, 
 
 Node* buildTree(int in[], int lvl[], int iStart, int iEnd,int n)
 {
-    std::map<int, int> m;
+    std::unordered_map<int, int> m;
 
     for(int i = 0; i < n; i++)
         m[in[i]] = i;
