@@ -15,9 +15,9 @@ int main()
         int N;
         cin>>N;
         int pre[N],in[N];
-        for(int i=0;i<N;i++)
+        for(int i=0; i<N; i++)
             cin>>in[i];
-        for(int i=0;i<N;i++)
+        for(int i=0; i<N; i++)
             cin>>pre[i];
         printPostOrder(in,pre,N);
         cout<<endl;
@@ -27,9 +27,8 @@ int main()
 // } Driver Code Ends
 
 
-// time: O(V), memory: O(1)
-// assumed that finding in map takes O(1)
-void recur(int in[], int pre[], int in_l, int in_r, int pre_l, int pre_r, std::map<int, int> &m)
+// time: O(n), memory: O(h)
+void recur(int in[], int pre[], int in_l, int in_r, int pre_l, int pre_r, std::unordered_map<int, int> &m)
 {
     int root_index = m[pre[pre_l]];
     if (root_index > in_l) {
@@ -43,7 +42,7 @@ void recur(int in[], int pre[], int in_l, int in_r, int pre_l, int pre_r, std::m
 
 void printPostOrder(int in[], int pre[], int n)
 {
-    std::map<int, int> m;
+    std::unordered_map<int, int> m;
     for(int i = 0; i < n; i++)
         m[in[i]] = i;
     recur(in, pre, 0, n -1, 0, n - 1, m);
