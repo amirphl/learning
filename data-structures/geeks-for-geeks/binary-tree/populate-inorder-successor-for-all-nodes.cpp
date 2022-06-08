@@ -1,9 +1,5 @@
 // https://www.geeksforgeeks.org/populate-inorder-successor-for-all-nodes/
 
-// other approaches:
-// 1- reverse inorder traveler
-// 2- linkedlist
-
 // { Driver Code Starts
 //Initial Template for C++
 
@@ -110,7 +106,7 @@ Node *Inorder(Node *root)
 }
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 
 /*
 struct Node
@@ -162,7 +158,7 @@ public:
                 s.push(curr);
                 s.push(sep);
                 if (curr -> left)
-                s.push(curr -> left);
+                    s.push(curr -> left);
             }
         }
     }
