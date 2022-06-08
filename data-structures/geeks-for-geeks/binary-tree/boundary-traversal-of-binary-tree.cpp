@@ -97,7 +97,7 @@ Node* buildTree(string str)
 
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 /* A binary tree Node
 struct Node
 {
@@ -107,7 +107,7 @@ struct Node
 
 class Solution {
 public:
-    // time: O(V), memory: O(V)
+    // time: O(n), memory: O(n)
     vector <int> boundary(Node *root)
     {
         Node* t = root;
@@ -164,7 +164,7 @@ public:
             vec.push_back(s.top());
             s.pop();
         }
-        
+
         return vec;
     }
 };
@@ -180,7 +180,7 @@ int main() {
     t=stoi(tc);
     while(t--)
     {
-        string s ,ch;
+        string s,ch;
         getline(cin, s);
         Node* root = buildTree(s);
         Solution ob;
