@@ -17,7 +17,7 @@ struct Node* newNode(int data) {
     return (node);
 }
 
-// time: O(V*V)?, memory: O(V)
+// time: O(n*n)?, memory: O(n)
 void modify(struct Node* root) {
     if (!root)
         return;
@@ -48,8 +48,8 @@ int main() {
     root->right = newNode(2);
     root->left->left = newNode(3);
     root->left->right = newNode(5);
- 
+
     modify(root);
     printpre(root);
-	return 0;
+    return 0;
 }
