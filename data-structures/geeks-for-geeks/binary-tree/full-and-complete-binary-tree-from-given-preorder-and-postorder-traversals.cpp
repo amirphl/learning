@@ -6,20 +6,20 @@
 
 using namespace std;
 
-class Node{
-    public:
-        int data;
-        Node* left;
-        Node* right;
+class Node {
+public:
+    int data;
+    Node* left;
+    Node* right;
 
-        Node(int d) {
-            data = d;
-            left = right = 0;
-        }
+    Node(int d) {
+        data = d;
+        left = right = 0;
+    }
 };
 
-// time: O(VlogV), memory: O(V)
-Node* cons(int pre[], int post[], int low, int high, int left, int right, map<int, int> &m) {
+// time: O(n), memory: O(h)
+Node* cons(int pre[], int post[], int low, int high, int left, int right, unordered_map<int, int> &m) {
     if (low > high)
         return 0;
 
@@ -47,10 +47,10 @@ void inorder(Node* root) {
 
 int main() {
     int pre[] = {1, 2, 4, 5, 8, 9, 12, 14, 15, 13, 3, 6, 7, 10, 11};
-    int post[] = {4, 8, 14, 15, 12, 13, 9, 5, 2, 6, 10, 11, 3 ,1};
+    int post[] = {4, 8, 14, 15, 12, 13, 9, 5, 2, 6, 10, 11, 3,1};
     int n = sizeof(pre) / sizeof(pre[0]);
 
-    map<int, int> m;
+    unordered_map<int, int> m;
 
     for(int i = 0; i < n; i++)
         m[post[i]] = i;
@@ -58,5 +58,5 @@ int main() {
     Node* root = cons(pre, post, 0, n - 1, 0, n - 1, m);
     inorder(root);
 
-	return 0;
+    return 0;
 }
