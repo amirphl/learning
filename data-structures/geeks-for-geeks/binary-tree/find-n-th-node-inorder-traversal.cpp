@@ -4,18 +4,18 @@
 #include<iostream>
 
 class Node {
-	public:
-	int data;
-	Node* left;
-	Node* right;
+public:
+    int data;
+    Node* left;
+    Node* right;
     int left_size;
     int right_size;
 
-	Node(int d) {
-		data = d;
-		left = right = NULL;
+    Node(int d) {
+        data = d;
+        left = right = NULL;
         left_size = right_size = 0;
-	}
+    }
 };
 
 void fill_size(Node* root) {
@@ -49,7 +49,7 @@ int find(Node* root, int n) {
     }
 }
 
-// time: O(V), memory: O(V) || O(h)
+// time: O(n), memory: O(h)
 int find_2(Node* root, int n) {
     if (root == NULL)
         return 0;
@@ -73,23 +73,23 @@ int find_2(Node* root, int n) {
 }
 
 int main() {
-	Node* root = new Node(1);
-	root -> left = new Node(2);
-	root -> left -> left = new Node(4);
-	root -> left -> right = new Node(5);
-	root -> left -> right -> left = new Node(8);
-	root -> left -> right -> left -> left = new Node(9);
-	root -> left -> right -> left -> right = new Node(10);
-	root -> right = new Node(3);
-	root -> right -> left = new Node(6);
-	root -> right -> left -> right = new Node(3);
-	root -> right -> right = new Node(7);
-	root -> right -> right -> right = new Node(11);
-	root -> right -> right -> right -> left = new Node(12);
+    Node* root = new Node(1);
+    root -> left = new Node(2);
+    root -> left -> left = new Node(4);
+    root -> left -> right = new Node(5);
+    root -> left -> right -> left = new Node(8);
+    root -> left -> right -> left -> left = new Node(9);
+    root -> left -> right -> left -> right = new Node(10);
+    root -> right = new Node(3);
+    root -> right -> left = new Node(6);
+    root -> right -> left -> right = new Node(3);
+    root -> right -> right = new Node(7);
+    root -> right -> right -> right = new Node(11);
+    root -> right -> right -> right -> left = new Node(12);
 
     // fill_size(root);
     // for(int i = 1; i <= 13; i++)
-        // std::cout << i << " " << find(root, i) << std::endl;
+    // std::cout << i << " " << find(root, i) << std::endl;
 
     for(int i = 1; i <= 13; i++)
         find_2(root, i);
