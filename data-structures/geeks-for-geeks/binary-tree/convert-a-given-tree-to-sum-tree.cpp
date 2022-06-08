@@ -17,84 +17,84 @@ Node* newNode(int val)
     temp->data = val;
     temp->left = NULL;
     temp->right = NULL;
-    
+
     return temp;
 }
 // Function to Build Tree
 Node* buildTree(string str)
-{   
+{
     // Corner Case
     if(str.length() == 0 || str[0] == 'N')
-            return NULL;
-    
-    // Creating vector of strings from input 
+        return NULL;
+
+    // Creating vector of strings from input
     // string after spliting by space
     vector<string> ip;
-    
+
     istringstream iss(str);
     for(string str; iss >> str; )
         ip.push_back(str);
-        
+
     // Create the root of the tree
     Node* root = newNode(stoi(ip[0]));
-        
+
     // Push the root to the queue
     queue<Node*> queue;
     queue.push(root);
-        
+
     // Starting from the second element
     int i = 1;
     while(!queue.empty() && i < ip.size()) {
-            
+
         // Get and remove the front of the queue
         Node* currNode = queue.front();
         queue.pop();
-            
+
         // Get the current node's value from the string
         string currVal = ip[i];
-            
+
         // If the left child is not null
         if(currVal != "N") {
-                
+
             // Create the left child for the current node
             currNode->left = newNode(stoi(currVal));
-                
+
             // Push it to the queue
             queue.push(currNode->left);
         }
-            
+
         // For the right child
         i++;
         if(i >= ip.size())
             break;
         currVal = ip[i];
-            
+
         // If the right child is not null
         if(currVal != "N") {
-                
+
             // Create the right child for the current node
             currNode->right = newNode(stoi(currVal));
-                
+
             // Push it to the queue
             queue.push(currNode->right);
         }
         i++;
     }
-    
+
     return root;
 }
 void inorder(Node * node)
 {
     if(node==NULL)
         return;
-    
+
     inorder(node->left);
     cout<<node->data<<" ";
     inorder(node->right);
 }
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 //User function template for C++
 
 /* A binary tree node
@@ -105,8 +105,8 @@ struct Node
 }; */
 
 class Solution {
-  public:
-    // time: O(V), memory: O(V)
+public:
+    // time: O(n), memory: O(n)
     int toSumTreeRec(Node *node) {
         if (!node) {
             return 0;
@@ -123,13 +123,13 @@ class Solution {
             u += toSumTreeRec(node -> right);
             u += node -> right -> data;
         }
-        
+
         node -> data = u;
         return prv;
     }
     // Convert a given tree to a tree where every node contains sum of values of
     // nodes in left and right subtrees in the original tree
-    
+
     void toSumTree(Node *node)
     {
         toSumTreeRec(node);
@@ -142,11 +142,11 @@ int main()
 {
 
     int t;
-	scanf("%d ",&t);
+    scanf("%d ",&t);
     while(t--)
     {
         string s;
-		getline(cin,s);
+        getline(cin,s);
         Node* root = buildTree(s);
         Solution ob;
         ob.toSumTree(root);
