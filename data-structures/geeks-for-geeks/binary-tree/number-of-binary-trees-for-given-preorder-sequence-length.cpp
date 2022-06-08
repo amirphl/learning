@@ -4,7 +4,7 @@
 #include<iostream>
 #include<cstring>
 
-// time: O(V), memory: O(V)
+// time: O(n), memory: O(n)
 int count(int dp[], int k) {
     if (dp[k] != -1)
         return dp[k];
@@ -29,5 +29,5 @@ int main() {
         std::cout << dp[i] << " ";
     }
 
-	return 0;
+    return 0;
 }
