@@ -1,5 +1,4 @@
 // https://www.geeksforgeeks.org/construct-a-special-tree-from-given-preorder-traversal/
-// https://www.geeksforgeeks.org/construct-full-k-ary-tree-preorder-traversal/
 
 // { Driver Code Starts
 #include <bits/stdc++.h>
@@ -61,36 +60,33 @@ struct Node
 };
 */
 
-// time: O(n*n), memory: O(n)
-struct Node* constructTreeRec(int pre[], char preLN[], int low, int high) {
-    if (low > high) {
-        return 0;
-    }
-
-    Node* node = new Node(pre[low]);
-
-    if (low == high) {
-        return node;
-    }
-
-    int s = 2, i = low + 1;
-
-    // TODO use DP
-    for (; i <= high && s != 1; i++) {
-        if (preLN[i] == 'N') {
-            s += 1;
-        } else {
-            s -= 1;
-        }
-    }
-
-    node -> left = constructTreeRec(pre, preLN, low + 1, i - 1);
-    node -> right = constructTreeRec(pre, preLN, i, high);
-
-    return node;
-}
-
+// time: O(n), memory: O(n)
 struct Node *constructTree(int n, int pre[], char preLN[])
 {
-    return constructTreeRec(pre, preLN, 0, n - 1);
+    stack<struct Node*> s;
+    struct Node* root = (struct Node*)malloc(sizeof(struct Node));
+    root -> left = 0;
+    root -> right = 0;
+    struct Node* u = root;
+    s.push(u);
+    int i = 0;
+    while(i < n && !s.empty()) {
+        u = s.top();
+        s.pop();
+        u -> data = pre[i];
+        if (preLN[i] == 'N') {
+            struct Node* left = (struct Node*)malloc(sizeof(struct Node));
+            struct Node* right = (struct Node*)malloc(sizeof(struct Node));
+            left -> left = 0;
+            left -> right = 0;
+            right -> left = 0;
+            right -> right = 0;
+            s.push(right);
+            s.push(left);
+            u -> left = left;
+            u -> right = right;
+        }
+        i++;
+    }
+    return root;
 }
