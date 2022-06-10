@@ -224,7 +224,16 @@ public:
         fill_inorder(root -> right, v);
     }
 
-    // FIXME(amirphl)
+    void fill_preorder(Node* root, vector<int>& v) {
+        if (!root) {
+            v.push_back(-1);
+            return;
+        }
+        v.push_back(root -> data);
+        fill_preorder(root -> left, v);
+        fill_preorder(root -> right, v);
+    }
+
     bool is_subarray(vector<int> v1, vector<int> v2) {
         int n = v1.size();
         int m = v2.size();
@@ -251,14 +260,21 @@ public:
         vector<int> v2;
         fill_inorder(T, v1);
         fill_inorder(S, v2);
+        if (!is_subarray(v1, v2)) {
+            return false;
+        }
+        v1.clear();
+        v2.clear();
+        fill_preorder(T, v1);
+        fill_preorder(S, v2);
         // for(auto& it: v1)
         // cout << it << " ";
         // cout << endl << endl;
         // for(auto& it: v2)
         // cout << it << " ";
         // cout << endl;
-        // return includes(v1.begin(), v1.end(), v2.begin(), v2.end());
         return is_subarray(v1, v2);
+        // return includes(v1.begin(), v1.end(), v2.begin(), v2.end());
     }
 };
 
