@@ -9,15 +9,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 using namespace std;
- 
+
 /* a Node of the doubly linked list */
 struct Node
 {
     int data;
     struct Node *next;
     struct Node *prev;
-    
-    Node(int x){
+
+    Node(int x) {
         data = x;
         next = NULL;
         prev = NULL;
@@ -32,7 +32,7 @@ struct Node *lastNode(Node *root)
 }
 
 void swap(int* a, int* b )
-{   
+{
     int t = *a;
     *a = *b;
     *b = t;
@@ -49,12 +49,12 @@ void _quickSort(struct Node* l, struct Node *h)
         _quickSort(p->next, h);
     }
 }
- 
+
 void quickSort(struct Node *head)
 {
     // Find last Node
     struct Node *h = lastNode(head);
- 
+
     // Call the recursive QuickSort
     _quickSort(head, h);
 }
@@ -70,7 +70,7 @@ void printList(struct Node *head)
     cout << endl;
 }
 
- 
+
 /* Driver program to test above function */
 int main()
 {
@@ -84,30 +84,30 @@ int main()
         scanf("%d",&x);
         head=new Node(x);
         p=head;
-        for(i=0;i<n-1;i++){
+        for(i=0; i<n-1; i++) {
             scanf("%d",&x);
             /* Let us create the doubly linked list 10<->8<->4<->2 */
-        	temp=new Node(x);
-        	p->next=temp;
-        	temp->prev=p;
+            temp=new Node(x);
+            p->next=temp;
+            temp->prev=p;
             p=p->next;
         }
-    
-    //printList(head); 
-    /* delete Nodes from the doubly linked list */
-	
-    quickSort(head);
-  
-    /* Modified linked list will be NULL<-8->NULL */
-    printList(head);           
-    while(head->next!=NULL)
-    {
-	  temp=head;
-	  head=head->next;
-	  free(temp);
-	}
-	  free(head);
-	}
+
+        //printList(head);
+        /* delete Nodes from the doubly linked list */
+
+        quickSort(head);
+
+        /* Modified linked list will be NULL<-8->NULL */
+        printList(head);
+        while(head->next!=NULL)
+        {
+            temp=head;
+            head=head->next;
+            free(temp);
+        }
+        free(head);
+    }
     return 0;
 }
 // } Driver Code Ends
@@ -122,7 +122,7 @@ struct Node
     int data;
     struct Node *next;
     struct Node *prev;
-    
+
     Node(int x){
         data = x;
         next = NULL;
