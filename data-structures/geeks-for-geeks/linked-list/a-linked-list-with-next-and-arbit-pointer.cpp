@@ -23,10 +23,10 @@ struct Node {
 
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 class Solution
 {
-    public:
+public:
     // time: O(n), memory: O(1)
     Node *copyList(Node *head)
     {
@@ -131,28 +131,28 @@ bool validation(Node *head, Node *res) {
     temp2 = res;
     map<Node*,Node*> a;
     while (temp1 != NULL) {
-        
+
         if(temp1==temp2)
             return false;
-        
+
         if (temp1->data != temp2->data) return false;
         if (temp1->arb != NULL and temp2->arb != NULL) {
             if (temp1->arb->data != temp2->arb->data)
                 return false;
         } else if (temp1->arb != NULL and temp2->arb == NULL)
             return false;
-          else if (temp1->arb == NULL and temp2->arb != NULL)
+        else if (temp1->arb == NULL and temp2->arb != NULL)
             return false;
         a[temp1]=temp2;
         temp1 = temp1->next;
         temp2 = temp2->next;
     }
-    
+
 
     temp1 = head;
     temp2 = res;
     while (temp1 != NULL) {
-        
+
         if (temp1->arb != NULL and temp2->arb != NULL) {
             if (a[temp1->arb] != temp2->arb) return false;
         }
@@ -168,7 +168,7 @@ int main() {
 
     int T, i, n, l, k;
     Node *generated_addr = NULL;
-     /*reading input stuff*/
+    /*reading input stuff*/
     cin >> T;
     while (T--) {
         generated_addr = NULL;
@@ -180,7 +180,7 @@ int main() {
             append(&head, &tail, l);
             append(&head2, &tail2, l);
         }
-         for (int i = 0; i < k; i++) {
+        for (int i = 0; i < k; i++) {
             int a, b;
             cin >> a >> b;
 
@@ -206,7 +206,7 @@ int main() {
             }
 
             // when both a is greater than N
-            if (a <= n){
+            if (a <= n) {
                 tempA->arb = tempB;
                 temp2A->arb = temp2B;
             }
