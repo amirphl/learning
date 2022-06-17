@@ -6,18 +6,18 @@ using namespace std;
 
 struct Node
 {
-	int data;
-	struct Node *next, *prev;
-	
-	Node (int x){
-	    data = x;
-	    next = NULL;
-	    prev = NULL;
-	}
+    int data;
+    struct Node *next, *prev;
+
+    Node (int x) {
+        data = x;
+        next = NULL;
+        prev = NULL;
+    }
 };
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 /*
 Structure of the node of the list is as
 struct Node
@@ -97,11 +97,11 @@ void sortDoublyRec(struct Node*& head, struct Node*& tail)
 struct Node* sortDoubly(struct Node* head)
 {
     Node* tail = head;
-	while (tail -> next) {
-	    tail = tail -> next;
-	}
-	sortDoublyRec(head, tail);
-	return head;
+    while (tail -> next) {
+        tail = tail -> next;
+    }
+    sortDoublyRec(head, tail);
+    return head;
 }
 
 
@@ -109,41 +109,41 @@ struct Node* sortDoubly(struct Node* head)
 
 void insert(struct Node **head, int data)
 {
-	struct Node *temp = new Node (data);
-	if (!(*head))
-		(*head) = temp;
-	else
-	{
-		temp->next = *head;
-		(*head)->prev = temp;
-		(*head) = temp;
-	}
+    struct Node *temp = new Node (data);
+    if (!(*head))
+        (*head) = temp;
+    else
+    {
+        temp->next = *head;
+        (*head)->prev = temp;
+        (*head) = temp;
+    }
 }
 
 void print(struct Node *head)
 {
-	struct Node *temp = head;
-	while (head)
-	{
-		cout<<head->data<<' ';
-		temp = head;
-		head = head->next;
-	}
-	cout<<endl;
-	while (temp)
-	{
-		cout<<temp->data<<' ';
-		temp = temp->prev;
-	}
-	cout<<endl;
+    struct Node *temp = head;
+    while (head)
+    {
+        cout<<head->data<<' ';
+        temp = head;
+        head = head->next;
+    }
+    cout<<endl;
+    while (temp)
+    {
+        cout<<temp->data<<' ';
+        temp = temp->prev;
+    }
+    cout<<endl;
 }
 
 // Utility function to swap two integers
 void swap(int *A, int *B)
 {
-	int temp = *A;
-	*A = *B;
-	*B = temp;
+    int temp = *A;
+    *A = *B;
+    *B = temp;
 }
 
 
@@ -157,13 +157,13 @@ int main(void)
         int n, tmp;
         struct Node *head = NULL;
         cin>>n;
-        while(n--){
+        while(n--) {
             cin>>tmp;
             insert(&head, tmp);
         }
         head = sortDoubly(head);
         print(head);
     }
-	return 0;
+    return 0;
 }
-  // } Driver Code Ends
+// } Driver Code Ends
