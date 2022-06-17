@@ -10,23 +10,23 @@ struct Node
 {
     int data;
     struct Node* next;
-    
-    Node(int x){
+
+    Node(int x) {
         data = x;
         next = NULL;
     }
 };
-void printList(Node* node) 
-{ 
-    while (node != NULL) { 
-        cout << node->data <<" "; 
-        node = node->next; 
-    }  
+void printList(Node* node)
+{
+    while (node != NULL) {
+        cout << node->data <<" ";
+        node = node->next;
+    }
     cout<<"\n";
-} 
+}
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 //User function template for C++
 
 /*
@@ -34,17 +34,17 @@ struct Node
 {
     int data;
     struct Node* next;
-    
+
     Node(int x){
         data = x;
         next = NULL;
     }
 };
 */
-class Solution{
+class Solution {
 public:
     // time: O(n), memory: O(1)
-    Node* divide(int N, Node *head){
+    Node* divide(int N, Node *head) {
         Node* t = head;
         Node* dummy = (struct Node*)malloc(sizeof(struct Node));
         dummy -> next = head;
@@ -57,7 +57,7 @@ public:
         if (!t)
             return head;
         dummy = prv;
-        
+
         while(t) {
             if (t -> data % 2 == 0) {
                 prv -> next = t -> next;
@@ -68,7 +68,7 @@ public:
             } else {
                 prv = t;
                 t = t -> next;
-            }            
+            }
         }
         return temp -> next;
     }
@@ -80,7 +80,7 @@ int main() {
     //code
     int t;
     cin>>t;
-    while(t--){
+    while(t--) {
         int N;
         cin>>N;
         int data;
@@ -93,11 +93,11 @@ int main() {
             tail->next = new Node(data);
             tail = tail->next;
         }
-        
+
         Solution ob;
         Node *ans = ob.divide(N, head);
-        printList(ans); 
+        printList(ans);
     }
     return 0;
 }
-  // } Driver Code Ends
+// } Driver Code Ends
