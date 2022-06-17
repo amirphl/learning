@@ -11,7 +11,7 @@ struct Node
 {
     int data;
     Node* next;
-    
+
     Node(int val)
     {
         data = val;
@@ -22,7 +22,7 @@ struct Node
 void loopHere(Node* head, Node* tail, int position)
 {
     if(position==0) return;
-    
+
     Node* walk = head;
     for(int i=1; i<position; i++)
         walk = walk->next;
@@ -30,7 +30,7 @@ void loopHere(Node* head, Node* tail, int position)
 }
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 //User function template for C++
 
 /*
@@ -47,7 +47,7 @@ struct Node
 */
 class Solution
 {
-    public:
+public:
     //Function to check if the linked list has a loop.
     // Floyd’s Cycle-Finding Algorithm
     // time: O(n), memory: O(1)
@@ -83,28 +83,28 @@ int main()
     {
         int n, num;
         cin>>n;
-        
+
         Node *head, *tail;
         cin>> num;
         head = tail = new Node(num);
-        
+
         for(int i=0 ; i<n-1 ; i++)
         {
             cin>> num;
             tail->next = new Node(num);
             tail = tail->next;
         }
-        
+
         int pos;
         cin>> pos;
         loopHere(head,tail,pos);
-        
+
         Solution ob;
         if(ob.detectLoop(head) )
             cout<< "True\n";
         else
             cout<< "False\n";
     }
-	return 0;
+    return 0;
 }
-  // } Driver Code Ends
+// } Driver Code Ends
