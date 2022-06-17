@@ -9,18 +9,18 @@
 using namespace std;
 /* Link list Node */
 struct Node {
-  int data;
-  struct Node *next;
-  Node(int x) {
-    data = x;
-    next = NULL;
-  }
+    int data;
+    struct Node *next;
+    Node(int x) {
+        data = x;
+        next = NULL;
+    }
 };
 
 
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 /*
 struct Node {
   int data;
@@ -32,8 +32,8 @@ struct Node {
 };
 */
 
-class Solution{
-  public:
+class Solution {
+public:
     //Function to check whether the list is palindrome.
     // time: O(n), memory: O(1)
     bool isPalindrome(Node *head)
@@ -93,11 +93,11 @@ class Solution{
 /* Driver program to test above function*/
 int main()
 {
-  int T,i,n,l,firstdata;
+    int T,i,n,l,firstdata;
     cin>>T;
     while(T--)
     {
-        
+
         struct Node *head = NULL,  *tail = NULL;
         cin>>n;
         // taking first data of LL
@@ -105,16 +105,16 @@ int main()
         head = new Node(firstdata);
         tail = head;
         // taking remaining data of LL
-        for(i=1;i<n;i++)
+        for(i=1; i<n; i++)
         {
             cin>>l;
             tail->next = new Node(l);
             tail = tail->next;
         }
-    Solution obj;
-   	cout<<obj.isPalindrome(head)<<endl;
+        Solution obj;
+        cout<<obj.isPalindrome(head)<<endl;
     }
     return 0;
 }
 
-  // } Driver Code Ends
+// } Driver Code Ends
