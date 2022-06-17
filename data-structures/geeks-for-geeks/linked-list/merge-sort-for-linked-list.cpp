@@ -17,9 +17,9 @@ struct Node {
 };
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 /* Structure of the linked list node is as
-struct Node 
+struct Node
 {
     int data;
     struct Node* next;
@@ -28,8 +28,8 @@ struct Node
 */
 
 
-class Solution{
-  public:
+class Solution {
+public:
     //Function to sort the given linked list using Merge Sort.
     Node* mergeSort(Node* head) {
         Node* tail = head;
