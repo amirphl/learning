@@ -17,13 +17,13 @@ struct Node
         next=NULL;
         prev=NULL;
     }
-        
+
 };
 
 Node *newNode(int data)
 {
     Node *temp=new Node(data);
-    
+
     return temp;
 }
 
@@ -39,16 +39,16 @@ void displayList(Node *head)
         head=head->next;
     }
     cout<<head->data;
-    
-    
-    
+
+
+
 }
 
 
 int getLength(Node * head)
 {
     Node *temp=head;
-    
+
     int count=0;
     while(temp->next!=head)
     {
@@ -65,26 +65,26 @@ bool verify(Node* head)
 {
     int fl=0;
     int bl=0;
-    
+
     Node *temp=head;
-    
+
     while(temp->next)
     {
         temp=temp->next;
         fl++;
     }
-    
+
     while(temp->prev)
     {
         temp=temp->prev;
         bl++;
     }
-    
+
     return fl==bl;
 }
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 /*
 struct Node
 {
@@ -97,7 +97,7 @@ struct Node
         next=NULL;
         prev=NULL;
     }
-        
+
 };
 */
 Node* reverseDLLRec(Node* head, Node*& tail)
@@ -129,37 +129,37 @@ Node* reverseDLL(Node* head)
 // { Driver Code Starts.
 
 int main() {
-	int t;
-	cin>>t;
-	while(t--)
-	{
-	    int n;
-	    cin>>n;
-	    Node *head=NULL, *tail=NULL;
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        Node *head=NULL, *tail=NULL;
         int x;
-	    cin>>x;
-	    head = newNode(x);
-	    tail = head;
-	    
-	    for(int i=0;i<n - 1;i++)
-	    {
-	        cin>>x;
-	        Node* temp=newNode(x);
-	        tail->next=temp;
-	        temp->prev= tail;
-	        tail = temp;
-	    }
-	    head=reverseDLL(head);
-	    
-	    
-	    if(verify(head))
-	    displayList(head);
-	    else
-	    cout<<"Your pointers are not correctly connected";
- 
-	    cout<<endl;
-	}
-	return 0;
+        cin>>x;
+        head = newNode(x);
+        tail = head;
+
+        for(int i=0; i<n - 1; i++)
+        {
+            cin>>x;
+            Node* temp=newNode(x);
+            tail->next=temp;
+            temp->prev= tail;
+            tail = temp;
+        }
+        head=reverseDLL(head);
+
+
+        if(verify(head))
+            displayList(head);
+        else
+            cout<<"Your pointers are not correctly connected";
+
+        cout<<endl;
+    }
+    return 0;
 }
 
-  // } Driver Code Ends
+// } Driver Code Ends
