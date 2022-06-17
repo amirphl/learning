@@ -7,19 +7,19 @@
 using namespace std;
 typedef struct node
 {
-  int data;
-  struct node*next,*prev;
-  
-  node(int x){
-      data = x;
-      next = NULL;
-      prev = NULL;
-  }
-  
+    int data;
+    struct node*next,*prev;
+
+    node(int x) {
+        data = x;
+        next = NULL;
+        prev = NULL;
+    }
+
 } Node;
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 //User function Template for C++
 
 /*
@@ -27,13 +27,13 @@ typedef struct node
 {
   int data;
   struct node*next,*prev;
-  
+
   node(int x){
       data = x;
       next = NULL;
       prev = NULL;
   }
-  
+
 } Node;
 */
 
@@ -86,8 +86,8 @@ int main()
         struct node*start = NULL;
         struct node* cur = NULL;
         struct node* ptr = NULL;
-        
-        for(int i=0;i<n;i++)
+
+        for(int i=0; i<n; i++)
         {
             int a;
             cin>>a;
@@ -120,8 +120,8 @@ int main()
             cout<<str->data<<" ";
             str=str->prev;
         }
-        cout<< "\n";   
+        cout<< "\n";
     }
 }
 
-  // } Driver Code Ends
+// } Driver Code Ends
