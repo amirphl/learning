@@ -9,11 +9,11 @@
 using namespace std;
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 // User function Template for C++
 
-class Solution{
-    public:
+class Solution {
+public:
     // time: O(n + m), memory: O(n + m)
     vector<int> mergeHeaps(vector<int> &a, vector<int> &b, int n, int m) {
         // a.reserve(a.size() + distance(b.begin(), b.end()));
@@ -47,18 +47,18 @@ class Solution{
 
 // { Driver Code Starts.
 
-bool isMerged(vector<int> &arr1, vector<int> &arr2, vector<int> &merged){
-    if (arr1.size() + arr2.size() != merged.size()){
+bool isMerged(vector<int> &arr1, vector<int> &arr2, vector<int> &merged) {
+    if (arr1.size() + arr2.size() != merged.size()) {
         return false;
     }
     arr1.insert(arr1.end(),arr2.begin(),arr2.end());
     sort(arr1.begin(),arr1.end());
     vector<int> mergedCopy =merged;
     sort(mergedCopy.begin(),mergedCopy.end());
-    if (arr1 != mergedCopy){
+    if (arr1 != mergedCopy) {
         return false;
     }
-    for(int i = 1; i<merged.size(); i++){
+    for(int i = 1; i<merged.size(); i++) {
         if(merged[i] > merged[(i-1)/2])
             return false;
     }
@@ -86,4 +86,4 @@ int main() {
     }
     return 0;
 }
-  // } Driver Code Ends
+// } Driver Code Ends
