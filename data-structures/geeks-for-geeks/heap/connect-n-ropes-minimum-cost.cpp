@@ -5,10 +5,10 @@
 using namespace std;
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 class Solution
 {
-    public:
+public:
     //Function to return the minimum cost of connecting the ropes.
     // time: O(nlogn), memory: O(n)
     long long minCost(long long arr[], long long n) {
@@ -52,4 +52,4 @@ int main() {
     }
     return 0;
 }
-  // } Driver Code Ends
+// } Driver Code Ends
