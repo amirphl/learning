@@ -6,10 +6,10 @@
 using namespace std;
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 class Solution
 {
-    public:
+public:
     //Function to convert an infix expression to a postfix expression.
     std::map<char, int> m;
     std::stack<char> s;
@@ -79,4 +79,4 @@ int main()
     }
     return 0;
 }
-  // } Driver Code Ends
+// } Driver Code Ends
