@@ -7,9 +7,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
- // } Driver Code Ends
+// } Driver Code Ends
 class Solution {
-  public:
+public:
     // time: O(nlogk), memory: O(k)
     vector<int> kthLargest(int k, int arr[], int n) {
         vector<int> v;
