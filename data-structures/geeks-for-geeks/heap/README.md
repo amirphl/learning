@@ -1,4 +1,6 @@
 ## Notes
+    - https://www.geeksforgeeks.org/rearrange-characters-string-no-two-adjacent/
+    - https://www.geeksforgeeks.org/kth-largest-element-in-a-stream/
     - https://www.geeksforgeeks.org/binary-heap/
     - https://www.geeksforgeeks.org/array-representation-of-binary-heap/
     - https://www.geeksforgeeks.org/heap-sort/
@@ -12,14 +14,18 @@
     - https://www.geeksforgeeks.org/a-data-structure-question/
     - https://www.geeksforgeeks.org/time-complexity-of-building-a-heap/
     - https://www.geeksforgeeks.org/heap-using-stl-c/
+    - https://www.geeksforgeeks.org/given-level-order-traversal-binary-tree-check-tree-min-heap/
 
     - heap-sort is not a stable sort algorithm!
     - heap child > (n - 2) / 2 -> don't check it anymore!
     - ```priority_queue<int, vector<int>, greater<int> > pq(arr, arr + n);```
+    - In BST, The k’th largest element can be found in O(Logk) time with help of *augmented data structure*.
 
 ## Easy Problems
     - https://www.geeksforgeeks.org/check-if-a-given-binary-tree-is-heap/
     - https://www.geeksforgeeks.org/connect-n-ropes-minimum-cost/
+    - https://www.geeksforgeeks.org/merge-k-sorted-arrays/
+        - other method: recursively merge arrays in a bottom-up manner: first merge array 1 with array 2, array 3 with array 4, ...
     - https://www.geeksforgeeks.org/smallest-derangement-sequence/
         - https://www.geeksforgeeks.org/largest-derangement-sequence/
     - https://www.geeksforgeeks.org/maximum-distinct-elements-removing-k-elements/
@@ -28,6 +34,8 @@
     - https://www.geeksforgeeks.org/print-all-nodes-less-than-a-value-x-in-a-min-heap/
     - https://www.geeksforgeeks.org/largest-triplet-product-stream/
     - https://www.geeksforgeeks.org/merge-two-binary-max-heaps/
+        - solution 1: time: O(n + m), memory: O(n + m)
+        - solution 2: time: O(mlog(n + m)), memory: O(n + m)
     - https://www.geeksforgeeks.org/leaf-starting-point-binary-heap-data-structure/
     - https://www.geeksforgeeks.org/sum-elements-k1th-k2th-smallest-elements/
     - https://www.geeksforgeeks.org/minimum-sum-two-numbers-formed-digits-array-2/
@@ -45,7 +53,6 @@
     - https://www.geeksforgeeks.org/quiz-heapsort-gq/
     - https://www.geeksforgeeks.org/amazon-interview-experience-set-330/
 
-    - https://www.geeksforgeeks.org/a-data-structure-question/
 
     - https://www.geeksforgeeks.org/fibonacci-heap-set-1-introduction/
     - https://www.geeksforgeeks.org/leftist-tree-leftist-heap/
@@ -57,10 +64,6 @@
     - https://www.geeksforgeeks.org/implementation-binomial-heap/
     - https://www.geeksforgeeks.org/greedy-algorithms-set-3-huffman-coding/
     - https://www.geeksforgeeks.org/containers-cpp-stl/
-    - https://www.geeksforgeeks.org/rearrange-characters-string-no-two-adjacent/
-
-    - In BST, The k’th largest element can be found in O(Logk) time. How?
-    - Implement method 3 of https://www.geeksforgeeks.org/kth-largest-element-in-a-stream/
 
     - https://www.geeksforgeeks.org/introsort-or-introspective-sort/
     - https://www.geeksforgeeks.org/pigeonhole-sort/
@@ -70,17 +73,21 @@
     - https://www.geeksforgeeks.org/counting-sort/
     - https://www.geeksforgeeks.org/radix-sort/
     - https://www.geeksforgeeks.org/merge-sort/
+        - https://www.geeksforgeeks.org/tag/merge-sort/
+        - https://practice.geeksforgeeks.org/tag-page.php?tag=sorting&isCmp=0
+        - https://www.geeksforgeeks.org/quiz-mergesort-gq/
+        - https://www.geeksforgeeks.org/3-way-merge-sort/
     - https://www.geeksforgeeks.org/insertion-sort/
     - https://www.geeksforgeeks.org/bubble-sort/
     - https://www.geeksforgeeks.org/selection-sort/
     - https://www.geeksforgeeks.org/quick-sort/
     - https://www.geeksforgeeks.org/quickselect-algorithm/
+    - http://en.wikipedia.org/wiki/External_sorting
 
     - http://www.cs.sfu.ca/CourseCentral/307/petra/2009/SLN_2.pdf
     - http://net.pku.edu.cn/~course/cs101/2007/resource/Intro2Algorithm/book6/chap07.htm
     - http://en.wikipedia.org/wiki/Heap_%28data_structure%29
     - http://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
     - http://en.wikipedia.org/wiki/Prim%27s_algorithm
-    - http://en.wikipedia.org/wiki/Binary_tree#Types_of_binary_trees
     - https://www.geeksforgeeks.org/heap-queue-or-heapq-in-python/
     - https://www.geeksforgeeks.org/priority-queue-class-in-java-2/
