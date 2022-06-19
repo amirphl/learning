@@ -77,7 +77,7 @@ Node *buildTree(string str) {
 }
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 // User Function template for C++
 
 // Structure of node
@@ -93,7 +93,7 @@ Node *buildTree(string str) {
 };*/
 
 class Solution {
-  public:
+public:
     // time: O(n), memory: O(n)
     bool isHeap(struct Node* root) {
         int n;
