@@ -25,21 +25,21 @@ int pop(stack<int>& s);
 int getMin(stack<int>& s);
 //This is the STL stack (http://quiz.geeksforgeeks.org/stack-container-adaptors-the-c-standard-template-library-stl/).
 stack<int> s;
-int main(){
-	int t;
-	cin>>t;
-	while(t--){
-		int n,a;
-		cin>>n;
-		while(!isEmpty(s)){
-		    pop(s);
-		}
-		while(!isFull(s,n)){
-			cin>>a;
-			push(s,a);
-		}
-		cout<<getMin(s)<<endl;
-	}
+int main() {
+    int t;
+    cin>>t;
+    while(t--) {
+        int n,a;
+        cin>>n;
+        while(!isEmpty(s)) {
+            pop(s);
+        }
+        while(!isFull(s,n)) {
+            cin>>a;
+            push(s,a);
+        }
+        cout<<getMin(s)<<endl;
+    }
 }// } Driver Code Ends
 
 int m = -1;
@@ -49,47 +49,47 @@ int m = -1;
 /////
 
 
-void push(stack<int>& s, int a){
-	if (s.empty()) {
-	    s.push(a);
-	    m = a;
-	} else {
-	    if (a < m) {
-	        s.push(-1 * m);
-	        m = a;
-	    } else {
-	        s.push(a - m);
-	    }
-	}
+void push(stack<int>& s, int a) {
+    if (s.empty()) {
+        s.push(a);
+        m = a;
+    } else {
+        if (a < m) {
+            s.push(-1 * m);
+            m = a;
+        } else {
+            s.push(a - m);
+        }
+    }
 }
 
-bool isFull(stack<int>& s,int n){
-	return s.size() == n;
+bool isFull(stack<int>& s,int n) {
+    return s.size() == n;
 }
 
-bool isEmpty(stack<int>& s){
-	return s.empty();
+bool isEmpty(stack<int>& s) {
+    return s.empty();
 }
 
-int pop(stack<int>& s){
-	if (s.empty()) {
-		return -1;
-	}
-	int t = s.top();
-	s.pop();
-	if (s.size() == 0) {
-		return t;
-	}
-	if (t >= 0)
-		return t + m;
-	int temp = m;
-	m = -1 * t;
-	// std::cout << "-> " << m << std::endl;
-	return temp;
+int pop(stack<int>& s) {
+    if (s.empty()) {
+        return -1;
+    }
+    int t = s.top();
+    s.pop();
+    if (s.size() == 0) {
+        return t;
+    }
+    if (t >= 0)
+        return t + m;
+    int temp = m;
+    m = -1 * t;
+    // std::cout << "-> " << m << std::endl;
+    return temp;
 }
 
-int getMin(stack<int>& s){
-	if (s.empty())
-		return -1;
-	return m;
+int getMin(stack<int>& s) {
+    if (s.empty())
+        return -1;
+    return m;
 }
