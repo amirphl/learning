@@ -6,11 +6,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
- // } Driver Code Ends
+// } Driver Code Ends
 // User function Template for C++
 
 class Solution {
-  public:
+public:
     int canRepresentBST(int arr[], int N) {
         int index = canRepresentBSTRec(arr, 0, N, INT_MIN, INT_MAX);
         return index == N - 1;
