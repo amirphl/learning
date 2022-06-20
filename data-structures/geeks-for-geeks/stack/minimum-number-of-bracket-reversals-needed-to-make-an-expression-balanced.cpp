@@ -7,10 +7,12 @@ using namespace std;
 int countRev (string s);
 int main()
 {
-    int t; cin >> t;
+    int t;
+    cin >> t;
     while (t--)
     {
-        string s; cin >> s;
+        string s;
+        cin >> s;
         cout << countRev (s) << '\n';
     }
 }
