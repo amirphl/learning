@@ -16,19 +16,19 @@ int main()
     {
         cin>>n;
         int arr[n];
-        for(int i=0;i<n;i++)
+        for(int i=0; i<n; i++)
             cin>>arr[i];
         cin>>k;
         vector<int> v;
-        
+
         v = deleteElement(arr,n,k);
         vector<int>::iterator it;
-         for(it=v.begin();it!=v.end();it++)
+        for(it=v.begin(); it!=v.end(); it++)
             cout<<*it<<" ";
         cout<<endl;
-        
+
     }
-return 0;
+    return 0;
 }
 // } Driver Code Ends
 
@@ -61,5 +61,5 @@ vector<int> deleteElement(int arr[],int n,int k)
     }
 
     std::reverse(vec.begin(), vec.end());
-    return vec;    
+    return vec;
 }
