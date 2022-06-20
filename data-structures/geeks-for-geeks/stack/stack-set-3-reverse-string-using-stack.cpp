@@ -14,13 +14,13 @@ int main()
         cin>>str;
         long long int len=strlen(str);
         char *ch=reverse(str,len);
-        for(int i=0;i<len;i++)
+        for(int i=0; i<len; i++)
         {
             cout<<ch[i];
         }
         cout<<endl;
     }
-        return 0;
+    return 0;
 }
 
 // } Driver Code Ends
