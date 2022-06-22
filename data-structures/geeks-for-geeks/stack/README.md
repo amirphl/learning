@@ -1,84 +1,168 @@
-## Source
-	- https://www.geeksforgeeks.org/stack-data-structure/
-	- remained:
-		- https://www.geeksforgeeks.org/stack-data-structure/#misc
+## Links
+    - * https://www.geeksforgeeks.org/length-of-the-longest-valid-substring/
+    - * https://www.geeksforgeeks.org/minimum-number-of-bracket-reversals-needed-to-make-an-expression-balanced/
+        - The first solution is interesting!
+    - * https://www.geeksforgeeks.org/maximum-sum-of-smallest-and-second-smallest-in-an-array/
+    - * https://www.geeksforgeeks.org/decode-string-recursively-encoded-count-followed-substring/
+    - * https://www.geeksforgeeks.org/remove-brackets-algebraic-string-containing-operators/
+    - * https://www.geeksforgeeks.org/form-minimum-number-from-given-sequence/
+    - * https://www.geeksforgeeks.org/largest-rectangle-under-histogram/
+	- * https://www.geeksforgeeks.org/stack-data-structure-introduction-program/
+    - * https://www.geeksforgeeks.org/g-fact-87/
+	- * https://www.geeksforgeeks.org/recursive-functions/
+	- * https://www.geeksforgeeks.org/stack-in-cpp-stl/
+    - **conversion (infix, prefix, postfix):**
+        - * https://www.geeksforgeeks.org/stack-set-2-infix-to-postfix/
+        - * https://www.geeksforgeeks.org/prefix-infix-conversion/
+            - solution using recursion
+            - * solution using stack
+		- * https://www.geeksforgeeks.org/postfix-to-infix/
+            - * solution using recursion
+            - solution using stack
+		- * https://www.geeksforgeeks.org/prefix-postfix-conversion/
+        - * https://www.geeksforgeeks.org/postfix-prefix-conversion/
+		- https://www.geeksforgeeks.org/expression-evaluation/
+		    - https://www.geeksforgeeks.org/arithmetic-expression-evalution/
+		    - * https://www.geeksforgeeks.org/stack-set-4-evaluation-postfix-expression/
+    - * https://www.geeksforgeeks.org/the-stock-span-problem/
+        - * https://www.geeksforgeeks.org/next-greater-element/
+        - * https://www.geeksforgeeks.org/next-smaller-element/
+        - * https://www.geeksforgeeks.org/find-maximum-difference-between-nearest-left-and-right-smaller-elements/
+        - https://www.geeksforgeeks.org/find-next-smaller-next-greater-array/
+        - https://www.geeksforgeeks.org/next-greater-frequency-element/
+        - https://www.geeksforgeeks.org/find-the-nearest-smaller-numbers-on-left-side-in-an-array/
+        - https://practice.geeksforgeeks.org/problems/save-gotham1222/1/
+    - * https://www.geeksforgeeks.org/design-and-implement-special-stack-data-structure/
+        - * https://www.geeksforgeeks.org/design-a-stack-that-supports-getmin-in-o1-time-and-o1-extra-space/
+            - Here, I applied a new idea!
+        - * https://www.geeksforgeeks.org/design-a-stack-with-find-middle-operation/
+	        - https://www.geeksforgeeks.org/create-mergable-stack/
+        - https://www.geeksforgeeks.org/create-customized-data-structure-evaluates-functions-o1/
+        - https://www.geeksforgeeks.org/tracking-current-maximum-element-in-a-stack/
+	- * https://www.geeksforgeeks.org/the-celebrity-problem/
+        - solution using graph (2D matrix)
+        - solution using stack
+        - solution using recursion
+        - solution without using any data structure
+        - Implement the algorithm using Queues. What is your observation? Compare your solution with Finding Maximum and Minimum in an array and Tournament Tree. What is the minimum number of comparisons do we need (optimal number of calls to HaveAcquaintance())?
+    - * https://www.geeksforgeeks.org/reverse-a-stack-using-recursion/
+        - https://www.geeksforgeeks.org/reverse-stack-without-using-extra-space/
+        - https://practice.geeksforgeeks.org/problems/clone-a-stack-without-usinig-extra-space/1
 
-## Notes
-	- links:
-		- https://www.geeksforgeeks.org/stack-in-cpp-stl/
-		- https://www.geeksforgeeks.org/stack-swap-in-c-stl/
-		- https://www.geeksforgeeks.org/stack-emplace-in-c-stl/
-	- methods:
-		- dp[i] = number of elements less than or equal to arr[i] -> O(n)
-		- dp[i] = first greater element in right side of arr[i]
-	- notes:
-		- infix, postfix, prefix: representation
-
-## Easy Problems (not present in files)
-	- https://www.geeksforgeeks.org/stack-data-structure-introduction-program/
-	- https://www.geeksforgeeks.org/stack-in-cpp-stl/
-	- https://www.geeksforgeeks.org/stack-class-in-java/
-	- https://www.geeksforgeeks.org/implement-two-stacks-in-an-array/
-	- https://www.geeksforgeeks.org/create-mergable-stack/
-	- https://www.geeksforgeeks.org/implement-stack-using-priority-queue-or-heap/
-	- https://www.geeksforgeeks.org/implement-stack-queue-using-deque/
 	- https://www.geeksforgeeks.org/check-for-balanced-parentheses-in-an-expression/
+        - support for "[(])"
+        - https://www.geeksforgeeks.org/find-maximum-depth-nested-parenthesis-string/
+        - https://www.geeksforgeeks.org/print-bracket-number/
+        - https://www.geeksforgeeks.org/find-index-closing-bracket-given-opening-bracket-expression/
+        - https://www.geeksforgeeks.org/identify-mark-unmatched-parenthesis-expression/
+    - https://www.geeksforgeeks.org/queue-using-stacks/
+        - https://www.geeksforgeeks.org/implement-stack-using-queue/
+            - https://www.geeksforgeeks.org/implement-a-stack-using-single-queue/
+	- https://www.geeksforgeeks.org/implement-two-stacks-in-an-array/
+	- https://www.geeksforgeeks.org/implement-stack-using-priority-queue-or-heap/
+    - https://www.geeksforgeeks.org/implement-stack-queue-using-deque/
 	- https://www.geeksforgeeks.org/sort-a-stack-using-recursion/
 		- https://www.geeksforgeeks.org/sort-stack-using-temporary-stack/
-		- https://www.geeksforgeeks.org/sorting-array-using-stacks/
-		- https://www.geeksforgeeks.org/check-array-stack-sortable/
+        - https://www.geeksforgeeks.org/sorting-array-using-stacks/
+        - https://www.geeksforgeeks.org/bubble-sort-using-two-stacks/
 	- https://www.geeksforgeeks.org/delete-middle-element-stack/
+    - https://www.geeksforgeeks.org/delete-array-elements-which-are-smaller-than-next-or-become-smaller/
 	- https://www.geeksforgeeks.org/reverse-individual-words/
+	- https://www.geeksforgeeks.org/check-array-stack-sortable/
+    - https://www.geeksforgeeks.org/merging-intervals/
+    - https://www.geeksforgeeks.org/print-ancestors-of-a-given-binary-tree-node-without-recursion/
+        - https://www.geeksforgeeks.org/iterative-method-to-find-ancestors-of-a-given-binary-tree/
+    - https://www.geeksforgeeks.org/stack-set-3-reverse-string-using-stack/
+    - https://www.geeksforgeeks.org/c-program-for-tower-of-hanoi/
+    - https://www.geeksforgeeks.org/check-if-a-given-array-can-represent-preorder-traversal-of-binary-search-tree/
+    - https://www.geeksforgeeks.org/stack-permutations-check-if-an-array-is-stack-permutation-of-other/
+    - https://www.geeksforgeeks.org/reverse-number-using-stack/
+    - https://www.geeksforgeeks.org/find-maximum-sum-possible-equal-sum-three-stacks/
+    - https://www.geeksforgeeks.org/printing-frequency-of-each-character-just-after-its-consecutive-occurrences/
+    - https://practice.geeksforgeeks.org/problems/8c8f95810b05b4cab665f2997d36991bd58308a2/1/
+    - https://practice.geeksforgeeks.org/problems/904237fa926d79126d42c437802b04287ea9d1c8/1/
+    - https://www.geeksforgeeks.org/delete-consecutive-words-sequence/
+    - https://www.geeksforgeeks.org/reversing-an-equation/
+    - https://www.geeksforgeeks.org/check-if-stack-elements-are-pairwise-consecutive/
+    - https://www.geeksforgeeks.org/growable-array-based-stack/
+
+
+    - In competitive programming, stack is usually used in case of:
+        - (next | first | previous) (greater | smaller) element is need
+        - merging
+    - This is a very good idea:
+        - `prv` = nearest `greater|smaller` element than curr from `left`
+        - `nxt` = nearest `greater|smaller` element than curr from `right`
+        - We can use some problems with `prv`, `curr`, and `nxt`!
+        - some samples:
+            - * https://www.geeksforgeeks.org/largest-rectangle-under-histogram/
+	- vector vs list vs deque
+	- push vs emplace
+	- fibonacci heap implementation of priority queue which would give us O(1) time complexity for push operation, but pop still requires O(log n)
+    - This can lead to seg fault: ```long long LS[n];``` (when n is too big)
+        - To solve the problem: ```long long* LS = new long long[n];```
+        - Make sure to free the memory at the end: ```delete(LS);```
+
 
 ## TODO
+    - https://practice.geeksforgeeks.org/courses/dsa-self-paced?utm_source=Google&utm_medium=Header+Link+Click&utm_campaign=DSA+Course+Tracker&utm_id=DSA-Course-Tracker&utm_term=DSA+Course+Promo&utm_content=Course+Page
+    - https://practice.geeksforgeeks.org/explore/?category%5B%5D=Stack&page=1&category%5B%5D=Stack
 	- https://practice.geeksforgeeks.org/topics/Stack/
-	- https://practice.geeksforgeeks.org/explore/?category%5B%5D=Stack&page=1&category%5B%5D=Stack
-	- https://www.geeksforgeeks.org/category/stack/
 	- https://www.geeksforgeeks.org/tag/cpp-stack/
+    - https://www.geeksforgeeks.org/category/stack/
 	- https://www.geeksforgeeks.org/data-structure-gq/stack-gq/
-	- https://www.geeksforgeeks.org/check-for-balanced-parentheses-in-an-expression/
-	- https://www.geeksforgeeks.org/recursive-functions/
-	- https://www.geeksforgeeks.org/618/
-	- https://www.geeksforgeeks.org/largest-rectangular-area-in-a-histogram-set-1/
-	- Backtracking is one of the algorithm designing techniques. Some examples of backtracking are the Knight-Tour problem, N-Queen problem, find your way through a maze, and game-like chess or checkers in all these problems we dive into someway if that way is not efficient we come back to the previous state and go into some another path. To get back from a current state we need to store the previous state for that purpose we need a stack.
-	- https://www.geeksforgeeks.org/topological-sorting/
-	- https://www.geeksforgeeks.org/strongly-connected-components/
-	- STL stack implementation - complexities
-	- https://www.geeksforgeeks.org/deque-cpp-stl/
-	- https://www.geeksforgeeks.org/list-cpp-stl/
-	- vector vs list vs deque
-	- https://contribute.geeksforgeeks.org/stackempty-and-stacksize-in-c-stl/
-	- push vs emplace
-	- https://www.geeksforgeeks.org/stack-in-python/
-	- * https://www.geeksforgeeks.org/implement-a-stack-using-single-queue/
-	- * https://www.geeksforgeeks.org/efficiently-implement-k-stacks-single-array/
-	- Implement a stack that supports getMax() in O(1) time and constant extra space.
-	- fibonacci heap implementation of priority queue which would give us O(1) time complexity for push operation, but pop still requires O(log n)
-	- * https://www.geeksforgeeks.org/prefix-infix-conversion/
-		- https://www.geeksforgeeks.org/postfix-prefix-conversion
-		- https://www.geeksforgeeks.org/prefix-postfix-conversion/
-		- https://www.geeksforgeeks.org/postfix-to-infix/
-		- https://www.geeksforgeeks.org/convert-infix-prefix-notation/
-		- http://en.wikipedia.org/wiki/Shunting-yard_algorithm
-		- https://www.geeksforgeeks.org/arithmetic-expression-evalution/
-		- https://www.geeksforgeeks.org/expression-evaluation/
-		- https://www.geeksforgeeks.org/stack-set-4-evaluation-postfix-expression/
-	- * https://www.geeksforgeeks.org/number-nges-right/
-	- * https://www.geeksforgeeks.org/maximum-product-of-indexes-of-next-greater-on-left-and-right/
-	- https://www.geeksforgeeks.org/recursive-functions/
-	- http://quiz.geeksforgeeks.org/algorithms/recursion/
-	- https://www.geeksforgeeks.org/tail-recursion/
 	- https://www.geeksforgeeks.org/algorithms-gq/recursion-gq/
-	- * https://www.geeksforgeeks.org/check-queue-can-sorted-another-queue-using-stack/
-	- * https://www.geeksforgeeks.org/the-celebrity-problem/
-	- * https://www.geeksforgeeks.org/count-subarrays-second-highest-lie-highest/
-	- https://practice.geeksforgeeks.org/courses/CPP-Foundation
-	- https://practice.geeksforgeeks.org/courses/Java-Foundation
-	- https://practice.geeksforgeeks.org/courses/Python-Foundation
-	- https://practice.geeksforgeeks.org/courses/geeks-classes-live
-	- https://practice.geeksforgeeks.org/courses/complete-interview-preparation
-	- https://practice.geeksforgeeks.org/courses/dsa-self-paced
-	- https://practice.geeksforgeeks.org/courses/Amazon-Test-Series
-	- https://practice.geeksforgeeks.org/courses/microsoft-test-series
-	- https://practice.geeksforgeeks.org/courses/tcs-interview-preparation
-	- https://practice.geeksforgeeks.org/courses/wipro-enth-preparation
+	- http://quiz.geeksforgeeks.org/algorithms/recursion/
+    - https://www.geeksforgeeks.org/flipkart-interview-experience-set-49/
+    - https://www.geeksforgeeks.org/amazon-interview-experience-set-241-1-5-years-experience/
+	- https://www.geeksforgeeks.org/number-nges-right/
+    - https://www.geeksforgeeks.org/next-smaller-element/
+        - segment tree!
+    - https://www.geeksforgeeks.org/iterate-over-characters-of-a-string-in-c/
+	- https://www.geeksforgeeks.org/tail-recursion/
+    - https://www.geeksforgeeks.org/divide-and-conquer-set-1-find-closest-pair-of-points/
+
+
+    - segment tree, binomial heap, fibo heap, red black tree, skip list, disjoint set, next greater element, ... in  competitive programming
+
+
+    - https://www.geeksforgeeks.org/find-expression-duplicate-parenthesis-not/
+    - https://www.geeksforgeeks.org/balanced-expression-replacement/
+    - https://www.geeksforgeeks.org/range-queries-longest-correct-bracket-subsequence-set-2/
+    - https://www.geeksforgeeks.org/pattern-occurrences-stack-implementation-java/
+    - https://www.geeksforgeeks.org/check-two-expressions-brackets/
+    - https://practice.geeksforgeeks.org/problems/number-of-positive-integral-solutions2115/1
+    - https://www.geeksforgeeks.org/identify-mark-unmatched-parenthesis-axpression/arenthesis-not/
+    - https://www.geeksforgeeks.org/expression-contains-redundant-bracket-not/
+    - https://www.geeksforgeeks.org/write-a-program-to-reverse-digits-of-a-number/
+    - https://www.geeksforgeeks.org/count-natural-numbers-whose-permutation-greater-number/
+    - https://www.geeksforgeeks.org/length-of-the-longest-valid-substring/
+    - https://www.geeksforgeeks.org/find-the-maximum-of-minimums-for-every-window-size-in-a-given-array/
+    - * https://www.geeksforgeeks.org/count-subarrays-second-highest-lie-highest/
+    - * https://www.geeksforgeeks.org/convert-infix-prefix-notation/
+    - * https://www.geeksforgeeks.org/largest-rectangular-area-in-a-histogram-set-1/
+	- https://www.geeksforgeeks.org/efficiently-implement-k-stacks-single-array/
+    - https://www.geeksforgeeks.org/iterative-tower-of-hanoi/
+    - https://www.geeksforgeeks.org/form-minimum-number-from-given-sequence/
+
+
+    - http://www.informatik.uni-ulm.de/acm/Locals/2003/html/judge.html
+    - http://www.informatik.uni-ulm.de/acm/Locals/2003/html/histogram.html
+    - http://en.wikipedia.org/wiki/Spaghetti_stack
+    - http://en.wikipedia.org/wiki/Tower_of_Hanoi
+	- http://en.wikipedia.org/wiki/Shunting-yard_algorithm
+    - http://en.wikipedia.org/wiki/Polish_notation
+    - http://en.wikipedia.org/wiki/Reverse_Polish_notation
+    - http://en.wikipedia.org/wiki/Stack_(abstract_data_type)#The_Stock_Span_Problem
+    - http://en.wikipedia.org/wiki/Stack_%28abstract_data_type%29#Problem_Description
+    - http://en.wikipedia.org/wiki/Stack_%28data_structure%29
+    - http://www.cs.nthu.edu.tw/~wkhon/ds/ds10/tutorial/tutorial2.pdf
+    - http://www2.lawrence.edu/fast/GREGGJ/CMSC270/Infix.html
+    - http://faculty.cs.niu.edu/~hutchins/csci241/eval.htm
+    - http://www.cis.upenn.edu/matuszek/cit594-2002/Assignments/5-expressions.htm
+    - https://stackoverflow.com/questions/688276/implement-stack-using-two-queues
+    - https://www.geeksforgeeks.org/python-frequency-of-each-character-in-string/
+    - https://www.geeksforgeeks.org/python-reverse-word-sentence/
+    - https://www.geeksforgeeks.org/c-sharp-stack-with-examples/
+    - https://www.geeksforgeeks.org/stack-in-python/
+    - https://www.geeksforgeeks.org/stack-class-in-java/
