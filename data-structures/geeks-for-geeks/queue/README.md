@@ -1,4 +1,10 @@
 ## Links
+    - * https://www.geeksforgeeks.org/sliding-window-maximum-maximum-of-all-subarrays-of-size-k/
+        - awesome idea!
+        - We can also use heap and BBST to solve the problem.
+        - * https://www.geeksforgeeks.org/sum-minimum-maximum-elements-subarrays-size-k/
+    - * https://www.geeksforgeeks.org/huffman-coding-greedy-algo-3/
+    - * https://practice.geeksforgeeks.org/problems/card-rotation5834/1/
     - * https://www.geeksforgeeks.org/queue-set-1introduction-and-array-implementation/
         - https://www.geeksforgeeks.org/queue-linked-list-implementation/
         - * https://www.geeksforgeeks.org/applications-of-queue-data-structure/
@@ -22,9 +28,6 @@
 	    - https://www.geeksforgeeks.org/implementation-deque-using-doubly-linked-list/
         - * https://www.geeksforgeeks.org/deque-cpp-stl/
     - **level order traversal:**
-        - https://www.geeksforgeeks.org/check-if-a-given-binary-tree-is-complete-tree-or-not/
-            - solution using queue
-            - solution using 2i + 1, 2i + 2
         - https://www.geeksforgeeks.org/averages-levels-binary-tree/
         - https://www.geeksforgeeks.org/check-if-all-levels-of-two-trees-are-anagrams-or-not/
         - https://www.geeksforgeeks.org/check-mirror-n-ary-tree/
@@ -38,11 +41,9 @@
         - https://www.geeksforgeeks.org/maximum-width-of-a-binary-tree/
             - other solution: using preorder traversal
         - https://www.geeksforgeeks.org/level-order-traversal-line-line-set-2-using-two-queues/
-        - https://www.geeksforgeeks.org/print-level-order-traversal-line-line/
+        - https://www.geeksforgeeks.org/print-binary-tree-levels-sorted-order/
+        - https://www.geeksforgeeks.org/find-next-right-node-of-a-given-key/
     - **other tree problems:**
-        - https://www.geeksforgeeks.org/given-linked-list-representation-of-complete-tree-convert-it-to-linked-representation/
-	    - * https://www.geeksforgeeks.org/reverse-tree-path/
-            - https://www.geeksforgeeks.org/given-a-binary-tree-print-all-root-to-leaf-paths/
         - https://www.geeksforgeeks.org/iterative-method-to-find-height-of-binary-tree/
             - https://www.geeksforgeeks.org/write-a-c-program-to-find-the-maximum-depth-or-height-of-a-tree/
             - solution using recursion
@@ -56,8 +57,6 @@
         - * https://www.geeksforgeeks.org/interleave-first-half-queue-second-half/
     - https://www.geeksforgeeks.org/sorting-queue-without-extra-space/
     - https://www.geeksforgeeks.org/check-queue-can-sorted-another-queue-using-stack/
-	- * https://www.geeksforgeeks.org/efficiently-implement-k-queues-single-array/
-        - Implement it yourself then test it!
     - https://www.geeksforgeeks.org/lru-cache-implementation/
     - https://www.geeksforgeeks.org/first-negative-integer-every-window-size-k/
     - * https://www.geeksforgeeks.org/minimum-sum-squares-characters-counts-given-string-removing-k-characters/
@@ -73,6 +72,10 @@
         - * https://www.geeksforgeeks.org/minimum-time-required-so-that-all-oranges-become-rotten/
         - * https://www.geeksforgeeks.org/distance-nearest-cell-1-binary-matrix/
             - fix time limit problem!
+        - * https://www.geeksforgeeks.org/minimum-steps-reach-target-knight/
+        - * https://practice.geeksforgeeks.org/problems/spidey-sense5556/1/
+        - * https://www.geeksforgeeks.org/find-the-count-of-unvisited-indices-in-an-infinite-array/
+            - Take a look at the O(1) memory solution at the page.
 
     - simple queue - circular queue - priority queue - dequeue
     - circular: front, rear
@@ -93,9 +96,11 @@
     - https://www.youtube.com/playlist?list=PLqM7alHXFySG6wgjVeEat_ouTIi0IBQ6D
 
 
+    - https://en.wikipedia.org/wiki/Coin_problem
+    - https://www.geeksforgeeks.org/minimum-incrementdecrement-to-make-array-non-increasing/
+    - https://practice.geeksforgeeks.org/problems/count-possible-ways-to-construct-buildings5007/1
+    - https://www.geeksforgeeks.org/efficiently-implement-k-queues-single-array/
     - https://www.geeksforgeeks.org/find-the-largest-number-multiple-of-3/
-    - https://www.geeksforgeeks.org/sliding-window-maximum-maximum-of-all-subarrays-of-size-k/
-        - https://www.geeksforgeeks.org/sum-minimum-maximum-elements-subarrays-size-k/
     - https://www.geeksforgeeks.org/find-a-tour-that-visits-all-stations/
     - https://www.geeksforgeeks.org/a-search-algorithm/
     - https://www.geeksforgeeks.org/0-1-bfs-shortest-path-binary-graph/
@@ -118,16 +123,16 @@
     - https://www.geeksforgeeks.org/implementation-priority-queue-javascript/
 	- https://www.geeksforgeeks.org/queue-in-python/
     - https://www.geeksforgeeks.org/deque-in-python/
-    - https://www.geeksforgeeks.org/heap-queue-or-heapq-in-python/
     - https://www.geeksforgeeks.org/queue-interface-java/
     - https://www.geeksforgeeks.org/deque-interface-java-example/
-    - https://www.geeksforgeeks.org/priority-queue-class-in-java-2/
     - https://practice.geeksforgeeks.org/problems/interrupt-handlers
     - https://www.geeksforgeeks.org/load-balancing-on-servers-random-algorithm/
     - https://www.geeksforgeeks.org/cpu-scheduling-in-operating-systems/
     - https://www.geeksforgeeks.org/disk-scheduling-algorithms/
 
 
+    - http://en.wikipedia.org/wiki/Huffman_coding#Applications
+    - http://en.wikipedia.org/wiki/Prefix_code
 	- http://www.yolinux.com/TUTORIALS/LinuxTutorialC++STL.html#LIST
 	- http://www.wiley.com/college/silberschatz6e/0471417432/slides/pdf2/mod10.2.pdf
     - https://en.wikipedia.org/wiki/Load_balancing_(computing)
@@ -144,24 +149,54 @@
 
 
     - STL containers:
+        - operation's time complexities and memory complexities
+        - http://geeksquiz.com/multimap-associative-containers-the-c-standard-template-library-stl/
+        - https://www.geeksforgeeks.org/unorderd_set-stl-uses/
+            - https://www.geeksforgeeks.org/unordered-set-of-vectors-in-c-with-examples/
         - https://www.geeksforgeeks.org/multiset-in-cpp-stl/
         - https://www.geeksforgeeks.org/priority-queue-in-cpp-stl/
+        - https://www.geeksforgeeks.org/heap-using-stl-c/
         - https://www.geeksforgeeks.org/queue-cpp-stl/
         - https://www.geeksforgeeks.org/deque-cpp-stl/
         - https://www.geeksforgeeks.org/vector-in-cpp-stl/
         - https://www.geeksforgeeks.org/list-cpp-stl/
+        - https://www.geeksforgeeks.org/stack-in-cpp-stl/
+            - https://www.geeksforgeeks.org/stack-top-c-stl/
+            - https://www.geeksforgeeks.org/stack-push-and-pop-in-c-stl/
+            - https://www.geeksforgeeks.org/stackemplace-c-stl/
+            - https://www.geeksforgeeks.org/stackswap-c-stl/
+            - https://www.geeksforgeeks.org/stackpush-stackpop-c-stl/
+            - https://www.geeksforgeeks.org/stackempty-stacksize-c-stl/
+            - https://www.geeksforgeeks.org/stack-empty-and-stack-size-in-c-stl/
+            - https://www.geeksforgeeks.org/stack-swap-in-c-stl/
+            - https://www.geeksforgeeks.org/stack-emplace-in-c-stl/
+            - https://contribute.geeksforgeeks.org/stackempty-and-stacksize-in-c-stl/
 
 
-    - https://practice.geeksforgeeks.org/courses/complete-interview-preparation?utm_source=CIP-A&utm_medium=Article&utm_campaign=a
-    - https://practice.geeksforgeeks.org/courses/live?utm_source=article&utm_medium=article&utm_campaign=live-courses-article
-    - https://practice.geeksforgeeks.org/courses/geeks-classes-live?utm_source=article&utm_medium=article&utm_campaign=geeks-classes-live-article
-    - https://practice.geeksforgeeks.org/courses/system-design-live?utm_source=article&utm_medium=article&utm_campaign=system-design-live-article
-    - https://practice.geeksforgeeks.org/courses/competitive-programming-live?utm_source=article&utm_medium=article&utm_campaign=cp-live-article
-    - https://practice.geeksforgeeks.org/courses/c-foundation?utm_source=gfg-page&utm_medium=gfg-page&utm_campaign=c-foundation-gfg-page
-    - https://practice.geeksforgeeks.org/courses/CPP-Foundation?utm_source=article&utm_medium=article&utm_campaign=cpp-foundation-article
-    - https://practice.geeksforgeeks.org/courses/Java-Foundation?utm_source=article&utm_medium=article&utm_campaign=java-foundation-article
-    - https://practice.geeksforgeeks.org/courses/Python-Foundation?utm_source=article&utm_medium=article&utm_campaign=python-foundation-article
-    - https://practice.geeksforgeeks.org/courses
+    - courses:
+        - https://practice.geeksforgeeks.org/courses/CPP-Foundation
+        - https://practice.geeksforgeeks.org/courses/Java-Foundation
+        - https://practice.geeksforgeeks.org/courses/Python-Foundation
+        - https://practice.geeksforgeeks.org/courses/geeks-classes-live
+        - https://practice.geeksforgeeks.org/courses/complete-interview-preparation
+        - https://practice.geeksforgeeks.org/courses/dsa-self-paced
+        - https://practice.geeksforgeeks.org/courses/Amazon-Test-Series
+        - https://practice.geeksforgeeks.org/courses/microsoft-test-series
+        - https://practice.geeksforgeeks.org/courses/tcs-interview-preparation
+        - https://practice.geeksforgeeks.org/courses/wipro-enth-preparation
+
+
+    - practice
+        - https://practice.geeksforgeeks.org/courses/complete-interview-preparation?utm_source=CIP-A&utm_medium=Article&utm_campaign=a
+        - https://practice.geeksforgeeks.org/courses/live?utm_source=article&utm_medium=article&utm_campaign=live-courses-article
+        - https://practice.geeksforgeeks.org/courses/geeks-classes-live?utm_source=article&utm_medium=article&utm_campaign=geeks-classes-live-article
+        - https://practice.geeksforgeeks.org/courses/system-design-live?utm_source=article&utm_medium=article&utm_campaign=system-design-live-article
+        - https://practice.geeksforgeeks.org/courses/competitive-programming-live?utm_source=article&utm_medium=article&utm_campaign=cp-live-article
+        - https://practice.geeksforgeeks.org/courses/c-foundation?utm_source=gfg-page&utm_medium=gfg-page&utm_campaign=c-foundation-gfg-page
+        - https://practice.geeksforgeeks.org/courses/CPP-Foundation?utm_source=article&utm_medium=article&utm_campaign=cpp-foundation-article
+        - https://practice.geeksforgeeks.org/courses/Java-Foundation?utm_source=article&utm_medium=article&utm_campaign=java-foundation-article
+        - https://practice.geeksforgeeks.org/courses/Python-Foundation?utm_source=article&utm_medium=article&utm_campaign=python-foundation-article
+        - https://practice.geeksforgeeks.org/courses
 
 
     - c++ data types
