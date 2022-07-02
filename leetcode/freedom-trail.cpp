@@ -6,8 +6,37 @@ using namespace std;
 
 class Solution {
 public:
-    // time: O(n*m), memory: O(n*m)
+    // time: O(n*m), memory: O(n)
     int findRotateSteps(string ring, string key) {
+        int n = ring.length(), m = key.length();
+        vector<int> dp(n);
+        unordered_map<char, vector<int>> pos;
+        int i = 0;
+        while(i < n) {
+            pos[ring[i]].push_back(i);
+            i++;
+        }
+        int j = m - 1;
+        while(-1 < j) {
+            vector<int> temp(n);
+            i = 0;
+            while(i < n) {
+                int res = INT_MAX, a;
+                for(auto& k: pos[key[j]]) {
+                    a = abs(i - k);
+                    res = min(res, (j == m - 1 ? 0 : dp[k]) + min(a, n - a));
+                }
+                temp[i] = res;
+                i++;
+            }
+            dp = temp;
+            j--;
+        }
+        return dp[0] + m;
+    }
+
+    // time: O(n*m), memory: O(n*m)
+    int findRotateSteps3(string ring, string key) {
         int n = ring.length(), m = key.length();
         vector<vector<int>> dp(n);
         unordered_map<char, vector<int>> pos;
