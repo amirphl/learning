@@ -5,24 +5,24 @@
 
 // time: O(n), memory: O(1)
 void sort(int arr[], int n) {
-	for (int i = 0; i < n; i++) {
-		arr[i] = i + 1;
-	}
+    for (int i = 0; i < n; i++) {
+        arr[i] = i + 1;
+    }
 }
 
 void print(int arr[], int n) {
-	for (int i = 0; i < n; i++) {
-		std::cout << arr[i] << " ";
-	}
+    for (int i = 0; i < n; i++) {
+        std::cout << arr[i] << " ";
+    }
 
-	std::cout << std::endl;
+    std::cout << std::endl;
 }
 
 int main() {
-	int arr[] = { 10, 7, 9, 2, 8, 3, 5, 4, 6, 1 };
-	int n = sizeof(arr) / sizeof(arr[0]);
-	print(arr, n);
-	sort(arr, n);
-	print(arr, n);
-	return 0;
+    int arr[] = { 10, 7, 9, 2, 8, 3, 5, 4, 6, 1 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+    print(arr, n);
+    sort(arr, n);
+    print(arr, n);
+    return 0;
 }
