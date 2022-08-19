@@ -1,0 +1,95 @@
+## Links
+    - In case of two sorted arrays, one idea is to use two pointers, the first one points to the first cell of **arr1** and the second one points to the last cell of **arr2**. This way, you may be able to solve the problem in O(n).
+        - Sometimes both pointers should point to the first cells of **arr1** and **arr2**.
+	- min\_heap initialization:
+		- first  approach: ```std::priority_queue<long long, std::vector<long long>, std::greater<long long>> pq(arr, arr + size);```. Note: array elements don't get modified!
+		- second approach: ```for (int i = 0; i <= k; i++) pq.push(arr[i]);```
+	- map iteration:
+		- correct  : ```for (auto it = m.begin(); it <  m.end(); it++)```
+		- incorrect: ```for (auto it = m.begin(); it != m.end(); it++)```
+	- C++ std::map can be implemented with a self balancing binary search tree (SBST). It depends on the compiler(GCC, CLANG, VS, ...).
+		- operations: search, delete, insert: O(logn)
+		- order: in-order traversal
+	- copy: ```std::copy(brr, brr + k + 1, arr + low);```
+	- custom sort:
+	```
+	std::stable_sort(arr, arr + n, [k](int a, int b) {
+        return std::abs(a - k) < std::abs(b - k);
+	});
+	```
+    - https://www.geeksforgeeks.org/alternative-sorting/
+    - https://www.geeksforgeeks.org/nearly-sorted-algorithm/
+        - (TODO) method 3
+    - (TODO) https://www.geeksforgeeks.org/sort-an-array-according-to-absolute-difference-with-given-value/
+    - https://www.geeksforgeeks.org/sort-array-wave-form-2/
+    - * https://www.geeksforgeeks.org/merge-one-array-of-size-n-into-another-one-of-size-mn/
+    - https://www.geeksforgeeks.org/sort-array-contain-1-n-values/
+    - (TODO) https://www.geeksforgeeks.org/sort-1-n-swapping-adjacent-elements/
+    - https://www.geeksforgeeks.org/sort-array-containing-two-types-elements/
+    - https://www.geeksforgeeks.org/segregate-0s-and-1s-in-an-array-by-traversing-array-once/
+    - https://www.geeksforgeeks.org/sort-an-array-of-0s-1s-and-2s/
+    - https://www.geeksforgeeks.org/sort-array-0s-1s-2s-simple-counting/
+    - https://www.geeksforgeeks.org/sort-elements-by-frequency/
+        - (TODO) method 3
+        - (TODO) https://www.geeksforgeeks.org/sort-elements-by-frequency-set-2/
+    - (TODO) https://www.geeksforgeeks.org/counting-inversions/
+		- (TODO) https://www.geeksforgeeks.org/counting-inversions-using-set-in-c-stl/
+        - (TODO) https://www.geeksforgeeks.org/count-inversions-array-set-3-using-bit/
+    - https://www.geeksforgeeks.org/shortest-un-ordered-subarray/
+	- * https://www.geeksforgeeks.org/minimum-number-swaps-required-sort-array/
+        - (TODO) method 1
+        - https://www.geeksforgeeks.org/minimum-swaps-to-make-two-array-identical/
+            - (TODO) Is it possible to solve the problem in time: O(n) and memory: O(1)?
+        - * https://www.geeksforgeeks.org/number-swaps-sort-adjacent-swapping-allowed/
+    - * https://www.geeksforgeeks.org/minimum-length-unsorted-subarray-sorting-which-makes-the-complete-array-sorted/
+    - * https://www.geeksforgeeks.org/find-number-of-triangles-possible/
+        - time: O(n*n)
+        - (TODO) method 3
+    - https://www.geeksforgeeks.org/find-number-pairs-xy-yx/
+    - * https://www.geeksforgeeks.org/construct-array-pair-sum-array/
+    - (TODO) https://www.geeksforgeeks.org/no-pairs-aj-ai-k-numbers-range-ai-aj-divisible-x/
+    - https://www.geeksforgeeks.org/product-maximum-first-array-minimum-second/
+    - https://www.geeksforgeeks.org/probability-random-pair-maximum-weighted-pair/
+    - https://www.geeksforgeeks.org/minimum-de-arrangements-present-array-ap-arithmetic-progression/
+    - https://www.geeksforgeeks.org/de-arrangements-for-minimum-product-sum-of-two-arrays/
+    - https://www.geeksforgeeks.org/divide-array-k-segments-maximize-maximum-segment-minimums/
+    - https://www.geeksforgeeks.org/minimum-product-pair-an-array-of-positive-integers/
+    - * https://www.geeksforgeeks.org/count-ways-form-minimum-product-triplets/
+    - https://www.geeksforgeeks.org/check-reversing-sub-array-make-array-sorted/
+    - https://www.geeksforgeeks.org/maximize-elements-using-another-array/
+    - https://www.geeksforgeeks.org/making-elements-of-two-arrays-same-with-minimum-incrementdecrement/
+    - https://www.geeksforgeeks.org/check-interval-completely-overlaps/
+    - https://www.geeksforgeeks.org/sorting-array-except-elements-subarray/
+    - https://www.geeksforgeeks.org/sorting-array-elements-except-one/
+    - https://www.geeksforgeeks.org/minimum-swaps-required-sort-binary-array/
+    - https://www.geeksforgeeks.org/sort-linked-list-order-elements-appearing-array/
+    - https://www.geeksforgeeks.org/print-sorted-distinct-elements-array-c/
+    - (TODO) https://www.geeksforgeeks.org/maximum-number-partitions-can-sorted-individually-make-sorted/
+    - https://www.geeksforgeeks.org/sort-basis-number-factors-using-stl/
+    - https://www.geeksforgeeks.org/sort-elements-basis-number-factors/
+    - https://www.geeksforgeeks.org/ropes-left-every-cut/
+    - https://www.geeksforgeeks.org/rank-elements-array/
+        - (TODO) method 1 and 2
+    - https://www.geeksforgeeks.org/merge-3-sorted-arrays/
+    - https://www.geeksforgeeks.org/find-minimum-number-operation-make-array-decreasing/
+    - https://www.geeksforgeeks.org/maximize-sum-arrii/
+    - https://www.geeksforgeeks.org/pairs-difference-less-k/
+    - https://www.geeksforgeeks.org/merging-two-unsorted-arrays-sorted-order/
+    - * https://www.geeksforgeeks.org/maximizing-unique-pairs-two-arrays/
+    - https://www.geeksforgeeks.org/sort-array-applying-given-equation/
+    - https://www.geeksforgeeks.org/sum-minimum-absolute-difference-array-element/
+    - (TODO) https://www.geeksforgeeks.org/find-whether-possible-make-array-elements-using-one-external-number/
+    - https://www.geeksforgeeks.org/smallest-difference-pair-values-two-unsorted-arrays/
+    - https://www.geeksforgeeks.org/given-two-sorted-arrays-number-x-find-pair-whose-sum-closest-x/
+    - https://www.geeksforgeeks.org/given-sorted-array-number-x-find-pair-array-whose-sum-closest-x/
+    - https://www.geeksforgeeks.org/program-check-array-sorted-not-iterative-recursive/
+    - https://www.geeksforgeeks.org/find-elements-larger-half-elements-array/
+    - https://www.geeksforgeeks.org/elements-to-be-added-so-that-all-elements-of-a-range-are-present-in-array/
+
+
+## TODO
+    - https://www.geeksforgeeks.org/category/sorting/
+    - https://www.geeksforgeeks.org/amazon-interview-experience-set-424-sde-2/
+    - https://www.geeksforgeeks.org/find-all-divisors-of-a-natural-number-set-2/
+    - https://practice.geeksforgeeks.org/topics/Array/
+    - https://www.geeksforgeeks.org/data-structure-gq/array-gq/
