@@ -10,7 +10,7 @@ class Solution {
 
 public:
     // time: O(max_elem + n), memory: O(max_elem)
-    vector<int> findMaxGuests(int Entry[], int Exit[], int N)
+    vector<int> findMaxGuests2(int Entry[], int Exit[], int N)
     {
         if (N == 1) {
             return {1, Entry[0]};
@@ -44,6 +44,33 @@ public:
             i++;
         }
         //cout << endl;
+        return {res, t};
+    }
+
+    // time: O(nlogn), memory: O(1)
+    vector<int> findMaxGuests(int Entry[], int Exit[], int N) {
+        if (N == 1) {
+            return {1, Entry[0]};
+        }
+        sort(Entry, Entry + N);
+        sort(Exit, Exit + N);
+        int i = 0;
+        int j = 0;
+        int sum = 0;
+        int res = 1;
+        int t = Entry[0];
+        while(i < N) {
+            if (Entry[i] < Exit[j] + 1) {
+                sum++;
+                if (sum > res) {
+                    res = sum;
+                    t = Entry[i];
+                }
+            } else {
+                j++;
+            }
+            i++;
+        }
         return {res, t};
     }
 };
