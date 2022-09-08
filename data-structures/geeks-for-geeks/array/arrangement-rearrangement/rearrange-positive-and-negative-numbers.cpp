@@ -8,12 +8,6 @@
 // https://www.geeksforgeeks.org/positive-elements-at-even-and-negative-at-odd-positions-relative-order-not-maintained/
 // https://www.geeksforgeeks.org/segregate-even-odd-numbers-set-3/
 // https://www.geeksforgeeks.org/segregate-even-odd-set-2/
-//
-// other approaches:
-// method 2 (doesn't maintain the order of appearance): using partition process of quick sort (pivot = 0): time: O(n), memory: O(1)
-// method 3 (       maintains the order of appearance): right rotate the array starting at element at incorrect position with next element which should be replaced with it: time: O(n*n), memory: O(1)
-// method 4 (doesn't maintain the order of appearance): sort then rearrange: time: O(nlogn), memory: O(1)
-// method 5 (doesn't maintain the order of appearance): two pointer technique: time: O(n), memory: O(1)
 
 // { Driver Code Starts
 #include<bits/stdc++.h>
@@ -22,8 +16,8 @@ using namespace std;
 
 void Rearrange(int arr[], int n);
 
-int main() 
-{ 
+int main()
+{
     int t;
     cin>>t;
     while(t--)
@@ -31,17 +25,17 @@ int main()
         int n;
         cin>>n;
         int arr[n];
-        for(int i=0;i<n;i++)
-        cin>>arr[i];
+        for(int i=0; i<n; i++)
+            cin>>arr[i];
         long long j=0;
-      
+
         Rearrange( arr, n);
-      
-        for (int i = 0; i < n; i++) 
-            cout << arr[i] << " "; 
-        cout << endl;  
+
+        for (int i = 0; i < n; i++)
+            cout << arr[i] << " ";
+        cout << endl;
     }
-    return 0; 
+    return 0;
 } // } Driver Code Ends
 
 void left_shift(int arr[], int i, int j, int d)
@@ -57,7 +51,7 @@ void rearr(int arr[], int low, int high)
 {
     if (low >= high)
         return;
-    
+
     if (low + 1 == high)
     {
         if (arr[low] >= 0 && arr[high] < 0)
