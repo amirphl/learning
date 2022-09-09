@@ -9,9 +9,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
- // } Driver Code Ends
-class Solution{
-    public:
+// } Driver Code Ends
+class Solution {
+public:
     // time: O(nlogn), memory: O(n)
     vector<int> assign(int arr[], int n)
     {
@@ -81,16 +81,16 @@ class Solution{
 // { Driver Code Starts.
 
 //checking if answer is correct or not
-bool checkOrder(vector<int> ans){
-    for(int i = 1; i < ans.size(); i++){
-        if(i%2 != 0){
+bool checkOrder(vector<int> ans) {
+    for(int i = 1; i < ans.size(); i++) {
+        if(i%2 != 0) {
             if(ans[i] < ans[i-1])
             {
                 return false;
             }
         }
-        else{
-            if(ans[i] > ans[i-1]){
+        else {
+            if(ans[i] > ans[i-1]) {
                 return false;
             }
         }
@@ -104,12 +104,12 @@ int main()
     cin>>t;
     while(t--)
     {
-    	int n;
-    	cin>>n;
-    	int arr[n];
-    	for(int i=0; i<n; i++)
-    	  cin>>arr[i];
-    	Solution ob;
+        int n;
+        cin>>n;
+        int arr[n];
+        for(int i=0; i<n; i++)
+            cin>>arr[i];
+        Solution ob;
         vector<int> ans;
         ans = ob.assign(arr, n);
         bool check_ans = checkOrder(ans);
