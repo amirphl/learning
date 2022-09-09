@@ -9,7 +9,7 @@ using namespace std;
 
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 
 
 class Solution
@@ -57,18 +57,18 @@ public:
 // Driver code
 int main() {
 
-	int t,n,k;
-	cin>>t;
-	while(t--)
+    int t,n,k;
+    cin>>t;
+    while(t--)
     {
         cin>>n;
         int arr[n];
-        for(int i=0;i<n;i++)
+        for(int i=0; i<n; i++)
             cin>>arr[i];
         cin>>k;
         Solution ob;
         cout << ob.minSwap(arr, n, k) << "\n";
     }
-	return 0;
+    return 0;
 }
-  // } Driver Code Ends
+// } Driver Code Ends
