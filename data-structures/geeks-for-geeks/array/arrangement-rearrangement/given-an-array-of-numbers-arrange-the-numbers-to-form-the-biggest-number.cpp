@@ -6,9 +6,9 @@
 using namespace std;
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 //User function template for C++
-bool comp(std::string a, std::string b){
+bool comp(std::string a, std::string b) {
     int a_len = a.length();
     int b_len = b.length();
 
@@ -43,18 +43,18 @@ int geeksCompare(string X, string Y)
     return XY.compare(YX) > 0 ? 1 : 0;
 }
 
-class Solution{
+class Solution {
 public:
-	// The main function that returns the arrangement with the largest value as
-	// string.
-	// The function accepts a vector of strings
-	string printLargest(vector<string> &arr) {
-    	// std::sort(arr.begin(), arr.end(), comp);
-    	std::sort(arr.begin(), arr.end(), geeksCompare);
-    	std::ostringstream os;
+    // The main function that returns the arrangement with the largest value as
+    // string.
+    // The function accepts a vector of strings
+    string printLargest(vector<string> &arr) {
+        // std::sort(arr.begin(), arr.end(), comp);
+        std::sort(arr.begin(), arr.end(), geeksCompare);
+        std::ostringstream os;
         std::copy(arr.begin(), arr.end(), ostream_iterator<string>(os));
         return os.str();
-	}
+    }
 };
 
 // { Driver Code Starts.
