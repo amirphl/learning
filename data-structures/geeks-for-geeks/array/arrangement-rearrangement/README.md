@@ -6,8 +6,8 @@
         - method 1 (maintains the order of appearance): right rotate the array starting at the element at the incorrect position with the next element which should be replaced with it: time: O(n*n), memory: O(1)
         - method 2 (maintains the order of appearance): optimized merge sort: [Ln Lp Rn Rp] -> [Ln Lp’ Rn’ Rp] -> [Ln Rn Lp Rp]: time: O(nlogn), memory: O(logn)
         - method 3 (maintains the order of appearance): using auxiliary array: time: O(n), memory: O(n)
-        - method 4 (maintains the order of appearance): using STL ```stdstable_partition```: time: ?, memory: ?
-        - method 5 (doesn't maintain the order of appearance): using partition process of quick sort (pivot = 0): time: O(n), memory: O(n) or time: O(nlogn), memory: O(1)
+        - method 4 (maintains the order of appearance): using STL ```stdstable_partition```: time: O(n), memory: O(n) or time: O(nlogn), memory: O(1)
+        - method 5 (doesn't maintain the order of appearance): using partition process of quick sort (pivot = 0): time: O(n), memory: O(1)
         - method 6 (doesn't maintain the order of appearance): two pointer technique: time: O(n), memory: O(1)
         - method 7 (doesn't maintain the order of appearance): sort then rearrange: time: O(nlogn), memory: O(1)
         - two pointer technique
