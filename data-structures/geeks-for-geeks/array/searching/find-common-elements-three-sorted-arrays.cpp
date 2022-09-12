@@ -10,51 +10,52 @@
 using namespace std;
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 class Solution
 {
-    public:
-        // time: O(n1 + n2 + max(n1, n2) + n3), memory: max(n1, n2) + max(max(n1, n2) + n3)
-        vector <int> commonElements(int a[], int b[], int c[], int n1, int n2, int n3) {
-            std::vector<int> mid_vec = commonElements(a, b, n1, n2);
-            /*
-            for (int i = 0; i < mid_vec.size(); i++)
-                std::cout << mid_vec[i] << " ";
-            std::cout << "-----------" << std::endl;
-            */
-            int* mid_res = &mid_vec[0];
-            return commonElements(mid_res, c, mid_vec.size(), n3);
-        }
+public:
+    // time: O(n1 + n2 + max(n1, n2) + n3), memory: max(n1, n2) + max(max(n1, n2) + n3)
+    vector <int> commonElements(int a[], int b[], int c[], int n1, int n2, int n3) {
+        std::vector<int> mid_vec = commonElements(a, b, n1, n2);
+        /*
+        for (int i = 0; i < mid_vec.size(); i++)
+            std::cout << mid_vec[i] << " ";
+        std::cout << "-----------" << std::endl;
+        */
+        int* mid_res = &mid_vec[0];
+        return commonElements(mid_res, c, mid_vec.size(), n3);
+    }
 
-        // time: O(n1 + n2), memory: max(n1, n2)
-        vector <int> commonElements(int a[], int b[], int n1, int n2) {
-            std::vector<int> res;
-            int i = 0, j = 0, prev, f = 0;
-            while(i < n1 && j < n2) {
-                // std::cout << a[i] << " " <<  b[j] << " \n";
-                if (a[i] == b[j]) {
-                    if ((f == 1 && prev != a[i]) || f == 0) {
-                        res.push_back(a[i]);
-                        prev = a[i];
-                        f = 1;
-                    }
-                    i++;
-                    j++;
-                } else if (a[i] < b[j]) {
-                    i++;
-                } else {
-                    j++;
+    // time: O(n1 + n2), memory: max(n1, n2)
+    vector <int> commonElements(int a[], int b[], int n1, int n2) {
+        std::vector<int> res;
+        int i = 0, j = 0, prev, f = 0;
+        while(i < n1 && j < n2) {
+            // std::cout << a[i] << " " <<  b[j] << " \n";
+            if (a[i] == b[j]) {
+                if ((f == 1 && prev != a[i]) || f == 0) {
+                    res.push_back(a[i]);
+                    prev = a[i];
+                    f = 1;
                 }
+                i++;
+                j++;
+            } else if (a[i] < b[j]) {
+                i++;
+            } else {
+                j++;
             }
-            return res;
         }
+        return res;
+    }
 };
 
 // { Driver Code Starts.
 
 int main ()
 {
-    int t; cin >> t;
+    int t;
+    cin >> t;
     while (t--)
     {
         int n1, n2, n3;
