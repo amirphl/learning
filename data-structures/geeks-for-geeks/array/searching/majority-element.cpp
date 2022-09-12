@@ -9,12 +9,12 @@
 using namespace std;
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 //User function template for C++
 
-class Solution{
-  public:
-     // Function to find majority element in the array
+class Solution {
+public:
+    // Function to find majority element in the array
     // a: input array
     // size: size of input array
     // time: O(n), memory: O(1)
@@ -51,17 +51,17 @@ class Solution{
 
 // { Driver Code Starts.
 
-int main(){
+int main() {
 
     int t;
     cin >> t;
 
-    while(t--){
+    while(t--) {
         int n;
         cin >> n;
         int arr[n];
-        
-        for(int i = 0;i<n;i++){
+
+        for(int i = 0; i<n; i++) {
             cin >> arr[i];
         }
         Solution obj;
@@ -70,4 +70,4 @@ int main(){
 
     return 0;
 }
-  // } Driver Code Ends
+// } Driver Code Ends
