@@ -13,30 +13,30 @@
 using namespace std;
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 //User function template for C++
-class Solution{
-public:	
-	// Function to check if array has 2 elements
-	// whose sum is equal to the given value
+class Solution {
+public:
+    // Function to check if array has 2 elements
+    // whose sum is equal to the given value
 
-	// sort + two pointer technique
-	// time: O(nlogn), memory: O(1)
-	bool hasArrayTwoCandidates1(int arr[], int n, int x) {
-	    if (n < 2)
-	        return false;
-	    std::sort(arr, arr + n);
-	    int i = 0, j = n - 1;
-	    while(i < n && j > -1 && j > i) {
-	        if (arr[i] + arr[j] == x)
-	            return true;
-	        if (arr[i] + arr[j] < x)
-	            i++;
-	        else
-	            j--;
- 	    }
- 	    return false;
-	}
+    // sort + two pointer technique
+    // time: O(nlogn), memory: O(1)
+    bool hasArrayTwoCandidates1(int arr[], int n, int x) {
+        if (n < 2)
+            return false;
+        std::sort(arr, arr + n);
+        int i = 0, j = n - 1;
+        while(i < n && j > -1 && j > i) {
+            if (arr[i] + arr[j] == x)
+                return true;
+            if (arr[i] + arr[j] < x)
+                i++;
+            else
+                j--;
+        }
+        return false;
+    }
 
     // approach: using set
     // time: O(n), memory: O(n)
@@ -90,4 +90,4 @@ int main() {
     }
     return 0;
 }
-  // } Driver Code Ends
+// } Driver Code Ends
