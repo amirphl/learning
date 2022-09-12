@@ -1,45 +1,101 @@
-## Notes
-    - https://www.geeksforgeeks.org/rearrange-array-arri-arrj-even-arri/
+## Links
+    - * https://www.geeksforgeeks.org/rearrange-positive-and-negative-numbers/
+        - (TODO) method 2, 5
+        - input:  [12 11 -13 -5 6 -7 5 -3 -6]
+        - output: [-13 -5 -7 -3 -6 12 11 6 5]
+        - method 1 (maintains the order of appearance): right rotate the array starting at the element at the incorrect position with the next element which should be replaced with it: time: O(n*n), memory: O(1)
+        - method 2 (maintains the order of appearance): optimized merge sort: [Ln Lp Rn Rp] -> [Ln Lp’ Rn’ Rp] -> [Ln Rn Lp Rp]: time: O(nlogn), memory: O(logn)
+        - method 3 (maintains the order of appearance): using auxiliary array: time: O(n), memory: O(n)
+        - method 4 (maintains the order of appearance): using STL ```stdstable_partition```: time: ?, memory: ?
+        - method 5 (doesn't maintain the order of appearance): using partition process of quick sort (pivot = 0): time: O(n), memory: O(n) or time: O(nlogn), memory: O(1)
+        - method 6 (doesn't maintain the order of appearance): two pointer technique: time: O(n), memory: O(1)
+        - method 7 (doesn't maintain the order of appearance): sort then rearrange: time: O(nlogn), memory: O(1)
+        - two pointer technique
+        - https://www.geeksforgeeks.org/two-pointers-technique/
+        - https://www.geeksforgeeks.org/rearrange-positive-and-negative-numbers-publish/
+        - https://www.geeksforgeeks.org/rearrange-array-alternating-positive-negative-items-o1-extra-space/
+        - https://www.geeksforgeeks.org/rearrange-array-in-alternating-positive-negative-items-with-o1-extra-space-set-2/
+        - (TODO) https://www.geeksforgeeks.org/rearrange-positive-negative-numbers-using-inbuilt-sort-function/
+        - https://www.geeksforgeeks.org/positive-elements-at-even-and-negative-at-odd-positions-relative-order-not-maintained/
+        - https://www.geeksforgeeks.org/move-ve-elements-end-order-extra-space-allowed/
+        - https://www.geeksforgeeks.org/move-zeroes-end-array/
+        - https://www.geeksforgeeks.org/move-zeroes-end-array-set-2-using-single-traversal/
+        - https://www.geeksforgeeks.org/move-negative-numbers-beginning-positive-end-constant-extra-space/
+        - https://www.geeksforgeeks.org/double-first-element-move-zero-end/
+        - https://www.geeksforgeeks.org/segregate-even-and-odd-numbers/
+            - (TODO) method 2
+        - https://www.geeksforgeeks.org/segregate-even-odd-set-2/
+        - https://www.geeksforgeeks.org/segregate-even-odd-numbers-set-3/
+        - * https://www.geeksforgeeks.org/three-way-partitioning-of-an-array-around-a-given-range/
+            - (TODO) method 1
+        - https://www.geeksforgeeks.org/shuffle-2n-integers-a1-b1-a2-b2-a3-b3-bn-without-using-extra-space/
+        - * https://www.geeksforgeeks.org/shuffle-2n-integers-format-a1-b1-a2-b2-a3-b3-bn-without-using-extra-space/
+            - * divide and conquer method
+        - (TODO) https://www.geeksforgeeks.org/shuffle-array-a1-b1-a2-b2-a3-b3-bn-without-using-extra-space/
+    - * https://www.geeksforgeeks.org/rearrange-array-arri-arrj-even-arri/
         - time: O(nlogn), memory: O(n)
         - input:  [1 2 1 4 5 6 8 8]
         - output: [4 5 2 6 1 8 1 8]
-        - https://www.geeksforgeeks.org/rearrange-array-maximum-minimum-form-set-2-o1-extra-space/
-    - https://www.geeksforgeeks.org/rearrange-positive-and-negative-numbers/
-        - time: O(n), memory: O(1) // doesn't maintain the order of appearance
-        - time: O(n*n), memory: O(1) // maintains the order of appearance
-        - input:  [12 11 -13 -5 6 -7 5 -3 -6]
-        - output: [-13 -5 -7 -3 -6 12 11 6 5]
-        - https://www.geeksforgeeks.org/rearrange-positive-negative-numbers-using-inbuilt-sort-function/
-    - https://www.geeksforgeeks.org/rearrange-array-such-that-even-positioned-are-greater-than-odd/
+        - https://www.geeksforgeeks.org/rearrange-array-order-smallest-largest-2nd-smallest-2nd-largest/
+        - https://www.geeksforgeeks.org/rearrange-array-maximum-minimum-form/
+        - * https://www.geeksforgeeks.org/rearrange-array-maximum-minimum-form-set-2-o1-extra-space/
+            - time: O(nlogn), memory: O(1)
+    - * https://www.geeksforgeeks.org/rearrange-array-such-that-even-positioned-are-greater-than-odd/
         - wave form
         - time: O(n), memory: O(1)
-    - https://www.geeksforgeeks.org/minimum-swaps-required-bring-elements-less-equal-k-together/
-    - https://www.geeksforgeeks.org/given-an-array-of-numbers-arrange-the-numbers-to-form-the-biggest-number/
-    - https://www.geeksforgeeks.org/rearrange-array-arrj-becomes-arri-j/
-
-
-## Easy Problems
+        - https://www.geeksforgeeks.org/rearrange-array-even-index-elements-smaller-odd-index-elements-greater/
+        - https://www.geeksforgeeks.org/convert-array-into-zig-zag-fashion/
     - https://www.geeksforgeeks.org/rearrange-array-arri/
-    - https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/
-    - https://www.geeksforgeeks.org/move-zeroes-end-array/
+        - (TODO) method 4
     - https://www.geeksforgeeks.org/reorder-a-array-according-to-given-indexes/
-    - https://www.geeksforgeeks.org/two-pointers-technique/
+    - https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/
+    - * https://www.geeksforgeeks.org/minimum-swaps-required-bring-elements-less-equal-k-together/
+    - https://www.geeksforgeeks.org/find-triplet-sum-two-equals-third-element/
+    - (TODO) https://www.geeksforgeeks.org/find-four-numbers-with-sum-equal-to-given-sum/
+    - (TODO) https://www.geeksforgeeks.org/find-four-elements-that-sum-to-a-given-value-set-2/
     - https://www.geeksforgeeks.org/replace-every-array-element-by-multiplication-of-previous-and-next/
+    - * https://www.geeksforgeeks.org/given-an-array-of-numbers-arrange-the-numbers-to-form-the-biggest-number/
+    - * https://www.geeksforgeeks.org/rearrange-array-arrj-becomes-arri-j/
+        - * method 3
+    - * https://www.geeksforgeeks.org/find-a-sorted-subsequence-of-size-3-in-linear-time/
+        - (TODO) method 2
+        - (TODO) What about size k?
+    - (TODO) https://www.geeksforgeeks.org/check-whether-there-exists-a-triplet-i-j-k-such-that-arri-arrk-arrj-for-i-j-k/
+    - * https://www.geeksforgeeks.org/largest-subarray-with-equal-number-of-0s-and-1s/
+        - This is not a DP problem.
+    - * https://www.geeksforgeeks.org/maximum-product-subarray/
+    - https://www.geeksforgeeks.org/replace-every-element-with-the-greatest-on-right-side/
+    - https://www.geeksforgeeks.org/leaders-in-an-array/
+    - * https://www.geeksforgeeks.org/maximum-contiguous-circular-sum/
+    - * https://www.geeksforgeeks.org/find-index-0-replaced-1-get-longest-continuous-sequence-1s-binary-array/
+    - (TODO) https://www.geeksforgeeks.org/generate-all-possible-sorted-arrays-from-alternate-elements-of-two-given-arrays/
+    - https://www.geeksforgeeks.org/replace-two-consecutive-equal-values-one-greater/
+    - * https://www.geeksforgeeks.org/distinct-adjacent-elements-array/
+        - (TODO) solution using majority element in time: O(n), memory: O(1)
+    - (TODO) https://www.geeksforgeeks.org/minimum-number-of-swaps-required-for-arranging-pairs-adjacent-to-each-other/
+
+    - (TODO) https://www.geeksforgeeks.org/sort-c-stl/
+    - (TODO) https://www.geeksforgeeks.org/c-qsort-vs-c-sort/
+    - (TODO) https://www.geeksforgeeks.org/stdstable_partition-in-c/
+    - (TODO) https://www.geeksforgeeks.org/stddistance-in-c/
+    - (TODO) https://www.geeksforgeeks.org/shuffle-a-given-array-using-fisher-yates-shuffle-algorithm/
+    - (TODO) https://www.geeksforgeeks.org/3-way-quicksort-dutch-national-flag/
+    - (TODO) https://www.geeksforgeeks.org/hoares-vs-lomuto-partition-scheme-quicksort/
+    - (TODO) https://www.geeksforgeeks.org/analysis-of-different-sorting-techniques/
+    - (TODO) https://www.geeksforgeeks.org/itertools-combinations-module-python-print-possible-combinations/
 
 ## TODO
-    - * * * * https://www.geeksforgeeks.org/array-data-structure/array-rearrangement/ * * * *
+    - https://practice.geeksforgeeks.org/topics/Array/
+    - https://www.geeksforgeeks.org/data-structure-gq/array-gq/
+    - https://www.geeksforgeeks.org/tag/array-rearrange/
+    - https://www.geeksforgeeks.org/top-25-interview-questions/
     - https://www.geeksforgeeks.org/amazon-interview-set-118-campus-internship/
     - https://www.geeksforgeeks.org/amazon-interview-set-114-campus-internship/
+    - https://www.geeksforgeeks.org/arcesium-interview-experience-set-7-campus-internship/
     - https://www.geeksforgeeks.org/microsoft-idc-interview-experience-set-150-full-time/
-    - https://www.geeksforgeeks.org/top-25-interview-questions/
-    - https://www.geeksforgeeks.org/sort-c-stl/
-    - https://www.geeksforgeeks.org/sorting-algorithms/
-    - https://www.geeksforgeeks.org/hoares-vs-lomuto-partition-scheme-quicksort/
-    - https://www.geeksforgeeks.org/analysis-of-different-sorting-techniques/
+    - solve more problems on modulo multiplicative method.
 
-    - https://www.geeksforgeeks.org/rearrange-positive-negative-numbers-using-inbuilt-sort-function/
-    - https://www.geeksforgeeks.org/rearrange-array-maximum-minimum-form-set-2-o1-extra-space/
-    - https://www.geeksforgeeks.org/shuffle-a-given-array-using-fisher-yates-shuffle-algorithm/
-
-    - http://discuss.codechef.com/questions/43062/anuund-editorial
     - https://users.monash.edu/~lloyd/tildeAlgDS/Sort/Flag/
+    - http://www.csse.monash.edu.au/~lloyd/tildeAlgDS/Sort/Flag/
+    - http://discuss.codechef.com/questions/43062/anuund-editorial
+    - https://stackoverflow.com/questions/10008118/how-to-find-3-numbers-in-increasing-order-and-increasing-indices-in-an-array-in
