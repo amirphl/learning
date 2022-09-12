@@ -7,6 +7,37 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
 public:
+    // time: O(n), memory: O(1)
+    // This solution doesn't work because of the integer overflow!
+    void shuffleArray2(int arr[], int n)
+    {
+        int min_elem = *min_element(arr, arr + n) - 1;
+        int max_elem = *max_element(arr, arr + n) + 1 + (min_elem * -1);
+        int i = 0;
+        while(i < n) {
+            arr[i] += (min_elem * -1);
+            i++;
+        }
+        i = 0;
+        int j = 0, k = n / 2;
+        while(i < n) {
+            if (i % 2 == 0) {
+                arr[i] += (arr[j] % max_elem) * max_elem;
+                j++;
+            } else {
+                arr[i] += (arr[k] % max_elem) * max_elem;
+                k++;
+            }
+            i++;
+        }
+        i = 0;
+        while(i < n) {
+            arr[i] /= max_elem;
+            arr[i] -= (min_elem * -1);
+            i++;
+        }
+    }
+
     // time: O(n), memory: O(n)
     void shuffleArray(int arr[], int n)
     {
