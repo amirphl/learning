@@ -6,10 +6,10 @@
 #include<bits/stdc++.h>
 using namespace std;
 
- // } Driver Code Ends
+// } Driver Code Ends
 class Solution
 {
-  public:
+public:
     // time: O(n), memory: O(n)
     int subArraySum(int arr[], int n, int sum)
     {
@@ -19,35 +19,35 @@ class Solution
             count++;
         }
         m[arr[0]]++;
-    	for(int i = 1; i < n; i++) {
-    	    arr[i] += arr[i - 1];
-    	    if (arr[i] == sum) {
-    	        count++;
-    	    }
-    	    x = arr[i] - sum;
-    	    count += m[x];
-    	    m[arr[i]]++;
-    	}
-    	return count;
+        for(int i = 1; i < n; i++) {
+            arr[i] += arr[i - 1];
+            if (arr[i] == sum) {
+                count++;
+            }
+            x = arr[i] - sum;
+            count += m[x];
+            m[arr[i]]++;
+        }
+        return count;
     }
 };
 
 // { Driver Code Starts.
 int main()
 {
-	int t;
-	cin>>t;
-	while(t--)
-	{
-	    int n,sum=0;
-	    cin>>n;
-	    int arr[n];
-	    for(int i=0;i<n;i++)
-	    cin>>arr[i];
-	    cin>>sum;
-	    Solution ob;
-	    cout<<ob.subArraySum(arr, n, sum);
-	    cout<<'\n';
-	}
-	return 0;
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n,sum=0;
+        cin>>n;
+        int arr[n];
+        for(int i=0; i<n; i++)
+            cin>>arr[i];
+        cin>>sum;
+        Solution ob;
+        cout<<ob.subArraySum(arr, n, sum);
+        cout<<'\n';
+    }
+    return 0;
 }  // } Driver Code Ends
