@@ -1,4 +1,4 @@
-// https://www.geeksforgeeks.org/repeatedly-search-element-doubling-every-successful-search/
+// https://www.geeksforgeeks.org/count-ways-of-choosing-a-pair-with-maximum-difference/
 
 //{ Driver Code Starts
 //
