@@ -6,11 +6,11 @@
 #include<bits/stdc++.h>
 using namespace std;
 
- // } Driver Code Ends
+// } Driver Code Ends
 //User function template for C++
 
-class Solution{
-    public:
+class Solution {
+public:
     // arr : given array
     // l : starting index of the array i.e 0
     // r : ending index of the array i.e size-1
@@ -28,7 +28,8 @@ class Solution{
         if (l + 1 == r) {
             int mi = min(arr[l], arr[r]);
             int ma = max(arr[l], arr[r]);
-            arr[l] = mi; arr[r] = ma;
+            arr[l] = mi;
+            arr[r] = ma;
             return (k == 1) ? arr[l] : arr[r];
         }
         int p = (rand() % (r - l + 1)) + l;
@@ -77,7 +78,7 @@ class Solution{
 };
 
 // { Driver Code Starts.
- 
+
 int main()
 {
     int test_case;
@@ -87,10 +88,10 @@ int main()
         int number_of_elements;
         cin>>number_of_elements;
         int a[number_of_elements];
-        
-        for(int i=0;i<number_of_elements;i++)
+
+        for(int i=0; i<number_of_elements; i++)
             cin>>a[i];
-            
+
         int k;
         cin>>k;
         Solution ob;
