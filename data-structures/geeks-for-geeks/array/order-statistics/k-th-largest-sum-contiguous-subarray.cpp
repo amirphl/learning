@@ -11,7 +11,7 @@ using namespace std;
 
 class Solution {
 public:
-    // time: O(n*n + klogn), memory: O(n*n)
+    // time: O(n*n*logn + klogn), memory: O(n*n)
     int kthLargest(vector<int>& arr, int n, int k) {
         map<int, int> sums;
         int i = 0;
