@@ -38,28 +38,28 @@ int find(int arr[], int n, int k) {
 
 // geeks solution
 int func(int arr[],
-          int k, int n)
+         int k, int n)
 {
     // Variable declaration
     int ans = n;
     int sum = 0;
     int start = 0;
- 
+
     // Loop till N
     for (int end = 0; end < n; end++)
     {
         // Sliding window from left
         sum += arr[end];
- 
+
         while (sum > k) {
             // Sliding window from right
             sum -= arr[start];
             start++;
- 
+
             // Storing sub-array size - 1
             // for which sum was greater than k
             ans = min(ans, end - start + 1);
- 
+
             // Sum will be 0 if start>end
             // because all elements are positive
             // start>end only when arr[end]>k i.e,
@@ -74,7 +74,7 @@ int func(int arr[],
             break;
         }
     }
- 
+
     // Print the answer
     // cout << ans;
     return ans;
