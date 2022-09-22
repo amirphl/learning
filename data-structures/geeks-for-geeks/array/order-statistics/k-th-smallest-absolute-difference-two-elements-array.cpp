@@ -36,32 +36,33 @@ struct hashFunction
 };
 
 // This code returns the kth ** largest ** absolute difference
-int kthDiff2(int arr[], int n, int k)
+int kthDiff3(int arr[], int n, int k)
 {   for(int j = 1; j < 10; j++) {
-    k = j;
-    sort(arr, arr + n);
-    priority_queue<vector<int>> pq;
-    unordered_set<pair<int, int>, hashFunction> hashset;
-    pq.push({abs(arr[0] - arr[n - 1]), 0, n - 1});
-    vector<int> t;
-    pair<int, int> u;
-    int s, e;
-    while(k > 1) {
-        t = pq.top();
-        pq.pop();
-        s = t[1];
-        e = t[2];
-        u = {s + 1, e};
-        if (hashset.find(u) == hashset.end()) {
-            pq.push({abs(arr[s + 1] - arr[e]), s + 1, e});
+        k = j;
+        sort(arr, arr + n);
+        priority_queue<vector<int>> pq;
+        unordered_set<pair<int, int>, hashFunction> hashset;
+        pq.push({abs(arr[0] - arr[n - 1]), 0, n - 1});
+        vector<int> t;
+        pair<int, int> u;
+        int s, e;
+        while(k > 1) {
+            t = pq.top();
+            pq.pop();
+            s = t[1];
+            e = t[2];
+            u = {s + 1, e};
+            if (hashset.find(u) == hashset.end()) {
+                pq.push({abs(arr[s + 1] - arr[e]), s + 1, e});
+            }
+            u = {s, e - 1};
+            if (hashset.find(u) == hashset.end()) {
+                pq.push({abs(arr[s] - arr[e - 1]), s, e - 1});
+            }
+            k--;
         }
-        u = {s, e - 1};
-        if (hashset.find(u) == hashset.end()) {
-            pq.push({abs(arr[s] - arr[e - 1]), s, e - 1});
-        }
-        k--;
+        cout << arr[pq.top()[1]] << " - " << arr[pq.top()[2]] << endl;
     }
-    cout << arr[pq.top()[1]] << " - " << arr[pq.top()[2]] << endl;}
     // return pq.top()[0];
     return 1;
 }
@@ -76,9 +77,8 @@ int num_pairs_abs_diff_less_equal_m(int arr[], int n,int m) {
     return res;
 }
 
-// time: O(nlogn + log(max_elem - min_elem) * nlogn)
-// memory: O(1)
-int kthDiff(int arr[], int n, int k)
+// time: O(nlogn + nlog(n)log(diff)), memory: O(1)
+int kthDiff2(int arr[], int n, int k)
 {
     sort(arr, arr + n);
     int max_diff = arr[n - 1] - arr[0];
@@ -98,4 +98,25 @@ int kthDiff(int arr[], int n, int k)
         }
     }
     return min_diff;
+}
+
+// time: O((n + k)logn), memory: O(n)
+int kthDiff(int arr[], int n, int k) {
+    k = min(k, n * (n - 1) / 2);
+    sort(arr, arr + n);
+    priority_queue<vector<int>, vector<vector<int>>, greater<vector<int>>> pq;
+    int i = 0;
+    while(i < n - 1) {
+        pq.push({arr[i + 1] - arr[i], i, i + 1});
+        i++;
+    }
+    while(k > 1) {
+        int frst = pq.top()[1];
+        int sec = pq.top()[2];
+        pq.pop();
+        if (sec + 1 < n)
+            pq.push({arr[sec + 1] - arr[frst], frst, sec + 1});
+        k--;
+    }
+    return pq.top()[0];
 }
