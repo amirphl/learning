@@ -39,32 +39,32 @@ int find(int arr[], int n, int m) {
 int maxSubarray(int arr[], int n, int m)
 {
     int x, prefix = 0, maxim = 0;
- 
+
     set<int> S;
-    S.insert(0);   
- 
+    S.insert(0);
+
     // Traversing the array.
     for (int i = 0; i < n; i++)
     {
         // Finding prefix sum.
         prefix = (prefix + arr[i])%m;
- 
+
         // Finding maximum of prefix sum.
         maxim = max(maxim, prefix);
- 
+
         // Finding iterator pointing to the first
         // element that is not less than value
         // "prefix + 1", i.e., greater than or
         // equal to this value.
         auto it = S.lower_bound(prefix+1);
- 
+
         if (it != S.end())
             maxim = max(maxim, prefix - (*it) + m );
- 
+
         // Inserting prefix in the set.
         S.insert(prefix);
     }
- 
+
     return maxim;
 }
 
