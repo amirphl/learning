@@ -8,7 +8,40 @@ using namespace std;
 
 class Solution {
 public:
-    int numoffbt(int arr[], int n)
+    int numoffbt(int arr[], int n) {
+        sort(arr, arr + n);
+        unordered_map<int, int> numbers;
+        int i = 0;
+        while(i < n) {
+            numbers[arr[i]] = 1;
+            i++;
+        }
+        // remove dup
+        i = 0;
+        while(i < n) {
+            int third = arr[i] * arr[i];
+            if (numbers.find(third) != numbers.end()) {
+                numbers[third] += numbers[arr[i]] * numbers[arr[i]];
+            }
+            int j = i + 1;
+            while(j < n && third <= arr[n - 1]) {
+                third = arr[i] * arr[j];
+                if (numbers.find(third) != numbers.end()) {
+                    numbers[third] += numbers[arr[i]] * numbers[arr[j]] * 2;
+                }
+                j++;
+            }
+            i++;
+        }
+        int count = 0;
+        for(auto& it: numbers) {
+            // cout << it.first << " " << it.second << endl;
+            count += it.second;
+        }
+        return count;
+    }
+
+    int numoffbt2(int arr[], int n)
     {
         unordered_map<int, int> trees;
         unordered_set<int> numbers(arr, arr + n);
