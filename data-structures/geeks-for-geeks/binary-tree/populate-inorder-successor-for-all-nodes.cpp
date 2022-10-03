@@ -128,7 +128,7 @@ struct Node
 class Solution
 {
 public:
-    // time: O(V), memory: O(h = height of tree)
+    // time: O(n), memory: O(h = height of tree)
     void populateNext(Node *curr)
     {
         std::stack<Node*> s;

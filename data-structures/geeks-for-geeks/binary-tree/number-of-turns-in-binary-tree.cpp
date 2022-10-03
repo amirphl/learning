@@ -137,6 +137,7 @@ public:
         if (d1 == -1 || d2 == -1) {
             return 0;
         }
+        // /This part is very important!
         if (d2 > d1) {
             Node** p = path_1;
             path_1 = path_2;
