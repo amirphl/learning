@@ -3,10 +3,12 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"net/http"
-    "io/ioutil"
 )
+
+// map is already a reference.
 
 func makeHttpReq() {
 	res, err := http.Get("http://www-01.sil.org/linguistics/wordlists/english/wordlist/wordsEn.txt")
@@ -98,6 +100,19 @@ func makeHashTable() {
 	fmt.Printf("buckets5[49]: %v\n", buckets5[49])
 }
 
+func onemoretime() {
+	fmt.Println("One more time, map and slice are actually references. These references are passed by value.")
+	m := make(map[int][]int, 10)
+	slice := make([]int, 10, 20)
+	for i := 0; i < 10; i++ {
+		slice[i] = i * 9
+	}
+	m[5] = slice
+	fmt.Println(m)
+	slice[6] = 666
+	fmt.Println(m)
+}
+
 func main() {
 	// There is no function like `append` for map.
 
@@ -184,5 +199,7 @@ func main() {
 	makeHashTable()
 	fmt.Println("----------------------")
 	makeHttpReq()
+	fmt.Println("----------------------")
+	onemoretime()
 	fmt.Println("----------------------")
 }
