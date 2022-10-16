@@ -2,6 +2,11 @@ package main
 
 import "fmt"
 
+// facts:
+// Slices are actually references.
+// appending int, string, ... to slice: copy by value
+// appending slice to slice (ex: []string to [][]string): copy by value (the reference is copied by value)
+
 // This is a reference to the slice in outer scope (The reference itself is passed by value)
 // If you change anything of the slice, the real slice will be changed too.
 func change(slice []string, index int, newValue string) {
@@ -12,14 +17,30 @@ func multiDim() {
 	var multi = make([][]float64, 10) // []float64{} as default value
 
 	for i := 2; i < 5; i++ {
-		temp := []float64{} // no default value
+		temp := []float64{}                                    // no default value
+		fmt.Printf("before `append` operations: %p \n", &temp) // A
 		for j := 3; j < 6; j++ {
 			temp = append(temp, float64(i*j))
 		}
+		fmt.Printf("after  `append` operations: %p \n", &temp) // B
 		multi = append(multi, temp)
+		fmt.Printf("after appending to 2D slice: %p \n", &multi[len(multi)-1]) // C
+		temp[1] = 100000
+		// TODO conflict: A == B != C while I changed `temp[1]` and it `multi` is changed too!
 	}
 
-	var t = make([]float64, 3, 5) // 0.0 as default value // First three elements are zero. // The first appended element is stored in the 4'th position.
+	/*
+		// uncomment to see the difference.
+		counter := 0
+		for i := 2; i < 5; i++ {
+			for j := 3; j < 6; j++ {
+				multi[counter] = append(multi[counter], float64(i*j))
+			}
+			counter++
+		}
+	*/
+
+	var t = make([]float64, 3, 5) // 0.0 as default value // First three elements are 0.0 // len is 3 // cap is 5 // The first appended element is stored in the 4'th position. // You can access the index 0:2 // resize in case of maximum capacity reached
 	t = append(t, 1.0, -1.0)
 	multi = append(multi, t)
 
@@ -65,8 +86,8 @@ func main() {
 	str := append([]byte("---"), 1)
 	fmt.Printf("append byte to str: %v \n", str)
 	fmt.Println("--------------------")
-	// str = append("---", 1)
-	// fmt.Printf("append byte to str without casting string to []byte: %v \n", str)
+	// first argument to append must be slice; have untyped string
+	// str := append("---", 1)
 	fmt.Printf("slice before passing to function to change: %v \n", slice)
 	change(slice, len(slice)-1, "I-have-changed")
 	fmt.Printf("slice after passing to function to change: %v \n", slice)
@@ -105,6 +126,7 @@ func main() {
 	fmt.Printf("&newSlice[:]   : %p\n", &subNewSlice6)
 	fmt.Printf("before changing newSlice: %v\n", newSlice)
 	subNewSlice1[0] = 1000
+	// subNewSlice1[7] = 300 // runtime error: index out of range [7] with length 2
 	fmt.Printf("after  changing newSlice (subNewSlice1[0] = 1000): %v\n", newSlice)
 	fmt.Printf("&newSlice == &newSlide[:]: %v\n", &newSlice == &subNewSlice6) // TODO
 	fmt.Println("--------------------")
