@@ -10,6 +10,16 @@ import (
 	"time"
 )
 
+// Notes:
+// 0- Setup multicore flags.
+// 1- Always specify the size of channel.
+// 2- Remeber to check all conditions. What happens in the case of concurrency vs parallelism?
+// 3- directed channels
+// 4- Close the channels. Take care of reading from a closed channel.
+// TODO Can I read from a closed channel if it's not empty?
+// 5- waitGroup, mutex, atomic, channels, pipeline, fanInfanOut
+// 6- range is blocking unless it's closed!
+
 func init() {
 	// If you include this line, we will have `parallelism` since we are using multiple cores
 	// If you don't include this line, we will have `concurrency` since we are using only one core.
@@ -242,6 +252,7 @@ func closeChan2() {
 			time.Sleep(time.Duration(time.Second))
 		}
 
+		// Take care! You might close a non-empty channel!
 		close(c)
 	}()
 
@@ -256,12 +267,13 @@ func closeChan3() {
 	go func() {
 		for i := 0; i < 10; i++ {
 			c <- i
+			fmt.Printf("added to channel at iteration %d \n", i)
 			time.Sleep(time.Duration(time.Second))
 		}
 
 	}()
 
-	time.Sleep(time.Duration(2) * time.Second)
+	time.Sleep(time.Duration(3) * time.Second)
 	close(c)
 
 	for v := range c {
@@ -271,6 +283,7 @@ func closeChan3() {
 	// panic: send on closed channel
 }
 
+// TODO what's the diff between this one and closeChan3?
 func closeChan4() {
 	c := make(chan int, 5)
 
@@ -416,7 +429,7 @@ func closeChan8() {
 		wg.Done()
 	}()
 
-	wg.Wait()
+	wg.Wait() // This line causes the problem.
 	fmt.Println("going to close the channel...")
 	close(c)
 
@@ -757,6 +770,7 @@ func testReturnChan3() {
 }
 
 // fatal error: all goroutines are asleep - deadlock!
+// TODO What the hell is wrong with it?
 func makeDeadlock() {
 	c := make(chan int)
 	c <- 1
@@ -789,6 +803,7 @@ func challenge1() {
 }
 
 // TODO What happens if the NumCPU = 1?
+// TODO effect of channel size, 0, 1, n
 func solveChallenge1() {
 	c := make(chan int)
 
