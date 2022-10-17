@@ -141,4 +141,24 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
+	fmt.Println(">>> phase 11: MultiReader")
+	paths := []string{"src.txt", "src1.txt"}
+	readers := make([]io.Reader, len(paths))
+	for idx, p := range paths {
+		f, err := os.Open(p)
+		if err != nil {
+			panic(err)
+		}
+		defer f.Close()
+		readers[idx] = f
+	}
+
+	multiR := io.MultiReader(readers...)
+	dst4, err := os.Create("dst4.txt")
+	if err != nil {
+		panic(err)
+	}
+	defer dst4.Close()
+	io.Copy(dst4, multiR)
 }
