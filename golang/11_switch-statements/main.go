@@ -47,7 +47,7 @@ func main() {
 		fmt.Println("it is the default case")
 	}
 
-	fmt.Println("\n---\n")
+	fmt.Printf("\n---\n")
 
 	y := food{"pizaa", 8}
 	switchOnType(y)

@@ -122,14 +122,12 @@ func printModes() {
 
 func readFileWriteStdout() {
 	fmt.Println("read src.txt write into stdout")
-	f, _ := os.Open("src.txt")
-	defer f.Close()
-	io.Copy(os.Stdout, f)
+	src, _ := os.Open("src.txt")
+	defer src.Close()
+	io.Copy(os.Stdout, src)
+	// io.Copy(dst, src)
 	fmt.Println("----------")
 }
-
-// rdr := strings.NewReader("test")
-// io.Copy(os.Stdout, rdr)
 
 func main() {
 	// getArg()
