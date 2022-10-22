@@ -7,6 +7,7 @@ func multipleArgsMultipleReturn(a, b string) (string, string) { // parames are r
 	return fmt.Sprint(a, b), fmt.Sprint(b, a)
 }
 
+// named return
 func multipleArgsMultipleReturn2(a, b string) (c, d string) {
 	c = fmt.Sprint(a, b)
 	d = fmt.Sprint(b, a)
@@ -84,6 +85,7 @@ func deferExample() {
 
 // everything is pass by value!
 // slices, maps, and channels are already references!
+// references themselves are passed by value!
 func changeString(name string) {
 	var addr *string = &name
 	fmt.Printf("inside changeString: %p %s\n", addr, name)
@@ -95,7 +97,7 @@ func sudoChangeString(name *string) {
 	*name = "I-have-changed"
 }
 
-// reference is passed!
+// `names` is passed by reference!
 func changeContent(names []string, index int, newValue string) {
 	names[index] = newValue
 }
