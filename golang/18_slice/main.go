@@ -95,13 +95,18 @@ func main() {
 	makeSlice := make([]int32, 5, 9)
 	newSlice := new([11]int32)[0:4]
 	fmt.Printf("slice created with `make` keyword: %T, %d, %d, %v\n", makeSlice, len(makeSlice), cap(makeSlice), makeSlice)
-	fmt.Printf("slice created with `new`  keyword: %T, %d, %d, %v\n", newSlice, len(newSlice), cap(newSlice), newSlice)
+	fmt.Printf("slice created with `new`  keyword: %T, %d, %d, %v\n", newSlice, len(newSlice), cap(newSlice), newSlice) // TODO Why cap == 11?
 	makeSlice = append(makeSlice, 100)
 	newSlice = append(newSlice, 101)
 	fmt.Printf("slice created with `make` keyword after appending an element: %T, %d, %d, %v\n", makeSlice, len(makeSlice), cap(makeSlice), makeSlice)
 	fmt.Printf("slice created with `new`  keyword after appending an element: %T, %d, %d, %v\n", newSlice, len(newSlice), cap(newSlice), newSlice)
 	fmt.Println("--------------------")
-	fmt.Printf("`سلام`[:2]:  %v\n", "سلام"[:2])
+	salam := "سلام"
+	fmt.Printf("`سلام`[:1]:\n%v\n", salam[:1]) // TODO
+	fmt.Printf("`سلام`[:2]:\n%v\n", salam[:2]) // TODO
+	fmt.Printf("`سلام`[:3]:\n%v\n", salam[:3]) // TODO
+	fmt.Printf("`سلام`[:4]:\n%v\n", salam[:4]) // TODO
+	fmt.Println("--------------------")
 	fmt.Printf("[:3]: %v\n", []int64{1, 3, 3333333333333})
 	fmt.Println("--------------------")
 	// len = cap = 3
@@ -124,10 +129,10 @@ func main() {
 	fmt.Printf("&newSlice[2:3] : %p\n", &subNewSlice4)
 	fmt.Printf("&newSlice[2:]  : %p\n", &subNewSlice5)
 	fmt.Printf("&newSlice[:]   : %p\n", &subNewSlice6)
-	fmt.Printf("before changing newSlice: %v\n", newSlice)
+	fmt.Printf("*****  before changing newSlice: %v\n", newSlice)
 	subNewSlice1[0] = 1000
 	// subNewSlice1[7] = 300 // runtime error: index out of range [7] with length 2
-	fmt.Printf("after  changing newSlice (subNewSlice1[0] = 1000): %v\n", newSlice)
+	fmt.Printf("*****  after  changing newSlice (subNewSlice1[0] = 1000): %v\n", newSlice)
 	fmt.Printf("&newSlice == &newSlide[:]: %v\n", &newSlice == &subNewSlice6) // TODO
 	fmt.Println("--------------------")
 	var appendedSlices = append([]byte{1, 2, 3}, []byte{4, 6, 0}...)
@@ -143,24 +148,24 @@ func main() {
 	fmt.Println("--------------------")
 	multiDim()
 	fmt.Println("--------------------")
-	var s1 []byte
-	var s2 = []byte{}
-	var s3 = []byte{1}
-	var s4 = make([]byte, 0)
-	var s5 = make([]byte, 1)
-	s6 := []byte{}
-	s7 := []byte{1}
-	s8 := make([]byte, 0)
-	s9 := make([]byte, 1)
+	var s1 []byte            // nil
+	var s2 = []byte{}        // len = cap = 0, no index yet
+	var s3 = []byte{1}       // len = cap = 1, index 0 is accessible
+	var s4 = make([]byte, 0) // same as s2
+	var s5 = make([]byte, 1) // same as s3
+	s6 := []byte{}           // same as s2
+	s7 := []byte{1}          // same as s3
+	s8 := make([]byte, 0)    // same as s2
+	s9 := make([]byte, 1)    // same as s3
 	fmt.Printf("s1 = %v      s1 == nil: %v\n", s1, s1 == nil)
 	fmt.Printf("s2 = %v      s2 == nil: %v\n", s2, s2 == nil)
-	fmt.Printf("s3 = %v     s3 == nil: %v\n", s3, s3 == nil)
+	fmt.Printf("s3 = %v      s3 == nil: %v\n", s3, s3 == nil)
 	fmt.Printf("s4 = %v      s4 == nil: %v\n", s4, s4 == nil)
-	fmt.Printf("s5 = %v     s5 == nil: %v\n", s5, s5 == nil)
+	fmt.Printf("s5 = %v      s5 == nil: %v\n", s5, s5 == nil)
 	fmt.Printf("s6 = %v      s6 == nil: %v\n", s6, s6 == nil)
-	fmt.Printf("s7 = %v     s7 == nil: %v\n", s7, s7 == nil)
+	fmt.Printf("s7 = %v      s7 == nil: %v\n", s7, s7 == nil)
 	fmt.Printf("s8 = %v      s8 == nil: %v\n", s8, s8 == nil)
-	fmt.Printf("s9 = %v     s9 == nil: %v\n", s9, s9 == nil)
+	fmt.Printf("s9 = %v      s9 == nil: %v\n", s9, s9 == nil)
 	// s1[0] = 100 // runtime error: index out of range [0] with length 0
 	// s2[0] = 100 // runtime error: index out of range [0] with length 0
 	s3[0] = 100
