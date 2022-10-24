@@ -10,6 +10,12 @@ func change(arr [5]byte, index int, newValue byte) {
 	arr[index] = newValue
 }
 
+// To solve the problem: pass the reference to the array.
+func changeByRef(arr *[5]byte, index int, newValue byte) {
+	fmt.Printf("inside changeByRef function: %p \n", arr)
+	arr[index] = newValue
+}
+
 func main() {
 	var strs [10]string
 	// strs[-1] = "abc" // invalid array index -1 (index must be non-negative)
@@ -20,6 +26,8 @@ func main() {
 	fmt.Println(strs)
 	fmt.Println(len(strs))
 	strs[1] = "amirphl"
+	strs[4] = "bbb"
+	strs[8] = "dccccd"
 	fmt.Println(strs)
 	fmt.Println(len(strs))
 	fmt.Println("---------")
@@ -31,10 +39,11 @@ func main() {
 	// b[0] = byte(-1) // constant -1 overflows byte
 	// b[0] = byte(300) // constant 300 overflows byte
 	var u int = 254
-	// b[1] = u // cannot use u (type int) as type byte in assignment
+	// b[1] = u // cannot use u (type int) as type byte in assignment even 254 <= 255
 	b[1] = byte(u)
-	fmt.Printf("inside main function: %p \n", &b)
-	fmt.Println(b)
+	fmt.Printf("inside main function: %p      %v\n", &b, b)
 	change(b, 4, 11)
-	fmt.Println(b)
+	fmt.Printf("inside main function: %p      %v\n", &b, b)
+	changeByRef(&b, 4, 11)
+	fmt.Printf("inside main function: %p      %v\n", &b, b)
 }
