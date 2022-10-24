@@ -2,10 +2,34 @@ package main
 
 import "fmt"
 
-// facts:
+// notes:
 // Slices are actually references.
 // appending int, string, ... to slice: copy by value
 // appending slice to slice (ex: []string to [][]string): copy by value (the reference is copied by value)
+// appending occurres at slice[len(slice)] if len(slice) < cap(slice), otherwise, first, the slice is extended (by doubling the cap) then the insertion occurres the same way as before.
+// accessing indexes: [0, len(slice) - 1]
+/*
+var t = make([]float64, 3, 5)
+0.0 as default value
+First three elements are 0.0
+len is 3
+cap is 5
+The first appended element is stored in the 4'th position
+You can access the index 0:2
+resize in case of maximum capacity reached
+*/
+/*
+str := "سلام"
+str[i] returns the i'th byte of the encoded string in utf8, not the i'th character.
+to access byte: str[i]
+to access char: string([]rune(salam)[i])
+ref: https://stackoverflow.com/questions/15018545/how-to-index-characters-in-a-golang-string
+*/
+// Be sure to take a look at `extendSliceFromMiddle` and `playWithSlice`.
+// This operation `slice[a:b]` doesn't create a new slice!
+// https://stackoverflow.com/questions/38654729/golang-slice-append-vs-assign-performance
+// TODO https://stackoverflow.com/questions/46628683/extend-slice-length-on-the-left
+// uasge of nil slice: https://stackoverflow.com/questions/30806931/the-zero-value-of-a-slice-is-not-nil
 
 // This is a reference to the slice in outer scope (The reference itself is passed by value)
 // If you change anything of the slice, the real slice will be changed too.
@@ -13,7 +37,58 @@ func change(slice []string, index int, newValue string) {
 	slice[index] = newValue
 }
 
-func multiDim() {
+func playWithSlice() {
+	slc := []uint16{1, 2, 3, 4, 5, 6, 7}
+	slc1 := slc[1:3]
+	slc2 := slc[1:4]
+	slc3 := slc[1:]
+	slc4 := slc[2:3]
+	// invalid slice index: 2 > 1
+	// subNewSlice4_ := newSlice[2:1]
+	slc5 := slc[2:]
+	slc6 := slc[:]
+	fmt.Printf("&slc      : %p\n", &slc)
+	fmt.Printf(" slc      len = %d, cap = %d\n", len(slc), cap(slc))
+	fmt.Printf("&slc[1:3] : %p\n", &slc1)
+	fmt.Printf(" slc[1:3] len = %d, cap = %d\n", len(slc1), cap(slc1))
+	fmt.Printf("&slc[1:4] : %p\n", &slc2)
+	fmt.Printf(" slc[1:4] len = %d, cap = %d\n", len(slc2), cap(slc2))
+	fmt.Printf("&slc[1:]  : %p\n", &slc3)
+	fmt.Printf(" slc[1:]  len = %d, cap = %d\n", len(slc3), cap(slc3))
+	fmt.Printf("&slc[2:3] : %p\n", &slc4)
+	fmt.Printf(" slc[2:3] len = %d, cap = %d\n", len(slc4), cap(slc4))
+	fmt.Printf("&slc[2:]  : %p\n", &slc5)
+	fmt.Printf(" slc[2:]  len = %d, cap = %d\n", len(slc5), cap(slc5))
+	fmt.Printf("&slc[:]   : %p\n", &slc6)
+	fmt.Printf(" slc[:]   len = %d, cap = %d\n", len(slc6), cap(slc6))
+	fmt.Printf("*****  before changing slc1: %v\n", slc)
+	slc1[0] = 1000
+	// slc1[7] = 300 // runtime error: index out of range [7] with length 2
+	fmt.Printf("*****  after  changing slc1 (slc1[0] = 1000): %v\n", slc)
+	fmt.Printf("*****  &slc == &slc[:]: %v\n", &slc == &slc6) // ***** This is reasonable: two pointers stored in different places but refer to the same datastructure.
+}
+
+func extendSliceFromMiddle() {
+	fmt.Println("extending slice from middle:")
+	slc := []byte("this is a slice")
+	slc2 := slc[3:10]
+	fmt.Println(slc)
+	fmt.Printf("%T     %v\n", slc2, slc2)
+	slc2[3] = 1
+	slc2[4] = 1
+	slc2[5] = 1
+	fmt.Println(slc)
+	fmt.Printf("%T     %v\n", slc2, slc2)
+	slc2 = append(slc2, 100, 100, 100)
+	fmt.Println(slc)
+	fmt.Printf("%T     %v\n", slc2, slc2)
+	slc = append(slc, 222, 222, 222)
+	fmt.Println(slc)
+	fmt.Printf("%T     %v\n", slc2, slc2)
+	// TODO How an array can be extended from the middle?
+}
+
+func multiDimSliceExample() {
 	var multi = make([][]float64, 10) // []float64{} as default value
 
 	for i := 2; i < 5; i++ {
@@ -26,7 +101,7 @@ func multiDim() {
 		multi = append(multi, temp)
 		fmt.Printf("after appending to 2D slice: %p \n", &multi[len(multi)-1]) // C
 		temp[1] = 100000
-		// TODO conflict: A == B != C while I changed `temp[1]` and it `multi` is changed too!
+		// A == B != C // ***** The address of `temp` is copied to the `multi`.
 	}
 
 	/*
@@ -102,10 +177,16 @@ func main() {
 	fmt.Printf("slice created with `new`  keyword after appending an element: %T, %d, %d, %v\n", newSlice, len(newSlice), cap(newSlice), newSlice)
 	fmt.Println("--------------------")
 	salam := "سلام"
-	fmt.Printf("`سلام`[:1]:\n%v\n", salam[:1]) // TODO
-	fmt.Printf("`سلام`[:2]:\n%v\n", salam[:2]) // TODO
-	fmt.Printf("`سلام`[:3]:\n%v\n", salam[:3]) // TODO
-	fmt.Printf("`سلام`[:4]:\n%v\n", salam[:4]) // TODO
+	// To access bytes:
+	fmt.Printf("`سلام`[:1]:\n%v\n", salam[:1])
+	fmt.Printf("`سلام`[:2]:\n%v\n", salam[:2])
+	fmt.Printf("`سلام`[:3]:\n%v\n", salam[:3])
+	fmt.Printf("`سلام`[:4]:\n%v\n", salam[:4])
+	// To access characters:
+	fmt.Printf("`سلام`[:1]:\n%s\n", string([]rune(salam)[:1]))
+	fmt.Printf("`سلام`[:2]:\n%s\n", string([]rune(salam)[:2]))
+	fmt.Printf("`سلام`[:3]:\n%s\n", string([]rune(salam)[:3]))
+	fmt.Printf("`سلام`[:4]:\n%s\n", string([]rune(salam)[:4]))
 	fmt.Println("--------------------")
 	fmt.Printf("[:3]: %v\n", []int64{1, 3, 3333333333333})
 	fmt.Println("--------------------")
@@ -113,27 +194,9 @@ func main() {
 	capLen3 := make([]rune, 3)
 	fmt.Printf("cap = len = 3: %v \n", capLen3)
 	fmt.Println("--------------------")
-	// TODO Does slicing return references or copies the content into new slices?
-	subNewSlice1 := newSlice[1:3]
-	subNewSlice2 := newSlice[1:4]
-	subNewSlice3 := newSlice[1:]
-	subNewSlice4 := newSlice[2:3]
-	// invalid slice index: 2 > 1
-	// subNewSlice4_ := newSlice[2:1]
-	subNewSlice5 := newSlice[2:]
-	subNewSlice6 := newSlice[:]
-	fmt.Printf("&newSlice      : %p\n", &newSlice)
-	fmt.Printf("&newSlice[1:3] : %p\n", &subNewSlice1)
-	fmt.Printf("&newSlice[1:4] : %p\n", &subNewSlice2)
-	fmt.Printf("&newSlice[1:]  : %p\n", &subNewSlice3)
-	fmt.Printf("&newSlice[2:3] : %p\n", &subNewSlice4)
-	fmt.Printf("&newSlice[2:]  : %p\n", &subNewSlice5)
-	fmt.Printf("&newSlice[:]   : %p\n", &subNewSlice6)
-	fmt.Printf("*****  before changing newSlice: %v\n", newSlice)
-	subNewSlice1[0] = 1000
-	// subNewSlice1[7] = 300 // runtime error: index out of range [7] with length 2
-	fmt.Printf("*****  after  changing newSlice (subNewSlice1[0] = 1000): %v\n", newSlice)
-	fmt.Printf("&newSlice == &newSlide[:]: %v\n", &newSlice == &subNewSlice6) // TODO
+	playWithSlice()
+	fmt.Println("--------------------")
+	extendSliceFromMiddle()
 	fmt.Println("--------------------")
 	var appendedSlices = append([]byte{1, 2, 3}, []byte{4, 6, 0}...)
 	fmt.Printf("appending two slices: %v\n", appendedSlices)
@@ -146,7 +209,7 @@ func main() {
 	}
 	fmt.Printf("test array: %v\n", test)
 	fmt.Println("--------------------")
-	multiDim()
+	multiDimSliceExample()
 	fmt.Println("--------------------")
 	var s1 []byte            // nil
 	var s2 = []byte{}        // len = cap = 0, no index yet
