@@ -5,7 +5,7 @@ import "fmt"
 // notes:
 // Slices are actually references.
 // appending int, string, ... to slice: copy by value
-// appending slice to slice (ex: []string to [][]string): copy by value (the reference is copied by value)
+// appending slice to slice (ex: []string to [][]string): copy by value (underlying array is passed by reference)
 // appending occurres at slice[len(slice)] if len(slice) < cap(slice), otherwise, first, the slice is extended (by doubling the cap) then the insertion occurres the same way as before.
 // accessing indexes: [0, len(slice) - 1]
 /*
@@ -26,12 +26,14 @@ to access char: string([]rune(salam)[i])
 ref: https://stackoverflow.com/questions/15018545/how-to-index-characters-in-a-golang-string
 */
 // Be sure to take a look at `extendSliceFromMiddle` and `playWithSlice`.
-// This operation `slice[a:b]` doesn't create a new slice!
+// This operation `slice[a:b]` doesn't create a new array, but creates a new slice!
 // https://stackoverflow.com/questions/38654729/golang-slice-append-vs-assign-performance
-// TODO https://stackoverflow.com/questions/46628683/extend-slice-length-on-the-left
-// uasge of nil slice: https://stackoverflow.com/questions/30806931/the-zero-value-of-a-slice-is-not-nil
+/*
+uasge of nil slice:
+https://stackoverflow.com/questions/30806931/the-zero-value-of-a-slice-is-not-nil
+*/
 
-// This is a reference to the slice in outer scope (The reference itself is passed by value)
+// [p *string, len int, cap int] is passed by value. Pay attention to *string. The underlying array is passed by reference.
 // If you change anything of the slice, the real slice will be changed too.
 func change(slice []string, index int, newValue string) {
 	slice[index] = newValue
@@ -68,9 +70,10 @@ func playWithSlice() {
 	fmt.Printf("*****  &slc == &slc[:]: %v\n", &slc == &slc6) // ***** This is reasonable: two pointers stored in different places but refer to the same datastructure.
 }
 
+// Take a look at outputs carefully!
 func extendSliceFromMiddle() {
 	fmt.Println("extending slice from middle:")
-	slc := []byte("this is a slice")
+	slc := []byte{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}
 	slc2 := slc[3:10]
 	fmt.Println(slc)
 	fmt.Printf("%T     %v\n", slc2, slc2)
@@ -79,7 +82,10 @@ func extendSliceFromMiddle() {
 	slc2[5] = 1
 	fmt.Println(slc)
 	fmt.Printf("%T     %v\n", slc2, slc2)
-	slc2 = append(slc2, 100, 100, 100)
+	slc2 = append(slc2, 36, 34)
+	fmt.Println(slc)
+	fmt.Printf("%T     %v\n", slc2, slc2)
+	slc2 = append(slc2, 100, 100, 100, 99, 88, 78, 68) // TODO no effect on slc
 	fmt.Println(slc)
 	fmt.Printf("%T     %v\n", slc2, slc2)
 	slc = append(slc, 222, 222, 222)
@@ -92,7 +98,7 @@ func multiDimSliceExample() {
 	var multi = make([][]float64, 10) // []float64{} as default value
 
 	for i := 2; i < 5; i++ {
-		temp := []float64{}                                    // no default value
+		temp := []float64{}
 		fmt.Printf("before `append` operations: %p \n", &temp) // A
 		for j := 3; j < 6; j++ {
 			temp = append(temp, float64(i*j))
@@ -101,7 +107,7 @@ func multiDimSliceExample() {
 		multi = append(multi, temp)
 		fmt.Printf("after appending to 2D slice: %p \n", &multi[len(multi)-1]) // C
 		temp[1] = 100000
-		// A == B != C // ***** The address of `temp` is copied to the `multi`.
+		// ***** A == B != C
 	}
 
 	/*
@@ -131,27 +137,33 @@ func main() {
 	fmt.Printf("empty slice: %v\n", emptySlice)
 	fmt.Printf("string slice type: %T\n", emptySlice)
 	fmt.Printf("non-empty slice: %v\n", slice)
+
+	fmt.Println("--------------------")
+
 	// invalid slice index -1 (index must be non-negative)
 	// fmt.Printf("non-empty slice[-1]: %v\n", slice[-1])
 	// untime error: index out of range [5] with length 5
 	// fmt.Printf("non-empty slice[5]: %v\n", slice[5])
 	// runtime error: slice bounds out of range [:10] with capacity 5
 	// fmt.Printf("non-empty slice[0:10]: %v\n", slice[0:10])
-	fmt.Println("--------------------")
 	fmt.Printf("non-empty slice[0:5]: %v\n", slice[0:5])
 	fmt.Printf("non-empty slice[0:1]: %v\n", slice[0:1])
 	fmt.Printf("non-empty slice[0:0]: %v\n", slice[0:0])
-	fmt.Println("--------------------")
 	// invalid slice index -1 (index must be non-negative)
 	// fmt.Printf("non-empty slice[0:-1]: %v\n", slice[0:-1])
 	// invalid slice index -4 (index must be non-negative)
 	// fmt.Printf("non-empty slice[-4:-2]: %v\n", slice[-4:-2])
+
+	fmt.Println("--------------------")
+
 	fmt.Printf("len(non-empty slice): %v\n", len(slice))
 	fmt.Printf("cap(non-empty slice): %v\n", cap(slice))
 	slice = append(slice, "!!!")
 	fmt.Printf("len(non-empty slice) after appending an element: %v\n", len(slice))
 	fmt.Printf("cap(non-empty slice) after appending an element: ***** %v\n", cap(slice))
+
 	fmt.Println("--------------------")
+
 	// first argument to append must be slice; have untyped string
 	// str := append("---", slice)
 	// first argument to append must be slice; have untyped string
@@ -160,13 +172,17 @@ func main() {
 	// str := append([]byte("---"), []byte{1, 2})
 	str := append([]byte("---"), 1)
 	fmt.Printf("append byte to str: %v \n", str)
-	fmt.Println("--------------------")
 	// first argument to append must be slice; have untyped string
 	// str := append("---", 1)
+
+	fmt.Println("--------------------")
+
 	fmt.Printf("slice before passing to function to change: %v \n", slice)
 	change(slice, len(slice)-1, "I-have-changed")
 	fmt.Printf("slice after passing to function to change: %v \n", slice)
+
 	fmt.Println("--------------------")
+
 	makeSlice := make([]int32, 5, 9)
 	newSlice := new([11]int32)[0:4]
 	fmt.Printf("slice created with `make` keyword: %T, %d, %d, %v\n", makeSlice, len(makeSlice), cap(makeSlice), makeSlice)
@@ -175,7 +191,9 @@ func main() {
 	newSlice = append(newSlice, 101)
 	fmt.Printf("slice created with `make` keyword after appending an element: %T, %d, %d, %v\n", makeSlice, len(makeSlice), cap(makeSlice), makeSlice)
 	fmt.Printf("slice created with `new`  keyword after appending an element: %T, %d, %d, %v\n", newSlice, len(newSlice), cap(newSlice), newSlice)
+
 	fmt.Println("--------------------")
+
 	salam := "سلام"
 	// To access bytes:
 	fmt.Printf("`سلام`[:1]:\n%v\n", salam[:1])
@@ -187,20 +205,27 @@ func main() {
 	fmt.Printf("`سلام`[:2]:\n%s\n", string([]rune(salam)[:2]))
 	fmt.Printf("`سلام`[:3]:\n%s\n", string([]rune(salam)[:3]))
 	fmt.Printf("`سلام`[:4]:\n%s\n", string([]rune(salam)[:4]))
-	fmt.Println("--------------------")
-	fmt.Printf("[:3]: %v\n", []int64{1, 3, 3333333333333})
+
 	fmt.Println("--------------------")
 	// len = cap = 3
 	capLen3 := make([]rune, 3)
 	fmt.Printf("cap = len = 3: %v \n", capLen3)
+
 	fmt.Println("--------------------")
+
 	playWithSlice()
 	fmt.Println("--------------------")
 	extendSliceFromMiddle()
 	fmt.Println("--------------------")
+	multiDimSliceExample()
+
+	fmt.Println("--------------------")
+
 	var appendedSlices = append([]byte{1, 2, 3}, []byte{4, 6, 0}...)
 	fmt.Printf("appending two slices: %v\n", appendedSlices)
+
 	fmt.Println("--------------------")
+
 	var test = make([]int, 3, 4)
 	// var test = []int{}
 	for i := 10; i < 100; i++ {
@@ -208,10 +233,9 @@ func main() {
 		fmt.Printf("len = %v,, cap = %v\n", len(test), cap(test))
 	}
 	fmt.Printf("test array: %v\n", test)
+
 	fmt.Println("--------------------")
-	multiDimSliceExample()
-	fmt.Println("--------------------")
-	var s1 []byte            // nil
+	var s1 []byte            // len = cap = 0, no index yet, underlying array is not allocated yet.
 	var s2 = []byte{}        // len = cap = 0, no index yet
 	var s3 = []byte{1}       // len = cap = 1, index 0 is accessible
 	var s4 = make([]byte, 0) // same as s2
@@ -247,22 +271,29 @@ func main() {
 	fmt.Printf("s7: %v\n", s7)
 	fmt.Printf("s8: %v\n", s8)
 	fmt.Printf("s9: %v\n", s9)
+
 	fmt.Println("--------------------")
+
 	ss := []byte{0}
 	ss[0] = 10
 	ss[0]++
 	ss[0] += 2
 	ss[0] = ss[0] + 3
 	fmt.Printf("ss ++ += =      : %v\n", ss)
+
 	fmt.Println("--------------------")
+
 	// ss2 := make([]byte, 100, 20) // len larger than cap in make([]byte)
 	// fmt.Println("--------------------")
 	// ss2 := make([]byte, 20, 100)
 	// ss2[35] = 100 // runtime error: index out of range [35] with length 20
+
 	fmt.Println("--------------------")
+
 	ss2 := make([]byte, 5, 10)
 	fmt.Printf("before append: %v\n", ss2)
 	ss2 = append(ss2, 101)
 	fmt.Printf("after  append: %v\n", ss2)
+
 	fmt.Println("--------------------")
 }
