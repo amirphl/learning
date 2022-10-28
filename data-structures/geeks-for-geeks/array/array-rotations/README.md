@@ -31,10 +31,15 @@
     - https://www.geeksforgeeks.org/print-left-rotation-array/
     - https://www.geeksforgeeks.org/find-element-given-index-number-rotations/
     - https://www.geeksforgeeks.org/split-array-add-first-part-end/
+    - https://www.geeksforgeeks.org/mth-element-after-k-right-rotations-of-an-array/
+    - https://www.geeksforgeeks.org/java-program-to-find-mth-element-after-k-right-rotations-of-an-array/
+    - https://www.geeksforgeeks.org/left-rotation-right-rotation-string-2/
+    - (TODO) https://www.geeksforgeeks.org/decrease-and-conquer/
+    - * https://www.geeksforgeeks.org/check-if-any-circular-rotation-of-string-has-at-most-x-1s-between-two-adjacent-0s/
+    - (TODO) https://www.geeksforgeeks.org/minimum-rotations-that-have-maximum-elements-with-value-at-most-its-index/
 
 ## TODO
     - https://www.geeksforgeeks.org/tag/rotation/
-    - https://www.geeksforgeeks.org/decrease-and-conquer/
 
     - https://en.wikipedia.org/wiki/Hamming_distance
     - http://www.cs.bell-labs.com/cm/cs/pearls/s02b.pdf
