@@ -76,7 +76,7 @@ public:
     }
 
     // time: O(n*n*n*logn), memory: O(n*n)
-    vector<vector<int>> fourSum(vector<int> &arr, int k) {
+    vector<vector<int>> fourSum3(vector<int> &arr, int k) {
         sort(arr.begin(), arr.end());
         vector<vector<int>> res;
         set<vector<int>> unique;
@@ -108,6 +108,53 @@ public:
         for(auto x: unique) {
             sort(x.begin(), x.end());
             res.push_back(x);
+        }
+        return res;
+    }
+
+    // time: O(n*n*n), memory: O(1)
+    vector<vector<int>> fourSum(vector<int> &arr, int k) {
+        sort(arr.begin(), arr.end());
+        vector<vector<int>> res;
+        int n = arr.size();
+        int i = 0;
+        int prv_i = INT_MAX;
+        while(i < n) {
+            if (arr[i] == prv_i) {
+                i++;
+                continue;
+            }
+            prv_i = arr[i];
+            int j = i + 1;
+            int prv_j = INT_MAX;
+            while(j < n) {
+                if (arr[j] == prv_j) {
+                    j++;
+                    continue;
+                }
+                prv_j = arr[j];
+                int x = arr[i] + arr[j];
+                int y = k - x;
+                int u = j + 1;
+                int v = n - 1;
+                while(u < v) {
+                    if (arr[u] + arr[v] < y) {
+                        u++;
+                    } else if (arr[u] + arr[v] == y) {
+                        res.push_back({arr[i], arr[j], arr[u], arr[v]});
+                        int prv_u = arr[u];
+                        int prv_v = arr[v];
+                        while(u < v && arr[u] == prv_u && arr[v] == prv_v) {
+                            u++;
+                            v--;
+                        }
+                    } else {
+                        v--;
+                    }
+                }
+                j++;
+            }
+            i++;
         }
         return res;
     }
