@@ -15,7 +15,7 @@
         - https://www.geeksforgeeks.org/rearrange-positive-and-negative-numbers-publish/
         - https://www.geeksforgeeks.org/rearrange-array-alternating-positive-negative-items-o1-extra-space/
         - https://www.geeksforgeeks.org/rearrange-array-in-alternating-positive-negative-items-with-o1-extra-space-set-2/
-        - (TODO) https://www.geeksforgeeks.org/rearrange-positive-negative-numbers-using-inbuilt-sort-function/
+        - https://www.geeksforgeeks.org/rearrange-positive-negative-numbers-using-inbuilt-sort-function/
         - https://www.geeksforgeeks.org/positive-elements-at-even-and-negative-at-odd-positions-relative-order-not-maintained/
         - https://www.geeksforgeeks.org/move-ve-elements-end-order-extra-space-allowed/
         - https://www.geeksforgeeks.org/move-zeroes-end-array/
@@ -23,7 +23,6 @@
         - https://www.geeksforgeeks.org/move-negative-numbers-beginning-positive-end-constant-extra-space/
         - https://www.geeksforgeeks.org/double-first-element-move-zero-end/
         - https://www.geeksforgeeks.org/segregate-even-and-odd-numbers/
-            - (TODO) method 2
         - https://www.geeksforgeeks.org/segregate-even-odd-set-2/
         - https://www.geeksforgeeks.org/segregate-even-odd-numbers-set-3/
         - * https://www.geeksforgeeks.org/three-way-partitioning-of-an-array-around-a-given-range/
@@ -51,8 +50,8 @@
     - https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/
     - * https://www.geeksforgeeks.org/minimum-swaps-required-bring-elements-less-equal-k-together/
     - https://www.geeksforgeeks.org/find-triplet-sum-two-equals-third-element/
-    - (TODO) https://www.geeksforgeeks.org/find-four-numbers-with-sum-equal-to-given-sum/
-    - (TODO) https://www.geeksforgeeks.org/find-four-elements-that-sum-to-a-given-value-set-2/
+    - https://www.geeksforgeeks.org/find-four-numbers-with-sum-equal-to-given-sum/
+    - * https://www.geeksforgeeks.org/find-four-elements-that-sum-to-a-given-value-set-2/
     - https://www.geeksforgeeks.org/replace-every-array-element-by-multiplication-of-previous-and-next/
     - * https://www.geeksforgeeks.org/given-an-array-of-numbers-arrange-the-numbers-to-form-the-biggest-number/
     - * https://www.geeksforgeeks.org/rearrange-array-arrj-becomes-arri-j/
@@ -68,11 +67,10 @@
     - https://www.geeksforgeeks.org/leaders-in-an-array/
     - * https://www.geeksforgeeks.org/maximum-contiguous-circular-sum/
     - * https://www.geeksforgeeks.org/find-index-0-replaced-1-get-longest-continuous-sequence-1s-binary-array/
-    - (TODO) https://www.geeksforgeeks.org/generate-all-possible-sorted-arrays-from-alternate-elements-of-two-given-arrays/
+    - * https://www.geeksforgeeks.org/generate-all-possible-sorted-arrays-from-alternate-elements-of-two-given-arrays/
     - https://www.geeksforgeeks.org/replace-two-consecutive-equal-values-one-greater/
     - * https://www.geeksforgeeks.org/distinct-adjacent-elements-array/
-        - (TODO) solution using majority element in time: O(n), memory: O(1)
-    - (TODO) https://www.geeksforgeeks.org/minimum-number-of-swaps-required-for-arranging-pairs-adjacent-to-each-other/
+    - * https://www.geeksforgeeks.org/minimum-number-of-swaps-required-for-arranging-pairs-adjacent-to-each-other/
 
     - (TODO) https://www.geeksforgeeks.org/sort-c-stl/
     - (TODO) https://www.geeksforgeeks.org/c-qsort-vs-c-sort/
@@ -82,11 +80,8 @@
     - (TODO) https://www.geeksforgeeks.org/3-way-quicksort-dutch-national-flag/
     - (TODO) https://www.geeksforgeeks.org/hoares-vs-lomuto-partition-scheme-quicksort/
     - (TODO) https://www.geeksforgeeks.org/analysis-of-different-sorting-techniques/
-    - (TODO) https://www.geeksforgeeks.org/itertools-combinations-module-python-print-possible-combinations/
 
 ## TODO
-    - https://practice.geeksforgeeks.org/topics/Array/
-    - https://www.geeksforgeeks.org/data-structure-gq/array-gq/
     - https://www.geeksforgeeks.org/tag/array-rearrange/
     - https://www.geeksforgeeks.org/top-25-interview-questions/
     - https://www.geeksforgeeks.org/amazon-interview-set-118-campus-internship/
@@ -94,6 +89,8 @@
     - https://www.geeksforgeeks.org/arcesium-interview-experience-set-7-campus-internship/
     - https://www.geeksforgeeks.org/microsoft-idc-interview-experience-set-150-full-time/
     - solve more problems on modulo multiplicative method.
+
+    - https://www.geeksforgeeks.org/itertools-combinations-module-python-print-possible-combinations/
 
     - https://users.monash.edu/~lloyd/tildeAlgDS/Sort/Flag/
     - http://www.csse.monash.edu.au/~lloyd/tildeAlgDS/Sort/Flag/
