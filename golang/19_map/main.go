@@ -8,8 +8,6 @@ import (
 	"net/http"
 )
 
-// map is already a reference.
-
 func makeHttpReq() {
 	res, err := http.Get("http://www-01.sil.org/linguistics/wordlists/english/wordlist/wordsEn.txt")
 
@@ -154,7 +152,7 @@ func main() {
 	fmt.Println("----------------------")
 
 	// d := map[rune]int16 // expected expression
-	d := map[rune]int16{}
+	d := map[rune]int16{} // This is rune -> int16, not rune -> []int16
 	fmt.Printf("d: %v\n", d)
 	fmt.Printf("***** d[3]: %v\n", d[3])
 	fmt.Println("----------------------")
@@ -198,8 +196,8 @@ func main() {
 
 	makeHashTable()
 	fmt.Println("----------------------")
-	makeHttpReq()
-	fmt.Println("----------------------")
+	// makeHttpReq()
+	// fmt.Println("----------------------")
 	onemoretime()
 	fmt.Println("----------------------")
 }
