@@ -17,9 +17,9 @@ func fileDoesNotExist() {
 		fmt.Println("-----------------------------------------")
 		log.Fatalln(err)
 		fmt.Println("-----------------------------------------")
-		// log.Panic(err)
-		// fmt.Println("-----------------------------------------")
-		// panic(err)
+		log.Panic(err)
+		fmt.Println("-----------------------------------------")
+		panic(err)
 	}
 }
 
@@ -65,7 +65,7 @@ type CustomErr struct {
 }
 
 func (ce *CustomErr) Error() string {
-	return fmt.Sprintf("%p", ce)
+	return fmt.Sprintf("%p\n", ce)
 }
 
 func createCustomErr() (error, string) {
