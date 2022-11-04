@@ -1,4 +1,5 @@
 // https://quera.org/contest/assignments/45359/problems/156056
+// score: 90
 
 #include<bits/stdc++.h>
 
