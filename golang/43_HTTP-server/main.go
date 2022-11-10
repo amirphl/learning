@@ -8,13 +8,21 @@ import (
 
 type MyHandler1 struct{}
 
-func (mh MyHandler1) ServeHTTP(w http.ResponseWriter, req *http.Request) {
-	fmt.Println(req.URL.RequestURI())
-	fmt.Println(req.URL.Path)
-	fmt.Println(req.RequestURI)
+func (h MyHandler1) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	fmt.Println(r.URL.RequestURI())
+	fmt.Println(r.URL.Path)
+	fmt.Println(r.RequestURI)
 	w.Header().Add("Content-Type", "application/json; charset=ascii")
-	// res.Write([]byte(`{"name": "amir"}`))
-	io.WriteString(w, `{"name": "میرمحمد"}`)
+	w.Header().Add("Content-Type", "text/html; charset=utf-8")
+	// w.Write([]byte(`{"name": "amir"}`))
+	switch r.URL.Path {
+	case "/cat":
+		io.WriteString(w, `{"name": "میرمحمد"}`)
+	case "/dog":
+		io.WriteString(w, `{"name": "amir"}`)
+	default:
+		io.WriteString(w, `{"name": "phl"}`)
+	}
 }
 
 func main() {
