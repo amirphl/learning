@@ -7,7 +7,7 @@ using namespace std;
 class Solution {
 public:
     // time: O(n*n), memory: O(n*n)
-    string longestPalindrome(string in) {
+    string longestPalindrome2(string in) {
         int n = in.length();
         int dp[n][n][2];
         int i = 0, j;
@@ -50,6 +50,62 @@ public:
         }
 
         return in.substr(dp[0][n - 1][0], dp[0][n - 1][1] - dp[0][n - 1][0] + 1);
+    }
+
+    int dp[1000][1000][2];
+
+    string longestPalindrome(string in) {
+        int n = in.length();
+        memset(dp, -1, sizeof(dp));
+        fill(0, n - 1, in);
+
+        int start = dp[0][n - 1][0];
+        int end = dp[0][n - 1][1];
+
+        return in.substr(start, end - start + 1);
+    }
+
+    void fill(int i, int j, string& in) {
+        if (dp[i][j][0] != -1) {
+            return;
+        }
+
+        if (i == j) {
+            dp[i][j][0] = dp[i][j][1] = i;
+            return;
+        }
+
+        if (i + 1 == j) {
+            dp[i][j][0] = i;
+
+            if (in[i] == in[j]) {
+                dp[i][j][1] = j;
+            } else {
+                dp[i][j][1] = i;
+            }
+
+            return;
+        }
+
+        fill(i + 1, j, in);
+        fill(i, j - 1, in);
+
+        int n = dp[i + 1][j][1] - dp[i + 1][j][0] + 1;
+        int m = dp[i][j - 1][1] - dp[i][j - 1][0] + 1;
+        int p = dp[i + 1][j - 1][1] - dp[i + 1][j - 1][0] + 1;
+
+        if (n >= m) {
+            dp[i][j][0] = dp[i + 1][j][0];
+            dp[i][j][1] = dp[i + 1][j][1];
+        } else {
+            dp[i][j][0] = dp[i][j - 1][0];
+            dp[i][j][1] = dp[i][j - 1][1];
+        }
+
+        if (in[i] == in[j] && p == j - i - 1) {
+            dp[i][j][0] = i;
+            dp[i][j][1] = j;
+        }
     }
 };
 
