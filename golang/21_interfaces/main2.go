@@ -38,11 +38,10 @@ func (d MyStruct) Mthd_1() {
 }
 
 // Uncomment to see the diff!
-/*
-func (d MyStruct) Mthd_2() {
-	d.x -= 7
-}
-*/
+// func (d MyStruct) Mthd_2() {
+// 	d.x -= 7
+// }
+
 
 // `d` is passed by the value, not the reference!
 // Note: `d` is a reference.

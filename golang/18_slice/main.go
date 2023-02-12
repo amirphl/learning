@@ -170,7 +170,7 @@ func main() {
 	// str := append("---", []byte{1, 2})
 	// cannot use []byte{...} (type []byte) as type byte in append
 	// str := append([]byte("---"), []byte{1, 2})
-	str := append([]byte("---"), 1)
+	str := append([]byte("س"), 1)
 	fmt.Printf("append byte to str: %v \n", str)
 	// first argument to append must be slice; have untyped string
 	// str := append("---", 1)

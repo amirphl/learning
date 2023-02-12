@@ -1,10 +1,11 @@
 package main
 
-import "fmt"
-import "strconv"
+import (
+	"fmt"
+	"strconv"
+)
 
 func main() {
-	// TODO
 	// var a int
 	// a = int(3.14) // constant 3.14 truncated to integer
 	// fmt.Printf("a:	%v	%T\n", a, a)
@@ -57,6 +58,15 @@ func main() {
 	h2 = string([]byte{'s', 'a', 'l', 'a', 'm'})
 	fmt.Printf("h2:	%v	%T\n", h2, h2)
 
+	// Not works.
+	// var h3 string
+	// h3 = string([]byte{'س', 'ل', 'ا', 'م'})
+	// fmt.Printf("h3:	%v	%T\n", h3, h3)
+
+	var h4 string
+	h4 = string([]rune{'س', 'ل', 'ا', 'م'})
+	fmt.Printf("h4:	%v	%T\n", h4, h4)
+
 	var i interface{}
 	i = "I-am-string"
 	fmt.Printf("i:	%v	%T\n", i, i)
@@ -78,13 +88,13 @@ func main() {
 	fmt.Printf("l2:	%v	%T\n", l2, l2)
 
 	var m, _ = strconv.Atoi("85")
-	fmt.Printf("m + 85:	%v	%T\n", m+85, m+85)
+	fmt.Printf("m:  %v	%T\n", m, m)
 
 	var m2, err = strconv.Atoi("b")
 	fmt.Printf("m2, err:	%v	%T	%v\n", m2, m2, err)
 
 	var m3 = strconv.Itoa(85)
-	fmt.Printf("m3 + \"85\":	%v	%T\n", m3+"85", m3+"85")
+	fmt.Printf("m3:	%v	%T\n", m3, m3)
 
 	// TODO precision
 	var n float64
