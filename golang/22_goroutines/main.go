@@ -13,12 +13,12 @@ import (
 // Notes:
 // 0- Setup multicore flags.
 // 1- Always specify the size of channel.
-// 2- Remeber to check all conditions. What happens in the case of concurrency vs parallelism?
+// 2- Remember to check all conditions. What happens in the case of concurrency vs parallelism?
 // 3- directed channels
 // 4- Close the channels. Take care of reading from a closed channel.
 // TODO Can I read from a closed channel if it's not empty?
 // 5- waitGroup, mutex, atomic, channels, pipeline, fanInfanOut
-// 6- range is blocking unless it's closed!
+// 6- range is blocking unless the channel is closed!
 
 func init() {
 	// If you include this line, we will have `parallelism` since we are using multiple cores
@@ -27,7 +27,7 @@ func init() {
 	runtime.GOMAXPROCS(runtime.NumCPU())
 }
 
-// TODO What's the zero value of `WaitGroup`?
+// TODO What's the default value of `WaitGroup`?
 var wg sync.WaitGroup
 
 func foo1() {
