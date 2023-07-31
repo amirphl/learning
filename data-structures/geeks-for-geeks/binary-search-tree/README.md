@@ -1,5 +1,20 @@
+practice section
+
 ## Links
-    - * https://www.geeksforgeeks.org/binary-search-tree-set-1-search-and-insertion/
+- https://www.geeksforgeeks.org/binary-search-tree-set-1-search-and-insertion/
+- https://www.geeksforgeeks.org/insertion-in-binary-search-tree/
+- https://www.geeksforgeeks.org/deletion-in-binary-search-tree/
+- https://www.geeksforgeeks.org/maximum-sub-tree-sum-in-a-binary-tree-such-that-the-sub-tree-is-also-a-bst/
+- https://www.geeksforgeeks.org/binary-search-tree-traversal-inorder-preorder-post-order/
+- https://www.geeksforgeeks.org/median-of-all-nodes-from-a-given-range-in-a-binary-search-tree-bst/
+- https://www.geeksforgeeks.org/floor-in-binary-search-tree-bst/
+- https://www.geeksforgeeks.org/binary-search-tree-vs-ternary-search-tree/
+- https://www.geeksforgeeks.org/complexity-different-operations-binary-tree-binary-search-tree-avl-tree/
+
+
+
+
+ooo
     - * https://www.geeksforgeeks.org/binary-search-tree-insert-parent-pointer/
     - * https://www.geeksforgeeks.org/binary-search-tree-set-2-delete/
     - * https://www.geeksforgeeks.org/how-to-handle-duplicates-in-binary-search-tree/
@@ -19,6 +34,7 @@
         - * https://www.geeksforgeeks.org/transform-bst-sum-tree/
             - https://www.geeksforgeeks.org/convert-bst-to-a-binary-tree/
             - https://www.geeksforgeeks.org/bst-tree-sum-smaller-keys/
+            - https://practice.geeksforgeeks.org/problems/bst-to-greater-sum-tree/1/
         - https://www.geeksforgeeks.org/check-if-given-sorted-sub-sequence-exists-in-binary-search-tree/
         - https://www.geeksforgeeks.org/largest-number-bst-less-equal-n/
         - https://www.geeksforgeeks.org/check-two-bsts-contain-set-elements/
@@ -30,6 +46,8 @@
     - **check for BST and balanced BST:**
     - https://www.geeksforgeeks.org/how-to-determine-if-a-binary-tree-is-balanced/
         - https://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/
+    - **postorder traversal:**
+        - * https://www.geeksforgeeks.org/construct-a-binary-search-tree-from-given-postorder/
     - **preorder traversal:**
     - * https://www.geeksforgeeks.org/construct-bst-from-given-preorder-traversa/
         - * https://www.geeksforgeeks.org/construct-bst-from-given-preorder-traversal-set-2/
@@ -41,12 +59,11 @@
         - https://www.geeksforgeeks.org/binary-tree-binary-search-tree-conversion-using-stl-set/
     - **balancing BST:**
     - * https://www.geeksforgeeks.org/sorted-linked-list-to-balanced-bst/
+        - https://practice.geeksforgeeks.org/problems/array-to-bst4443/1/
         - * https://www.geeksforgeeks.org/convert-normal-bst-balanced-bst/
         - * https://www.geeksforgeeks.org/merge-two-balanced-binary-search-trees/
             - * https://www.geeksforgeeks.org/merge-two-bsts-with-limited-extra-space/
-            - * https://www.geeksforgeeks.org/merge-two-sorted-linked-lists/
             - * https://www.geeksforgeeks.org/merge-two-sorted-linked-lists-such-that-merged-list-is-in-reverse-order/
-            - https://www.geeksforgeeks.org/reverse-a-linked-list/
     - **BST to heap conversion:**
     - * https://www.geeksforgeeks.org/in-place-convert-bst-into-a-min-heap/
         - * https://www.geeksforgeeks.org/convert-bst-min-heap/
@@ -60,6 +77,7 @@
         - https://www.geeksforgeeks.org/find-distance-between-two-nodes-of-a-binary-tree/
         - https://www.geeksforgeeks.org/maximum-element-two-nodes-bst/
             - How to solve the problem without constructing the actual tree?
+        - https://practice.geeksforgeeks.org/problems/pth-common-ancestor-in-bst/1/
     - **check for dead end:**
     - * https://www.geeksforgeeks.org/check-whether-bst-contains-dead-end-not/
         - https://www.geeksforgeeks.org/simple-recursive-solution-check-whether-bst-contains-dead-end/
@@ -78,6 +96,7 @@
         - https://www.geeksforgeeks.org/find-a-pair-with-given-sum-in-bst/
         - https://www.geeksforgeeks.org/find-pair-given-sum-bst/
         - https://www.geeksforgeeks.org/find-pairs-with-given-sum-such-that-pair-elements-lie-in-different-bsts/
+        - * https://practice.geeksforgeeks.org/problems/pairs-violating-bst-property/1/
     - **union and intersection:**
     - * https://www.geeksforgeeks.org/print-common-nodes-in-two-binary-search-trees/
             - solution using stack?
@@ -87,10 +106,10 @@
     - * https://www.geeksforgeeks.org/check-if-each-internal-node-of-a-bst-has-exactly-one-child/
     - * https://www.geeksforgeeks.org/remove-bst-keys-outside-the-given-range/
         - What about deleting the nodes **inside** the range?
+        - https://practice.geeksforgeeks.org/problems/delete-nodes-greater-than-k/1/
     - * https://www.geeksforgeeks.org/minimum-possible-value-ai-aj-k-given-array-k/
     - https://www.geeksforgeeks.org/maximum-unique-element-every-subarray-size-k/
     - https://www.geeksforgeeks.org/find-the-minimum-element-in-a-binary-search-tree/
-    - https://www.geeksforgeeks.org/write-a-c-program-to-calculate-size-of-a-tree/
     - https://www.geeksforgeeks.org/floor-and-ceil-from-a-bst/
     - https://www.geeksforgeeks.org/check-array-represents-inorder-binary-search-tree-not/
     - https://www.geeksforgeeks.org/iterative-searching-binary-search-tree/
@@ -98,6 +117,9 @@
     - https://www.geeksforgeeks.org/remove-leaf-nodes-binary-search-tree/
     - https://www.geeksforgeeks.org/sorted-order-printing-of-an-array-that-represents-a-bst/
     - https://www.geeksforgeeks.org/rank-element-stream/
+    - https://practice.geeksforgeeks.org/problems/4ead9c3991a3822f578309e2232bc5415ac35cb9/1/
+    - https://practice.geeksforgeeks.org/problems/0f02fb492c69c094d94e806cba6ff8d8cd04d630/1/
+    - https://practice.geeksforgeeks.org/problems/sum-of-leaf-nodes-in-bst/1/
 
     - ```set<int, less_equal<int>> s;```
     - ```auto it = s.lower_bound(arr[i]);```
@@ -111,9 +133,59 @@
     - TODO add remaining notes here!
 
 ## TODO
-    - https://practice.geeksforgeeks.org/courses/dsa-self-paced?utm_source=Google&utm_medium=Header+Link+Click&utm_campaign=DSA+Course+Tracker&utm_id=DSA-Course-Tracker&utm_term=DSA+Course+Promo&utm_content=Course+Page
-    - https://practice.geeksforgeeks.org/explore/?category%5B%5D=Binary%20Search%20Tree&page=1&category%5B%5D=Binary%20Search%20Tree
-    - https://practice.geeksforgeeks.org/explore?category%5B%5D=Binary%20Search%20Tree&page=1
+    - https://practice.geeksforgeeks.org/courses/dsa-self-paced
+    - https://practice.geeksforgeeks.org/explore?category%5B%5D=Binary%20Search%20Tree
+    - https://www.geeksforgeeks.org/searching-algorithms/
+    - https://www.geeksforgeeks.org/complexity-analysis-of-binary-search/
+    - interpolation search or exponential search
+    - https://www.geeksforgeeks.org/introduction-to-sorting-algorithm/
+    - https://www.geeksforgeeks.org/introduction-to-min-heap-data-structure/
+    - https://www.geeksforgeeks.org/static-data-structure-vs-dynamic-data-structure/
+    - https://www.geeksforgeeks.org/meta-binary-search-one-sided-binary-search/
+    - * https://www.geeksforgeeks.org/count-permutations-of-given-array-that-generates-the-same-binary-search-tree-bst/
+    - https://www.geeksforgeeks.org/m-way-search-tree-set-2-insertion-and-deletion/
+    - https://www.geeksforgeeks.org/applications-advantages-and-disadvantages-of-binary-search-tree/
+    - https://www.geeksforgeeks.org/threaded-binary-search-tree-deletion/
+    - https://www.geeksforgeeks.org/find-k-th-smallest-element-in-bst-order-statistics-in-bst/
+    - https://www.geeksforgeeks.org/build-binary-tree-from-bst-such-that-its-level-order-traversal-prints-sorted-data/
+    - https://www.geeksforgeeks.org/find-the-sum-of-all-left-leaf-nodes-which-also-has-its-right-sibling/
+    - https://www.geeksforgeeks.org/iterative-approach-to-check-if-a-binary-tree-is-bst-or-not/
+    - https://www.geeksforgeeks.org/construct-binary-tree-from-given-parent-array-representation-iterative-approach/
+    - https://www.geeksforgeeks.org/check-if-the-array-can-be-sorted-using-swaps-between-given-indices-only/
+    - https://www.geeksforgeeks.org/preorder-traversal-of-n-ary-tree-without-recursion/
+    - https://www.geeksforgeeks.org/check-if-given-inorder-and-preorder-traversals-are-valid-for-any-binary-tree-without-building-the-tree/
+    - https://www.geeksforgeeks.org/preorder-from-inorder-and-postorder-traversals/
+    - https://www.geeksforgeeks.org/sum-of-nodes-in-a-binary-search-tree-with-values-from-a-given-range/
+    - https://www.geeksforgeeks.org/largest-element-in-an-n-ary-tree/
+    - https://www.geeksforgeeks.org/java-program-to-represent-graphs-using-linked-list/
+    - https://www.geeksforgeeks.org/absolute-difference-between-floor-of-array-sum-divided-by-x-and-floor-sum-of-every-array-element-when-divided-by-x/
+    - https://www.geeksforgeeks.org/priority-queue-of-pairs-in-c-ordered-by-first/
+    - https://www.geeksforgeeks.org/find-the-only-missing-number-in-a-sorted-array/
+    - https://www.geeksforgeeks.org/ternary-search-tree/
+    - https://www.geeksforgeeks.org/binary-search-preferred-ternary-search/
+    - https://www.geeksforgeeks.org/ternary-search-tree-deletion/
+    - https://www.geeksforgeeks.org/ternary-search-tree-meaning-definition-in-dsa/
+    - https://www.geeksforgeeks.org/longest-word-ternary-search-tree/
+    - https://www.geeksforgeeks.org/how-to-implement-text-auto-complete-feature-using-ternary-search-tree/
+    - https://www.geeksforgeeks.org/searching-in-binary-indexed-tree-using-binary-lifting-in-ologn/
+    - https://www.geeksforgeeks.org/maximum-xor-pair-product-with-a-given-value/
+    - https://www.geeksforgeeks.org/tag/avl-tree/
+    - https://www.geeksforgeeks.org/what-is-avl-tree-avl-tree-meaning/
+    - https://www.geeksforgeeks.org/difference-between-binary-search-tree-and-avl-tree/
+    - https://www.geeksforgeeks.org/how-is-an-avl-tree-different-from-a-b-tree/
+    - https://www.geeksforgeeks.org/time-complexity-and-space-complexity/
+    - https://www.geeksforgeeks.org/different-shapes-of-avl-possible-at-height-h/
+    - https://www.geeksforgeeks.org/red-black-tree-vs-avl-tree/
+    - https://www.geeksforgeeks.org/complexity-analysis-of-various-operations-of-binary-min-heap/
+    - https://www.geeksforgeeks.org/prune-and-search-a-complexity-analysis-overview/
+    - https://www.geeksforgeeks.org/insertion-in-an-avl-tree/
+    - https://www.geeksforgeeks.org/string-from-prefix-and-suffix-of-given-two-strings/
+    - https://www.geeksforgeeks.org/longest-uncommon-subsequence/
+
+
+
+
+
     - https://www.geeksforgeeks.org/category/binary-search-tree/
     - https://practice.geeksforgeeks.org/tag-page.php?tag=BST&isCmp=0
     - http://quiz.geeksforgeeks.org/data-structure/binary-search-trees/
@@ -140,12 +212,25 @@
         - https://practice.geeksforgeeks.org/company/InfoEdge/
         - https://practice.geeksforgeeks.org/company/MakeMyTrip/
         - https://practice.geeksforgeeks.org/company/Oracle/
+        - https://practice.geeksforgeeks.org/company/Cadence/
+        - https://practice.geeksforgeeks.org/company/Philips/
+        - https://practice.geeksforgeeks.org/company/Prop%20Tiger/
+        - https://practice.geeksforgeeks.org/company/Sales%20Force/
+        - https://practice.geeksforgeeks.org/company/Snapdeal/
+        - https://practice.geeksforgeeks.org/company/VMWare/
+        - https://practice.geeksforgeeks.org/company/Brocade/
+        - https://practice.geeksforgeeks.org/company/Goldman-Sachs/
+        - https://practice.geeksforgeeks.org/company/Juniper/
+        - https://practice.geeksforgeeks.org/company/Linkedin/
+        - https://practice.geeksforgeeks.org/company/Quikr/
+        - https://practice.geeksforgeeks.org/company/Zoho/
         - https://www.geeksforgeeks.org/microsoft-interview-experience-set-53/
 
     - Red Black Tree and Threaded Binary Tree
+    move this README to stack readme
 
+    - https://practice.geeksforgeeks.org/problems/finding-profession3834/1
     - https://www.geeksforgeeks.org/avl-tree-set-2-deletion/
-    - https://www.geeksforgeeks.org/sliding-window-maximum-maximum-of-all-subarrays-of-size-k/
     - https://www.geeksforgeeks.org/count-smaller-elements-on-right-side/
     - https://www.geeksforgeeks.org/special-two-digit-numbers-in-a-binary-search-tree/
     - https://www.geeksforgeeks.org/leaf-nodes-preorder-binary-search-tree/
@@ -154,9 +239,7 @@
     - https://www.geeksforgeeks.org/data-structure-for-future-reservations-for-a-single-resource/
     - https://www.geeksforgeeks.org/how-to-implement-decrease-key-or-change-key-in-binary-search-tree/
     - https://www.geeksforgeeks.org/find-if-there-is-a-triplet-in-bst-that-adds-to-0/
-    - https://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion-and-without-stack/
     - http://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/
-    - https://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion-and-without-stack/
     - https://www.geeksforgeeks.org/iteratively-reverse-a-linked-list-using-only-2-pointers/
     - https://www.geeksforgeeks.org/g-fact-18-2/
     - https://www.geeksforgeeks.org/program-nth-catalan-number/
