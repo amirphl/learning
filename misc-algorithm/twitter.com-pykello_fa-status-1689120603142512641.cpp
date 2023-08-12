@@ -97,6 +97,9 @@ int main() {
   // test(a, b);
   a = 255, b = 255;
   test(a, b);
+  a = 1, b = 1125899906842624;
+  Solution sol;
+  cout << sol.num_ones_between(a, b) << endl;
 
   return 0;
 }
