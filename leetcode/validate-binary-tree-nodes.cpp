@@ -6,9 +6,7 @@ class Solution {
 public:
   bool validateBinaryTreeNodes(int n, vector<int> &leftChild,
                                vector<int> &rightChild) {
-    bool c[n];
     int parent[n];
-    memset(c, 0, sizeof(c));
     memset(parent, -1, sizeof(parent));
     int i = 0;
     for (auto &x : leftChild) {
@@ -16,10 +14,6 @@ public:
         i++;
         continue;
       }
-      if (c[x]) {
-        return 0;
-      }
-      c[x] = 1;
       int ipar = par(parent, i);
       int xpar = par(parent, x);
       if (ipar == i && xpar == x) {
@@ -32,11 +26,7 @@ public:
         }
         parent[x] = ipar;
       } else {
-        if (ipar == xpar) {
-          return 0;
-        } else {
-          return 0;
-        }
+        return 0;
       }
       i++;
     }
@@ -46,10 +36,6 @@ public:
         i++;
         continue;
       }
-      if (c[x]) {
-        return 0;
-      }
-      c[x] = 1;
       int ipar = par(parent, i);
       int xpar = par(parent, x);
       if (ipar == i && xpar == x) {
@@ -62,11 +48,7 @@ public:
         }
         parent[x] = ipar;
       } else {
-        if (ipar == xpar) {
-          return 0;
-        } else {
-          return 0;
-        }
+        return 0;
       }
       i++;
     }
@@ -95,7 +77,6 @@ public:
       return i;
     }
     int p = par(parent, parent[i]);
-    parent[i] = p;
-    return p;
+    return parent[i] = p;
   }
 };
