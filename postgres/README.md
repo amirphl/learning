@@ -1,0 +1,55 @@
+## Links
+- https://tapoueh.org/
+- https://use-the-index-luke.com/
+- http://www.pomm-project.org/
+- https://www.torodb.com/
+- https://tpgit.github.io/UnOfficialLeptDocs/vs2008/building-image-libraries.html
+- https://www.nyse.com/
+- http://www.nyxdata.com/nysedata/asp/factbook/viewer_edition.asp?mode=table&key=3141&category=3
+- https://www.postgresql.org/docs/9.6/functions-formatting.html
+- https://www.postgresql.org/docs/current/protocol-flow.html
+    - https://www.postgresql.org/docs/current/protocol-flow.html#PROTOCOL-FLOW-EXT-QUERY
+- https://www.postgresql.org/docs/current/libpq-exec.html
+- http://initd.org/psycopg/
+    - http://initd.org/psycopg/docs/usage.html#passing-parameters-to-sql-queries
+- https://www.postgresql.org/docs/current/sql-prepare.html
+- https://www.postgresql.org/docs/current/sql-execute.html
+- https://magicstack.github.io/asyncpg/current/index.html
+- https://www.postgresql.org/docs/current/functions-srf.html
+- https://www.postgresql.org/docs/9.5/functions-conditional.html#FUNCTIONS-COALESCE-NVL-IFNULL
+- https://www.postgresql.org/docs/
+- https://www.postgresql.org/docs/current/mvcc.html
+- https://www.postgresql.org/docs/current/transaction-iso.html
+- https://pgloader.io/
+    - https://github.com/dimitri/pgloader
+- https://github.com/nackjicholson/aiosql
+- https://www.postgresql.org/docs/current/app-psql.html
+- https://www.postgresql.org/docs/current/sql-savepoint.html
+- https://www.postgresql.org/docs/current/sql-rollback-to.html
+- https://github.com/postgres/postgres/blob/master/src/test/regress/sql/aggregates.sql
+- https://github.com/postgres/postgres/blob/master/src/test/regress/expected/aggregates.out
+- https://pgtap.org/
+    - https://pgtap.org/documentation.html#canyourelate
+    - https://pgtap.org/pg_prove.html
+- https://manpages.ubuntu.com/manpages/trusty/man1/pg_virtualenv.1.html
+- https://julien.danjou.info/blog/2014/db-integration-testing-strategies-python
+- https://github.com/dimitri/regresql
+- https://www.postgresql.org/docs/current/indexes.html
+    - https://www.postgresql.org/docs/current/indexes-types.html
+    - https://github.com/postgres/postgres/tree/master/src/backend/access/nbtree
+    - http://gist.cs.berkeley.edu/
+    - https://en.wikipedia.org/wiki/Total_order
+    - https://www.postgresql.org/docs/current/textsearch-intro.html
+- https://www.postgresql.org/docs/current/pgstatstatements.html
+- https://explain.depesz.com/
+- http://tatiyants.com/pev/#/about
+- https://www.pgadmin.org/
+- https://www.postgresql.org/docs/current/routine-vacuuming.html#AUTOVACUUM
+- https://www.postgresql.org/docs/current/planner-stats.html
+- https://en.wikipedia.org/wiki/Amdahl%27s_law
+- https://stackoverflow.com/questions/28550679/what-is-the-difference-between-a-lateral-join-and-a-subquery-in-postgresql
+- https://en.wikipedia.org/wiki/Rubber_duck_debugging
+- https://www.postgresql.org/docs/current/storage-toast.html
+- https://www.postgresql.org/docs/current/functions-datetime.html
+- https://www.postgresql.org/docs/current/queries-table-expressions.html#QUERIES-FROM
+- https://www.postgresql.org/docs/current/pgtrgm.html
