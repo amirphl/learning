@@ -1,4 +1,4 @@
-package MinFlips
+package minFlips
 // https://leetcode.com/problems/minimum-number-of-flips-to-make-the-binary-string-alternating/
 
 object Solution {
