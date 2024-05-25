@@ -1,0 +1,398 @@
+## Links
+    - **construction:**
+        - * https://www.geeksforgeeks.org/construct-tree-from-given-inorder-and-preorder-traversal/
+            - solution using stack?
+            - https://www.geeksforgeeks.org/construct-a-binary-tree-from-postorder-and-inorder/
+        - * https://www.geeksforgeeks.org/construct-tree-inorder-level-order-traversals/
+            - * https://www.geeksforgeeks.org/construct-tree-inorder-level-order-traversals-set-2/
+                - solution using unordered_set
+                - solution using unordered_map
+        - https://www.geeksforgeeks.org/given-linked-list-representation-of-complete-tree-convert-it-to-linked-representation/
+            - https://www.geeksforgeeks.org/construct-complete-binary-tree-given-array/
+            - https://www.geeksforgeeks.org/create-doubly-linked-list-ternary-ree/
+            - https://www.geeksforgeeks.org/in-place-convert-a-given-binary-tree-to-doubly-linked-list/
+                - https://www.geeksforgeeks.org/convert-a-given-binary-tree-to-doubly-linked-list-set-2/
+                - https://www.geeksforgeeks.org/convert-given-binary-tree-doubly-linked-list-set-3/
+                - https://www.geeksforgeeks.org/convert-a-given-binary-tree-to-doubly-linked-list-set-4/
+            - * https://www.geeksforgeeks.org/convert-a-binary-tree-into-doubly-linked-list-in-spiral-fashion/
+            - https://www.geeksforgeeks.org/convert-a-binary-tree-to-a-circular-doubly-link-list/
+        - * https://www.geeksforgeeks.org/full-and-complete-binary-tree-from-given-preorder-and-postorder-traversals/
+            - * https://www.geeksforgeeks.org/construct-full-binary-tree-using-preorder-traversal-preorder-traversal-mirror-tree/
+        - * https://www.geeksforgeeks.org/construct-a-special-tree-from-given-preorder-traversal/
+            - solution using stack
+            - solution using recursion
+            - * https://www.geeksforgeeks.org/calculate-depth-full-binary-tree-preorder/
+            - * https://www.geeksforgeeks.org/convert-ternary-expression-binary-tree/
+            - * https://www.geeksforgeeks.org/construct-full-k-ary-tree-preorder-traversal/
+            - * https://www.geeksforgeeks.org/sum-nodes-k-th-level-tree-represented-string/
+            - * https://www.geeksforgeeks.org/construct-ancestor-matrix-from-a-given-binary-tree/
+                - Implement second solution yourself!
+        - https://www.geeksforgeeks.org/construct-binary-tree-from-inorder-traversal/
+        - https://www.geeksforgeeks.org/construct-a-binary-tree-from-parent-array-representation/
+            - https://www.geeksforgeeks.org/find-height-binary-tree-represented-parent-array/
+                - compare with your solution!
+            - https://www.geeksforgeeks.org/height-generic-tree-parent-array/
+        - * https://www.geeksforgeeks.org/construct-binary-tree-string-bracket-representation/
+            - see other solutions!
+        - * https://www.geeksforgeeks.org/convert-an-arbitrary-binary-tree-to-a-tree-that-holds-children-sum-property/
+            - (TODO) method 2
+        - https://www.geeksforgeeks.org/convert-left-right-representation-bianry-tree-right/
+        - https://www.geeksforgeeks.org/convert-a-given-tree-to-sum-tree/
+            - https://www.geeksforgeeks.org/change-a-binary-tree-so-that-every-node-stores-sum-of-all-nodes-in-left-subtree/
+        - * https://www.geeksforgeeks.org/write-an-efficient-c-function-to-convert-a-tree-into-its-mirror-tree/
+            - recursive solution
+            - level order solution
+            - * https://www.geeksforgeeks.org/find-mirror-given-node-binary-tree/
+        - https://www.geeksforgeeks.org/convert-given-binary-tree-tree-holds-logical-property/
+    - **traversal:**
+        - https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/
+        - * https://www.geeksforgeeks.org/if-you-are-given-two-traversal-sequences-can-you-construct-the-binary-tree/
+        - * https://www.geeksforgeeks.org/print-postorder-from-given-inorder-and-preorder-traversals/
+            - optimization using hashing
+        - * https://www.geeksforgeeks.org/find-postorder-traversal-of-bst-from-preorder-traversal/
+        - * https://www.geeksforgeeks.org/check-if-given-preorder-inorder-and-postorder-traversals-are-of-same-tree/
+        - * https://www.geeksforgeeks.org/check-if-given-preorder-inorder-and-postorder-traversals-are-of-same-tree-set-2/
+        - * https://www.geeksforgeeks.org/reverse-tree-path/
+            - best approach: using vector
+            - other approach: using unordered_map
+            - https://www.geeksforgeeks.org/given-a-binary-tree-print-all-root-to-leaf-paths/
+                - https://www.geeksforgeeks.org/given-a-binary-tree-print-out-all-of-its-root-to-leaf-paths-one-per-line/
+                - https://www.geeksforgeeks.org/print-root-leaf-path-without-using-recursion/
+                    - solution using parent pointer
+                    - solution using vector and stack
+                - * https://www.geeksforgeeks.org/print-all-root-to-leaf-paths-with-there-relative-positions/
+                - https://www.geeksforgeeks.org/print-path-root-given-node-binary-tree/
+                - * https://www.geeksforgeeks.org/find-pair-root-leaf-path-sum-equals-roots-data/
+                - https://www.geeksforgeeks.org/sum-nodes-longest-path-root-leaf-node/
+                - https://www.geeksforgeeks.org/find-the-maximum-sum-path-in-a-binary-tree/
+                - * https://www.geeksforgeeks.org/remove-all-nodes-which-lie-on-a-path-having-sum-less-than-k/
+                - * https://www.geeksforgeeks.org/remove-nodes-root-leaf-paths-length-k/
+                - * https://www.geeksforgeeks.org/print-k-sum-paths-binary-tree/
+                - https://www.geeksforgeeks.org/print-paths-root-specified-sum-binary-tree/
+                - https://www.geeksforgeeks.org/root-to-leaf-path-sum-equal-to-a-given-number/
+                - * https://www.geeksforgeeks.org/sum-numbers-formed-root-leaf-paths/
+                - https://www.geeksforgeeks.org/check-root-leaf-path-given-sequence/
+                - * https://www.geeksforgeeks.org/print-nodes-distance-k-leaf-node/
+                - * https://www.geeksforgeeks.org/closest-leaf-to-a-given-node-in-binary-tree/
+                    - https://www.geeksforgeeks.org/find-closest-leaf-binary-tree/
+                - https://www.geeksforgeeks.org/root-leaf-paths-equal-lengths-binary-tree/
+                    - https://www.geeksforgeeks.org/maximum-distinct-nodes-in-a-root-to-leaf-path/
+        - https://www.geeksforgeeks.org/boundary-traversal-of-binary-tree/
+        - https://www.geeksforgeeks.org/linked-complete-binary-tree-its-creation/
+        - **inorder:**
+            - * https://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion/
+            - * https://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion-and-without-stack/
+            - https://www.geeksforgeeks.org/replace-node-binary-tree-sum-inorder-predecessor-successor/
+            - https://www.geeksforgeeks.org/populate-inorder-successor-for-all-nodes/
+                - (TODO) solution using stack
+            - * https://www.geeksforgeeks.org/inorder-succesor-node-binary-tree/
+                - binary tree: time: O(n), memory: O(1)
+                - bbst: time: O(logn), memory: O(1)
+                - https://www.geeksforgeeks.org/inorder-successor-in-binary-search-tree/
+                - https://practice.geeksforgeeks.org/problems/implementing-ceil-in-bst/1/
+                - * https://practice.geeksforgeeks.org/problems/implement-change-key-in-bst/1/
+            - * https://www.geeksforgeeks.org/find-n-th-node-inorder-traversal/
+                - approach for bst: maintain the number of nodes in the left subtree for each node then you can solve the problem in O(logn).
+            - * https://www.geeksforgeeks.org/minimum-swap-required-convert-binary-tree-binary-search-tree/
+        - **preorder:**
+            - * https://www.geeksforgeeks.org/morris-traversal-for-preorder/
+            - * https://www.geeksforgeeks.org/iterative-preorder-traversal/
+                - micro-optimization
+            - * https://www.geeksforgeeks.org/modify-binary-tree-get-preorder-traversal-using-right-pointers/
+                - recursive solution
+                - (TODO) solution using iterative preorder traversal
+        - **postorder:**
+            - * https://www.geeksforgeeks.org/iterative-postorder-traversal-using-stack/
+                - best method: using only a single instance of stack
+                - second method: interesting!
+                - third method: using hashing
+                - https://www.geeksforgeeks.org/iterative-postorder-traversal/
+            - https://www.geeksforgeeks.org/write-a-c-program-to-delete-a-tree/
+            - https://www.geeksforgeeks.org/find-n-th-node-in-postorder-traversal-of-a-binary-tree/
+            - https://www.geeksforgeeks.org/density-of-binary-tree-in-one-traversal/
+        - **level order:**
+            - https://www.geeksforgeeks.org/level-order-tree-traversal/
+                - https://www.geeksforgeeks.org/reverse-level-order-traversal/
+                - * https://www.geeksforgeeks.org/reverse-alternate-levels-binary-tree/
+                    - approach 1: using auxiliary array
+                    - approach 2: using two inorder traversal
+                    - approach 3: using single traversal (Read this again!)
+            - * https://www.geeksforgeeks.org/level-order-traversal-in-spiral-form/
+                - best approach: using deque
+                - other approach: using two stacks
+                - * https://www.geeksforgeeks.org/level-order-traversal-direction-change-every-two-levels/
+                - https://www.geeksforgeeks.org/maximum-spiral-sum-in-binary-tree/
+            - * https://www.geeksforgeeks.org/level-order-traversal-line-line-set-3-using-one-queue/
+                - best approach: use NULL as delimiter
+                - https://www.geeksforgeeks.org/print-level-order-traversal-line-line/
+                - https://www.geeksforgeeks.org/level-order-traversal-line-line-set-2-using-two-queues/
+            - * https://www.geeksforgeeks.org/perfect-binary-tree-specific-level-order-traversal/
+                - best approach: process two nodes at a time: 1st node’s left child, 2nd node’s right child, 1st node’s right child and 2nd node’s left child
+                - The above code prints specific level order from TOP to BOTTOM. How will you do specific level order traversal from BOTTOM to TOP (Amazon Interview | Set 120 – Round 1 Last Problem)
+                - * https://www.geeksforgeeks.org/perfect-binary-tree-specific-level-order-traversal-set-2/
+                    - best approach: using stack
+            - https://www.geeksforgeeks.org/diagonal-traversal-of-binary-tree/
+                - https://www.geeksforgeeks.org/iterative-diagonal-traversal-binary-tree/
+                - (TODO) https://www.geeksforgeeks.org/diagonal-sum-binary-tree/
+    - **number of binary trees**
+        - * https://www.geeksforgeeks.org/find-all-possible-trees-with-given-inorder-traversal/
+            - https://www.geeksforgeeks.org/construct-all-possible-bsts-for-keys-1-to-n/
+        - * https://www.geeksforgeeks.org/number-of-binary-trees-for-given-preorder-sequence-length/
+        - * https://www.geeksforgeeks.org/succinct-encoding-of-binary-tree/
+            - Encode the tree using only preorder traversal and considering NULL children for leafs and the nodes with only one child.
+        - * https://www.geeksforgeeks.org/number-full-binary-trees-node-product-children/
+    - **checking, printing, summation:**
+        - https://www.geeksforgeeks.org/check-if-a-binary-tree-is-subtree-of-another-binary-tree/
+            - * https://www.geeksforgeeks.org/check-binary-tree-subtree-another-binary-tree-set-2/
+                - usage of '$' for NULL pointers is very important.
+                - perform both inorder and preorder!
+                - use succinct encoding.
+            - * https://www.geeksforgeeks.org/check-binary-tree-contains-duplicate-subtrees-size-2/
+                - to serialize a tree: use inorder + preorder or inorder + preorder (uniquly identifying a tree)
+                - * https://www.geeksforgeeks.org/find-duplicate-subtrees/
+            - * https://www.geeksforgeeks.org/serialize-deserialize-binary-tree/
+                - * Note: We can serialize a tree by storing preorder traversal + NULLs as INT_MAX.
+                    - No inorder traversal needed!
+                    - We can restore the main tree without any information loss!
+            - https://www.geeksforgeeks.org/write-c-code-to-determine-if-two-trees-are-identical/
+                - https://www.geeksforgeeks.org/iterative-function-check-two-trees-identical/
+            - * https://www.geeksforgeeks.org/find-largest-subtree-having-identical-left-and-right-subtrees/
+        - https://www.geeksforgeeks.org/sum-nodes-binary-tree/
+            - https://www.geeksforgeeks.org/check-sum-covered-uncovered-nodes-binary-tree/
+            - https://www.geeksforgeeks.org/check-if-a-given-binary-tree-is-sumtree/
+            - https://www.geeksforgeeks.org/check-for-children-sum-property-in-a-binary-tree/
+            - https://www.geeksforgeeks.org/sum-parent-nodes-child-node-x/
+            - https://www.geeksforgeeks.org/find-sum-left-leaves-given-binary-tree/
+            - https://www.geeksforgeeks.org/find-sum-right-leaves-given-binary-tree/
+            - https://www.geeksforgeeks.org/find-sum-nodes-given-perfect-binary-tree/
+            - https://www.geeksforgeeks.org/find-largest-subtree-sum-tree/
+            - https://www.geeksforgeeks.org/sum-heights-individual-nodes-binary-tree/
+            - https://www.geeksforgeeks.org/subtree-given-sum-binary-tree/
+            - https://www.geeksforgeeks.org/count-subtress-sum-given-value-x/
+            - https://www.geeksforgeeks.org/sum-nodes-maximum-depth-binary-tree/
+            - https://www.geeksforgeeks.org/difference-between-sums-of-odd-and-even-levels/
+            - https://www.geeksforgeeks.org/find-level-maximum-sum-binary-tree/
+            - https://www.geeksforgeeks.org/sum-leaf-nodes-binary-tree/
+            - https://www.geeksforgeeks.org/sum-leaf-nodes-minimum-level/
+            - https://www.geeksforgeeks.org/merge-two-binary-trees-node-sum/
+        - https://www.geeksforgeeks.org/get-level-of-a-node-in-a-binary-tree/
+            - https://www.geeksforgeeks.org/check-leaves-level/
+            - https://www.geeksforgeeks.org/print-nodes-at-k-distance-from-root/
+            - https://www.geeksforgeeks.org/print-nodes-odd-levels-tree/
+            - https://www.geeksforgeeks.org/print-full-nodes-binary-tree/
+        - https://www.geeksforgeeks.org/find-maximum-path-sum-two-leaves-binary-tree/
+            - https://www.geeksforgeeks.org/print-longest-leaf-leaf-path-binary-tree/
+        - * https://www.geeksforgeeks.org/maximum-sum-nodes-binary-tree-no-two-adjacent/
+            - https://www.geeksforgeeks.org/maximum-sum-tree-adjacent-levels-not-allowed/
+        - * https://www.geeksforgeeks.org/vertical-sum-in-binary-tree-set-space-optimized/
+            - https://www.geeksforgeeks.org/vertical-sum-in-a-given-binary-tree/
+            - https://www.geeksforgeeks.org/width-binary-tree-set-1/
+            - https://www.geeksforgeeks.org/vertical-width-binary-tree-set-2/
+            - https://www.geeksforgeeks.org/find-given-vertical-level-binary-tree-sorted-not/
+            - https://www.geeksforgeeks.org/print-binary-tree-vertical-order/
+            - https://www.geeksforgeeks.org/print-binary-tree-vertical-order-set-2/
+                - We will use first 30 bits of key for horizontal distance [MSB to LSB] and will use 30 next bits for vertical distance. Thus keys will be stored in map as per our requirement.
+            - https://www.geeksforgeeks.org/bottom-view-binary-tree/
+            - https://www.geeksforgeeks.org/print-nodes-top-view-binary-tree/
+            - https://www.geeksforgeeks.org/print-left-view-binary-tree/
+            - https://www.geeksforgeeks.org/print-right-view-binary-tree-2/
+            - https://www.geeksforgeeks.org/right-view-binary-tree-using-queue/
+            - https://practice.geeksforgeeks.org/problems/vertical-width-of-a-binary-tree/1/
+        - https://www.geeksforgeeks.org/check-two-nodes-cousins-binary-tree/
+            - https://www.geeksforgeeks.org/check-if-two-nodes-are-cousins-in-a-binary-tree-set-2/
+                - good idea!
+            - https://www.geeksforgeeks.org/print-cousins-of-a-given-node-in-binary-tree/
+                - https://www.geeksforgeeks.org/print-cousins-of-a-given-node-in-binary-tree-single-traversal/
+                    - solution using parent pointer
+        - https://www.geeksforgeeks.org/given-level-order-traversal-binary-tree-check-tree-min-heap/
+            - * https://www.geeksforgeeks.org/check-if-a-given-binary-tree-is-complete-tree-or-not/
+                - solution using queue
+                - solution using 2i + 1, 2i + 2
+            - https://www.geeksforgeeks.org/check-weather-given-binary-tree-perfect-not/
+            - https://www.geeksforgeeks.org/check-whether-binary-tree-full-binary-tree-not/
+            - https://www.geeksforgeeks.org/check-whether-binary-tree-full-binary-tree-not-iterative-approach/
+            - https://www.geeksforgeeks.org/print-middle-level-perfect-binary-tree-without-finding-height/
+            - note: complete != full != perfect
+        - https://www.geeksforgeeks.org/check-if-two-trees-are-mirror/
+            - https://www.geeksforgeeks.org/iterative-method-check-two-trees-mirror/
+                - don't forget to check parents!
+                - inorder traversal solution is interesting!
+            - * https://www.geeksforgeeks.org/check-symmetric-binary-tree-iterative-approach/
+                - https://www.geeksforgeeks.org/symmetric-tree-tree-which-is-mirror-image-of-itself/
+        - https://www.geeksforgeeks.org/check-if-removing-an-edge-can-divide-a-binary-tree-in-two-halves/
+        - https://www.geeksforgeeks.org/check-if-leaf-traversal-of-two-binary-trees-is-same/
+        - https://www.geeksforgeeks.org/check-given-binary-tree-follows-height-property-red-black-tree/
+        - https://www.geeksforgeeks.org/check-binary-tree-not-bst-duplicate-values/
+        - * https://www.geeksforgeeks.org/check-given-graph-tree/
+    - **misc:**
+        - https://www.geeksforgeeks.org/print-nodes-dont-sibling-binary-tree/
+        - https://www.geeksforgeeks.org/the-great-tree-list-recursion-problem/
+        - https://www.geeksforgeeks.org/custom-tree-problem/
+        - * https://www.geeksforgeeks.org/tree-isomorphism-problem/
+        - https://www.geeksforgeeks.org/ways-to-color-a-skewed-tree-such-that-parent-and-child-have-different-colors/
+        - https://www.geeksforgeeks.org/delete-leaf-nodes-value-x/
+            - https://www.geeksforgeeks.org/non-recursive-program-to-delete-an-entire-binary-tree/
+        - https://www.geeksforgeeks.org/write-program-calculate-size-tree-iterative/
+        - https://www.geeksforgeeks.org/height-binary-tree-considering-even-level-leaves/
+        - * https://www.geeksforgeeks.org/find-height-of-a-special-binary-tree-whose-leaf-nodes-are-connected/
+            - There is a smarter approach in the link.
+            - https://www.geeksforgeeks.org/connect-leaves-doubly-linked-list/
+        - * https://www.geeksforgeeks.org/diameter-of-a-binary-tree/
+            - * https://www.geeksforgeeks.org/diameter-of-a-binary-tree-in-on-a-new-method/
+            - * https://www.geeksforgeeks.org/diameter-n-ary-tree/
+            - * https://www.geeksforgeeks.org/longest-path-undirected-tree/
+        - * https://www.geeksforgeeks.org/sink-odd-nodes-binary-tree/
+        - https://www.geeksforgeeks.org/find-depth-of-the-deepest-odd-level-node/
+            - https://www.geeksforgeeks.org/depth-deepest-odd-level-node-binary-tree/
+            - https://www.geeksforgeeks.org/deepest-right-leaf-node-binary-tree-iterative-approach/
+            - https://www.geeksforgeeks.org/deepest-left-leaf-node-binary-tree-iterative-approach/
+                - https://www.geeksforgeeks.org/deepest-left-leaf-node-in-a-binary-tree/
+            - https://www.geeksforgeeks.org/find-deepest-node-binary-tree/
+            - https://www.geeksforgeeks.org/find-minimum-depth-of-a-binary-tree/
+            - https://www.geeksforgeeks.org/replace-node-with-depth-in-a-binary-tree/
+        - https://www.geeksforgeeks.org/check-if-a-binary-tree-is-sorted-level-wise-or-not/
+        - https://www.geeksforgeeks.org/write-a-c-program-to-get-count-of-leaf-nodes-in-a-binary-tree/
+            - https://www.geeksforgeeks.org/iterative-program-count-leaf-nodes-binary-tree/
+            - https://www.geeksforgeeks.org/count-non-leaf-nodes-binary-tree/
+            - https://www.geeksforgeeks.org/count-half-nodes-in-a-binary-tree-iterative-and-recursive/
+            - https://www.geeksforgeeks.org/count-full-nodes-binary-tree-iterative-recursive/
+        - https://www.geeksforgeeks.org/given-a-binary-tree-how-do-you-remove-all-the-half-nodes/
+        - * https://www.geeksforgeeks.org/connect-nodes-at-same-level-with-o1-extra-space/
+            - https://www.geeksforgeeks.org/connect-nodes-level-level-order-traversal/
+            - * https://www.geeksforgeeks.org/connect-nodes-at-same-level/
+        - https://www.geeksforgeeks.org/level-maximum-number-nodes/
+            - https://www.geeksforgeeks.org/largest-value-level-binary-tree-set-2-iterative-approach/
+            - https://www.geeksforgeeks.org/largest-value-level-binary-tree/
+            - https://www.geeksforgeeks.org/smallest-value-level-binary-tree/
+        - https://www.geeksforgeeks.org/get-level-node-binary-tree-iterative-approach/
+        - https://www.geeksforgeeks.org/find-count-of-singly-subtrees/
+        - https://www.geeksforgeeks.org/iterative-search-for-a-key-x-in-binary-tree/
+        - https://www.geeksforgeeks.org/swap-nodes-binary-tree-every-kth-level/
+        - https://www.geeksforgeeks.org/pairwise-swap-leaf-nodes-binary-tree/
+            - * finding children with Morris traversal is interesting!
+            - https://www.geeksforgeeks.org/print-leaf-nodes-left-right-binary-tree/
+        - https://www.geeksforgeeks.org/print-nodes-distance-k-given-node-binary-tree/
+        - https://practice.geeksforgeeks.org/problems/nodes-at-given-distance-in-binary-tree/1/
+        - https://www.geeksforgeeks.org/count-bst-nodes-that-are-in-a-given-range/
+        - https://www.geeksforgeeks.org/minimum-time-to-burn-a-tree-starting-from-a-leaf-node/
+        - https://practice.geeksforgeeks.org/problems/burning-tree/1/
+        - * https://www.geeksforgeeks.org/number-turns-reach-one-node-binary-tree/
+            - * https://practice.geeksforgeeks.org/problems/number-of-turns-in-binary-tree/1/
+            - https://www.geeksforgeeks.org/path-length-maximum-number-bends/
+        - https://practice.geeksforgeeks.org/problems/count-non-leaf-nodes-in-tree/1/
+        - https://www.geeksforgeeks.org/maximum-difference-between-node-and-its-ancestor-in-binary-tree/
+        - * https://practice.geeksforgeeks.org/problems/maximum-path-sum-from-any-node/1/
+            - * https://www.geeksforgeeks.org/find-maximum-path-sum-in-a-binary-tree/
+        - https://www.cdn.geeksforgeeks.org/find-the-maximum-sum-path-in-a-binary-tree/
+        - https://practice.geeksforgeeks.org/problems/binary-tree-to-bst/1/
+        - * https://www.geeksforgeeks.org/construct-tree-from-ancestor-matrix/
+            - https://www.geeksforgeeks.org/construct-ancestor-matrix-from-a-given-binary-tree/
+                - * second approach
+        - https://www.geeksforgeeks.org/find-maximum-or-minimum-in-binary-tree/
+        - * https://www.geeksforgeeks.org/left-child-right-sibling-representation-tree/
+            - https://www.geeksforgeeks.org/creating-tree-left-child-right-sibling-representation/
+        - * https://www.geeksforgeeks.org/prufer-code-tree-creation/
+        - * https://www.geeksforgeeks.org/convert-tree-forest-even-nodes/
+        - https://www.geeksforgeeks.org/kth-ancestor-node-binary-tree/
+        - https://www.geeksforgeeks.org/print-leftmost-and-rightmost-nodes-of-a-binary-tree/
+        - https://www.geeksforgeeks.org/given-binary-tree-print-nodes-two-given-level-numbers/
+        - https://www.geeksforgeeks.org/print-nodes-k-distance-root-iterative/
+        - https://www.geeksforgeeks.org/print-levels-nodes-binary-tree/
+        - https://www.geeksforgeeks.org/print-a-binary-tree-in-vertical-order-set-3-using-level-order-traversal/
+        - https://www.geeksforgeeks.org/print-binary-tree-levels-sorted-order-2/
+        - (TODO) https://www.geeksforgeeks.org/print-binary-tree-2-dimensions/
+        - (TODO) https://www.geeksforgeeks.org/flip-binary-tree/
+        - * https://www.geeksforgeeks.org/find-root-tree-children-id-sum-every-node-given/
+        - * https://www.geeksforgeeks.org/print-possible-edges-tree-given-diameter-height-vertices/
+        - https://www.geeksforgeeks.org/write-a-c-program-to-calculate-size-of-a-tree/
+        - https://www.geeksforgeeks.org/write-a-c-program-to-find-the-maximum-depth-or-height-of-a-tree/
+        - https://www.geeksforgeeks.org/iterative-method-to-find-height-of-binary-tree/
+        - https://www.geeksforgeeks.org/height-complete-binary-tree-heap-n-nodes/
+        - https://www.geeksforgeeks.org/maximum-width-of-a-binary-tree/
+        - https://www.geeksforgeeks.org/averages-levels-binary-tree/
+        - * https://www.geeksforgeeks.org/maximum-consecutive-increasing-path-length-in-binary-tree/
+            - Looks like a dynamic programming approach.
+            - https://www.geeksforgeeks.org/longest-consecutive-sequence-binary-tree/
+        - https://www.geeksforgeeks.org/longest-path-values-binary-tree/
+        - https://www.geeksforgeeks.org/create-loops-of-even-and-odd-values-in-a-binary-tree/
+        - https://www.geeksforgeeks.org/find-first-non-matching-leaves-two-binary-trees/
+        - https://www.geeksforgeeks.org/get-maximum-left-node-binary-tree/
+        - https://www.geeksforgeeks.org/factor-tree-of-a-given-number/
+        - https://www.geeksforgeeks.org/number-subtrees-odd-count-even-numbers/
+        - https://www.geeksforgeeks.org/find-distance-root-given-node-binary-tree/
+        - https://www.geeksforgeeks.org/find-next-right-node-of-a-given-key/
+            - * https://www.geeksforgeeks.org/find-next-right-node-given-key-set-2/
+            - https://www.geeksforgeeks.org/find-right-sibling-binary-tree-parent-pointers/
+        - https://www.geeksforgeeks.org/tilt-binary-tree/
+        - https://www.geeksforgeeks.org/top-three-elements-binary-tree/
+        - https://www.geeksforgeeks.org/maximum-distinct-nodes-in-a-root-to-leaf-path/
+        - https://www.geeksforgeeks.org/bfs-vs-dfs-binary-tree/
+    - **advanced**
+        - * https://www.geeksforgeeks.org/total-number-of-possible-binary-search-trees-with-n-keys/
+        - (TODO) https://www.geeksforgeeks.org/binary-indexed-tree-or-fenwick-tree-2/
+        - (TODO) https://www.geeksforgeeks.org/binary-indexed-tree-range-updates-point-queries/
+        - (TODO) https://www.geeksforgeeks.org/segment-tree-set-1-sum-of-given-range/
+        - (TODO) https://www.geeksforgeeks.org/find-a-number-in-minimum-steps/
+        - (TODO) https://www.geeksforgeeks.org/minimum-iterations-pass-information-nodes-tree/
+
+
+    - Sometimes you can solve the complement of the problem. For example, convert maximize to minimize.
+    - Best approach to traverse a tree is to use Morris traversal!
+    - ```delete[] rlevel;```
+    - Do not choose the first traversal that comes to your mind as the solution. Evaluate other traversals too.
+
+## TODO
+    - https://practice.geeksforgeeks.org/courses/dsa-self-paced?utm_source=Google&utm_medium=Header+Link+Click&utm_campaign=DSA+Course+Tracker&utm_id=DSA-Course-Tracker&utm_term=DSA+Course+Promo&utm_content=Course+Page
+    - https://practice.geeksforgeeks.org/explore/?category%5B%5D=Tree&page=1&category%5B%5D=Tree
+    - https://practice.geeksforgeeks.org/topics/Tree/
+    - https://www.geeksforgeeks.org/data-structure-gq/binary-trees-gq/
+    - https://www.geeksforgeeks.org/tag/binary-tree/
+    - https://www.geeksforgeeks.org/tag/tree-traversal/
+    - https://www.geeksforgeeks.org/tag/lca/
+    - https://www.geeksforgeeks.org/binary-tree-data-structure/binary-tree-checking-printing/
+    - https://www.geeksforgeeks.org/amazon-interview-set-120-campus-internship/
+    - https://www.geeksforgeeks.org/amazon-interview-experience-set-128-sdet/
+    - https://www.geeksforgeeks.org/amazon-interview-experience-set-323-software-development-engineer-off-campus/
+    - https://www.geeksforgeeks.org/microsoft-interview-experience-set-157-campus/
+    - https://www.geeksforgeeks.org/microsoft-idc-interview-experience-set-150-full-time/
+    - https://www.geeksforgeeks.org/microsoft-interview-experience-set-122-off-campus/
+
+
+    - Access to the node height in Morris traversal.
+    - Access to the node parent in Morris traversal.
+    - Access to the leaves in Morris traversal.
+    - tree coloring problem
+    - Binary Indexed Tree
+    - Segment Tree
+    - get input tree from user then convert to tree
+    - codeforces templates
+    - 10^4
+    - ```x & (x+1) == 0```
+
+
+    - remaining: Introduction + Lowest Common Ancestor
+
+
+    - https://www.geeksforgeeks.org/introduction-to-recursion-data-structure-and-algorithm-tutorials/
+    - http://www.geeksforgeeks.org/recursion/
+    - https://www.geeksforgeeks.org/smallest-window-contains-characters-string/
+    - https://www.geeksforgeeks.org/connect-nodes-at-same-level-with-o1-extra-space/
+    - https://www.geeksforgeeks.org/postorder-traversal-binary-tree-without-recursion-without-stack/
+
+
+    - https://stackoverflow.com/questions/47265259/morris-traversal-how-to-check-if-you-reach-leaf-nodes
+    - https://stackoverflow.com/questions/20010472/proof-of-correctness-algorithm-for-diameter-of-a-tree-in-graph-theory
+    - http://www.cplusplus.com/reference/cstring/strstr/
+    - http://www.cs.duke.edu/courses/spring00/cps100/assign/trees/diameter.html
+    - http://www.cs.usfca.edu/~brooks/S04classes/cs245/lectures/lecture11.pdf
+    - http://courses.cs.vt.edu/~cs3114/Fall09/wmcquain/Notes/T03a.BinaryTreeTheorems.pdf
+    - http://www.eem.anadolu.edu.tr/egermen/EEM%20480/icerik/EEM%20480%20Algorithms%20and%20Complexity%20Week%208.pdf
+    - http://xlinux.nist.gov/dads//HTML/perfectBinaryTree.html
+    - http://www.scss.tcd.ie/disciplines/software_systems/fmg/fmg_web/IFMSIG/winter2000/HughGibbonsSlides.pdf
+    - http://www.liacs.nl/~deutz/DS/september28.pdf
+    - http://web.cs.wpi.edu/~cs2005/common/iterative.inorder
+    - http://neural.cs.nthu.edu.tw/jang/courses/cs2351/slide/animation/Iterative%20Inorder%20Traversal.pps
+    - https://en.wikipedia.org/wiki/Tail_call
+    - https://en.wikipedia.org/wiki/Binary_tree#Types_of_binary_trees
+    - https://en.wikipedia.org/wiki/Binary_tree#Succinct_encodings
+    - https://en.wikipedia.org/wiki/Breadth-first_traversal

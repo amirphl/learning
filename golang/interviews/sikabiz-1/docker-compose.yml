@@ -1,0 +1,17 @@
+version: '3.0'
+services:
+  postgres:
+    image: postgres:14.5
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=interview
+    ports:
+      - '5555:5432'
+    volumes:
+      - db2:/var/lib/postgresql/data
+volumes:
+  db2:
+    driver: local
+

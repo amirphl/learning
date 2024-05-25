@@ -1,0 +1,296 @@
+## Links
+- https://leetcode.com/problems/container-with-most-water/
+- https://leetcode.com/problems/integer-to-roman/
+- (TODO) http://jakeboxer.com/blog/2009/12/13/the-knuth-morris-pratt-algorithm-in-my-own-words/
+- https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/
+- * https://leetcode.com/problems/minimum-fuel-cost-to-report-to-the-capital
+- https://leetcode.com/problems/knight-probability-in-chessboard/
+- https://leetcode.com/problems/insert-into-a-binary-search-tree/
+- https://leetcode.com/problems/most-profit-assigning-work/
+    - (TODO) second solution (great): https://leetcode.com/problems/most-profit-assigning-work/solutions/175676/java-memorization-without-sort-beat-99-85/
+- https://leetcode.com/problems/masking-personal-information/
+- https://leetcode.com/problems/permutations-ii/
+- https://leetcode.com/problems/queens-that-can-attack-the-king/
+- https://leetcode.com/problems/multiply-strings/
+- * https://leetcode.com/problems/minimize-hamming-distance-after-swap-operations/
+- https://leetcode.com/problems/count-good-meals/
+- * https://leetcode.com/problems/number-of-restricted-paths-from-first-to-last-node/
+- https://leetcode.com/problems/number-of-ways-to-select-buildings/
+- * https://leetcode.com/problems/minimum-sum-of-squared-difference/
+- https://leetcode.com/problems/using-a-robot-to-print-the-lexicographically-smallest-string/
+- https://leetcode.com/problems/minimum-path-cost-in-a-grid/
+- https://leetcode.com/problems/maximum-star-sum-of-a-graph/
+- https://leetcode.com/problems/smallest-missing-non-negative-integer-after-operations/
+- * https://leetcode.com/problems/count-the-number-of-fair-pairs/
+- https://leetcode.com/problems/increment-submatrices-by-one
+- * https://leetcode.com/problems/mice-and-cheese/
+- * https://leetcode.com/problems/non-overlapping-intervals/
+- https://leetcode.com/problems/lexicographical-numbers/
+- * https://leetcode.com/problems/optimal-division/
+- https://leetcode.com/problems/maximum-width-of-binary-tree/
+- https://leetcode.com/problems/single-element-in-a-sorted-array/
+- https://leetcode.com/problems/largest-plus-sign/
+- * https://leetcode.com/problems/boats-to-save-people/
+    - (TODO) optimal solution
+- https://leetcode.com/problems/binary-tree-pruning/
+- https://leetcode.com/problems/score-of-parentheses/
+- https://leetcode.com/problems/sort-an-array/
+- https://leetcode.com/problems/complete-binary-tree-inserter/
+- https://leetcode.com/problems/powerful-integers/
+- https://leetcode.com/problems/longest-mountain-in-array/
+- https://leetcode.com/problems/split-array-into-fibonacci-sequence/
+- * https://leetcode.com/problems/previous-permutation-with-one-swap/
+- https://leetcode.com/problems/corporate-flight-bookings/
+- https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/
+- https://leetcode.com/problems/remove-covered-intervals/
+- * https://leetcode.com/problems/maximum-number-of-occurrences-of-a-substring/
+- https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/
+    - (TODO) segment tree solution
+- https://leetcode.com/problems/minimum-insertions-to-balance-a-parentheses-string/
+- https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/
+    - (TODO) efficient solution
+- https://leetcode.com/problems/maximum-score-from-removing-stones/
+- https://leetcode.com/problems/single-threaded-cpu/
+- https://leetcode.com/problems/change-minimum-characters-to-satisfy-one-of-three-conditions/
+- https://leetcode.com/problems/incremental-memory-leak/
+- https://leetcode.com/problems/minimum-additions-to-make-valid-string/
+- https://leetcode.com/problems/sum-of-matrix-after-queries/
+- https://leetcode.com/problems/check-if-it-is-possible-to-split-array/
+- https://leetcode.com/problems/most-popular-video-creator/
+- https://leetcode.com/problems/minimum-consecutive-cards-to-pick-up/
+>
+- * https://leetcode.com/problems/largest-combination-with-bitwise-and-greater-than-zero/
+- https://leetcode.com/problems/find-the-minimum-and-maximum-number-of-nodes-between-critical-points/
+- https://leetcode.com/problems/execution-of-all-suffix-instructions-staying-in-a-grid/
+- https://leetcode.com/problems/minimum-time-to-complete-trips/
+- https://leetcode.com/problems/maximum-split-of-positive-even-integers/
+- https://leetcode.com/problems/find-good-days-to-rob-the-bank/
+- https://leetcode.com/problems/minimize-maximum-pair-sum-in-array/
+- https://leetcode.com/problems/unique-length-3-palindromic-subsequences/
+- https://leetcode.com/problems/minimum-number-of-operations-to-move-all-balls-to-each-box/
+- * https://leetcode.com/problems/subrectangle-queries/solutions/685500/c-original-and-updates/
+- * https://leetcode.com/problems/avoid-flood-in-the-city/
+- https://leetcode.com/problems/number-of-sets-of-k-non-overlapping-line-segments/
+    - * O(n) solution
+- https://leetcode.com/problems/lexicographically-smallest-string-after-applying-operations/
+- https://leetcode.com/problems/even-odd-tree/
+- https://leetcode.com/problems/split-a-string-into-the-max-number-of-unique-substrings/
+- https://leetcode.com/problems/number-of-ways-to-split-a-string/
+- https://leetcode.com/problems/count-square-submatrices-with-all-ones/
+- https://leetcode.com/problems/number-of-burgers-with-no-waste-of-ingredients/
+- https://leetcode.com/problems/maximum-product-of-splitted-binary-tree/
+- https://leetcode.com/problems/break-a-palindrome/
+- * https://leetcode.com/problems/minimum-number-of-frogs-croaking/
+- https://leetcode.com/problems/validate-binary-tree-nodes/
+- https://leetcode.com/problems/beautiful-arrangement/
+- https://leetcode.com/problems/rotate-function/
+- https://leetcode.com/problems/largest-sum-of-averages/
+    - (TODO) https://leetcode.com/problems/largest-sum-of-averages/solutions/126280/naive-detailed-step-by-step-approach-from-recursive-to-dp-o-n-solution/
+- https://leetcode.com/problems/uncrossed-lines/
+- https://leetcode.com/problems/best-sightseeing-pair/
+- https://leetcode.com/problems/longest-arithmetic-subsequence-of-given-difference/
+- https://leetcode.com/problems/find-two-non-overlapping-sub-arrays-each-with-target-sum/
+    - (TODO) O(n)
+- https://leetcode.com/problems/count-number-of-teams/
+    - TODO see other solutions
+- https://leetcode.com/problems/swap-adjacent-in-lr-string/
+- https://leetcode.com/problems/decoded-string-at-index/
+- ** https://leetcode.com/problems/sliding-window-median/
+
+
+
+
+
+
+
+
+
+
+
+
+
+- start here
+    - https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/
+    - https://leetcode.com/problems/rearrange-words-in-a-sentence/
+    - https://leetcode.com/problems/sum-root-to-leaf-numbers/
+    - https://leetcode.com/problems/display-table-of-food-orders-in-a-restaurant/
+    - https://leetcode.com/problems/number-of-nodes-in-the-sub-tree-with-the-same-label/
+    - https://leetcode.com/problems/number-of-substrings-with-only-1s/
+    - https://leetcode.com/problems/number-of-good-ways-to-split-a-string/
+    - (TODO) https://leetcode.com/problems/find-the-most-competitive-subsequence/
+    - https://leetcode.com/problems/widest-vertical-area-between-two-points-containing-no-points/
+    - * https://leetcode.com/problems/check-if-number-is-a-sum-of-powers-of-three/
+    - https://leetcode.com/problems/subarray-product-less-than-k/
+    - https://leetcode.com/problems/find-k-th-smallest-pair-distance/
+    - https://leetcode.com/problems/rabbits-in-forest/
+    - https://leetcode.com/problems/walking-robot-simulation/
+    - * https://leetcode.com/problems/binary-subarrays-with-sum/
+    - https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+    - https://leetcode.com/problems/powx-n/
+    - https://leetcode.com/problems/largest-time-for-given-digits/
+    - https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/
+
+    
+
+
+    - https://leetcode.com/problems/validate-binary-search-tree/
+    - ++ https://leetcode.com/problems/find-the-duplicate-number/
+        - (TODO) Take a look at other methods.
+    - ++++ https://leetcode.com/problems/shortest-unsorted-continuous-subarray/
+        - second solution
+    - ++++ https://leetcode.com/problems/maximum-sum-of-3-non-overlapping-subarrays/
+    - https://leetcode.com/problems/longest-palindromic-substring/
+        - Take a look at: https://leetcode.com/problems/longest-palindromic-substring/solutions/2928/very-simple-clean-java-solution/
+            - https://leetcode.com/problems/longest-palindromic-substring/solutions/2921/share-my-java-solution-using-dynamic-programming/
+        - (TODO) https://www.geeksforgeeks.org/longest-palindrome-substring-set-1/
+        - (TODO) https://www.geeksforgeeks.org/longest-palindromic-substring-set-2/
+        - (TODO) https://www.geeksforgeeks.org/shortest-palindromic-substring/
+    - https://leetcode.com/problems/add-to-array-form-of-integer/
+    - + https://leetcode.com/problems/the-k-th-lexicographical-string-of-all-happy-strings-of-length-n/
+    - https://leetcode.com/problems/find-xor-beauty-of-array/
+        - solve again.
+    - ++++ https://leetcode.com/problems/make-sum-divisible-by-p/
+    - https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/
+        - (TODO) https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/solutions/161268/c-java-python-one-pass-real-o-n/
+    - https://leetcode.com/problems/minimum-number-of-vertices-to-reach-all-nodes/
+    - https://leetcode.com/problems/all-ancestors-of-a-node-in-a-directed-acyclic-graph/
+        - (TODO) https://leetcode.com/problems/all-ancestors-of-a-node-in-a-directed-acyclic-graph/
+    - https://leetcode.com/problems/out-of-boundary-paths/
+    - https://leetcode.com/problems/maximum-product-of-word-lengths/
+    - https://leetcode.com/problems/minimum-score-by-changing-two-elements/
+    - https://leetcode.com/problems/bulls-and-cows/
+    - https://leetcode.com/problems/number-of-orders-in-the-backlog/
+
+
+    - (TODO) https://leetcode.com/problems/shortest-palindrome/
+        - (TODO) https://www.geeksforgeeks.org/minimum-insertions-to-form-shortest-palindrome/
+        - (TODO) https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/
+            - (TODO) https://www.geeksforgeeks.org/naive-algorithm-for-pattern-searching/
+        - (TODO) https://www.geeksforgeeks.org/print-the-longest-palindromic-prefix-of-a-given-string
+            - (TODO) https://stackoverflow.com/questions/3833103/longest-palindrome-prefix
+        - (TODO) https://www.geeksforgeeks.org/longest-palindromic-string-formed-by-concatenation-of-prefix-and-suffix-of-a-string/
+    - ++++ https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
+        - https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/
+        - https://www.geeksforgeeks.org/best-time-to-buy-and-sell-stock/
+        - (TODO) https://www.geeksforgeeks.org/maximum-profit-by-buying-and-selling-a-stock-at-most-twice-set-2/
+        - (TODO) https://www.geeksforgeeks.org/stock-buy-sell/
+        - (TODO) https://www.geeksforgeeks.org/maximum-profit-by-buying-and-selling-a-share-at-most-k-times/
+    - + https://leetcode.com/problems/scramble-string/
+        - https://www.geeksforgeeks.org/check-if-a-string-is-a-scrambled-form-of-another-string/
+    - ++++ https://leetcode.com/problems/minimum-window-substring/
+        - (TODO) https://www.geeksforgeeks.org/find-the-smallest-window-in-a-string-containing-all-characters-of-another-string/
+    - ++++ https://leetcode.com/problems/median-of-two-sorted-arrays/
+    - https://leetcode.com/problems/maximum-product-subarray/
+    - https://leetcode.com/problems/candy/
+        - (TODO) https://www.geeksforgeeks.org/minimum-number-of-candies-required-to-distribute-among-children-based-on-given-conditions/
+    - ++++ https://leetcode.com/problems/binary-trees-with-factors/
+        - (TODO) https://www.geeksforgeeks.org/factor-tree-of-a-given-number/
+    - https://leetcode.com/problems/kth-largest-element-in-an-array/
+    - https://leetcode.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers/
+    - https://leetcode.com/problems/longest-substring-without-repeating-characters/
+    - https://leetcode.com/problems/reverse-integer/
+    - https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+    - https://leetcode.com/problems/n-queens/
+        - (TODO) https://www.geeksforgeeks.org/n-queen-problem-backtracking-3
+    - ++++ https://leetcode.com/problems/word-ladder/
+        - (TODO) https://www.geeksforgeeks.org/word-ladder-length-of-shortest-chain-to-reach-a-target-word/
+    - https://leetcode.com/problems/text-justification/
+    - https://leetcode.com/problems/minimum-operations-to-halve-array-sum/
+        - (TODO) https://www.geeksforgeeks.org/minimize-operations-to-reduce-array-sum-by-half-by-reducing-any-elements-by-half/
+        - (TODO) https://www.geeksforgeeks.org/minimum-operations-to-make-array-sum-at-most-s-from-given-array/
+    - ++++ https://leetcode.com/problems/split-array-largest-sum/
+        - (TODO) https://www.geeksforgeeks.org/split-the-given-array-into-k-sub-arrays-such-that-maximum-sum-of-all-sub-arrays-is-minimum/
+    - (TODO) https://leetcode.com/problems/freedom-trail/
+        - Sometimes memory O(n*m) can be reduced to O(n) like this problem. Take care.
+    - https://leetcode.com/problems/distinct-subsequences/
+        - (TODO) https://www.geeksforgeeks.org/count-distinct-occurrences-as-a-subsequence/
+        - (TODO) https://www.geeksforgeeks.org/count-distinct-subsequences/
+    - https://leetcode.com/problems/game-of-life/
+    - (TODO) ++++ https://leetcode.com/problems/word-search/
+    - + https://leetcode.com/problems/maximum-value-of-k-coins-from-piles/
+    - (TODO) ++++ https://leetcode.com/problems/concatenated-words/
+    - https://leetcode.com/problems/matchsticks-to-square/
+        - good idea
+    - (TODO) https://leetcode.com/problems/maximal-rectangle/
+    - https://leetcode.com/problems/decode-ways/
+    - https://leetcode.com/problems/reverse-linked-list-ii/
+    - https://leetcode.com/problems/house-robber/
+    - https://leetcode.com/problems/coin-change/
+    - https://leetcode.com/problems/minimum-cost-for-tickets/
+    - https://leetcode.com/problems/global-and-local-inversions/
+    - ++++ https://leetcode.com/problems/maximum-subsequence-score/
+    - https://leetcode.com/problems/maximum-non-negative-product-in-a-matrix/
+    - https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/
+    - ++++ https://leetcode.com/problems/maximum-product-of-the-length-of-two-palindromic-subsequences/
+        - solve more bitmasking problems.
+    - https://leetcode.com/problems/edit-distance/
+    - + https://leetcode.com/problems/decode-the-slanted-ciphertext/
+    - ++++ https://leetcode.com/problems/construct-target-array-with-multiple-sums/
+    - + https://leetcode.com/problems/minimum-deletions-to-make-string-balanced/
+        - 
+    - https://leetcode.com/problems/minimum-deletions-to-make-array-beautiful/
+    - ++ https://leetcode.com/problems/frog-jump/
+    - https://leetcode.com/problems/flip-string-to-monotone-increasing/
+    - ++++ https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
+    - https://leetcode.com/problems/arithmetic-slices/
+    - https://leetcode.com/problems/perfect-squares/
+    - https://leetcode.com/problems/unique-binary-search-trees-ii/
+    - https://leetcode.com/problems/target-sum/
+    - https://leetcode.com/problems/count-and-say/
+    - ++++ https://leetcode.com/problems/first-missing-positive/
+
+
+    - https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
+    - https://leetcode.com/problems/clone-graph/
+    - https://leetcode.com/problems/add-two-numbers/
+    - https://leetcode.com/problems/zigzag-conversion/
+    - * https://leetcode.com/problems/next-permutation/
+    - https://leetcode.com/problems/group-anagrams/
+    - https://leetcode.com/problems/unique-paths-ii/
+    - https://leetcode.com/problems/subsets-ii/
+        - (TODO) solve with better memory and time complexity using for loops, take a look at c++ suggested solution.
+    - * https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
+        - (TODO) memory O(1) solution
+    - https://leetcode.com/problems/evaluate-reverse-polish-notation/
+    - https://leetcode.com/problems/palindromic-substrings/
+    - https://leetcode.com/problems/delete-and-earn/
+    - https://leetcode.com/problems/is-graph-bipartite/
+    - https://leetcode.com/problems/find-eventual-safe-states/
+    - https://leetcode.com/problems/top-k-frequent-words/
+        - (TODO) other solutions
+    - https://leetcode.com/problems/longest-univalue-path/
+    - https://leetcode.com/problems/repeated-string-match/
+        - (TODO)
+    - https://leetcode.com/problems/check-if-a-string-can-break-another-string/
+        - (TODO) O(n) solution
+    - https://leetcode.com/problems/construct-k-palindrome-strings/
+    - https://leetcode.com/problems/number-of-times-binary-string-is-prefix-aligned/
+    - * https://leetcode.com/problems/course-schedule-iv/
+        - (TODO) solution using topological sorting
+    - * https://leetcode.com/problems/count-substrings-that-differ-by-one-character/
+    - https://leetcode.com/problems/maximum-value-after-insertion/
+    - https://leetcode.com/problems/most-beautiful-item-for-each-query/
+        - upper_bound custom comparator vs lower_bound custom comparator
+    - https://leetcode.com/problems/maximum-candies-allocated-to-k-children/
+    - (TODO) https://leetcode.com/problems/number-of-subarrays-with-lcm-equal-to-k/
+    - https://leetcode.com/problems/number-of-islands/
+    - https://leetcode.com/problems/decode-string/
+
+
+
+
+
+## TODO
+    - https://leetcode.com/problems/max-sum-of-rectangle-no-larger-than-k/
+    - https://leetcode.com/problems/substring-with-concatenation-of-all-words/
+    - https://leetcode.com/problems/super-ugly-number/
+        - https://www.geeksforgeeks.org/find-starting-indices-substrings-string-s-made-concatenating-words-listl/
+    - https://leetcode.com/problems/zuma-game/
+    - https://www.geeksforgeeks.org/tag/anagram/
+        - https://www.geeksforgeeks.org/check-whether-two-strings-are-anagram-of-each-other/
+    - https://www.geeksforgeeks.org/maximum-adjacent-difference-array-sorted-form/
+    - https://www.geeksforgeeks.org/distribute-n-candies-among-k-people/
+    - counting sort
+    - reverse
+    - move
+    - dp n*m to m space
